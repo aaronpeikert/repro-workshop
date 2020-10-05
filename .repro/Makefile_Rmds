@@ -1,0 +1,6 @@
+presentation.html: presentation.Rmd  
+	$(RUN1) Rscript -e 'rmarkdown::render("$(WORKDIR)/$<", "all")' $(RUN2)
+
+README.md: README.Rmd  
+	$(RUN1) Rscript -e 'rmarkdown::render("$(WORKDIR)/$<", "all")' $(RUN2)
+

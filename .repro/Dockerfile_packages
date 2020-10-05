@@ -1,0 +1,2 @@
+RUN install2.r --error --skipinstalled \ 
+  repro
