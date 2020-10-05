@@ -13,9 +13,10 @@ knitr::opts_chunk$set(
 
 # Ensuring Reproducibility of complex data analytic projects
 
-I will discuss in this workshop (2h) what reproducibility is, why you should care about it and how you can achieve it.
-Spoiler: getting the same results from the same data set, because you will be more productive, just copy effective best practices from software engineering.
-If you want to we'll get our hands dirty using R in [RStudio Cloud](https://rstudio.cloud), but bystanders are also very welcome.
+Why should you care about reproducibility? In this workshop (2h), I will give you the answer and discuss the nuts and bolts of reproducibility.
+Spoiler: it is about getting the same results from the same analysis on the same data set.
+We discuss what can go wrong when trying to achieve reproducibility and derive some best practices to avoid common pitfalls.
+In the second half of the workshop, you'll have a chance to get your hands dirty with some practical examples in R using RStudio Cloud.
 
 <!-- badges: start -->
 <!-- badges: end -->
