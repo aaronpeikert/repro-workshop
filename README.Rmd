@@ -13,11 +13,11 @@ knitr::opts_chunk$set(
 
 # Ensuring Reproducibility of complex data analytic projects
 
-Why should you care about reproducibility? In this workshop (2h), I will give you the answer and discuss the nuts and bolts of reproducibility.
-Spoiler: it is about getting the same results from the same analysis on the same data set.
-We discuss what can go wrong when trying to achieve reproducibility and derive some best practices to avoid common pitfalls.
-In the second half of the workshop, you'll have a chance to get your hands dirty with some practical examples in R using RStudio Cloud.
-
 <!-- badges: start -->
 <!-- badges: end -->
 
+Can I trust these results [to reproduce]?
+In this workshop (2 x 2h) participants learn to spot threats to reproducibility and develop the skills to avoid them.
+These skills stem from hard learned lessons of the software engineering community, which developed tools the research community can utilize.
+The employed tools, namely RMarkdown, Git, Make, and Docker, do not merely increase the shelf life of an analysis, they help researchers to be more productive and collaborate easier.
+Researchers who routinely use R will benefit most, however all presented principles (and most tools) work well with other programming languages.
