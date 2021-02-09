@@ -4,8 +4,12 @@ author: Aaron Peikert
 output: github_document
 ---
 
+* *P* implies emphasis on presentation
+* *I* implies emphasis on interaction/hands on/try out
+* *G* means work in groups <= 4
+* (optional) depending on time this topic will be skipped
 
-# The four pillars of reproducible research (30min)
+### The four pillars of reproducible research (30min)
  
  - the goal: reproduction that fits into a tweet *P*
  - hands on reproduction *I*
@@ -16,14 +20,14 @@ output: github_document
      - software management *P*
      - dependency tracking *P*
 
-# RProjects (30 min)
+### RProjects (30 min)
 
  - Create a Project *I*
  - Choose a license *P*
  - add a Contributer Covenant *I*
  - add a README.Rmd *I*
 
-# RMarkdown (45 min)
+### RMarkdown (45 min)
 
  - handy chunk options *P*
     - include
@@ -42,7 +46,7 @@ output: github_document
     - [Tufte Handout](https://rstudio.github.io/tufte/)
     - [rmdformats](https://github.com/juba/rmdformats)
 
-# Git + GitHub 1/2 (2h)
+### Git + GitHub 1/2 (2h)
 
  - fork a repository *G*
  - invite collaborators *G*
@@ -55,7 +59,7 @@ output: github_document
  - comment on a PR *G*
  - merge and close a PR *G*
 
-# Git + GitHub 2/2 (90min)
+### Git + GitHub 2/2 (90min)
 
  - create and solve a merge conflict *G*
  - interactive rebase (optional) *G*
@@ -65,7 +69,7 @@ output: github_document
  - suggest changes in a PR review *G*
  - project management with issues via canban automation (optional) *G*
  
-# Docker (60min)
+### Docker (60min)
 
  - pull a Docker image *I*
  - run a shell in a Docker container *I*
@@ -76,7 +80,7 @@ output: github_document
  - build a Docker image (optional) *I*
  - use `repro` to automatically write Dockerfiles *I*
 
-# Make (60min)
+### Make (60min)
 
  - read a basic Makefile recipe *P*
  - write a basic Makefile recipe *I*
