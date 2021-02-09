@@ -1,0 +1,26 @@
+Requirements for a two day advanced reproducibility workshop
+================
+Aaron Peikert
+
+### Computer Set Up
+
+  - OS: Linux, Mac OS, Windows 10 Pro/Enterprise/Education (no Windows
+    10 Home)
+  - Admin Rights
+  - R + RStudio + Git + Make + Docker installed (you’ll get
+    instructions\!)
+  - Having two displays will bring you joy (then you can follow and try
+    out at the same time\!).
+
+### Can you answer the following Questions?
+
+  - How will two asterisks (`**like this**`) change the formatting in
+    Markdown?
+  - How do you add an R code chunk to a RMarkdown?
+  - What is a commit?
+  - Name a place that is great to host Git repositories.
+  - How do you open a terminal/shell/cmd on you computer?
+
+If you struggle to answer these questions, it is probably ok to attend
+the workshop. However, if you have no idea what I am talking about it
+will bring you no fun to attend.
