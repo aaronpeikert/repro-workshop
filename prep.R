@@ -29,11 +29,15 @@
 if(!requireNamespace("remotes"))install.packages("remotes")
 if(!requireNamespace("repro"))remotes::install_github("aaronpeikert/repro")
 
-#### Git/Make/Docker ####
+#### Make/Docker ####
 # follow instructions, rerun till you are told to not worry, then do not worry.
-repro::check_git()
 repro::check_make()
 repro::check_docker()
+
+#### Git/GitHub
+repro::check_git()
+repro::check_github()
+
 
 #### This doesn't work ####
 # If you right now hate any of the following:
