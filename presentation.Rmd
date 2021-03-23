@@ -3,9 +3,6 @@ title: "Untitled"
 author: "Aaron Peikert"
 date: "10/5/2020"
 output: slidy_presentation
-repro:
-  packages:
-    - repro
 ---
 
 ```{r setup, include=FALSE}
