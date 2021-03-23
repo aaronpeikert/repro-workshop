@@ -1,0 +1,318 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\usepackage{tikz}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% title info
+
+\title{Automating Reproducibility}
+\subtitle{A Reproducible Data Analysis Workflow with RMarkdown, Git, Make, and Docker}
+\author{\href{https://github.com/aaronpeikert/}{Aaron Peikert}}
+\institute{
+\textsuperscript{1}Max Planck Institute of Human Development
+}
+\date{
+\scriptsize {\lolit Slides:} \href{https://github.com/aaronpeikert/repro-workshop}{\tt \scriptsize
+  \color{foreground} https://github.com/aaronpeikert/repro-workshop}
+}
+
+
+\begin{document}
+\lstset{columns=fullflexible}
+
+% title slide
+{
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+  \vfill \hfill \includegraphics[height=6mm]{Figs/cc-zero.png} \vspace*{-1cm}
+
+  \note{These Slides are for a medium length talk (30min) meant as an introduction to a reproducible research workflow.
+
+    Source: {\tt https://github.com/aaronpeikert/repro-talk}
+}}
+}
+\begin{frame}[c]
+  \begin{center}
+  \large
+  \textcolor<2>{lolit}{``Insanity is doing the same thing over and over again and expecting different results."}
+  \end{center}
+  \textcolor<2>{lolit}{\hfill {\textendash} Albert Einstein}\\
+  \onslide<2>{
+  \begin{center}
+  As it turns out, doing the\\
+    \textcolor{hilit}{{\large same thing}}\\
+  is pretty complicated.
+\end{center}}
+
+\end{frame}
+\begin{frame}[c]{Reproduction ≠ Replication}
+  If everything is already there:
+\begin{itemize}
+  \item published paper
+  \item data originally used
+  \item code originally used
+\end{itemize}
+\onslide<2->{Shouldn't that be enough for \textcolor<2>{vhilit}{Reproducibility}? }\onslide<3>{\textcolor{hilit}{Unlikely.}}
+\end{frame}
+{
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{Figs/ikea.png}}
+  \begin{frame}[plain]
+  \end{frame}
+}
+
+\begin{frame}[c]{Problems}
+  \begin{enumerate}
+    \item<1->Multiple versions of scripts/data (e.g., the dataset has changed over time, i.e., was further cleaned or extended)
+    \item<2->Copy\&paste errors (e.g., inconsistency between reported result and reproduced result)
+    \item<3->\textcolor<5>{hilit}{unclear which scripts should be executed in which order}
+    \item<4->\textcolor<5>{vhilit}{Broken software dependencies (e.g., analysis broken after an update, missing package)}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Lessons from software engeniering}
+  \begin{enumerate}
+    \item Dynamic document creation
+    \item Version control
+    \item \textcolor<2>{hilit}{Dependency tracking}
+    \item \textcolor<2>{vhilit}{Software management}
+  \end{enumerate}
+  \vfill
+\end{frame}
+
+\begin{frame}[c]{Tools for R Users}
+  In the R Universe and beyond, the most flexible tools are:
+  \begin{enumerate}
+    \item Dynamic document creation = RMarkdown*
+    \item Version control = Git**
+    \item \textcolor{hilit}{Dependency tracking = Make**}
+    \item \textcolor{vhilit}{Software management = Docker**}
+  \end{enumerate}
+  \vfill
+  \textcolor{lolit}{
+	* RMarkdown supports more then 40 languages e.g.:\\
+	\hspace{10mm}Python, Julia, SAS, Scala \& Octave\\
+	** Language agnostic
+	}
+\end{frame}
+
+\begin{frame}[c, fragile]{A little taste}
+
+In the best case, you can put all instructions for reproducing something into a tweet.
+\vspace{10mm}
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily\scriptsize]
+git clone https://github.com/aaronpeikert/workflow-showcase.git
+cd workflow-showcase
+make build
+make all DOCKER=TRUE
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[c]{Specify Everything}
+  The relations between\\
+  \textcolor<2>{hilit}{code}, \textcolor<2>{hilit}{data}, \textcolor<2>{hilit}{results} and their \textcolor<2>{hilit}{environment}\\
+  need to be \textcolor<2>{vhilit}{unambiguously} specified.
+\end{frame}
+
+\begin{frame}[c]{Why should I care?}
+	\only<1>{
+		Productivity:
+		\begin{itemize}
+			\item reuse
+			\item easier collaboration
+		\end{itemize}
+	}
+	\only<2>{
+	Good scientific practice:
+		\begin{itemize}
+			\item reproducibility is a precondition for replication
+			\item increases transparency and (longterm) accessibility
+		\end{itemize}
+	}
+\end{frame}
+
+\begin{frame}[c]{RMarkdown\textemdash{}Literate Programming}
+  Text and code are mixed\\
+  in a single source document\\
+  that can be \textcolor{hilit}{dynamically} compiled\\
+  into various representations:
+  \begin{itemize}
+    \item (APA conformable) manuscripts
+    \item presentations
+    \item websites
+    \item books
+    \item posters
+		\item CV
+  \end{itemize}
+\end{frame}
+
+{
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{Figs/rmarkdown.png}}
+  \begin{frame}[plain]
+  \end{frame}
+}
+{
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{Figs/rmarkdown-rendered.png}}
+  \begin{frame}[plain]
+  \end{frame}
+}
+\begin{frame}[c]{Git/GitHub\textemdash{}Version Control}
+  Version control is a system that records changes to a set of files
+  over time so that you can recall \href{https://github.com/aaronpeikert/reproducible-research/blame/master/manuscript.Rmd}{specific versions} later.\\
+  \vspace{10mm}
+  It guarantees that code and data are exactly the same version as used for
+  publication.
+\end{frame}
+
+\begin{frame}[c, fragile]{Make\textemdash{}Dependency Management}
+
+Make is a ``recipe" language that describes how files depend on each other and how to resolve these dependencies.
+\vspace{10mm}
+\begin{lstlisting}[language=make,basicstyle=\ttfamily\scriptsize]
+cfcs-example.pdf: cfcs-example.Rmd data/CFCS.csv
+  $(run) Rscript -e 'rmarkdown::render("$(current_dir)/$<")'
+
+data/CFCS.csv: R/00load_data.R
+  $(run) Rscript -e 'source("$(current_dir)/$<")'
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[c, fragile]{Docker\textemdash{}Containerization}
+	Docker is a lightweight virtual computer.\\
+	Dockerfiles are ``recipes" that describe what to install on that virtual computer:
+	\vspace{10mm}
+	\begin{lstlisting}[language=make,basicstyle=\ttfamily\scriptsize]
+FROM rocker/verse:3.6.1
+ARG BUILD_DATE=2019-11-11
+RUN install2.r --error --skipinstalled\
+  here lavaan
+WORKDIR /home/rstudio
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[c]{Advantages}
+	\begin{center}
+		\onslide<1->{\textcolor<2->{lolit}{Unambiguous }}
+		\onslide<2->{\textcolor<3->{lolit}{Standardized }}
+		\onslide<3->{\textcolor<4->{lolit}{Portable }}
+		\onslide<4->{Automated }
+	\end{center}
+\end{frame}
+
+\begin{frame}[c]{Simplifying the tools}
+
+\textcolor<2->{lolit}{These tools require extensive training and need much time to configure correctly.\\}
+\onslide<2->\textcolor<3->{lolit}{The R package 'repro' abstracts away the concrete technical implementation:\\}
+\onslide<3->{\centering \Huge Live Demo}
+
+\end{frame}
+
+\begin{frame}[fragile, c]{Cheat I \textemdash{} Custom Recipes}
+
+A few variations on zip:
+
+\begin{lstlisting}[language=make,basicstyle=\ttfamily\scriptsize]
+data/mtcars.csv: data/mtcars.csv.zip
+  unzip -p data/mtcars.csv.zip > data/mtcars.csv
+\end{lstlisting}
+
+\begin{lstlisting}[language=make,basicstyle=\ttfamily\scriptsize]
+data/mtcars.csv: data/mtcars.csv.zip
+  unzip -p $< > $@
+\end{lstlisting}
+
+\begin{lstlisting}[language=make,basicstyle=\ttfamily\scriptsize]
+data/mtcars.csv: data/mtcars.csv.zip
+  Rscript -e "unzip('data/mtcars.csv.zip', exdir = 'data/')"
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile, c]{Cheat II \textemdash{} Custom Software}
+
+Install 7zip in Docker:
+
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+RUN apt-get update -y &&\
+  apt-get install -y --no-install-recommends p7zip
+\end{lstlisting}
+
+Use 7zip in Make:
+
+\begin{lstlisting}[language=make,basicstyle=\ttfamily\scriptsize]
+data/mtcars.csv: data/mtcars.csv.zip
+  7z e -y -odata/ data/mtcars.csv.zip
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[c]{}
+\centering \Huge Backup Slides
+\end{frame}
+
+\begin{frame}[c]{Disadvantages}
+\begin{itemize}
+	\item requires complex software infrastructure
+	\item depends on for-profit services
+	\item diverges from the standard manuscript workflow
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Focus: Longterm Archive}
+	\textcolor<2>{lolit}{All software is bundled into the container, therefore all we need is:}
+	\begin{itemize}
+		\item \textcolor<2>{lolit}{container software}
+		\item \textcolor<2>{lolit}{storage infrastructure}
+	\end{itemize}
+
+	\onslide<2>{
+	What happens when Docker and co. are not supported anymore?\\
+	Containers can be converted into a full system image ensuring support for decades.
+	}
+
+\end{frame}
+
+\begin{frame}[c]{Focus: Computing infrastructure}
+	\centering
+	\onslide<1-2>{Dependency management + containerization\\}
+	\onslide<2>{=\\}
+	\onslide<2->{\textcolor<5->{lolit}{distributed computation\\}}
+	\onslide<3->{\textcolor<5->{lolit}{on\\}}
+	\only<3>{\textcolor{hilit}{High Performance Computing cluster\\}}
+	\only<4->{\textcolor<4>{vhilit}{\textcolor<5->{lolit}{Cloud Computing infrastructure\\}}}
+	\onslide<5->{\textcolor<5->{lolit}{=\\}}
+	\onslide<5->{Upon change, the manuscript is rerendered assuring reproducibility.}
+\end{frame}
+
+\begin{frame}[c]{Focus: Modularity}
+\begin{itemize}
+	\item<1-> repro is a modular system
+	\item<2-> potential integration of other workflows\\
+	\item<3-> ``Lego system of reproducibility tools"
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{References}
+	\textcolor{lolit}{Slides:\\}\href{https://github.com/aaronpeikert/repro-talk}{\texttt{\textcolor{foreground}{https://github.com/aaronpeikert/repro-talk}}}
+	\textcolor{lolit}{Package:\\}\href{https://github.com/aaronpeikert/repro-thesis}{\texttt{\textcolor{foreground}{https://github.com/aaronpeikert/repro-thesis}}}\\
+	\textcolor{lolit}{Workflow:\\}\href{https://doi.org/10.31234/osf.io/8xzqy}{\texttt{\textcolor{foreground}{https://doi.org/10.31234/osf.io/8xzqy}}}
+\end{frame}
+
+\begin{frame}[c]
+  \Huge
+	\only<1>{Thank you}
+	\only<2>{Questions?}
+\end{frame}
+
+\end{document}
