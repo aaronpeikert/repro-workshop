@@ -1,20 +1,8 @@
 ---
-title: Tidy Tuesday
-author: Ingrid Zoll
-date: '2021-03-18'
-slug: tidy-tuesday-march-16
-categories: []
-tags: [RStudio, tidytuesday]
-subtitle: ''
-summary: ''
-authors: []
-lastmod: '2021-03-18T11:59:19-07:00'
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+title: An exploration of computer facilitated free time activities
+author: "UKE Hamburg Workshop on Reproducibility"
+date: "2021-03-29"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
