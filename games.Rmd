@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Acknowledgement
+## Acknowledgement
 
 The idea for the data stems from the [tidytuesday initiative](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-03-16/readme.md); the data was scraped for [kaggle](https://www.kaggle.com/michau96/popularity-of-games-on-steam) from [steamcharts.com](https://steamcharts.com/).
 The code and graphics were adapted from [Ingrid Zoll's tidytuesday submission](https://itlzoll.netlify.app/post/tidy-tuesday-march-16/).
@@ -28,6 +28,23 @@ games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidy
   mutate(date = my(str_c(month, "_", year)))
 ```
 
+## Descriptive Analysis
+
+We have `r length(unique(games$gamename))` different games in the dataset.
+Each game was in the dataset for on average of `r games %>% group_by(gamename) %>% count() %>% pull(n) %>% mean() %>% round(2)` months.
+
+```{r}
+summary(games$avg) %>% 
+  pander(caption = "Summary of avarage simultaneous gamers.")
+```
+
+```{r}
+summary(games$peak) %>% 
+  pander(caption = "Summary of peak simultaneous gamers.")
+```
+
+## Correlation
+
 If we just average across time for each game and correlate average and peak simultaneous gamers, we get a a between game correlation.
 
 ```{r}
@@ -38,6 +55,8 @@ games %>%
   pander()
 ```
 
+This is also an estimate for the internal consistency (aka Cohen's α).
+
 ```{r}
 within_cor <- games %>% 
   group_by(gamename) %>% 
@@ -46,7 +65,9 @@ within_cor <- games %>%
   mean()
 ```
 
-If we instead correlate average and peak simultaneous gamers for each game separate and then average, we get a within game correlation of `r round(within_cor, 4)` (remember this is a somewhat crude and a real multilevel/mixed effect model would be state of the art).
+If we instead correlate average and peak simultaneous gamers for each game separate and then average these correlations, we get a within game correlation of `r round(within_cor, 4)` (remember this is a somewhat crude and a real multilevel/mixed effect model would be state of the art).
+
+## Most Popular
 
 ```{r by month popularity, message=FALSE, warning=FALSE}
 mostpop_bymonth <- games %>%
@@ -81,7 +102,7 @@ populargames <- mostpop_bymonth %>%
 ggplot(populargames, aes(x=date, y=avg))+
   geom_linerange(aes(ymax=peak, ymin=avg, color=game), size=.25)+
   geom_point(aes(y=peak, color=game), size=.7)+
-  geom_point(aes(y=avg, color=game), size=.7)+
+  geom_point(aes(y=avg, color=game), size=.7) +
   theme_minimal() +
   labs(title="Three Most Popular Games", x="Date", y="Number of players") +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
