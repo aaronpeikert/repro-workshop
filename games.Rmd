@@ -23,13 +23,12 @@ conflicted::conflict_prefer("filter", "dplyr")
 
 ```{r loading data, message=FALSE, warning=FALSE, results='hide'}
 # Get the Data
-games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-16/games.csv')
+games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-16/games.csv') %>% 
+  mutate(date = my(str_c(month, "_", year)))
 ```
 
 ```{r by month popularity, message=FALSE, warning=FALSE}
 mostpop_bymonth <- games %>%
-  unite(yearmonth, month:year)%>%
-  mutate(date = my(yearmonth)) %>%
   group_by(date)%>% 
   top_n(3, avg) %>% 
   ungroup %>%
