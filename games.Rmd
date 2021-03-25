@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Acknowledgement
 
-The the idea for the data stems from the [tidytuesday initiative](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-03-16/readme.md); the data was scraped for [kaggle](https://www.kaggle.com/michau96/popularity-of-games-on-steam) from [steamcharts.com](https://steamcharts.com/).
+The idea for the data stems from the [tidytuesday initiative](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-03-16/readme.md); the data was scraped for [kaggle](https://www.kaggle.com/michau96/popularity-of-games-on-steam) from [steamcharts.com](https://steamcharts.com/).
 The code and graphics were adapted from [Ingrid Zoll's tidytuesday submission](https://itlzoll.netlify.app/post/tidy-tuesday-march-16/).
 
 ```{r libraries, message=FALSE, warning=FALSE}
