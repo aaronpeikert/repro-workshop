@@ -17,8 +17,6 @@ The code and graphics were adapted from [Ingrid Zolls tidytuesday submission](ht
 ```{r libraries, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(lubridate)
-library(ggdark)
-library(wesanderson)
 conflicted::conflict_prefer("filter", "dplyr")
 ```
 
@@ -46,8 +44,7 @@ mostpop_bymonth <- games %>%
 ```{r}
 ggplot(mostpop_bymonth, aes(x=date, y=avg, color=game))+
   geom_line()+
-  scale_color_manual(values = wes_palette("Zissou1"))+
-  dark_theme_gray() +
+  theme_minimal() +
   labs(caption = "PUBG = PlayerUnknown's BattleGround \nCS GO = Counter-Strike: Global Offensive",
        title= "The Three Most Popular Games on Steam by Month", 
        y="Average number of players at the same time", x="Date")
@@ -60,12 +57,10 @@ populargames <- mostpop_bymonth %>%
 
 ```{r}
 ggplot(populargames, aes(x=date, y=avg))+
-  dark_theme_gray()+
-  scale_color_manual(name = 'Game', values =c('CS GO'="#F21A00",'Dota 2'="#EBCC2A", 'PUBG' = "#3B9AB2"),
-        labels = c("CS GO", "Dota 2", "PUBG"))+
   geom_linerange(aes(ymax=peak, ymin=avg, color=game), size=.25)+
   geom_point(aes(y=peak, color=game), size=.7)+
   geom_point(aes(y=avg, color=game), size=.7)+
+  theme_minimal() +
   labs(title="Three Most Popular Games", x="Date", y="Number of players")
 ```
 
