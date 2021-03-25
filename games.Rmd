@@ -100,10 +100,6 @@ Here we have the averages and peaks for number of players for the three most pop
 
 Next, I wanted to look at a game that I know and love: The Witcher 3- Wild Hunt. It's a game (and TV show, and book) that was introduced to me by my boyfriend, and one I love to watch him play. It's a gorgeous game with amazing story, and when Geralt, the main character, isn't in active combat, I get to "drive him" with the controller.
 
-```{r, fig.align = 'center', echo=FALSE}
-knitr::include_graphics("geralt.jpg")
-```
-
 ```{r witcher 1, message=FALSE, warning=FALSE}
 witcher <- games %>%
   filter(gamename == c("The Witcher 3: Wild Hunt")) %>%
