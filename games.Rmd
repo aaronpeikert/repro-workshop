@@ -1,5 +1,5 @@
 ---
-title: An exploration of computer facilitated free time activities
+title: An exploration of computer facilitated free time activities over the last decade
 author: "UKE Hamburg Workshop on Reproducibility"
 date: "2021-03-29"
 output: html_document
