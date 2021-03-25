@@ -1,0 +1,145 @@
+---
+title: Tidy Tuesday
+author: Ingrid Zoll
+date: '2021-03-18'
+slug: tidy-tuesday-march-16
+categories: []
+tags: [RStudio, tidytuesday]
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-03-18T11:59:19-07:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+For my first official TidyTuesday, I was extremely excited to see that the data was from Steam! I use Steam for a few games that I play- some of my favorites are Townscaper, Samorost, and Firewatch. They are all fairly small games which are played by very few people, so I wasn't too surprised when they didn't show up in the dataset. So that led to my first question: what games are people playing? What is popular now, and how has that changed with time?
+
+```{r libraries, message=FALSE, warning=FALSE}
+library(tidytuesdayR)
+library(tidyverse)
+library(lubridate)
+library(ggdark)
+library(wesanderson)
+```
+
+```{r loading data, message=FALSE, warning=FALSE, results='hide'}
+# Get the Data
+tuesdata <- tidytuesdayR::tt_load('2021-03-16')
+games <- tuesdata$games
+```
+Question 1: For each month in the dataset (April 2013 - February 2021) what were the three most popular games? 
+
+But first: some wrangling. 
+
+```{r by month popularity, message=FALSE, warning=FALSE}
+mostpop_bymonth <- games %>%
+  unite(yearmonth, month:year)%>%
+  mutate(date = my(yearmonth)) %>%
+  group_by(date)%>% 
+  top_n(3, avg) %>% 
+  ungroup %>%
+  add_count(gamename, name = "count") %>%
+  mutate(label = gamename, label = case_when(
+    count < 10 ~ "Other games",
+    count > 10 ~ gamename)) %>%
+  mutate(game = factor(label), game = fct_infreq(label)) %>%
+  mutate(game = str_replace(game, "PLAYERUNKNOWN'S BATTLEGROUNDS", "PUBG"), 
+         game = str_replace(game, "Counter-Strike: Global Offensive", "CS GO"))
+```
+
+now: graphing!
+
+```{r, message=FALSE, warning=FALSE}
+ggplot(mostpop_bymonth, aes(x=date, y=avg, fill=game))+
+  geom_col(position="stack")+
+  scale_fill_manual(values = wes_palette("Zissou1"))+
+  dark_theme_gray()+
+  labs(caption = "PUBG = PlayerUnknown's BattleGround \nCS GO = Counter-Strike: Global Offensive",
+       title= "The Three Most Popular Games on Steam by Month", 
+       y="Average number of players at the same time", x="Date")
+```
+First thought: Wow, this looks cool!
+Second thought: but.... not a great way to show the data. Sigh.
+
+```{r}
+ggplot(mostpop_bymonth, aes(x=date, y=avg, fill=game))+
+  geom_col(position="dodge")+
+  scale_fill_manual(values = wes_palette("Zissou1"))+
+  dark_theme_gray() +
+  labs(caption = "PUBG = PlayerUnknown's BattleGround \nCS GO = Counter-Strike: Global Offensive",
+       title= "The Three Most Popular Games on Steam by Month", 
+       y="Average number of players at the same time", x="Date")
+```
+What about... dodging them? Still cool looking, but still not an effective visualization. This graph does start to show us some patterns- PUBG was an insanely popular game in 2017 and 2018, dwarfing CS GO and Dota 2 (which were the most popular games by A LOT). So I wanted to take a closer look at these three games. 
+
+```{r, message=FALSE, warning=FALSE}
+populargames <- mostpop_bymonth %>%
+  filter(game == "CS GO" | game == "PUBG"| game == "Dota 2")
+```
+
+```{r}
+ggplot(populargames, aes(x=date, y=avg))+
+  dark_theme_gray()+
+  scale_color_manual(name = 'Game', values =c('CS GO'="#F21A00",'Dota 2'="#EBCC2A", 'PUBG' = "#3B9AB2"),
+        labels = c("CS GO", "Dota 2", "PUBG"))+
+  geom_linerange(aes(ymax=peak, ymin=avg, color=game), size=.25)+
+  geom_point(aes(y=peak, color=game), size=.7)+
+  geom_point(aes(y=avg, color=game), size=.7)+
+  labs(title="Three Most Popular Games", x="Date", y="Number of players")
+```
+Here we have the averages and peaks for number of players for the three most popular games on Steam. And yes- PUBG really did dwarf Dota 2 and CS GO, only a few months after it was released. 
+
+Next, I wanted to look at a game that I know and love: The Witcher 3- Wild Hunt. It's a game (and TV show, and book) that was introduced to me by my boyfriend, and one I love to watch him play. It's a gorgeous game with amazing story, and when Geralt, the main character, isn't in active combat, I get to "drive him" with the controller.
+
+```{r, fig.align = 'center', echo=FALSE}
+knitr::include_graphics("geralt.jpg")
+```
+
+```{r witcher 1, message=FALSE, warning=FALSE}
+witcher <- games %>%
+  filter(gamename == c("The Witcher 3: Wild Hunt")) %>%
+  unite(yearmonth, month:year)%>%
+  mutate(date = my(yearmonth))
+
+
+release <- ymd("2019-12-20")
+label <- ymd("2019-02-01")
+
+ggplot(witcher, aes(x=date, y=avg))+
+  theme(legend.position = "bottom")+
+  scale_color_manual(name = 'Player Number \nMeasurement', values =c('gold'="#E1AF00",'skyblue3'="#78B7C5"), labels = c("Peak", "Average"))+
+  dark_theme_gray()+
+  geom_vline(aes(xintercept = release), color="grey95", linetype="dashed")+
+  labs(x="Date", y="Number of players at the same time")+
+  annotate(geom = "text", x = label, y = 75000, 
+  label = "Dec 20, 2019: Release of \n \"The Witcher\" TV show", color="grey94", size=3)+
+  geom_point(aes(y=peak, color="gold"))+
+  geom_line(aes(color="skyblue3"))+
+  labs(title="The Witcher 3: Wild Hunt", subtitle= "Average and peak player numbers per month")
+```
+
+Initially when I looked at this graph, I noticed a few things: first, the massive spike in activity in late 2019/early 2020, and the smaller (but still notable) spike in the summer of 2016. The larger spike can be attributed to the release of The Witcher TV show on netflix, but the smaller peak took me longer to figure out. Steam has an annual summer sale, and by best guess is that the game went on sale in the summer of 2016, so many new players bought it and started to play. 
+
+```{r, message=FALSE, warning=FALSE}
+ggplot(witcher, aes(x=date, y=gain))+
+  theme(legend.position = "bottom")+
+  dark_theme_gray()+
+  geom_vline(aes(xintercept = release), color="grey95", linetype="dashed")+
+  labs(x="Date", y="Number of players at the same time")+
+  annotate(geom = "text", x = label, y = 25000, 
+  label = "Dec 20, 2019: Release of \n \"The Witcher\" TV show", color="grey94", size=3)+
+  geom_line(aes(y=avg), color="#EBCC2A")+
+  geom_col(aes(fill="gains"), fill="#3B9AB2")+
+  labs(title="The Witcher 3: Wild Hunt", subtitle="Average number of players at the same time with montly gains or losses")
+```
+
+Lastly, I wanted to look at the gains (and losses) of player activity. There's nothing too interesting in this graph, but I thought it added another cool visualization to this post. 
