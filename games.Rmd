@@ -18,6 +18,7 @@ The code and graphics were adapted from [Ingrid Zoll's tidytuesday submission](h
 library(tidyverse)
 library(lubridate)
 library(scales)
+library(pander)
 conflicted::conflict_prefer("filter", "dplyr")
 ```
 
@@ -26,6 +27,26 @@ conflicted::conflict_prefer("filter", "dplyr")
 games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-16/games.csv') %>% 
   mutate(date = my(str_c(month, "_", year)))
 ```
+
+If we just average across time for each game and correlate average and peak simultaneous gamers, we get a a between game correlation.
+
+```{r}
+games %>% 
+  group_by(gamename) %>% 
+  summarise(across(c(avg, peak), mean), .groups = "drop") %>% 
+  with(cor.test(avg, peak)) %>% 
+  pander()
+```
+
+```{r}
+within_cor <- games %>% 
+  group_by(gamename) %>% 
+  summarise(cor = cor(avg, peak)) %>% 
+  pull(cor) %>% 
+  mean()
+```
+
+If we instead correlate average and peak simultaneous gamers for each game separate and then average, we get a within game correlation of `r round(within_cor, 4)` (remember this is a somewhat crude and a real multilevel/mixed effect model would be state of the art).
 
 ```{r by month popularity, message=FALSE, warning=FALSE}
 mostpop_bymonth <- games %>%
