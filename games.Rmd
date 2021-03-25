@@ -17,6 +17,7 @@ The code and graphics were adapted from [Ingrid Zolls tidytuesday submission](ht
 ```{r libraries, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(lubridate)
+library(scales)
 conflicted::conflict_prefer("filter", "dplyr")
 ```
 
@@ -47,7 +48,8 @@ ggplot(mostpop_bymonth, aes(x=date, y=avg, color=game))+
   theme_minimal() +
   labs(caption = "PUBG = PlayerUnknown's BattleGround \nCS GO = Counter-Strike: Global Offensive",
        title= "The Three Most Popular Games on Steam by Month", 
-       y="Average number of players at the same time", x="Date")
+       y="Average number of players at the same time", x="Date") +
+  scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
 
 ```{r, message=FALSE, warning=FALSE}
@@ -61,6 +63,7 @@ ggplot(populargames, aes(x=date, y=avg))+
   geom_point(aes(y=peak, color=game), size=.7)+
   geom_point(aes(y=avg, color=game), size=.7)+
   theme_minimal() +
-  labs(title="Three Most Popular Games", x="Date", y="Number of players")
+  labs(title="Three Most Popular Games", x="Date", y="Number of players") +
+  scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
 
