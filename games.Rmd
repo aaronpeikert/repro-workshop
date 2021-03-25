@@ -104,7 +104,10 @@ ggplot(populargames, aes(x=date, y=avg))+
   geom_point(aes(y=peak, color=game), size=.7)+
   geom_point(aes(y=avg, color=game), size=.7) +
   theme_minimal() +
-  labs(title="Three Most Popular Games", x="Date", y="Number of players") +
+  labs(title="Three Most Popular Games", x="Date", y="Number of players",
+       caption = "Upper limit represents peak, lower limit is average.
+       PUBG = PlayerUnknown's BattleGround
+       CS GO = Counter-Strike: Global Offensive") +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
 
