@@ -71,25 +71,30 @@ If we instead correlate average and peak simultaneous gamers for each game separ
 
 ```{r by month popularity, message=FALSE, warning=FALSE}
 mostpop_bymonth <- games %>%
-  group_by(date)%>% 
-  top_n(3, avg) %>% 
+  group_by(date) %>%
+  top_n(3, avg) %>%
   ungroup %>%
   add_count(gamename, name = "count") %>%
-  mutate(label = gamename, label = case_when(
-    count < 10 ~ "Other games",
-    count > 10 ~ gamename)) %>%
+  mutate(label = gamename,
+         label = case_when(count < 10 ~ "Other games",
+                           count > 10 ~ gamename)) %>%
   mutate(game = factor(label), game = fct_infreq(label)) %>%
-  mutate(game = str_replace(game, "PLAYERUNKNOWN'S BATTLEGROUNDS", "PUBG"), 
-         game = str_replace(game, "Counter-Strike: Global Offensive", "CS GO"))
+  mutate(
+    game = str_replace(game, "PLAYERUNKNOWN'S BATTLEGROUNDS", "PUBG"),
+    game = str_replace(game, "Counter-Strike: Global Offensive", "CS GO")
+  )
 ```
 
 ```{r}
-ggplot(mostpop_bymonth, aes(x=date, y=avg, color=game))+
-  geom_line()+
+ggplot(mostpop_bymonth, aes(x = date, y = avg, color = game)) +
+  geom_line() +
   theme_minimal() +
-  labs(caption = "PUBG = PlayerUnknown's BattleGround \nCS GO = Counter-Strike: Global Offensive",
-       title= "The Three Most Popular Games on Steam by Month", 
-       y="Average number of players at the same time", x="Date") +
+  labs(
+    caption = "PUBG = PlayerUnknown's BattleGround \nCS GO = Counter-Strike: Global Offensive",
+    title = "The Three Most Popular Games on Steam by Month",
+    y = "Average number of players at the same time",
+    x = "Date"
+  ) +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
 
@@ -99,15 +104,19 @@ populargames <- mostpop_bymonth %>%
 ```
 
 ```{r}
-ggplot(populargames, aes(x=date, y=avg))+
-  geom_linerange(aes(ymax=peak, ymin=avg, color=game), size=.25)+
-  geom_point(aes(y=peak, color=game), size=.7)+
-  geom_point(aes(y=avg, color=game), size=.7) +
+ggplot(populargames, aes(x = date, y = avg)) +
+  geom_linerange(aes(ymax = peak, ymin = avg, color = game), size = .25) +
+  geom_point(aes(y = peak, color = game), size = .7) +
+  geom_point(aes(y = avg, color = game), size = .7) +
   theme_minimal() +
-  labs(title="Three Most Popular Games", x="Date", y="Number of players",
-       caption = "Upper limit represents peak, lower limit is average.
+  labs(
+    title = "Three Most Popular Games",
+    x = "Date",
+    y = "Number of players",
+    caption = "Upper limit represents peak, lower limit is average.
        PUBG = PlayerUnknown's BattleGround
-       CS GO = Counter-Strike: Global Offensive") +
+       CS GO = Counter-Strike: Global Offensive"
+  ) +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
 
