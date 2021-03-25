@@ -22,7 +22,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r libraries, message=FALSE, warning=FALSE}
-library(tidytuesdayR)
 library(tidyverse)
 library(lubridate)
 library(ggdark)
@@ -32,8 +31,7 @@ conflicted::conflict_prefer("filter", "dplyr")
 
 ```{r loading data, message=FALSE, warning=FALSE, results='hide'}
 # Get the Data
-tuesdata <- tidytuesdayR::tt_load('2021-03-16')
-games <- tuesdata$games
+games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-16/games.csv')
 ```
 
 ```{r by month popularity, message=FALSE, warning=FALSE}
@@ -53,9 +51,9 @@ mostpop_bymonth <- games %>%
 ```
 
 ```{r}
-ggplot(mostpop_bymonth, aes(x=date, y=avg, fill=game))+
-  geom_col(position="dodge")+
-  scale_fill_manual(values = wes_palette("Zissou1"))+
+ggplot(mostpop_bymonth, aes(x=date, y=avg, color=game))+
+  geom_line()+
+  scale_color_manual(values = wes_palette("Zissou1"))+
   dark_theme_gray() +
   labs(caption = "PUBG = PlayerUnknown's BattleGround \nCS GO = Counter-Strike: Global Offensive",
        title= "The Three Most Popular Games on Steam by Month", 
