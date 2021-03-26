@@ -67,7 +67,7 @@ within_cor <- games %>%
   mean()
 ```
 
-If we instead correlate average and peak simultaneous gamers for each game separate and then average these correlations, we get a within game correlation of `r round(within_cor, 4)`. Remember this is a somewhat crude way to sidestep the simpson paradox [@simpson_interpretation_1951] and a real mixed effect model would be state of the art [@balakrishnan_generalized_2014].
+If we instead correlate average and peak simultaneous gamers for each game separate and then average these correlations, we get a within game correlation of `r round(within_cor, 4)`. This is state of the art for avoiding the simpson's paradox [@simpson_interpretation_1951; @balakrishnan_generalized_2014].
 
 ## Most Popular
 
