@@ -98,7 +98,7 @@ ggplot(mostpop_bymonth, aes(x = date, y = avg, color = game)) +
     caption = "PUBG = PlayerUnknown's BattleGround \nCS GO = Counter-Strike: Global Offensive",
     title = "The Three Most Popular Games on Steam by Month",
     y = "Average number of players at the same time",
-    x = "Date"
+    x = "$ invested in Game"
   ) +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
