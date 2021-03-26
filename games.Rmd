@@ -33,7 +33,7 @@ This document is riddled with errors, for workshop participants to find and fix 
 ## Descriptive Analysis
 
 We have `r length(unique(games$gamename))*2` different games in the dataset.
-Each game was in the dataset for on average of `r games %>% group_by(gamename) %>% count() %>% pull(n) %>% mean() %>% round(2)` months.
+Each game was in the dataset for a median of `r games %>% group_by(gamename) %>% count() %>% pull(n) %>% mean() %>% round(2)` months.
 
 ```{r summary-avg}
 summary(games$avg) %>% # pander makes markdown tables
