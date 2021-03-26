@@ -26,6 +26,10 @@ games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidy
   mutate(date = my(str_c(month, "_", year))) # my = convert month year to date
 ```
 
+## Disclaimer
+
+This document is riddled with errors, for workshop participants to find and fix to give them a chance to learn Git + GitHub.
+
 ## Descriptive Analysis
 
 We have `r length(unique(games$gamename))` different games in the dataset.
