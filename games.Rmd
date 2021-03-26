@@ -23,7 +23,7 @@ library(pander)
 conflicted::conflict_prefer("filter", "dplyr")
 ```
 
-```{r loading data, message=FALSE, warning=FALSE, results='hide'}
+```{r data, message=FALSE, warning=FALSE, results='hide'}
 # Get the Data
 games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-16/games.csv') %>% 
   mutate(date = my(str_c(month, "_", year))) # my = convert month year to date
@@ -34,12 +34,12 @@ games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidy
 We have `r length(unique(games$gamename))` different games in the dataset.
 Each game was in the dataset for on average of `r games %>% group_by(gamename) %>% count() %>% pull(n) %>% mean() %>% round(2)` months.
 
-```{r}
+```{r summary-avg}
 summary(games$avg) %>% # pander makes markdown tables
   pander(caption = "Summary of avarage simultaneous gamers.")
 ```
 
-```{r}
+```{r summary-peak}
 summary(games$peak) %>% 
   pander(caption = "Summary of peak simultaneous gamers.")
 ```
@@ -48,7 +48,7 @@ summary(games$peak) %>%
 
 If we just average across time for each game and correlate average and peak simultaneous gamers, we get a a between game correlation.
 
-```{r}
+```{r between-cor}
 games %>% 
   group_by(gamename) %>% # calculate the mean of avg & peak per game
   summarise(across(c(avg, peak), mean), .groups = "drop") %>% 
@@ -58,7 +58,7 @@ games %>%
 
 This is also an estimate for the internal consistency (aka Cohen's α).
 
-```{r}
+```{r within-cor}
 within_cor <- games %>% 
   group_by(gamename) %>% # calculate the correlation within each game
   summarise(cor = cor(avg, peak)) %>% 
@@ -70,7 +70,7 @@ If we instead correlate average and peak simultaneous gamers for each game separ
 
 ## Most Popular
 
-```{r by month popularity, message=FALSE, warning=FALSE}
+```{r by-month-popularity, message=FALSE, warning=FALSE}
 mostpop_bymonth <- games %>%
   group_by(date) %>%
   top_n(3, avg) %>% # select highest 3 games per month
@@ -102,12 +102,12 @@ ggplot(mostpop_bymonth, aes(x = date, y = avg, color = game)) +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
 
-```{r, message=FALSE, warning=FALSE}
+```{r filter-games, message=FALSE, warning=FALSE}
 populargames <- mostpop_bymonth %>%
   filter(game == "CS GO" | game == "PUBG"| game == "Dota 2")
 ```
 
-```{r}
+```{r peak-avg-plot}
 ggplot(populargames, aes(x = date, y = avg)) +
   geom_linerange(aes(ymax = peak, ymin = avg, color = game), size = .25) +
   geom_point(aes(y = peak, color = game), size = .7) +
