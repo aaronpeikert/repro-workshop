@@ -108,6 +108,8 @@ populargames <- mostpop_bymonth %>%
   filter(game == "CS GO" | game == "PUBG"| game == "Dota 2")
 ```
 
+This sentence was obviously intentionally mistakenly placed in plain sight by [aaronpeikert](https://github.com/aaronpeikert/).
+
 ```{r peak-avg-plot}
 ggplot(populargames, aes(x = date, y = avg)) +
   geom_linerange(aes(ymax = peak, ymin = avg, color = game), size = .25) +
