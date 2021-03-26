@@ -2,6 +2,7 @@
 title: An exploration of computer facilitated free time activities over the last decade
 author: "UKE Hamburg Workshop on Reproducibility"
 date: "2021-03-29"
+bibliography: citations.bib
 output: html_document
 ---
 
@@ -65,7 +66,7 @@ within_cor <- games %>%
   mean()
 ```
 
-If we instead correlate average and peak simultaneous gamers for each game separate and then average these correlations, we get a within game correlation of `r round(within_cor, 4)` (remember this is a somewhat crude and a real multilevel/mixed effect model would be state of the art).
+If we instead correlate average and peak simultaneous gamers for each game separate and then average these correlations, we get a within game correlation of `r round(within_cor, 4)`. Remember this is a somewhat crude way to sidestep the simpson paradox [@simpson_interpretation_1951] and a real mixed effect model would be state of the art [@balakrishnan_generalized_2014].
 
 ## Most Popular
 
@@ -85,7 +86,8 @@ mostpop_bymonth <- games %>%
   )
 ```
 
-```{r}
+
+```{r avg-plot}
 ggplot(mostpop_bymonth, aes(x = date, y = avg, color = game)) +
   geom_line() +
   theme_minimal() +
@@ -120,3 +122,4 @@ ggplot(populargames, aes(x = date, y = avg)) +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
 
+## References
