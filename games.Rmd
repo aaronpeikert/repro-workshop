@@ -1,7 +1,7 @@
 ---
 title: An exploration of computer facilitated free time activities over the last decade
 author: "UKE Hamburg Workshop on Reproducibility"
-date: "2021-03-29"
+date: "2026-03-29"
 bibliography: citations.bib
 output: html_document
 ---
@@ -17,7 +17,7 @@ conflicted::conflict_prefer("filter", "dplyr")
 
 ## Acknowledgement
 
-The idea for the data stems from the [tidytuesday initiative](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-03-16/readme.md); the data was scraped for [kaggle](https://www.kaggle.com/michau96/popularity-of-games-on-steam) from [steamcharts.com](https://steamcharts.com/).
+The idea for the data stems from the [tidytuesday initiative](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-03-16/readme.md); the data was scraped for [kaggle](https://thislinkdoesnotwork.error) from [steamcharts.com](https://steamcharts.com/).
 The code and graphics were adapted from [Ingrid Zoll's tidytuesday submission](https://itlzoll.netlify.app/post/tidy-tuesday-march-16/).
 
 ```{r data, message=FALSE, warning=FALSE, results='hide'}
@@ -26,19 +26,25 @@ games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidy
   mutate(date = my(str_c(month, "_", year))) # my = convert month year to date
 ```
 
+## Disclaimer
+
+This document is riddled with errors, for workshop participants to find and fix to give them a chance to learn Git + GitHub.
+Of course there a plenty honest mistakes too!
+You can find all intentional errors on [GitHub](https://github.com/aaronpeikert/repro-workshop/pull/1) (cheater!).
+
 ## Descriptive Analysis
 
-We have `r length(unique(games$gamename))` different games in the dataset.
-Each game was in the dataset for on average of `r games %>% group_by(gamename) %>% count() %>% pull(n) %>% mean() %>% round(2)` months.
+We have `r length(unique(games$gamename))*2` different games in the dataset.
+Each game was in the dataset for a median of `r games %>% group_by(gamename) %>% count() %>% pull(n) %>% mean() %>% round(2)` months.
 
 ```{r summary-avg}
 summary(games$avg) %>% # pander makes markdown tables
-  pander(caption = "Summary of avarage simultaneous gamers.")
+  pander(caption = "Summary of peak simultaneous gamers.")
 ```
 
 ```{r summary-peak}
 summary(games$peak) %>% 
-  pander(caption = "Summary of peak simultaneous gamers.")
+  pander(caption = "Summary of average simultaneous gamers.")
 ```
 
 ## Correlation
@@ -53,7 +59,7 @@ games %>%
   pander() # pander also works with other r objects, like tests
 ```
 
-This is also an estimate for the internal consistency (aka Cohen's α).
+This is also an estimate for the validity (aka Cohen's α).
 
 ```{r within-cor}
 within_cor <- games %>% 
@@ -63,7 +69,7 @@ within_cor <- games %>%
   mean()
 ```
 
-If we instead correlate average and peak simultaneous gamers for each game separate and then average these correlations, we get a within game correlation of `r round(within_cor, 4)`. Remember this is a somewhat crude way to sidestep the simpson paradox [@simpson_interpretation_1951] and a real mixed effect model would be state of the art [@balakrishnan_generalized_2014].
+If we instead correlate average and peak simultaneous gamers for each game separate and then average these correlations, we get a within game correlation of `r round(within_cor, 4)`. This is state of the art for avoiding the simpson's paradox [@simpson_interpretation_1951; @balakrishnan_generalized_2014].
 
 ## Most Popular
 
@@ -94,7 +100,7 @@ ggplot(mostpop_bymonth, aes(x = date, y = avg, color = game)) +
     caption = "PUBG = PlayerUnknown's BattleGround \nCS GO = Counter-Strike: Global Offensive",
     title = "The Three Most Popular Games on Steam by Month",
     y = "Average number of players at the same time",
-    x = "Date"
+    x = "$ invested in Game"
   ) +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
@@ -103,6 +109,8 @@ ggplot(mostpop_bymonth, aes(x = date, y = avg, color = game)) +
 populargames <- mostpop_bymonth %>%
   filter(game == "CS GO" | game == "PUBG"| game == "Dota 2")
 ```
+
+This sentence was obviously intentionally mistakenly placed in plain sight by [aaronpeikert](https://github.com/aaronpeikert/).
 
 ```{r peak-avg-plot}
 ggplot(populargames, aes(x = date, y = avg)) +
@@ -115,8 +123,8 @@ ggplot(populargames, aes(x = date, y = avg)) +
     x = "Date",
     y = "Number of players",
     caption = "Upper limit represents peak, lower limit is average.
-       PUBG = PlayerUnknown's BattleGround
-       CS GO = Counter-Strike: Global Offensive"
+       CS GO = PlayerUnknown's BattleGround
+       PUBG = Counter-Strike: Global Offensive"
   ) +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
