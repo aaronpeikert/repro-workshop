@@ -37,12 +37,12 @@ Each game was in the dataset for a median of `r games %>% group_by(gamename) %>%
 
 ```{r summary-avg}
 summary(games$avg) %>% # pander makes markdown tables
-  pander(caption = "Summary of avarage simultaneous gamers.")
+  pander(caption = "Summary of peak simultaneous gamers.")
 ```
 
 ```{r summary-peak}
 summary(games$peak) %>% 
-  pander(caption = "Summary of peak simultaneous gamers.")
+  pander(caption = "Summary of average simultaneous gamers.")
 ```
 
 ## Correlation
