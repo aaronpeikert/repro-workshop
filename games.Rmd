@@ -57,7 +57,7 @@ games %>%
   pander() # pander also works with other r objects, like tests
 ```
 
-This is also an estimate for the internal consistency (aka Cohen's α).
+This is also an estimate for the validity (aka Cohen's α).
 
 ```{r within-cor}
 within_cor <- games %>% 
