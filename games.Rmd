@@ -26,7 +26,7 @@ conflicted::conflict_prefer("filter", "dplyr")
 ```{r loading data, message=FALSE, warning=FALSE, results='hide'}
 # Get the Data
 games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-16/games.csv') %>% 
-  mutate(date = my(str_c(month, "_", year)))
+  mutate(date = my(str_c(month, "_", year))) # my = convert month year to date
 ```
 
 ## Descriptive Analysis
@@ -35,7 +35,7 @@ We have `r length(unique(games$gamename))` different games in the dataset.
 Each game was in the dataset for on average of `r games %>% group_by(gamename) %>% count() %>% pull(n) %>% mean() %>% round(2)` months.
 
 ```{r}
-summary(games$avg) %>% 
+summary(games$avg) %>% # pander makes markdown tables
   pander(caption = "Summary of avarage simultaneous gamers.")
 ```
 
@@ -50,17 +50,17 @@ If we just average across time for each game and correlate average and peak simu
 
 ```{r}
 games %>% 
-  group_by(gamename) %>% 
+  group_by(gamename) %>% # calculate the mean of avg & peak per game
   summarise(across(c(avg, peak), mean), .groups = "drop") %>% 
   with(cor.test(avg, peak)) %>% 
-  pander()
+  pander() # pander also works with other r objects, like tests
 ```
 
 This is also an estimate for the internal consistency (aka Cohen's α).
 
 ```{r}
 within_cor <- games %>% 
-  group_by(gamename) %>% 
+  group_by(gamename) %>% # calculate the correlation within each game
   summarise(cor = cor(avg, peak)) %>% 
   pull(cor) %>% 
   mean()
@@ -73,19 +73,21 @@ If we instead correlate average and peak simultaneous gamers for each game separ
 ```{r by month popularity, message=FALSE, warning=FALSE}
 mostpop_bymonth <- games %>%
   group_by(date) %>%
-  top_n(3, avg) %>%
+  top_n(3, avg) %>% # select highest 3 games per month
   ungroup %>%
   add_count(gamename, name = "count") %>%
+  # games that appear less then ten time are grouped to others
   mutate(label = gamename,
          label = case_when(count < 10 ~ "Other games",
                            count > 10 ~ gamename)) %>%
+  # sort legend by frequency
   mutate(game = factor(label), game = fct_infreq(label)) %>%
+  # shorten gamenames
   mutate(
     game = str_replace(game, "PLAYERUNKNOWN'S BATTLEGROUNDS", "PUBG"),
     game = str_replace(game, "Counter-Strike: Global Offensive", "CS GO")
   )
 ```
-
 
 ```{r avg-plot}
 ggplot(mostpop_bymonth, aes(x = date, y = avg, color = game)) +
