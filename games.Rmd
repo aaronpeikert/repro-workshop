@@ -29,6 +29,8 @@ games <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidy
 ## Disclaimer
 
 This document is riddled with errors, for workshop participants to find and fix to give them a chance to learn Git + GitHub.
+Of course there a plenty honest mistakes too!
+You can find all intentional errors on [GitHub](https://github.com/aaronpeikert/repro-workshop/pull/1) (cheater!).
 
 ## Descriptive Analysis
 
