@@ -119,8 +119,8 @@ ggplot(populargames, aes(x = date, y = avg)) +
     x = "Date",
     y = "Number of players",
     caption = "Upper limit represents peak, lower limit is average.
-       PUBG = PlayerUnknown's BattleGround
-       CS GO = Counter-Strike: Global Offensive"
+       CS GO = PlayerUnknown's BattleGround
+       PUBG = Counter-Strike: Global Offensive"
   ) +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6))
 ```
