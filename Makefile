@@ -6,6 +6,9 @@ all: $(PROJECT).pdf $(PROJECT)_withnotes.pdf $(PROJECT)_bright.pdf
 clean:
 	Ruby/clean.rb
 
+$(PROJECT).tex: reproworkshop.Rnw Figs/tool.svg
+	R -e 'library(knitr);knit("$<")'
+
 $(PROJECT).pdf: $(PROJECT).tex header.tex
 	xelatex $<
 
@@ -22,6 +25,7 @@ $(PROJECT)_bright.pdf: $(PROJECT)_bright.tex header.tex Figs
 
 $(PROJECT)_bright.tex: $(PROJECT).tex Ruby/createVersionInBright.rb
 	Ruby/createVersionInBright.rb $(PROJECT).tex $(PROJECT)_bright.tex
+
 ### Wrap Commands ###
 # if a command is to be send to another process e.g. a container/scheduler use:
 # $(RUN1) mycommand --myflag $(RUN2)
