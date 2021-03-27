@@ -6,7 +6,7 @@ all: $(PROJECT).pdf $(PROJECT)_withnotes.pdf $(PROJECT)_bright.pdf
 clean:
 	Ruby/clean.rb
 
-$(PROJECT).tex: reproworkshop.Rnw Figs/tool.svg
+$(PROJECT).tex: reproworkshop.Rnw
 	R -e 'library(knitr);knit("$<")'
 
 $(PROJECT).pdf: $(PROJECT).tex header.tex
