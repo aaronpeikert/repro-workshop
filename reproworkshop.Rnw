@@ -93,8 +93,8 @@
   \begin{enumerate}
     \item Dynamic document creation = RMarkdown*
     \item Version control = Git**
-    \item \textcolor{hilit}{Dependency tracking = Make**}
-    \item \textcolor{vhilit}{Software management = Docker**}
+    \item Dependency tracking = Make**
+    \item Software management = Docker**
   \end{enumerate}
   \vfill
   \textcolor{lolit}{
@@ -105,7 +105,6 @@
 \end{frame}
 
 \begin{frame}[c]{Goals}
-\only<1>{
  Day I: Basics of Reproducibility
  \begin{itemize}
   \item Introduction to usethis
@@ -116,9 +115,35 @@
  \bigskip
  This skillset gets you 80\% reproducibility.\\
  My goal was to compress the frustration of months, into a few hours.
-}
+\end{frame}
 
-\only<2>{
+\begin{frame}[c, fragile]{Download this GitHub repo}
+
+  <<gh-setup, include=FALSE>>=
+  options(repro.github.token = TRUE)
+  options(repro.github.ssh = TRUE)
+  @
+  
+  <<gh, eval=FALSE>>=
+  if(repro::has_github_token()) {
+    options(usethis.protocol = "https")
+  } else if(repro::has_github_ssh()) {
+    options(usethis.protocol = "ssh")
+  }
+  
+  usethis::create_from_github(
+    "aaronpeikert/repro-workshop",
+    #creates new folder 'repro-workshop'
+    destdir = "path/to/some/folder",
+    #if you are brave, try fork = TRUE
+    fork = FALSE)
+  
+  usethis::browse_github()
+  @
+  
+\end{frame}
+
+\begin{frame}[c]{Goals}
  Day II: Advanced Reproducibility
  \begin{itemize}
   \item Automated use of Docker and Make
@@ -127,7 +152,6 @@
  \end{itemize}
  \bigskip
  This skillset gets you bullet proof reproducibility, but is quite technical.
-}
 \end{frame}
 
 \begin{frame}[c, fragile]{A little taste}
@@ -149,20 +173,104 @@ make all DOCKER=TRUE
 \end{frame}
 
 \begin{frame}[c]{Why should I care?}
-	\only<1>{
+	\only<1-2>{
 		Productivity:
 		\begin{itemize}
 			\item reuse
-			\item easier collaboration
+			\item easier \only<1>{collaboration}\only<2>{\Huge \textcolor{hilit}{collaboration!}}
 		\end{itemize}
 	}
-	\only<2>{
+	\only<3>{
 	Good scientific practice:
 		\begin{itemize}
 			\item reproducibility is a precondition for replication
 			\item increases transparency and (longterm) accessibility
 		\end{itemize}
 	}
+\end{frame}
+
+\begin{frame}[c]{To do (1 min)}
+  \textcolor{todo}{This color indicates, that you should do this.}\\
+  \vspace{5mm}
+  \textcolor{maydo}{This color indicates, that you may want to do this (if you have time/energy).}\\
+\end{frame}
+
+\begin{frame}[c]{Projects \onslide<2>{(4 min)}}
+  Self contained folder\\
+  never \lstinline[basicstyle=\ttfamily]{setwd()} again\\
+  \onslide<2>{
+  \vspace{5mm}
+  \small \textcolor{todo}{RStudio → File → New Project → New Directory → New Project}\\
+  Project names tend to stick, think hard.\\
+  Or not: \href{https://colinmorris.github.io/rbm/repos/}{name generator!}\\
+  \vspace{5mm}
+  \small \textcolor{maydo}{Take a look at the templates in:\\RStudio → File → New Project → New Directory}\\
+  \vspace{5mm}
+  \small \textcolor{maydo}{Try in R \lstinline[basicstyle=\ttfamily]{getwd()}}\\
+  }
+\end{frame}
+
+\begin{frame}[c]{Usethis}
+  \lstinline[basicstyle=\ttfamily]{usethis} automates commonly used steps for RProjects.\\
+  it is the backbone of \lstinline[basicstyle=\ttfamily]{repro}\\
+  any tasks it does for you, you can do manually\\
+  \vspace{5mm}
+  \small \textcolor{maydo}{Try in R \lstinline[basicstyle=\ttfamily]{usethis::browse_github("usethis")}}\\
+  Or open browser, google "usethis github", click first link.
+  \vspace{5mm}
+\end{frame}
+
+\begin{frame}[c]{Code of Conduct \onslide<2>{(2 min)}}
+  A CoC signals a welcoming and respectfull environment.\\
+  \vspace{5mm}
+  \onslide<2>{
+  \small \textcolor{todo}{Give your project a \href{https://www.contributor-covenant.org/version/2/0/code_of_conduct/}{Contributor Covenant CoC}, in R with:\\ \lstinline[basicstyle=\ttfamily]{usethis::use_code_of_conduct()}}\\
+  }
+\end{frame}
+
+\begin{frame}[c]{Code of Conduct for this Workshop}
+  I expect you to be nice to everyone, but this workshop has no formal code of conduct.\\
+  \vspace{5mm}
+  If you observe inappropriate behavior (not only towards yourself), approach Aaron or Tina via private chat.\\
+  Or ask someone else to approach us for you instead.\\
+  If you want to remain anonymous send a mail via \href{https://www.guerrillamail.com/compose}{www.guerrillamail.com/compose} to peikert@mpib-berlin.mpg.de\\
+  \vspace{5mm}
+  \textcolor{vhilit}{If necessary, we will exclude a delinquent from further participating in this workshop.}
+\end{frame}
+
+\begin{frame}[c]{Licenses \onslide<2>{(10 min)}}
+  Without a license \textcolor{vhilit}{no one} can reuse what you did.\\
+  \onslide<2>{
+  \vspace{5mm}
+  \small \textcolor{todo}{Give your project a CC0 license, in R with:\\
+  \lstinline[basicstyle=\ttfamily]{usethis::use_cc0_license()}}\\
+  \vspace{5mm}
+  \small \textcolor{maydo}{Learn about one of the following licenses:\\
+  GPL: \href{https://choosealicense.com/licenses/gpl-3.0/}{https://choosealicense.com/licenses/gpl-3.0/}\\
+  MIT: \href{https://choosealicense.com/licenses/mit/}{https://choosealicense.com/licenses/mit/}\\
+  CC0: \href{https://creativecommons.org/publicdomain/zero/1.0/}{https://creativecommons.org/publicdomain/zero/1.0/}\\
+  CC-BY: \href{https://creativecommons.org/licenses/by/4.0/}{https://creativecommons.org/licenses/by/4.0/}\\}
+  \vspace{5mm}
+  \small \textcolor{maydo}{Summarise what you have learned for your neighbor. Discuss.}\\
+  }
+\end{frame}
+
+\begin{frame}[c, fragile]{\lstinline[basicstyle=\ttfamily]{README.md} \onslide<2>{(5 min)}}
+  A \lstinline[basicstyle=\ttfamily]{README} is the first thing that people visiting see.\\
+  \onslide<2>{
+  \vspace{5mm}
+  \small \textcolor{todo}{Give your project a \lstinline[basicstyle=\ttfamily]{README.md}, in R with:\\
+  \lstinline[basicstyle=\ttfamily]{use_readme_md()}}\\
+  \vspace{5mm}
+  \small \textcolor{todo}{Paste:\\
+  \vspace{2mm}
+  \lstinline[basicstyle=\ttfamily]{\# This is a Header}\\
+  \lstinline[basicstyle=\ttfamily]{*italic* / **bold**}\\
+  \vspace{2mm}
+  Click on Preview}\\
+  \vspace{5mm}
+  \small \textcolor{maydo}{Try some things from:\\RStudio → Help → Markdown Quick Reference}\\
+  }
 \end{frame}
 
 \begin{frame}[c]{RMarkdown\textemdash{}Literate Programming}
@@ -190,6 +298,8 @@ make all DOCKER=TRUE
   \begin{frame}[plain]
   \end{frame}
 }
+
+
 \begin{frame}[c]{Git/GitHub\textemdash{}Version Control}
   Version control is a system that records changes to a set of files
   over time so that you can recall \href{https://github.com/aaronpeikert/reproducible-research/blame/master/manuscript.Rmd}{specific versions} later.\\
