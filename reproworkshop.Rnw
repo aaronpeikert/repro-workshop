@@ -204,9 +204,9 @@ make all DOCKER=TRUE
   Project names tend to stick, think hard.\\
   Or not: \href{https://colinmorris.github.io/rbm/repos/}{name generator!}\\
   \vspace{5mm}
-  \small \textcolor{maydo}{Take a look at the templates in:\\RStudio → File → New Project → New Directory}\\
-  \vspace{5mm}
   \small \textcolor{maydo}{Try in R \lstinline[basicstyle=\ttfamily]{getwd()}}\\
+  \vspace{5mm}
+  \small \textcolor{maydo}{Take a look at the templates in:\\RStudio → File → New Project → New Directory}\\
   }
 \end{frame}
 
@@ -262,15 +262,423 @@ make all DOCKER=TRUE
   \small \textcolor{todo}{Give your project a \lstinline[basicstyle=\ttfamily]{README.md}, in R with:\\
   \lstinline[basicstyle=\ttfamily]{use_readme_md()}}\\
   \vspace{5mm}
-  \small \textcolor{todo}{Paste:\\
+  \small \textcolor{todo}{Try out Markdown, paste:\\
   \vspace{2mm}
-  \lstinline[basicstyle=\ttfamily]{\# This is a Header}\\
+  \lstinline[basicstyle=\ttfamily]{\#  This is a Header}\\
   \lstinline[basicstyle=\ttfamily]{*italic* / **bold**}\\
   \vspace{2mm}
   Click on Preview}\\
   \vspace{5mm}
   \small \textcolor{maydo}{Try some things from:\\RStudio → Help → Markdown Quick Reference}\\
   }
+\end{frame}
+
+\begin{frame}[c, fragile]{\lstinline[basicstyle=\ttfamily]{README.Rmd} \onslide<2>{(10 min)}}
+  A \lstinline[basicstyle=\ttfamily]{README.Rmd} generates a \lstinline[basicstyle=\ttfamily]{README.md} with \textcolor{vhilit}{R code}!\\
+  \onslide<2>{
+  \vspace{5mm}
+  \small \textcolor{todo}{Give your project a \lstinline[basicstyle=\ttfamily]{README.Rmd}, in R with:\\
+  \lstinline[basicstyle=\ttfamily]{use_readme_rmd()}}\\
+  \vspace{5mm}
+  \small \textcolor{todo}{Try out RMarkdown, paste:\\
+  \vspace{2mm}
+  \lstinline[basicstyle=\ttfamily]{This is a dynamically calculated number: `r 1 + 1`}\\
+  \lstinline[basicstyle=\ttfamily]{Here you see the code:}\\
+  \lstinline[basicstyle=\ttfamily]{```\{r number-two\}}\\
+  \lstinline[basicstyle=\ttfamily]{2 * 5}\\
+  \lstinline[basicstyle=\ttfamily]{```}\\
+  \vspace{2mm}
+  Click on Preview}\\
+  \vspace{5mm}
+  \small \textcolor{maydo}{Try to add a plot:\\\lstinline[basicstyle=\ttfamily]{with(mtcars, plot(mpg, hp))}}\\
+  }
+\end{frame}
+
+\begin{frame}[fragile]{Code Chunk Options \onslide<3->{(5 min)}}
+
+\begin{onlyenv}<1-3>
+  \begin{lstlisting}
+```{language chunk-name, option=value}
+some_code
+```
+  \end{lstlisting}
+  Insert with \lstinline[basicstyle=\ttfamily]{Ctrl + Alt + I}
+\end{onlyenv}
+
+\begin{onlyenv}<2>
+  \begin{lstlisting}
+```{r nocode, echo=FALSE}
+hidden_code <- function(x){
+  visible_result <- x
+  return(visible_result)
+}
+```
+  \end{lstlisting}
+  
+  \begin{lstlisting}
+```{r noresults, results='hide'}
+visible_code <- function(x){
+  visible_result <- x
+  return(hidden_result)
+}
+```
+  \end{lstlisting}
+\end{onlyenv}
+
+
+\begin{onlyenv}<3>
+    \vspace{5mm}
+  \small \textcolor{todo}{Try out: \lstinline[basicstyle=\ttfamily]{echo=FALSE} and then \lstinline[basicstyle=\ttfamily]{results='hide'}}\\
+  \small \textcolor{todo}{Figure out what: \lstinline[basicstyle=\ttfamily]{include=FALSE} does.}\\
+  \vspace{5mm}
+  \small \textcolor{maydo}{Figure out how to hide (hint: \lstinline[basicstyle=\ttfamily]{warning=?}):}\\
+    \begin{lstlisting}
+```{r noresults, results='hide'}
+warning("Look at me.")
+```
+  \end{lstlisting}
+    \vspace{5mm}
+
+    \small \textcolor{maydo}{Figure out how deal with (\href{https://bookdown.org/yihui/rmarkdown-cookbook/opts-error.html}{hint}):}\\
+    \begin{lstlisting}
+```{r noresults, results='hide'}
+stop("Figure me out.")
+```
+  \end{lstlisting}
+\end{onlyenv}
+
+\begin{onlyenv}<4>
+  \small \textcolor{todo}{Paste:}\\
+      \begin{lstlisting}
+```{r slow, cache=TRUE}
+slow_square <- function(x){
+  Sys.sleep(5)
+  x * x
+}
+slow_square(4)
+```
+  \end{lstlisting}
+  \small \textcolor{todo}{Render. Render again. Observe needed time.}\\
+  \vspace{5mm}
+  \small \textcolor{maydo}{Try to generate a vector graphic:}\\
+    \begin{lstlisting}
+```{r pretty, dev = 'svglite'}
+library(ggplot2)
+ggplot(mpg, aes(displ, hwy, colour = class)) + 
+  geom_point()
+```
+  \end{lstlisting}
+    \small \textcolor{maydo}{Figure out how to use higher quality pixel graphics with the package: }\href{https://github.com/r-lib/ragg#use-ragg-with-knitr}{\lstinline[basicstyle=\ttfamily]{ragg}}\\
+
+\end{onlyenv}
+\end{frame}
+
+\begin{frame}[fragile]{\lstinline[basicstyle=\ttfamily]{YAML} Metadata \onslide<2->{(5 min)}}
+
+\begin{onlyenv}<1-2>
+  Metadata for Markdown is stored in a format called \lstinline[basicstyle=\ttfamily]{YAML}:
+
+  \begin{lstlisting}
+---
+title: "Untitled"
+author: "Jane Doe"
+date: "3/29/2021"
+output: html_document
+---
+  \end{lstlisting}
+\end{onlyenv}
+  \vspace{5mm}
+
+\begin{onlyenv}<1-2>
+\small \textcolor{todo}{
+RStudio → File → New File → R Markdown... → OK\\
+Ctrl + S → "anynameyouwant.Rmd"\\
+Change Author + Title\\
+\vspace{5mm}
+Change: \lstinline[basicstyle=\ttfamily]{html_document} → \lstinline[basicstyle=\ttfamily]{word_document}}
+  \vspace{5mm}
+
+\textcolor{maydo}{
+Try to add a table of contents:
+}
+  \begin{lstlisting}
+output:
+  html_document:
+    toc: TRUE
+  \end{lstlisting}
+\end{onlyenv}
+
+
+\end{frame}
+
+\begin{frame}[fragile]{R Markdown Formats \onslide<2->{(25 min)}}
+RMarkdown can produce:\\ \begin{center} PDF, DOCX, HTML, MD \end{center} in hundreds of flavours!\\
+\begin{onlyenv}<2>
+\small \textcolor{todo}{
+ Move to group rooms.\\
+ Try out one of the following formats (no particular order):}
+ \begin{itemize}
+  \item \href{https://github.com/yixuan/prettydoc}{prettydoc}
+  \item \href{https://bookdown.org/yihui/rmarkdown/r-package-vignette.html}{vignette}
+  \item \href{https://github.com/yihui/xaringan}{xaringan}
+  \item \href{https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html}{ioslides}
+  \item \href{https://rstudio.github.io/tufte/}{Tufte Handout}
+  \item \href{https://github.com/juba/rmdformats}{rmdformats}
+ \end{itemize}
+\end{onlyenv}
+\end{frame}
+
+\begin{frame}{First Steps with Git \onslide<2->{(10 min)}}
+Git takes snapshots of your project files.\\
+It has powerfull tools to compare snapshots.\\
+\onslide<2>{
+\vspace{5mm}
+\textcolor{todo}{
+ Stay in group rooms. Help each other.\\
+ \vspace{5mm}
+ Try in R: \lstinline[basicstyle=\ttfamily]{usethis::use_git()}\\
+ Change something in any file you like.\\
+RStudio → Git Pane → Tic Changed File\\
+Commit → "First Change" → Commit}\\
+\vspace{5mm}
+\textcolor{maydo}{If you have a GitHub Token:\\
+Try in R \lstinline[basicstyle=\ttfamily]{usethis::use_github()}\\
+\vspace{5mm}
+Or for a privat repro (only visible to you and via invite):\\
+\lstinline[basicstyle=\ttfamily]{usethis::use_github(private = TRUE)}}}
+
+\end{frame}
+
+\begin{frame}[fragile]{GitHub Fork \onslide<2->{(10min)}}
+\only<1-2>{
+A \textcolor{vhilit}{fork} is a copy on GitHub.\\A \textcolor{hilit}{clone} is a copy on your computer.\\
+\vspace{5mm}
+}
+\begin{onlyenv}<2>
+\small \textcolor{todo}{
+ Stay in group rooms. Help each other.\\
+ Fork Repo:}
+<<gh2, eval=FALSE>>=
+# Needs a GitHub Token!
+# I show the manual way for others.
+usethis::create_from_github(
+"aaronpeikert/repro-workshop",
+#creates new folder 'repro-workshop' at a
+#default location, if you dont want this, uncomment:
+#destdir = "path/to/some/folder",
+fork = TRUE) # notice!
+@
+  \vspace{5mm}
+ \small \textcolor{maydo}{Skim \href{https://happygitwithr.com/common-remote-setups.html}{happygitwithr.com/common-remote-setups.html}}
+\end{onlyenv}
+\begin{onlyenv}<3>
+\small \textcolor{todo}{
+ Only when you have NO GitHub Token.\\
+ Open: \href{https://github.com/aaronpeikert/repro-workshop}{github.com/aaronpeikert/repro-workshop} → Fork.}
+ <<gh3, eval=FALSE>>=
+usethis::create_from_github(
+"yourname/repro-workshop",
+#creates new folder 'repro-workshop' at a
+#default location, if you dont want this, uncomment:
+#destdir = "path/to/some/folder",
+fork = FALSE) # notice!
+usethis::use_git_remote(name = "upstream",
+url="git@github.com:aaronpeikert/repro-workshop.git")
+@
+\small \textcolor{maydo}{Skim \href{https://happygitwithr.com/common-remote-setups.html}{happygitwithr.com/common-remote-setups.html}}
+\end{onlyenv}
+\end{frame}
+
+\begin{frame}{Reproduce \lstinline[basicstyle=\ttfamily]{games.Rmd} \onslide<2->{(5 min)}}
+Time for the first reproduction!\\
+\onslide<2>{
+\vspace{5mm}
+\textcolor{todo}{
+Take a look at \lstinline[basicstyle=\ttfamily]{games.Rmd}.\\
+Install packages when necessary.\\
+Click on Knit.\\}
+\vspace{5mm}
+\textcolor{maydo}{
+Try in R: \lstinline[basicstyle=\ttfamily]{rmarkdown::render("games.Rmd")}\\
+Do you see the green arrow in the Chunks? Click on it.\\
+}}
+\end{frame}
+
+\begin{frame}{Change \lstinline[basicstyle=\ttfamily]{games.Rmd} (5 min)}
+Make \lstinline[basicstyle=\ttfamily]{games.Rmd} your own.\\
+\vspace{5mm}
+\textcolor{todo}{
+Change anything you like.\\
+RStudio → Git Pane → Tic Changed File\\
+Commit → "Second Change" → Commit\\}
+\vspace{5mm}
+\textcolor{maydo}{
+RStudio → Git Pane → History → Look around. \\}
+\end{frame}
+
+\begin{frame}{Create a common repo (15 min)}
+Git is distributed. There are many copies.\\
+Sometimes it is hard to keep track.\\
+\vspace{5mm}
+\textcolor{todo}{
+Delete folder \lstinline[basicstyle=\ttfamily]{repro-workshop}.\\
+\vspace{5mm}
+Choose a group member at random.\\Clone their repo with:\\
+\lstinline[basicstyle=\ttfamily]{usethis::create_from_github("random/repro-workshop")}\\
+\vspace{5mm}
+Only chosen one → \lstinline[basicstyle=\ttfamily]{usethis::browse_github()}\\
+Settings → Manage access → Invite a collaborator\\
+Add all your group members.\\}
+\vspace{5mm}
+ \small \textcolor{maydo}{Skim \href{https://happygitwithr.com/common-remote-setups.html}{happygitwithr.com/common-remote-setups.html}}
+\end{frame}
+
+\begin{frame}{Hunt for errors in \lstinline[basicstyle=\ttfamily]{games.Rmd} \onslide<2->{(5 min)}}
+No one is perfect.\\
+\lstinline[basicstyle=\ttfamily]{games.Rmd} contains 10 intentional errors\\(and a few real ones too).\\
+\onslide<2>{
+\vspace{5mm}
+\textcolor{todo}{Find an error.\vspace{5mm}
+\\ File the error as issue:\\ \lstinline[basicstyle=\ttfamily]{usethis::browse_github_issues()}\\
+Make sure you are in the repo of the chosen one.\\
+\vspace{5mm}
+Assign yourself to one of the \textcolor{vhilit}{other} issues.\\
+}
+\vspace{5mm}
+\textcolor{maydo}{
+Take a look at the issues of your favorite package:\\
+\lstinline[basicstyle=\ttfamily]{usethis::browse_github_issues("ggplot2")}
+}}
+\end{frame}
+
+
+\begin{frame}{Correct errors in \lstinline[basicstyle=\ttfamily]{games.Rmd} \onslide<2->{(15 min)}}
+A branch sets up a parallel versions of your code.\\
+A pull request (PR) integrates changes from a branch.\\
+\vspace{5mm}
+\onslide<2>{
+\textcolor{todo}{Create a branch:
+\lstinline[basicstyle=\ttfamily]{usethis::pr_init("fix-issue_number")}\\
+Fix the error. Commit the file with message:\\ "fix \#issue\_number" \\
+\vspace{5mm}
+\lstinline[basicstyle=\ttfamily]{usethis::pr_push()} → Create PR\\}
+\vspace{5mm}
+\textcolor{maydo}{Take a look at the original issue.}
+}
+\end{frame}
+
+\begin{frame}[fragile]{Review changes in \lstinline[basicstyle=\ttfamily]{games.Rmd} \onslide<2->{(10 min)}}
+A PR is a place for discussion.\\
+\vspace{5mm}
+\begin{onlyenv}<2>
+\textcolor{todo}{As the reviewer, leave a general comment at the PR:}\\
+<<>>=
+# these slides do contain R code!
+praise::praise(
+  "${EXCLAMATION}! Thank you ${adverb_manner}!"
+)
+@
+<<include=FALSE>>=
+this <- praise::praise(
+  "This is ${adjective}!"
+)
+@
+\textcolor{todo}{Admire a specific line e.g.: \lstinline[basicstyle=\ttfamily]{\Sexpr{this}}}
+\vspace{5mm}
+
+\textcolor{todo}{Merge PR.}\\
+\vspace{5mm}
+
+\textcolor{maydo}{Take a look at the original issue.}
+\end{onlyenv}
+\end{frame}
+
+\begin{frame}{Pull changes in \lstinline[basicstyle=\ttfamily]{games.Rmd} \onslide<2->{(5 min)}}
+A pull integrates changes from GitHub with your local copy.\\
+\vspace{5mm}
+\onslide<2>{
+\textcolor{todo}{
+Close your PR branch with \lstinline[basicstyle=\ttfamily]{usethis::pr_finish()}\\
+\vspace{5mm}
+Then pull changes:\\
+RStudio → Git Pane → Pull}\\
+\vspace{5mm}
+\textcolor{maydo}{Inspect RStudio → Git Pane → History.}
+}
+\end{frame}
+
+\begin{frame}{Apply changes directly \onslide<2->{(10 min)}}
+A PR is the formal way to introduce changes.\\
+It is the polite way and gives other the chance to chime in.\\
+However, you can directly push trivial changes.\\
+\vspace{5mm}
+\onslide<2>{
+\textcolor{todo}{Add a file with your name. E.g. in R:\\
+\lstinline[basicstyle=\ttfamily]{file.create("myname.txt")}\\
+Commit file.\\
+\vspace{5mm}
+Expect trouble.\\
+Pull → Push → Repeat if necessary.\\
+Inspect RStudio → Git Pane → History.\\}
+\vspace{5mm}
+\textcolor{maydo}{
+Learn about \href{https://happygitwithr.com/pull-tricky.html\#pull-and-rebase}{rebase}.\\
+Set it as default: \lstinline[basicstyle=\ttfamily]{gert::git_config_global_set("pull.rebase", "true")}
+}}
+\end{frame}
+
+\begin{frame}{Merge conflicts in \lstinline[basicstyle=\ttfamily]{games.Rmd} \onslide<2->{(10 min)}}
+If you are not highly coordinated e.g. via GitHub issues,\\ expect trouble.\\
+\vspace{5mm}
+\onslide<2>{
+\textcolor{todo}{Change the author of \lstinline[basicstyle=\ttfamily]{games.Rmd} to yourself.\\
+Commit file.\\
+\vspace{5mm}
+Expect  a lot of trouble.\\
+Pull → Push → Repeat if necessary.\\
+Resolve conflicts in a way that all group members are authors.\\
+}
+\vspace{5mm}
+\textcolor{maydo}{
+Take a look at the emails GitHub has sent you.
+}}
+\end{frame}
+
+\begin{frame}{Discuss PRs \onslide<2->{(10 min)}}
+If you write a manuscript and want your supervisor or collaborator to look at your changes, create a \textcolor{hilit}{PR} and request them as a \textcolor{vhilit}{reviewer}.\\
+\vspace{5mm}
+\onslide<2>{
+\textcolor{todo}{
+Propose some changes:
+\lstinline[basicstyle=\ttfamily]{usethis::pr_init("newchange")} → Change → Commit → \lstinline[basicstyle=\ttfamily]{usethis::pr_push()}\\
+\vspace{5mm}
+Propose a change within another PR on GitHub.\\
+}
+\vspace{5mm}
+\textcolor{maydo}{
+Make changes to the PR locally via:\\ \lstinline[basicstyle=\ttfamily]{usethis::pr_fetch(pr_number)} \& \lstinline[basicstyle=\ttfamily]{usethis::pr_push()}
+}}
+\end{frame}
+
+\begin{frame}{Revert Changes \onslide<2->{(10 min)}}
+Anything you have committed, can always be retrieved.\\
+\vspace{5mm}
+\onslide<2>{
+\textcolor{todo}{
+Inspect History on GitHub.\\}
+\vspace{5mm}
+\textcolor{maydo}{
+Watch out, uncommitted changes may be lost!\\
+Look around with (in Terminal): \lstinline[basicstyle=\ttfamily]{git checkout the_hash}\\
+Come back with: \lstinline[basicstyle=\ttfamily]{git checkout master}\\
+}
+\vspace{5mm}
+Do NOT do this:\\
+To destroy recent changes locally:\\
+\lstinline[basicstyle=\ttfamily]{git reset the_hash --hard}\\
+To destroy them then on GitHub:\\
+\lstinline[basicstyle=\ttfamily]{git push --force-with-lease}
+}
 \end{frame}
 
 \begin{frame}[c]{RMarkdown\textemdash{}Literate Programming}
