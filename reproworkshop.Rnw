@@ -282,7 +282,7 @@ make all DOCKER=TRUE
   }
 \end{frame}
 
-\begin{frame}[fragile]{Code Chunk Options \onslide<3->{(5 min)}}
+\begin{frame}[fragile]{Code Chunk Options \onslide<4->{II}\onslide<3->{(5 min)}}
 
 \begin{onlyenv}<1-3>
   \begin{lstlisting}
@@ -377,7 +377,7 @@ output: html_document
 \end{onlyenv}
   \vspace{5mm}
 
-\begin{onlyenv}<1-2>
+\begin{onlyenv}<2>
 \small \textcolor{todo}{
 RStudio → File → New File → R Markdown... → OK\\
 Ctrl + S → "anynameyouwant.Rmd"\\
@@ -469,7 +469,8 @@ usethis::create_from_github(
 #creates new folder 'repro-workshop' at a
 #default location, if you dont want this, uncomment:
 #destdir = "path/to/some/folder",
-fork = FALSE) # notice!
+fork = FALSE,  # notice!
+protocol = "ssh") # notice!
 usethis::use_git_remote(name = "upstream",
 url="git@github.com:aaronpeikert/repro-workshop.git")
 @
@@ -477,7 +478,7 @@ url="git@github.com:aaronpeikert/repro-workshop.git")
 \end{onlyenv}
 \end{frame}
 
-\begin{frame}{Reproduce \lstinline[basicstyle=\ttfamily]{games.Rmd} \onslide<2->{(5 min)}}
+\begin{frame}{Reproduce \lstinline[basicstyle=\ttfamily]{games.Rmd} \onslide<2->{(10 min)}}
 Time for the first reproduction!\\
 \onslide<2>{
 \vspace{5mm}
@@ -549,7 +550,9 @@ A pull request (PR) integrates changes from a branch.\\
 \lstinline[basicstyle=\ttfamily]{usethis::pr_init("fix-issue_number")}\\
 Fix the error. Commit the file with message:\\ "fix \#issue\_number" \\
 \vspace{5mm}
-\lstinline[basicstyle=\ttfamily]{usethis::pr_push()} → Create PR\\}
+\lstinline[basicstyle=\ttfamily]{usethis::pr_push()} → Create PR\\
+\vspace{5mm}
+Assign the original issue creator as reviewer.\\}
 \vspace{5mm}
 \textcolor{maydo}{Take a look at the original issue.}
 }
