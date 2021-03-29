@@ -119,28 +119,13 @@
 
 \begin{frame}[c, fragile]{Download this GitHub repo}
 
-  <<gh-setup, include=FALSE>>=
-  options(repro.github.token = TRUE)
-  options(repro.github.ssh = TRUE)
-  @
-  
-  <<gh, eval=FALSE>>=
-  if(repro::has_github_token()) {
-    options(usethis.protocol = "https")
-  } else if(repro::has_github_ssh()) {
-    options(usethis.protocol = "ssh")
-  }
-  
-  usethis::create_from_github(
-    "aaronpeikert/repro-workshop",
-    #creates new folder 'repro-workshop'
-    destdir = "path/to/some/folder",
-    #if you are brave, try fork = TRUE
-    fork = FALSE)
-  
-  usethis::browse_github()
-  @
-  
+\textcolor{todo}{Please run in RStudio:}
+
+<<gh, eval=FALSE>>=
+usethis::use_course("aaronpeikert/repro-workshop")
+@
+
+If you are asked if you want to delete the ZIP file say \textcolor{hilit}{yes}\\ (or \textcolor{vhilit}{no}, I don't care).
 \end{frame}
 
 \begin{frame}[c]{Goals}
@@ -244,6 +229,9 @@ make all DOCKER=TRUE
   \vspace{5mm}
   \small \textcolor{todo}{Give your project a CC0 license, in R with:\\
   \lstinline[basicstyle=\ttfamily]{usethis::use_cc0_license()}}\\
+  \vspace{5mm}
+  \textcolor{todo}{Completely unrelated tech check:\\
+  \lstinline[basicstyle=\ttfamily]{repro::check_github_token()}}\\
   \vspace{5mm}
   \small \textcolor{maydo}{Learn about one of the following licenses:\\
   GPL: \href{https://choosealicense.com/licenses/gpl-3.0/}{https://choosealicense.com/licenses/gpl-3.0/}\\
