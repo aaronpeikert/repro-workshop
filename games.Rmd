@@ -36,6 +36,7 @@ You can find all intentional errors on [GitHub](https://github.com/aaronpeikert/
 
 We have `r length(unique(games$gamename))*2` different games in the dataset.
 Each game was in the dataset for a median of `r games %>% group_by(gamename) %>% count() %>% pull(n) %>% median() %>% round(2)` months.
+The median is really robust, so it is a good fit.
 
 ```{r summary-avg}
 summary(games$avg) %>% # pander makes markdown tables
