@@ -49,7 +49,7 @@ summary(games$peak) %>%
 
 ## Correlation
 
-If we just average across time for each game and correlate average and peak simultaneous gamers, we get a a between game correlation.
+If we just average across time for each game and correlate average and peak simultaneous gamers, we get a between game correlation.
 
 ```{r between-cor}
 games %>% 
