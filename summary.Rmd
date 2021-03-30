@@ -142,4 +142,74 @@ create_from_github("teammember/repro-workshop")
 plot(ggdraw() + draw_image("https://happygitwithr.com/img/ours-them.png"))
 ```
 
+## Git Check
+
+```
+git remote get-url origin
+```
+
+## Git Reset
+
+```
+git fetch origin
+git reset --hard origin/master
+```
+
+## games.Rmd teamlead
+
+Only teamlead!!!
+
+Copy games.Rmd from
+
+https://raw.githubusercontent.com/aaronpeikert/repro-workshop/master/games.Rmd
+
+Commit
+
+Push
+
+## games.Rmd team
+
+Pull
+
+## Issues to coordinate
+
+
+Each one, open an issue.
+
+Don't do anything else. Wait.
+
+```
+usethis::browse_github_issues()
+```
+
+## Assign Issue
+
+assign one of the other issue to yourself
+
+Remember issue number i.g. #4
+
+wait.
+
+## Create Branch/Inititate PR
+
+Change to your remembered issue number:
+
+```{r eval=FALSE, echo=TRUE}
+usethis::pr_init("fix-issuenumber")
+```
+
+Make changes.
+
+Commit. Don't Push!
+
+Wait.
+
+## Create PR
+
+```{r, eval=FALSE, echo=TRUE}
+usethis::pr_push()
+```
+
+Request a reviewer.
+
 ## References
