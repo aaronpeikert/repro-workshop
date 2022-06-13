@@ -32,5 +32,6 @@ reproduction of results are available on any machine with Docker
 installed. Docker is supported on online cloud services, e.g. GitHub
 Actions, which are used to “proof” reproducibility to the public. In
 short, after the workshop, researchers can work reproducibly and hence
-be confident in their results. *Note: Attending the workshop leans
-heavily on concepts put forward in the talk with the same title*
+be confident in their results. *Note: The workshop teaches the practical
+side of theoretical concepts put forward in the talk with the same
+title.*
