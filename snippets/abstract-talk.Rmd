@@ -1,0 +1,6 @@
+## Reproducible Research: A Talk on How to Do the Same Thing More Than Once
+
+Computational reproducibility is the ability to obtain identical results from the same data with the same computer code.
+The high rate of irreproducible research limits the reach of results and decreases the efficiency of researchers.
+Reproducible research is a building block for transparent and cumulative science because it enables the originator and other researchers, on other computers and later in time, to reproduce and thus understand how results came about.
+In this talk, I present a conceptual analysis of what it takes to work reproducible, provide hints on how to work reproducible in practice, and what problems researchers are likely to encounter.

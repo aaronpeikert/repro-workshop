@@ -1,0 +1,11 @@
+### Sign In
+
+#### GitHub
+
+<https://github.com/login>
+
+#### RStudio Cloud
+
+*Use Option: "Log In with GitHub"*
+
+<https://login.rstudio.cloud/login>

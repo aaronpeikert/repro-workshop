@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Reproducible Research: A Talk on How to Do the Same Thing More Than Once
+## Reproducible Research: A Talk on How to Do the Same Thing More Than Once
 
 Computational reproducibility is the ability to obtain identical results
 from the same data with the same computer code. The high rate of
@@ -14,7 +14,7 @@ conceptual analysis of what it takes to work reproducible, provide hints
 on how to work reproducible in practice, and what problems researchers
 are likely to encounter.
 
-# Reproducible Research in R: A Workshop on How to Do the Same Thing More Than Once
+## Reproducible Research in R: A Workshop on How to Do the Same Thing More Than Once
 
 Many researchers want to work reproducibly, but it is not easy.
 Considerable time is required to acquire the skills required for
@@ -24,14 +24,41 @@ analyses in R (and beyond). Specifically, researchers learn to automate
 the whole process from raw data to publishable manuscripts. This
 automation is possible by combining dynamic document generation (via R
 Markdown), version control (via Git), workflow orchestration (via Make)
-and software management (via Docker). The resulting workflow is highly
-transferable across machines and time. These core properties of
-reproducibility are demonstrated for any reader by automatically
-reproducing the manuscript online. These tools and, therefore, automatic
-reproduction of results are available on any machine with Docker
-installed. Docker is supported on online cloud services, e.g. GitHub
-Actions, which are used to “proof” reproducibility to the public. In
-short, after the workshop, researchers can work reproducibly and hence
-be confident in their results. *Note: The workshop teaches the practical
-side of theoretical concepts put forward in the talk with the same
-title.*
+and software management (via Docker). These tools and, therefore,
+automatic reproduction of results are available on any machine with
+Docker installed. The resulting workflow is, hence, highly transferable
+across machines and time. These core properties of reproducibility are
+demonstrated for any reader by automatically reproducing the manuscript
+online. *Note: The workshop teaches the practical side of theoretical
+concepts put forward in the talk with the same title.*
+
+## Getting Started
+
+Hi there, great that you made it\!
+
+Lets get started by creating an account on Github and RStudio Cloud
+(login below, if you already have one).
+
+### Sign Up
+
+#### GitHub
+
+<https://github.com/signup>
+
+#### RStudio Cloud
+
+*Use Option: “Sign Up with GitHub”*
+
+<https://login.rstudio.cloud/register>
+
+### Sign In
+
+#### GitHub
+
+<https://github.com/login>
+
+#### RStudio Cloud
+
+*Use Option: “Log In with GitHub”*
+
+<https://login.rstudio.cloud/login>

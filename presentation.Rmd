@@ -1,36 +1,246 @@
 ---
-title: "Untitled"
-author: "Aaron Peikert"
-date: "10/5/2020"
-output: slidy_presentation
+title: "Reproducible Research in R"
+subtitle: "How to do the same thing more than once"
+author: 
+  - "Aaron Peikert"
+date: 'Marbach Castle | `r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
 ---
+class: inverse, center, middle
+
+# Why should we work reproducibly?
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-library(repro)
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=4, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE,
+  dev = "svglite"
+)
+library("tidyverse")
+library("patchwork")
+library("xaringanthemer")
+library("svglite")
+library("qrcode")
 ```
 
-## R Markdown
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+primary_color <- "#024959"
+secondary_color <- "#F28705"
+style_duo(
+  primary_color = primary_color,
+  secondary_color = secondary_color,
+  header_font_google = google_font("Didact Gothic", "400", "400i"),
+  text_font_google   = google_font("IBM Plex Sans", "400", "400i"),
+  text_font_size = "1.5rem",
+  )
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
-
-## Slide with Bullets
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-## Slide with R Output
-
-```{r cars, echo = TRUE}
-summary(cars)
+style_extra_css(css = list(".todo" = list(color = "#17C25B"),
+                           ".optional" = list(color = "#05BCE6"),
+                           ".large" = list(`font-size` = "130%")),
+                )
 ```
 
-## Slide with Plot
+---
+class: inverse, center, middle
 
-```{r pressure}
-plot(pressure)
+# ~~Why~~ How should we work reproducibly?
+
+---
+
+## How to behave in this workshop?
+
+1. Be nice and help each other.
+2. Don't be shy: Answer and ask questions, even stupid ones.
+3. .todo[Do things in this color.]
+4. .optional[Try things in this color (they are completely optional).]
+
+--
+
+## Let's try it.
+
+---
+
+## Slides
+
+```{r, echo=FALSE}
+link <- "https://github.com/aaronpeikert"
 ```
+
+```{r, echo=FALSE, out.width = "30%", out.extra='style="float:right; padding:10px"'}
+generate_svg(qr_code(link), here::here("images/", "qr_slides.svg"), foreground = secondary_color, background = primary_color, show = FALSE)
+knitr::include_graphics("images/qr_slides.svg")
+```
+
+.todo[Tell your neighbors your name and how familiar you are with R.]
+
+--
+
+Which color means: "this task is optional"?
+
+--
+
+Do you have a question?
+
+--
+
+.todo[Open this link to get the materials:]
+
+`r link`
+
+--
+
+.optional[Scan the QR code (→) to get the materials:]
+
+???
+
+1. Be nice and help each other.
+2. Don't be shy: Answer and ask questions, even stupid once.
+3. .todo[Do things in this color.]
+4. .optional[Try things in this color (they are completely optional).]
+
+Workshop within the workshop.
+
+---
+class: inverse, center, middle
+
+# Goals
+
+---
+class: middle
+
+.center[
+
+.large[code + data]
+
+```{r, echo=FALSE, out.width='30%'}
+knitr::include_graphics("https://publicdomainvectors.org/download.php?file=CARTON01.svg")
+```
+
+]
+
+---
+
+## The Boring Stuff
+
+.pull-left[
+
+```{r, child="snippets/signin.Rmd"}
+```
+
+]
+
+.pull-left[
+
+```{r, child="snippets/signup.Rmd"}
+```
+
+]
+
+---
+
+# A single script
+
+.todo[Look around, become comfortable. Then, locate the files pane.]
+
+--
+
+.todo[Open the R folder.]
+
+.todo[Click on the file `R/prepare_games.R`]
+
+.optional[Take a look at `R/prepare_inflation.R` (same thing but more complicated)]
+
+---
+
+# An incomplete list of best practices
+
+1. list requirements early
+2. use relative locations
+3. document relevant information
+
+---
+
+# A few principles of documentation
+
+
+.center[
+document relevant information = lot of writing
+
+?]
+
+--
+
+## No
+--
+, not necessarily.
+
+--
+
+1. What is *standard* does not have to be documented.
+2. What is *easy* needs only little documentation.
+3. What is *consistent* only has to be documented once.
+
+---
+class: inverse, center, middle
+
+# Goals
+
+---
+class: middle
+
+.center[
+
+.large[code + data + text + software + history + workflow]
+
+```{r, echo=FALSE, out.width='30%'}
+knitr::include_graphics("https://publicdomainvectors.org/download.php?file=CARTON01.svg")
+```
+
+]
+
+---
+## Goals for today
+
+Ultimate reproducibility for a toy(-ish) project:
+
+1. Fully open: data, code, software
+2. Fully automated: from raw data (csv, excel) to paper (html, pdf)
+2. Across machines
+2. Across time
+
+And provide tangible proof for 1-3 via automated public reproduction in the cloud/GitHub Actions.
+
+---
+
+## Not goals for today (though possible)
+
+1. beyond R (but works the same for Python/Julia/Octave)
+2. data > 100MB, analysis > 1h / 1 CPU
+3. complicated tables / formatting / die hard word lovers
+
+---
+background-color: #F0F8F8
+
+
+.center[
+
+```{r, echo=FALSE, out.width='90%'}
+knitr::include_graphics("https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg")
+```
+
+]
 

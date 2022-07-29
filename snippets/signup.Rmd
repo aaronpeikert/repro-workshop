@@ -1,0 +1,11 @@
+### Sign Up
+
+#### GitHub
+
+<https://github.com/signup>
+
+#### RStudio Cloud
+
+*Use Option: "Sign Up with GitHub"*
+
+<https://login.rstudio.cloud/register>
