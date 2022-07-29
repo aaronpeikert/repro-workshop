@@ -1,30 +1,11 @@
-PROJECT := reproworkshop
-WORKDIR := $(CURDIR)
-
 # list below your targets and their recipies
-all: $(PROJECT).pdf $(PROJECT)_withnotes.pdf $(PROJECT)_bright.pdf
-clean:
-	Ruby/clean.rb
+all: presentation.html data/processed README.md
+data/processed: data/processed/inflation.rds
+data/processed/inflation.rds: R/prepare_inflation.R data/raw/inflation.xlsx
+	Rscript -e "source('$<')"
 
-$(PROJECT).tex: reproworkshop.Rnw
-	R -e 'library(knitr);knit("$<")'
-
-$(PROJECT).pdf: $(PROJECT).tex header.tex
-	xelatex $<
-
-$(PROJECT)_withnotes.pdf: $(PROJECT)_withnotes.tex header.tex Figs
-	xelatex $(PROJECT)_withnotes
-	pdfnup $(PROJECT)_withnotes.pdf --nup 1x2 --no-landscape --paper letterpaper --frame true --scale 0.9
-	mv $(PROJECT)_withnotes-nup.pdf $(PROJECT)_withnotes.pdf
-
-$(PROJECT)_withnotes.tex: $(PROJECT).tex Ruby/createVersionWithNotes.rb
-	Ruby/createVersionWithNotes.rb $(PROJECT).tex $(PROJECT)_withnotes.tex
-
-$(PROJECT)_bright.pdf: $(PROJECT)_bright.tex header.tex Figs
-	xelatex $<
-
-$(PROJECT)_bright.tex: $(PROJECT).tex Ruby/createVersionInBright.rb
-	Ruby/createVersionInBright.rb $(PROJECT).tex $(PROJECT)_bright.tex
+data/raw/inflation.xlsx: R/download_inflation.R
+	Rscript -e "source('$<')"
 
 ### Wrap Commands ###
 # if a command is to be send to another process e.g. a container/scheduler use:
