@@ -3,3 +3,11 @@
 FROM rocker/verse:4.0.4
 ARG BUILD_DATE=2020-03-16
 WORKDIR /home/rstudio
+RUN install2.r --error --skipinstalled \ 
+  patchwork \ 
+  qrcode \ 
+  svglite \ 
+  tidyverse \ 
+  xaringanthemer
+RUN installGithub.r \ 
+  aaronpeikert/repro@2af4c58

@@ -1,0 +1,8 @@
+RUN install2.r --error --skipinstalled \ 
+  patchwork \ 
+  qrcode \ 
+  svglite \ 
+  tidyverse \ 
+  xaringanthemer
+RUN installGithub.r \ 
+  aaronpeikert/repro@2af4c58

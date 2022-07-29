@@ -13,6 +13,17 @@ output:
       highlightLines: true
       ratio: 16:9
       countIncrementalSlides: true
+repro:
+  packages:
+    - aaronpeikert/repro@2af4c58
+    - tidyverse
+    - patchwork
+    - xaringanthemer
+    - svglite
+    - qrcode
+  files:
+    - snippets/signin.Rmd
+    - snippets/signup.Rmd
 ---
 class: inverse, center, middle
 
@@ -30,11 +41,7 @@ knitr::opts_chunk$set(
   hiline = TRUE,
   dev = "svglite"
 )
-library("tidyverse")
-library("patchwork")
-library("xaringanthemer")
-library("svglite")
-library("qrcode")
+repro::automate_load_packages()
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
