@@ -34,7 +34,7 @@ concepts put forward in the talk with the same title.*
 
 ## Getting Started
 
-Hi there, great that you made it\!
+Hi there, great that you made it!
 
 Lets get started by creating an account on Github and RStudio Cloud
 (login below, if you already have one).
