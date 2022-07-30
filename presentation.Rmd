@@ -21,6 +21,8 @@ repro:
     - xaringanthemer
     - svglite
     - qrcode
+    - showtext
+    - here
   files:
     - snippets/signin.Rmd
     - snippets/signup.Rmd
