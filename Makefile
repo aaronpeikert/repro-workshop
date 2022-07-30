@@ -1,3 +1,4 @@
+PROJECT = reproworkshop
 # list below your targets and their recipies
 all: presentation.html data/processed README.md
 data/processed: data/processed/inflation.rds
