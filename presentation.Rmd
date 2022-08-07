@@ -26,6 +26,8 @@ repro:
   files:
     - snippets/signin.Rmd
     - snippets/signup.Rmd
+  apt:
+    - rsync
 ---
 class: inverse, center, middle
 

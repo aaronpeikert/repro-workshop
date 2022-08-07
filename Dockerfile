@@ -3,6 +3,7 @@
 FROM rocker/verse:4.2.1
 ARG BUILD_DATE=2020-03-16
 WORKDIR /home/rstudio
+RUN apt-get update -y && apt-get install -y rsync
 RUN install2.r --error --skipinstalled \ 
   here \ 
   patchwork \ 
