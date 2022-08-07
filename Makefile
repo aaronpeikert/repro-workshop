@@ -8,7 +8,7 @@ data/processed/inflation.rds: R/prepare_inflation.R data/raw/inflation.xlsx
 data/raw/inflation.xlsx: R/download_inflation.R
 	Rscript -e "source('$<')"
 
-publish: presentation.html
+publish/: presentation.html
 
 include .repro/Makefile_publish
 
