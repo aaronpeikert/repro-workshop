@@ -10,7 +10,7 @@ data/processed/inflation.rds: R/prepare_inflation.R data/raw/inflation.xlsx
 data/raw/inflation.xlsx: R/download_inflation.R
 	Rscript -e "source('$<')"
 
-publish/: presentation.html xaringan-themer.css
+publish/: presentation.html xaringan-themer.css presentation_files/ images/
 
 include .repro/Makefile_publish
 
