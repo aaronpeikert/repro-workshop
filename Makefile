@@ -8,6 +8,10 @@ data/processed/inflation.rds: R/prepare_inflation.R data/raw/inflation.xlsx
 data/raw/inflation.xlsx: R/download_inflation.R
 	Rscript -e "source('$<')"
 
+publish: presentation.html
+
+include ./repro/Makefile_publish
+
 ### Wrap Commands ###
 # if a command is to be send to another process e.g. a container/scheduler use:
 # $(RUN1) mycommand --myflag $(RUN2)
