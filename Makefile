@@ -10,7 +10,7 @@ data/raw/inflation.xlsx: R/download_inflation.R
 
 publish: presentation.html
 
-include ./repro/Makefile_publish
+include .repro/Makefile_publish
 
 ### Wrap Commands ###
 # if a command is to be send to another process e.g. a container/scheduler use:
