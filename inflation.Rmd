@@ -10,6 +10,8 @@ repro:
     - lubridate
   scripts:
     - R/prepare_inflation.R
+  data:
+    - data/raw/inflation.rds
 ---
 
 ```{r setup, include=FALSE}

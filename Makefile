@@ -2,12 +2,9 @@ PROJECT := reproworkshop
 WORKDIR := $(CURDIR)
 
 # list below your targets and their recipies
-all: presentation.html data/processed README.md
-data/processed: data/processed/inflation.rds
-data/processed/inflation.rds: R/prepare_inflation.R data/raw/inflation.xlsx
-	Rscript -e "source('$<')"
+all: presentation.html README.md
 
-data/raw/inflation.xlsx: R/download_inflation.R
+data/raw/inflation.rds: R/download_inflation.R
 	Rscript -e "source('$<')"
 
 publish/: presentation.html xaringan-themer.css presentation_files/ images/

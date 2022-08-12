@@ -8,7 +8,7 @@ library(lubridate)
 # 2. use relative locations
 # (relative paths instead absolute, names instead of indices)
 inflation_raw <-
-  readxl::read_xlsx(here("data", "raw", "inflation.xlsx"), sheet = 4)
+  readr::read_rds(here("data", "raw", "inflation.rds"))
 
 #----transform-inflation----
 # 3. document relevant information
@@ -50,4 +50,4 @@ inflation <- inflation_raw %>%
 #----export-inflation---
 inflation_path <- here("data", "processed", "inflation.rds")
 fs::dir_create(fs::path_dir(inflation_path))
-write_rds(inflation, inflation_path, compress = "gz")
+write_rds(inflation_raw, inflation_path, compress = "gz")

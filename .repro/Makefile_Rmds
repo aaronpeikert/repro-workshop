@@ -1,4 +1,4 @@
-examples/inflation.html: examples/inflation.Rmd data/processed/inflation.rds
+inflation.html: inflation.Rmd data/raw/inflation.rds R/prepare_inflation.R
 	$(RUN1) Rscript -e 'rmarkdown::render("$(WORKDIR)/$<", "all")' $(RUN2)
 
 presentation.html: presentation.Rmd snippets/signin.Rmd snippets/signup.Rmd

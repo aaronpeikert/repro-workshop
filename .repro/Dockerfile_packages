@@ -1,5 +1,6 @@
 RUN install2.r --error --skipinstalled \ 
   here \ 
+  lubridate \ 
   patchwork \ 
   qrcode \ 
   showtext \ 

@@ -6,6 +6,7 @@ WORKDIR /home/rstudio
 RUN apt-get update -y && apt-get install -y rsync
 RUN install2.r --error --skipinstalled \ 
   here \ 
+  lubridate \ 
   patchwork \ 
   qrcode \ 
   showtext \ 
