@@ -21,7 +21,7 @@ class: center, middle, inverse, title-slide
 ### Aaron Peikert
 ]
 .date[
-### Marbach Castle | 2022-08-07
+### Marbach Castle | 2022-08-12
 ]
 
 ---
@@ -197,7 +197,7 @@ class: middle
 
 .center[
 
-.large[code + data + text + software + history + workflow]
+.large[code + data + text  + history + software + workflow]
 
 &lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
 
@@ -232,6 +232,399 @@ background-color: #F0F8F8
 &lt;img src="https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg" width="90%" /&gt;
 
 ]
+
+---
+class: middle
+
+.center[
+
+.large[code + data + **text**  + history + software + workflow]
+
+&lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
+
+]
+
+---
+
+## A first taste of RMarkdown
+
+.todo[Open the file `inflation.Rmd`.]
+
+.todo[Take a minute to skim the document.]
+
+.todo[Click on `knit`.]
+
+.optional[Admire some examples at the [RMarkdown Gallery](https://rmarkdown.rstudio.com/gallery.html)].
+
+---
+name: desiree
+class: inverse, full, middle
+background-size: contain
+background-color: #F0F8F8
+background-image: url(https://rstudio-education.github.io/sharing-short-notice/images/screenshots/Single-rmd0.png)
+
+.pull-right.vertical.small[Created by [Desirée De Leon](https://github.com/dcossyleon), unchanged,
+[CC-BY-NC](https://creativecommons.org/licenses/by-nc/4.0/).]
+
+---
+
+## YAML Metadata
+
+.todo[Change `html_document` to `pdf_document`.]
+
+.todo[Knit again.]
+
+.optional[Change the author or date field.]
+
+.optional[Try the [`tufte`-format (click me)](https://rstudio.github.io/tufte/).]
+
+---
+template: desiree
+background-image: url(https://rstudio-education.github.io/sharing-short-notice/images/screenshots/Single-rmd4.png)
+
+---
+
+## Markdown | Text
+
+.todo[Make something **bold** and something else *italic*]:
+
+```
+This is **bold**, while this is *italic*.
+```
+
+.optional[Go to `Help → Markdown Quick Reference` and try something out.]
+
+---
+template: desiree
+background-image: url(https://rstudio-education.github.io/sharing-short-notice/images/screenshots/Single-rmd5.png)
+
+---
+
+## R &amp; Python &amp; Octave &amp; Julia | Code
+
+--
+
+.todo[Add a code chunk (Ctrl + Alt + I) and inline code:]
+
+````
+A code chunk is for longer code/output:
+
+```{r}
+with(mtcars, plot(hp, mpg))
+```
+
+Inline code is for single numbers/short text:
+
+We have `r nrow(mtcars)` cars.
+````
+
+.optional[Try using python:]
+
+````
+```{python}
+print("Hi! Python here, do you miss R already?")
+```
+````
+
+---
+class: middle
+
+.center[
+
+.large[code + data + text  + **history** + software + workflow]
+
+&lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
+
+]
+
+---
+
+## Introduce yourself to Git
+
+.todo[Modify, then run:]
+
+
+```r
+# use a function without loading the package
+# package::function
+usethis::use_git_config(
+  user.name = "Jane Doe",
+  user.email = "jane@example.org",
+  init.defaultBranch = "main") # &lt;-- not necessary but kinder than 'master'
+```
+
+## Activate Git
+
+.todo[Run:]
+
+
+```r
+usethis::use_git()
+```
+
+---
+
+## Make history
+
+Git has just started to record, so there is only a single entry.
+Lets add some changes:
+
+.todo[The plot is ~~ugly~~ very functional. Beautify it a bit. Some suggestions:]
+
+```
+  theme_minimal() +
+  ylab("subjective inflation in %") +
+  labs(color = "") +
+  theme(legend.position = c(.1, .9)) +
+```
+
+.optional[Plot the the two or five year expectation.]
+
+.small[[Hint: Swapping the variable `E1y_all` in `R/prepare_inflation.R` should to the trick.]]
+
+---
+
+## Record history
+
+Git commits are like checkpoints in a computer game.
+They save the current state of the project and you can always come back to them.
+
+.todo[Create a commit:]
+
+Git pane → Click checkbox of changed files → Commit → Message → Commit
+
+.optional[What can you do when you delete a file by accident?]
+
+.optional[Can Git help when you loose your computer / access to RStudio Cloud?]
+
+---
+
+## Introduce yourself to GitHub
+
+.todo[To get a GitHub pat/token run:]
+
+
+```r
+usethis::create_github_token(description = "Token for Repro Workshop 2022 Marbach")
+```
+
+.todo[Modify expiration. Today is enough.]
+
+.todo[Copy token.]
+
+--
+
+.todo[Set token:]
+
+
+```r
+gitcreds::gitcreds_set() # &lt;-- Token must *not* go into brackets, paste when asked
+```
+
+--
+
+.optional[Verify that everything is in order:]
+
+
+```r
+usethis::gh_token_help()
+```
+
+---
+
+## Activate GitHub
+
+.todo[To activate GitHub and upload your files to the public web:]
+
+
+```r
+usethis::use_github()
+```
+
+.optional[Private alternative/ upload to non-public web:]
+
+
+```r
+usethis::use_github(private = TRUE)
+```
+
+.optional[Can you simply use code from others that you find on GitHub?]
+
+.optional[Try `usethis::use_mit_license()`]
+
+---
+class: middle
+
+.center[
+
+.large[code + data + text + history + **software** + workflow]
+
+&lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
+
+]
+
+---
+## A note on workflow automation
+
+This workshop uses a lot of automation to automate reproducibility, e.g., to configure software, fill templates, interact with Git/GitHub etc.
+
+Among them:
+
+* usethis
+* gitcreds
+* gh
+
+And one of my packages:
+
+* `repro`
+
+These packages are "training wheels" and not required.
+
+---
+## `repro`-metadata
+
+`repro` uses metadata in Rmds to infer (among other things) the software environment required. 
+
+.todo[Trigger this mechanism using: `repro::automate()`]
+
+.todo[Take a look at the newly generated file `Dockerfile`.]
+
+.todo[Commit changes. (Do not push.)]
+
+.optional[Add any package of your liking to any Rmd and `repro::automate()`]
+
+.optional[Take a look at the file `.repro/Dockerfile_base` and friends. How would you change the R version used?]
+
+---
+## Build the image
+
+GitHub action (GHA) is a cloud service that runs software when certain events trigger it.
+
+.todo[Add a GitHub Action to build the required Docker image with `repro::use_gha_docker()`]
+
+.todo[To trigger the action, commit and push your changes.]
+
+.todo[Browse through the actions: `usethis::browse_github_actions()`]
+
+.optional[Take a look at `.github/workflows/push-container.yml`. When is the action triggered?]
+
+---
+class: middle
+
+.center[
+
+.large[code + data + text + history + software + **workflow**]
+
+&lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
+
+]
+
+---
+class: middle
+## Whats cooking?
+
+.pull-left[
+
+&gt; Arrabbiata sauce, or sugo all'arrabbiata in Italian, is a spicy sauce for pasta made from garlic, tomatoes, and dried red chili peppers cooked in olive oil. 
+
+.small["Arrabbiata sauce" from Wikipedia under [CC BY-SA 3.0](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)]
+
+]
+
+---
+class: middle
+## Whats cooking?
+
+.pull-left[
+
+&gt; Arrabbiata sauce, or sugo all'arrabbiata in Italian, is a spicy **sauce** for **pasta** made from **garlic**, **tomatoes**, and dried red **chili** peppers cooked in olive oil. 
+
+.small["Arrabbiata sauce" from Wikipedia under [CC BY-SA 3.0](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License), emphasis added]
+
+]
+
+--
+
+.pull-right[
+
+.large[
+
+```
+arrabiata.pdf: arrabiata.Rmd sauce.csv R/pasta.R 
+  Rscript -e "rmarkdown::render('arrabiata.Rmd')"
+
+sauce.csv: R/cook.R tomatoes.zip aromatics.yaml
+  Rscript -e "source(R/cook.R)"
+
+aromatics.yaml: R/sizzle.py garlic.txt chili.json
+  python sizzle.py garlic.txt
+  python sizzle.py chili.json
+```
+
+]
+
+]
+
+---
+
+.pull-left[
+
+### Key features
+
+Missing ingredients will be generated,  
+.small[*e.g., if the cleaned data is missing, the raw data is first cleaned.*]
+
+Newer ingredients trigger updates,  
+.small[*e.g., new data leads to recreation of the whole manuscript.*]
+
+]
+
+--
+
+.pull-right[
+
+### Advanced features
+
+```
+tomatoes.zip: raw/tomatoes/
+  zip -r -b $@ $&lt;
+```
+
+.small[
+
+* its turtles all the way down
+* bash command / language independent
+* across operating systems
+* automatic variables
+* control flow
+* recipe templates
+
+]
+
+]
+
+--
+
+.center.large[
+
+`repro::automate()` generates appropriate recipes for Rmds
+
+]
+
+--
+
+.center[
+
+only deeper nested dependencies must be added manually.
+
+]
+
+---
+## Make in action
+
+.todo[Go to the terminal (`Alt + Shift + M`) and type `make`]
+
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
