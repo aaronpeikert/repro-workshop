@@ -1,0 +1,48 @@
+---
+title: "Inflation Data"
+author: "Aaron Peikert"
+date: "8/11/2022"
+output: html_document
+repro:
+  packages:
+    - here
+    - tidyverse
+    - lubridate
+  scripts:
+    - R/prepare_inflation.R
+---
+
+```{r setup, include=FALSE}
+repro::automate_load_packages()
+repro::automate_load_scripts()
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The dataset we use stems from the [Bank of England Research datasets](https://www.bankofengland.co.uk/statistics/research-datasets).
+
+I quote:
+
+> This dataset contains the individual responses to our Inflation Attitudes Survey, a quarterly survey of people’s feelings about inflation and other economic variables like the interest rate. 
+
+```{r load-inflation}
+# code chunks can come from other scripts, this one is loaded from:
+# `R/prepare_inflation.R`
+```
+
+```{r transform-inflation}
+# this chunk is also loaded from the same script
+# note that they must be empty and the names must correspond
+```
+
+```{r}
+inflation %>% 
+  group_by(date) %>% 
+  summarise(across(c(perception, expectation),
+                   ~ mean(., na.rm = TRUE)),
+            .groups = "drop") %>% 
+  pivot_longer(c(expectation, perception)) %>% 
+  ungroup() %>% 
+  ggplot() +
+  geom_line(aes(date, value, color = name)) +
+  NULL
+```

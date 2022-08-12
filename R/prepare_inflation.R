@@ -51,15 +51,3 @@ inflation <- inflation_raw %>%
 inflation_path <- here("data", "processed", "inflation.rds")
 fs::dir_create(fs::path_dir(inflation_path))
 write_rds(inflation, inflation_path, compress = "gz")
-
-inflation %>% 
-  group_by(date) %>% 
-  summarise(across(c(perception, expectation),
-                   ~ mean(., na.rm = TRUE)),
-            .groups = "drop") %>% 
-  pivot_longer(c(expectation, perception)) %>% 
-  ungroup() %>% 
-  ggplot() +
-  geom_line(aes(date, value, color = name)) +
-  theme_minimal() +
-  NULL
