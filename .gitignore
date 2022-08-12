@@ -32,3 +32,6 @@ publish/
 *.pre
 *.snm
 *.vrb
+.Rdata
+.httr-oauth
+.DS_Store
