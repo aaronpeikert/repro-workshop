@@ -8,6 +8,7 @@ repro:
     - here
     - tidyverse
     - lubridate
+    - aaronpeikert/repro@fc7e884
   scripts:
     - R/prepare_inflation.R
   data:
