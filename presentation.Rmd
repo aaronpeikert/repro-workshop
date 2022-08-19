@@ -697,4 +697,4 @@ Go to Settings → Pages and change `none` to `gh-pages`.
 
 Inspect the published PDF online (change username):
 
-<yourusername.github.io/project/inflation.pdf>
+`yourusername.github.io/project/inflation.pdf`
