@@ -94,7 +94,7 @@ class: inverse, center, middle
 ## Slides
 
 ```{r, echo=FALSE}
-link <- "https://github.com/aaronpeikert"
+link <- "https://github.com/aaronpeikert/repro-workshop"
 ```
 
 ```{r, echo=FALSE, out.width = "30%", out.extra='style="float:right; padding:10px"'}
@@ -166,6 +166,14 @@ knitr::include_graphics("https://publicdomainvectors.org/download.php?file=CARTO
 ```
 
 ]
+
+---
+
+# RStudio Cloud
+
+Access the project:
+
+https://rstudio.cloud/content/4366949
 
 ---
 

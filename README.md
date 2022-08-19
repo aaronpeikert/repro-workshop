@@ -34,7 +34,11 @@ concepts put forward in the talk with the same title.*
 
 ## Getting Started
 
-Hi there, great that you made it!
+Hi there, great that you made it\!
+
+It is useful to keep the [slides open
+alongside](https://aaronpeikert.github.io/repro-workshop/presentation.html#1)
+(who likes typing links?).
 
 Lets get started by creating an account on Github and RStudio Cloud
 (login below, if you already have one).
@@ -62,3 +66,9 @@ Lets get started by creating an account on Github and RStudio Cloud
 *Use Option: “Log In with GitHub”*
 
 <https://login.rstudio.cloud/login>
+
+## RStudio Cloud
+
+Now that you have acces to RStudio Cloud, open the project:
+
+<https://rstudio.cloud/content/4366949>
