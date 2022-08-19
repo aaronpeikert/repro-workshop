@@ -21,7 +21,7 @@ class: center, middle, inverse, title-slide
 ### Aaron Peikert
 ]
 .date[
-### Marbach Castle | 2022-08-15
+### Marbach Castle | 2022-08-19
 ]
 
 ---
@@ -318,6 +318,8 @@ Inline code is for single numbers/short text:
 We have `r nrow(mtcars)` cars.
 ````
 
+.optional[Suppress all code in output with: `knitr::opts_chunk$set(echo = FALSE)`]
+
 .optional[Try using python:]
 
 ````
@@ -373,7 +375,7 @@ Lets add some changes:
 
 ```
   theme_minimal() +
-  ylab("subjective inflation in %") +
+  ylab("subjective inflation in %-points") +
   labs(color = "") +
   theme(legend.position = c(.1, .9)) +
 ```
@@ -408,11 +410,15 @@ Git pane → Click checkbox of changed files → Commit → Message → Commit
 usethis::create_github_token(description = "Token for Repro Workshop 2022 Marbach")
 ```
 
+.todo[Activate scope `write:packages`.]
+
 .todo[Modify expiration. Today is enough.]
 
 .todo[Copy token.]
 
---
+---
+
+## Store token
 
 .todo[Set token:]
 
@@ -441,7 +447,7 @@ usethis::gh_token_help()
 usethis::use_github()
 ```
 
-.optional[Private alternative/ upload to non-public web:]
+.optional[Private alternative/ upload to non-public web (don't use now):]
 
 
 ```r
@@ -451,6 +457,8 @@ usethis::use_github(private = TRUE)
 .optional[Can you simply use code from others that you find on GitHub?]
 
 .optional[Try `usethis::use_mit_license()`]
+
+.optional[Up for a challenge? Try `usethis::use_readme_rmd()`]
 
 ---
 class: middle
@@ -488,6 +496,8 @@ These packages are "training wheels" and not required.
 .todo[Trigger this mechanism using: `repro::automate()`]
 
 .todo[Take a look at the newly generated file `Dockerfile`.]
+
+.todo[Remove all, if any, python chunks.]
 
 .todo[Commit changes. (Do not push.)]
 
@@ -607,7 +617,7 @@ tomatoes.zip: raw/tomatoes/
 
 .center.large[
 
-`repro::automate()` generates appropriate recipes for Rmds
+`repro::automate()` auto-generates recipes for Rmds
 
 ]
 
@@ -624,8 +634,41 @@ only deeper nested dependencies must be added manually.
 
 .todo[Go to the terminal (`Alt + Shift + M`) and type `make`]
 
+.todo[Delete `inflation.pdf` terminal (`Alt + Shift + M`) and type `make`]
+
+.optional[Run: `make -B --dry-run`]
+
+`-B` means rebuild everything. `--dry-run` means do not actually run the commands.
+
+---
+## Make in the cloud
+
+.todo[Run `repro::use_make_publish()`.]
+
+.optional[Inspect `.repro/Makefile_publish`.]
+
+.todo[Paste the following into the `Makefile`:]
+
+```
+publish/: inflation.pdf
+
+include .repro/Makefile_publish
+```
+
+.todo[Run `repro::use_gha_publish()`.]
+
+.todo[Commit and push.]
 
 
+---
+
+## GitHub Pages
+
+Go to Settings → Pages and change `none` to `gh-pages`.
+
+Inspect the published PDF online (change username):
+
+`yourusername.github.io/project/inflation.pdf`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
