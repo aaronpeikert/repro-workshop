@@ -15,5 +15,5 @@ games_raw <- readr::read_csv(
 #----transform-inflation----
 # 3. document relevant information
 # (i.e., variable names are documentation + comments)
-games <- mutate(date = str_c(month, "_", year) %>% # concatenate month and year
+games <- mutate(games_raw, date = str_c(month, "_", year) %>% # concatenate month and year
                   my()) # my = month year -> convert to date
