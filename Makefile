@@ -7,7 +7,10 @@ all: presentation.html README.md
 data/raw/inflation.rds: R/download_inflation.R
 	Rscript -e "source('$<')"
 
-publish/: presentation.html xaringan-themer.css presentation_files/ images/
+publish/: presentation.html index.html xaringan-themer.css presentation_files/ images/
+
+index.html: presentation.html
+	cp $< $@
 
 include .repro/Makefile_publish
 
