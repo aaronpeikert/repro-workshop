@@ -94,7 +94,7 @@ class: inverse, center, middle
 ## Slides
 
 ```{r, echo=FALSE}
-link <- "https://github.com/aaronpeikert/repro-workshop"
+link <- "aaronpeikert.github.io/repro-workshop"
 ```
 
 ```{r, echo=FALSE, out.width = "30%", out.extra='style="float:right; padding:10px"'}
@@ -114,9 +114,9 @@ Do you have a question?
 
 --
 
-.todo[Open this link to get the materials:]
+.todo[Keep the slides handy for copy & pasting stuff:]
 
-`r link`
+[`r link`](https://`r link`)
 
 --
 
