@@ -18,7 +18,7 @@ repro:
 ```{r setup, include=FALSE}
 repro::automate_load_packages()
 repro::automate_load_scripts()
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 The dataset we use stems from the [Bank of England Research datasets](https://www.bankofengland.co.uk/statistics/research-datasets).

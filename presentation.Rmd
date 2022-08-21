@@ -356,7 +356,7 @@ Inline code is for single numbers/short text:
 We have `r '\x60r nrow(mtcars)\x60'` cars.
 ````
 
-.optional[Suppress all code in output with: `knitr::opts_chunk$set(echo = FALSE)`]
+.optional[Include all the code in output with: `knitr::opts_chunk$set(echo = TRUE)`]
 
 .optional[Try using python:]
 
