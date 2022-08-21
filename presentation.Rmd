@@ -669,7 +669,7 @@ only deeper nested dependencies must be added manually.
 ---
 ## Make in action
 
-.todo[Go to the terminal (`Alt + Shift + M`) and type `make`]
+.todo[Go to the terminal (`Alt + Shift + M`) and type `make inflation.pdf`]
 
 .todo[Delete `inflation.pdf`.]
 
