@@ -82,8 +82,8 @@ class: inverse, center, middle
 
 1. Be nice and help each other.
 2. Don't be shy: Answer and ask questions, even stupid ones.
-3. .todo[Do things in this color.]
-4. .optional[Try things in this color (they are completely optional).]
+3. .todo[Do things in this color (green).]
+4. .optional[Try things in this color (blue). They are completely optional.]
 
 --
 
@@ -186,6 +186,8 @@ https://rstudio.cloud/content/4366949
 .todo[Open the R folder.]
 
 .todo[Click on the file `R/prepare_games.R`]
+
+***
 
 .optional[Take a look at `R/prepare_inflation.R` (same thing but more complicated)]
 
@@ -292,6 +294,8 @@ knitr::include_graphics("https://publicdomainvectors.org/download.php?file=CARTO
 
 .todo[Click on `knit`.]
 
+***
+
 .optional[Admire some examples at the [RMarkdown Gallery](https://rmarkdown.rstudio.com/gallery.html)].
 
 ---
@@ -312,6 +316,8 @@ background-image: url(https://rstudio-education.github.io/sharing-short-notice/i
 
 .todo[Knit again.]
 
+***
+
 .optional[Change the author or date field.]
 
 .optional[Try the [`tufte`-format (click me)](https://rstudio.github.io/tufte/).]
@@ -329,6 +335,8 @@ background-image: url(https://rstudio-education.github.io/sharing-short-notice/i
 ```
 This is **bold**, while this is *italic*.
 ```
+
+***
 
 .optional[Go to `Help → Markdown Quick Reference` and try something out.]
 
@@ -418,6 +426,8 @@ Lets add some changes:
   theme(legend.position = c(.1, .9)) +
 ```
 
+***
+
 .optional[Plot the the two or five year expectation.]
 
 .small[[Hint: Swapping the variable `E1y_all` in `R/prepare_inflation.R` should to the trick.]]
@@ -432,6 +442,8 @@ They save the current state of the project and you can always come back to them.
 .todo[Create a commit:]
 
 Git pane → Click checkbox of changed files → Commit → Message → Commit
+
+***
 
 .optional[What can you do when you delete a file by accident?]
 
@@ -550,6 +562,8 @@ GitHub action (GHA) is a cloud service that runs software when certain events tr
 .todo[To trigger the action, commit and push your changes.]
 
 .todo[Browse through the actions: `usethis::browse_github_actions()`]
+
+***
 
 .optional[Take a look at `.github/workflows/push-container.yml`. When is the action triggered?]
 
@@ -675,6 +689,8 @@ only deeper nested dependencies must be added manually.
 
 .todo[Go to the terminal (`Alt + Shift + M`) and type `make`]
 
+***
+
 .optional[Run: `make -B --dry-run`]
 
 `-B` means rebuild everything. `--dry-run` means do not actually run the commands.
@@ -683,8 +699,6 @@ only deeper nested dependencies must be added manually.
 ## Make in the cloud
 
 .todo[Run `repro::use_make_publish()`.]
-
-.optional[Inspect `.repro/Makefile_publish`.]
 
 .todo[Paste the following into the `Makefile`:]
 
@@ -698,6 +712,9 @@ include .repro/Makefile_publish
 
 .todo[Commit and push.]
 
+***
+
+.optional[Inspect `.repro/Makefile_publish`.]
 
 ---
 
@@ -710,3 +727,6 @@ include .repro/Makefile_publish
 .todo[Inspect the published PDF online (change username):]
 
 `yourusername.github.io/project/inflation.pdf`
+
+***
+
