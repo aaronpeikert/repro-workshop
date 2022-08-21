@@ -671,7 +671,9 @@ only deeper nested dependencies must be added manually.
 
 .todo[Go to the terminal (`Alt + Shift + M`) and type `make`]
 
-.todo[Delete `inflation.pdf` terminal (`Alt + Shift + M`) and type `make`]
+.todo[Delete `inflation.pdf`.]
+
+.todo[Go to the terminal (`Alt + Shift + M`) and type `make`]
 
 .optional[Run: `make -B --dry-run`]
 
@@ -701,8 +703,10 @@ include .repro/Makefile_publish
 
 ## GitHub Pages
 
-Go to Settings → Pages and change `none` to `gh-pages`.
+.todo[Go to Settings → Pages and change `none` to `gh-pages`.]
 
-Inspect the published PDF online (change username):
+.todo[Go to actions and wait for the new action to finish.]
+
+.todo[Inspect the published PDF online (change username):]
 
 `yourusername.github.io/project/inflation.pdf`
