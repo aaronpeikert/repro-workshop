@@ -249,7 +249,6 @@ And provide tangible proof for 1-3 via automated public reproduction in the clou
 ---
 background-color: #F0F8F8
 
-
 .center[
 
 ```{r, echo=FALSE, out.width='90%'}
@@ -713,7 +712,7 @@ only deeper nested dependencies must be added manually.
 ---
 ## Make in the cloud
 
-.todo[Run `repro::use_make_publish()`.]
+.todo[Run `repro::use_make_publish()`]
 
 .todo[Paste the following into the `Makefile`:]
 
@@ -723,7 +722,7 @@ publish/: inflation.pdf
 include .repro/Makefile_publish
 ```
 
-.todo[Run `repro::use_gha_publish()`.]
+.todo[Run `repro::use_gha_publish()`]
 
 .todo[Commit and push.]
 
@@ -745,4 +744,4 @@ include .repro/Makefile_publish
 
 ***
 
-.optional[Change something, e.g., make the plot ugly again, then commit and push.]
+.optional[Change something, e.g., make the plot ugly again, then commit and push. Takes ~5min or so.]
