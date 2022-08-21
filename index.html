@@ -447,7 +447,7 @@ usethis::create_github_token(description = "Token for Repro Workshop 2022 Marbac
 gitcreds::gitcreds_set() # &lt;-- Token must *not* go into brackets, paste when asked
 ```
 
---
+***
 
 .optional[Verify that everything is in order:]
 
@@ -455,6 +455,15 @@ gitcreds::gitcreds_set() # &lt;-- Token must *not* go into brackets, paste when 
 ```r
 usethis::gh_token_help()
 ```
+---
+
+## Note
+
+GitHub might find it funky that 20 people push the same code from the same IP range (RStudio Cloud).
+
+If pushing code fails or asks for the password, we have triggered spam detection. In this case, we will have to repeat the GitHub handshake.
+
+Generally the "handshake" only needs to be done once per machine (per token validity period).
 
 ---
 
@@ -466,6 +475,8 @@ usethis::gh_token_help()
 ```r
 usethis::use_github()
 ```
+
+***
 
 .optional[Private alternative/ upload to non-public web (don't use now):]
 
@@ -521,7 +532,7 @@ These packages are "training wheels" and not required.
 
 .todo[Commit changes. (Do not push.)]
 
-.optional[Add any package of your liking to any Rmd and `repro::automate()`]
+.optional[Add any package of your liking to any Rmd and run `repro::automate()`]
 
 .optional[Take a look at the file `.repro/Dockerfile_base` and friends. How would you change the R version used?]
 
@@ -608,6 +619,10 @@ Missing ingredients will be generated,
 
 Newer ingredients trigger updates,  
 .small[*e.g., new data leads to recreation of the whole manuscript.*]
+
+Always the same "button" that triggers reproduction,  
+.small[*e.g., regardless of programming language, file format, and intermediate steps.*]
+
 
 ]
 
@@ -701,6 +716,7 @@ include .repro/Makefile_publish
 
 ***
 
+.optional[Change something, e.g., make the plot ugly again, then commit and push.]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
