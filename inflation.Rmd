@@ -2,7 +2,7 @@
 title: "Inflation Data"
 author: "Aaron Peikert"
 date: "`r Sys.Date()`"
-output: html_document
+output: pdf_document
 repro:
   packages:
     - here
@@ -36,6 +36,9 @@ I quote:
 # this chunk is also loaded from the same script
 # note that they must be empty and the names must correspond
 ```
+
+For this dataset the Bank of England asked `r prettyNum(nrow(inflation), big.mark = ".", decimal.mark = ",")` people for their opinion on the perceived and expected inflation.
+The survey has run quarterly since `r min(inflation$year)`.
 
 ```{r}
 inflation %>% 
