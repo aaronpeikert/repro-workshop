@@ -227,19 +227,6 @@ class: inverse, center, middle
 # Goals
 
 ---
-class: middle
-
-.center[
-
-.large[code + data + text  + history + software + workflow]
-
-```{r, echo=FALSE, out.width='30%'}
-knitr::include_graphics("https://publicdomainvectors.org/download.php?file=CARTON01.svg")
-```
-
-]
-
----
 ## Goals for today
 
 Ultimate reproducibility for a toy(-ish) project:
@@ -267,6 +254,19 @@ background-color: #F0F8F8
 
 ```{r, echo=FALSE, out.width='90%'}
 knitr::include_graphics("https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg")
+```
+
+]
+
+---
+class: middle
+
+.center[
+
+.large[code + data + text  + history + software + workflow]
+
+```{r, echo=FALSE, out.width='30%'}
+knitr::include_graphics("https://publicdomainvectors.org/download.php?file=CARTON01.svg")
 ```
 
 ]
