@@ -1,3 +1,7 @@
+Tickle CI to update date on slides.
+
+Log into RStudio Cloud, then:
+
 ```r
 install.packages("remotes")
 remotes::install_github("aaronpeikert/repro")
