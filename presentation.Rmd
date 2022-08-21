@@ -638,8 +638,6 @@ aromatics.yaml: R/sizzle.py garlic.txt chili.json
 
 ---
 
-.pull-left[
-
 ### Key features
 
 Missing ingredients will be generated,  
@@ -650,33 +648,6 @@ Newer ingredients trigger updates,
 
 Always the same "button" that triggers reproduction,  
 .small[*e.g., regardless of programming language, file format, and intermediate steps.*]
-
-
-]
-
---
-
-.pull-right[
-
-### Advanced features
-
-```
-tomatoes.zip: raw/tomatoes/
-  zip -r -b $@ $<
-```
-
-.small[
-
-* its turtles all the way down
-* bash command / language independent
-* across operating systems
-* automatic variables
-* control flow
-* recipe templates
-
-]
-
-]
 
 --
 
@@ -745,3 +716,18 @@ include .repro/Makefile_publish
 ***
 
 .optional[Change something, e.g., make the plot ugly again, then commit and push. Takes ~5min or so.]
+
+---
+class: inverse, center, middle
+
+# Done.
+
+---
+class: center, middle
+
+# Thanks!
+
+---
+class: inverse, center, middle
+
+# Questions?
