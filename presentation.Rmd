@@ -475,13 +475,22 @@ usethis::create_github_token(description = "Token for Repro Workshop 2022 Marbac
 gitcreds::gitcreds_set() # <-- Token must *not* go into brackets, paste when asked
 ```
 
---
+***
 
 .optional[Verify that everything is in order:]
 
 ```{r, eval=FALSE}
 usethis::gh_token_help()
 ```
+---
+
+## Note
+
+GitHub might find it funky that 20 people push the same code from the same IP range (RStudio Cloud).
+
+If pushing code fails or asks for the password, we have triggered spam detection. In this case, we will have to repeat the GitHub handshake.
+
+Generally the "handshake" only needs to be done once per machine (per token validity period).
 
 ---
 
