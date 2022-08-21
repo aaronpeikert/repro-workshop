@@ -1,5 +1,3 @@
-Tickle CI to update date on slides.
-
 Log into RStudio Cloud, then:
 
 ```r
@@ -11,7 +9,7 @@ install.packages(c("tidyverse", "rmarkdown", "markdown", "remotes", "here", "ret
 ```r
 library(fs)
 all_files <- dir_ls(all = TRUE)
-to_delete <- all_files[!(all_files %in% c("inflation.Rmd", "R", "Makefile", "repro-workshop.Rproj", ".gitignore"))]
+to_delete <- all_files[!(all_files %in% c("inflation.Rmd", "presentation.Rmd", "R", "Makefile", "repro-workshop.Rproj", ".gitignore"))]
 file_delete(to_delete)
 ```
 
@@ -40,3 +38,5 @@ include .repro/Makefile_Rmds
  
  - set link to public
  - paste link into repo
+ - maybe tickle CI to update date on slides
+
