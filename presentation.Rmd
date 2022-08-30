@@ -23,8 +23,6 @@ repro:
     - qrcode
     - showtext
     - here
-    - magick
-    - rsvg
   files:
     - snippets/signin.Rmd
     - snippets/signup.Rmd
