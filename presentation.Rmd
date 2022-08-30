@@ -15,7 +15,7 @@ output:
       countIncrementalSlides: true
 repro:
   packages:
-    - aaronpeikert/repro@2af4c58
+    - aaronpeikert/repro@fc7e884
     - tidyverse
     - patchwork
     - xaringanthemer
@@ -23,6 +23,8 @@ repro:
     - qrcode
     - showtext
     - here
+    - magick
+    - rsvg
   files:
     - snippets/signin.Rmd
     - snippets/signup.Rmd
