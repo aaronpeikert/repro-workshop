@@ -1,23 +1,14 @@
 Log into RStudio Cloud, then:
 
 ```r
-install.packages("remotes")
+install.packages(c("tidyverse", "rmarkdown", "markdown", "remotes", "here", "reticulate", "remotes"))
 remotes::install_github("aaronpeikert/repro")
-install.packages(c("tidyverse", "rmarkdown", "markdown", "remotes", "here", "reticulate"))
-```
-
-```r
-library(fs)
-all_files <- dir_ls(all = TRUE)
-to_delete <- all_files[!(all_files %in% c("inflation.Rmd", "R", "Makefile", "repro-workshop.Rproj", ".gitignore"))]
-file_delete(to_delete)
 ```
 
 ```r
 fs::dir_create("data/raw/")
 ```
 
- - Delete Github Repro aaronpeikert/project
  - Upload the rds.
  - Scrub the Makefile.
  
@@ -35,8 +26,13 @@ data/raw/inflation.rds: R/download_inflation.R
 include .repro/Makefile_Rmds
 
 ```
- 
- - set link to public
- - paste link into repo
- - maybe tickle CI to update date on slides
 
+```r
+library(fs)
+all_files <- dir_ls(all = TRUE)
+to_delete <- all_files[!(all_files %in% c("inflation.Rmd", "R", "Makefile", "repro-workshop.Rproj", ".gitignore"))]
+file_delete(to_delete)
+```
+ - set link to public
+ - paste link into slides
+ - maybe tickle CI to update date on slides
