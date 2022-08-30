@@ -672,6 +672,8 @@ only deeper nested dependencies must be added manually.
 
 .todo[Delete `inflation.pdf`.]
 
+.todo[Add `inflation.pdf` to the target `all` (`all: inflation.pdf`).]
+
 .todo[Go to the terminal (`Alt + Shift + M`) and type `make`]
 
 ***
