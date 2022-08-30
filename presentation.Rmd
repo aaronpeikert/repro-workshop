@@ -704,6 +704,11 @@ include .repro/Makefile_publish
 .optional[Inspect `.repro/Makefile_publish`.]
 
 ---
+class: middle, center, inverse
+
+<img src="https://publicdomainvectors.org/download.php?file=johnny_automatic_hourglass.svg" alt="" width="20%" style="filter: invert(1);">
+
+---
 
 ## GitHub Pages
 
