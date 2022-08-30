@@ -2,7 +2,7 @@
 title: "Inflation Data"
 author: "Aaron Peikert"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: html_document
 repro:
   packages:
     - here
