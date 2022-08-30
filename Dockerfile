@@ -7,10 +7,8 @@ RUN apt-get update -y && apt-get install -y rsync
 RUN install2.r --error --skipinstalled \ 
   here \ 
   lubridate \ 
-  magick \ 
   patchwork \ 
   qrcode \ 
-  rsvg \ 
   showtext \ 
   svglite \ 
   tidyverse \ 
