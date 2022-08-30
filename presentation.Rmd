@@ -405,7 +405,7 @@ usethis::use_git_config(
 
 .todo[Run:]
 
-```{r}
+```{r, eval=FALSE}
 usethis::use_git()
 ```
 
