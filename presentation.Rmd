@@ -169,6 +169,24 @@ knitr::include_graphics("https://publicdomainvectors.org/download.php?file=CARTO
 
 ---
 
+## A Note on Computing Infrastructure
+
+Usually you work on a private laptop.
+--
+**Not today.**
+
+For ease of setup we work in the Cloud. But confusingly we than ask another cloud provider to reproduce everything again somewhere else.
+
+An incomplete list of computational infrastructures:
+
+- laptops
+- virtual machines
+- single servers
+- cloud computers
+- high performance computers
+
+---
+
 # RStudio Cloud
 
 Access the project:
