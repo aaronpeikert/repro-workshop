@@ -1,3 +1,3 @@
 FROM rocker/verse:4.2.1
-ARG BUILD_DATE=2022-09-11
+ARG BUILD_DATE=2022-09-10
 WORKDIR /home/rstudio
