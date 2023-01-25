@@ -21,7 +21,7 @@ class: center, middle, inverse, title-slide
 ### Aaron Peikert
 ]
 .date[
-### Marbach Castle | 2022-11-10
+### LMU Open Science Center | 2023-01-25
 ]
 
 ---
@@ -38,6 +38,168 @@ class: inverse, center, middle
 class: inverse, center, middle
 
 # ~~Why~~ How should we work reproducibly?
+
+---
+class: center, middle
+
+# Reproducible Research
+
+# =
+
+# same data + same analysis
+
+# =
+
+# same results
+
+---
+class: center, middle
+
+&lt;img src="images/frustrating.gif" width="30%" /&gt;
+
+
+.tiny[No idea how to attribute self-made memes.]
+
+---
+class: center, middle
+
+&lt;img src="images/satisfying.jpeg" width="50%" /&gt;
+
+.tiny[No idea how to attribute self-made memes.]
+
+---
+class: middle
+
+.right[
+
+## What would I know about reproducible research?
+
+]
+
+.right[
+
+## Glad you asked!
+
+]
+
+---
+class: middle
+
+.left[
+
+Let me present to you today:
+
+]
+
+.center[
+
+# Reproducible Research: The Bleeding Edge
+
+]
+
+.right[
+
+An action movie.
+
+]
+
+
+---
+
+## Properties we are after:
+
+* fully automated
+* independent of hardware
+* independent of users
+* continually verified
+
+---
+
+## Problems we want to solve:
+
+1. copy&amp;paste mistakes
+2. inconsistent versions of code or data
+3. missing or incompatible software
+4. complicated or ambiguous procedure for reproduction
+
+---
+
+## Software we will use:
+
+1. R Markdown
+2. Git
+3. Docker
+4. Make
+
+
+---
+
+## Services we will use:
+
+* Posit Cloud (= RStudio Cloud)
+* GitHub (≠ Git)
+* GitHub Actions (∈ GitHub)
+
+---
+class: middle, center
+
+## TL;DR: This is almost impossible.
+
+## Don't freak out. 
+--
+Ok, maybe a bit.
+
+---
+class: center, middle
+
+# Today:
+
+### I push you to the brink of what is possible†
+
+--
+
+† in the form of a cozy precooked meal.
+
+---
+
+.center[
+
+# Alone in the wild:
+
+]
+
+--
+
+## 1. do the nessesary,
+
+--
+
+## 2. than the possible,
+
+--
+
+## 3. and you reach the impossible.
+
+---
+class: middle
+
+.center.pull-left[
+
+# Goal for today:
+
+### Understanding what is possible!
+
+]
+
+--
+
+.center.pull-left[
+
+# Not today:
+
+### Reaching a deep technical understanding of what is possible.
+
+]
 
 ---
 
@@ -92,7 +254,9 @@ Workshop within the workshop.
 ---
 class: inverse, center, middle
 
-# Goals
+.left[Level 1:]
+
+# The nessesary
 
 ---
 class: middle
@@ -104,6 +268,24 @@ class: middle
 &lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
 
 ]
+
+---
+
+## A Note on Computing Infrastructure
+
+Usually you work on a private laptop. 
+--
+**Not today.**
+
+For ease of setup we work in the Cloud. But confusingly we than ask another cloud provider to reproduce everything again somewhere else.
+
+An incomplete list of computational infrastructures:
+
+- laptops
+- virtual machines
+- single servers
+- cloud computers
+- high performance computers
 
 ---
 
@@ -145,29 +327,17 @@ class: middle
 
 ---
 
-## A Note on Computing Infrastructure
-
-Usually you work on a private laptop.
---
-**Not today.**
-
-For ease of setup we work in the Cloud. But confusingly we than ask another cloud provider to reproduce everything again somewhere else.
-
-An incomplete list of computational infrastructures:
-
-- laptops
-- virtual machines
-- single servers
-- cloud computers
-- high performance computers
-
----
-
 # RStudio Cloud
 
 Access the project:
 
 https://rstudio.cloud/content/4467593
+---
+
+# Where are you?
+
+Your computer → Posit Cloud
+
 ---
 
 # A single script
@@ -196,7 +366,6 @@ https://rstudio.cloud/content/4467593
 
 # A few principles of documentation
 
-
 .center[
 document relevant information = lot of writing
 
@@ -215,29 +384,16 @@ document relevant information = lot of writing
 3. What is *consistent* only has to be documented once.
 
 ---
+class: middle, center
+
+.left[Congratulations, you have completed:]
+
+# Nessesary
+
+---
 class: inverse, center, middle
 
-# Goals
-
----
-## Goals for today
-
-Ultimate reproducibility for a toy(-ish) project:
-
-1. Fully open: data, code, software
-2. Fully automated: from raw data (csv, excel) to paper (html, pdf)
-2. Across machines
-2. Across time
-
-And provide tangible proof for 1-3 via automated public reproduction in the cloud/GitHub Actions.
-
----
-
-## Not goals for today (though possible)
-
-1. beyond R (but works the same for Python/Julia/Octave)
-2. data &gt; 100MB, analysis &gt; 1h / 1 CPU
-3. complicated tables / formatting / die hard word lovers
+# Expanded Goals
 
 ---
 background-color: #F0F8F8
@@ -253,11 +409,80 @@ class: middle
 
 .center[
 
-.large[code + data + text  + history + software + workflow]
+.large[code + data + text + history + software + workflow]
+
+&lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
+
+
+]
+
+---
+class: middle
+
+.center[
+
+.large[**code + data** + text + history + software + workflow]
 
 &lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
 
 ]
+
+---
+
+.center[
+
+# Todo list
+
+]
+
+.pull-left[
+
+## Problems
+
+1. copy&amp;paste mistakes
+2. inconsistent versions of code or data
+3. missing or incompatible software
+4. complicated or ambiguous procedure for reproduction
+
+]
+
+.pull-right[
+
+## Solutions
+
+1. RMarkdown
+2. Git
+3. Docker
+4. Make
+
+]
+---
+
+## Software used:
+
+* R
+
+## Services used:
+
+* Posit Cloud
+
+## You are here:
+
+Your computer → Posit Cloud → R
+
+---
+class: inverse, center, middle
+
+.left[Level 2:]
+
+# Open Science: Current practice
+
+---
+class: inverse, center, middle
+
+.left[Tool to learn:]
+
+# RMarkdown
 
 ---
 class: middle
@@ -361,6 +586,98 @@ print("Hi! Python here, do you miss R already?")
 ````
 
 ---
+class: middle, center
+
+.left[Congratulations, you have completed:]
+
+# Open Science: Current practice
+
+---
+background-color: #F0F8F8
+
+.center[
+
+&lt;img src="https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg" width="90%" /&gt;
+
+]
+
+---
+class: middle
+
+.center[
+
+.large[**code + data + text** + history + software + workflow]
+
+&lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
+
+]
+
+---
+
+.center[
+
+# Todo list
+
+]
+
+.pull-left[
+
+## Problems
+
+1. ~~copy&amp;paste mistakes~~
+2. inconsistent versions of code or data
+3. missing or incompatible software
+4. complicated or ambiguous procedure for reproduction
+
+
+]
+
+.pull-right[
+
+## Solutions
+
+1. **RMarkdown**
+2. Git
+3. Docker
+4. Make
+
+
+]
+
+---
+
+## Software used:
+
+* R, RMarkdown
+
+## Services used:
+
+* Posit Cloud
+
+## You are here:
+
+Your computer → Posit Cloud → RMarkdown → R
+
+---
+class: center, middle
+
+# Break?
+
+---
+class: inverse, center, middle
+
+.left[Level 3:]
+
+# Open science: best practice
+
+---
+class: inverse, center, middle
+
+.left[Tool to learn:]
+
+# Git/GitHub
+
+---
 class: middle
 
 .center[
@@ -370,6 +687,27 @@ class: middle
 &lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
 
 ]
+
+---
+class: center
+
+## A wholly inadequate explantation of version control
+
+--
+
+### Version 1 → Version 2 → Version 3 → Current
+
+--
+
+### +
+
+### Time travel
+
+--
+
+### +
+
+### Change detection
 
 ---
 
@@ -387,6 +725,10 @@ usethis::use_git_config(
   init.defaultBranch = "main") # &lt;-- not necessary but kinder than 'master'
 ```
 
+*Done once per computing environment.*
+
+---
+
 ## Activate Git
 
 .todo[Run:]
@@ -395,6 +737,23 @@ usethis::use_git_config(
 ```r
 usethis::use_git()
 ```
+
+*Done once per project.*
+
+---
+class: center
+
+## Current status
+
+### Version 1 → Current
+
+### +
+
+### nowhere to time travel
+
+### +
+
+### no changes
 
 ---
 
@@ -419,7 +778,21 @@ Lets add some changes:
 .small[[Hint: Swapping the variable `E1y_all` in `R/prepare_inflation.R` should to the trick.]]
 
 ---
+class: center
 
+## Current status
+
+### Version 1 → Current
+
+###+
+
+### time travel to undo changes
+
+###+
+
+### changes detected
+
+---
 ## Record history
 
 Git commits are like checkpoints in a computer game.
@@ -436,6 +809,42 @@ Git pane → Click checkbox of changed files → Commit → Message → Commit
 .optional[Can Git help when you loose your computer / access to RStudio Cloud?]
 
 ---
+class: center
+
+## Current status
+
+### Version 1 → Version 2 → Current
+
+### +
+
+### time travel to version 1/2
+
+### +
+
+### nothing changed compared to version 2 (but vs. version 1)
+
+---
+class: center
+
+# Current status
+
+.pull-left[
+
+## Local (Posit Cloud)
+
+### Version 1 → Version 2 → Current
+
+]
+
+.pull-right[
+
+## Remote (GitHub)
+
+`nothing`
+
+]
+
+---
 
 ## Introduce yourself to GitHub
 
@@ -443,7 +852,7 @@ Git pane → Click checkbox of changed files → Commit → Message → Commit
 
 
 ```r
-usethis::create_github_token(description = "Token for Repro Workshop 2022 Marbach")
+usethis::create_github_token(description = "Token for Repro Workshop 2023 LMU Open Science Center")
 ```
 
 .todo[Activate scope `write:packages`.]
@@ -451,6 +860,8 @@ usethis::create_github_token(description = "Token for Repro Workshop 2022 Marbac
 .todo[Modify expiration. Today is enough.]
 
 .todo[Copy token.]
+
+*Done once per computing environment.*
 
 ---
 
@@ -471,6 +882,32 @@ gitcreds::gitcreds_set() # &lt;-- Token must *not* go into brackets, paste when 
 ```r
 usethis::gh_token_help()
 ```
+
+*Done once once per computing environment.*
+
+---
+class: center
+
+# Current status
+
+.pull-left[
+
+## Local (Posit Cloud)
+
+### Version 1 → Version 2 → Current
+
+]
+
+.pull-right[
+
+## Remote (GitHub)
+
+### `nothing`
+
+]
+
+We only have authenticated ourselves, nothing has left Posit Cloud.
+  
 ---
 
 ## Note
@@ -508,17 +945,120 @@ usethis::use_github(private = TRUE)
 .optional[Up for a challenge? Try `usethis::use_readme_rmd()`]
 
 ---
+class: center
+
+# Current status
+
+.pull-left[
+
+## Local (Posit Cloud)
+
+### Version 1 → Version 2 → Current
+
+]
+
+.pull-right[
+
+## Remote (GitHub)
+
+### Version 1 → Version 2 → Current
+
+]
+
+---
+class: middle, center
+
+.left[Congratulations, you have completed:]
+
+# Open Science: best practice
+
+---
+background-color: #F0F8F8
+
+.center[
+
+&lt;img src="https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg" width="90%" /&gt;
+
+]
+
+---
 class: middle
 
 .center[
 
-.large[code + data + text + history + **software** + workflow]
+.large[**code + data + text + history** + software + workflow]
 
 &lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
 
 ]
 
 ---
+
+.center[
+
+# Todo list
+
+]
+
+.pull-left[
+
+## Problems
+
+1. ~~copy&amp;paste mistakes~~
+2. ~~inconsistent versions of code or data~~
+3. missing or incompatible software
+4. complicated or ambiguous procedure for reproduction
+
+
+]
+
+.pull-right[
+
+## Solutions
+
+1. **RMarkdown**
+2. **Git**
+3. Docker
+4. Make
+
+
+]
+
+---
+
+## Software used:
+
+* R, RMarkdown, Git
+
+## Services used:
+
+* Posit Cloud, GitHub
+
+## You are here:
+
+Your computer → Posit Cloud → GitHub
+
+---
+class: inverse, center, middle
+
+.left[Level 4:]
+
+# Open science: longterm perspektive
+
+---
+class: inverse, center, middle
+
+.left[Tool to learn:]
+
+# Docker
+
+---
+# What is Docker?
+
+No slide here. TBD. Sorry!
+
+---
+
 ## A note on workflow automation
 
 This workshop uses a lot of automation to automate reproducibility, e.g., to configure software, fill templates, interact with Git/GitHub etc.
@@ -566,6 +1106,98 @@ GitHub action (GHA) is a cloud service that runs software when certain events tr
 ***
 
 .optional[Take a look at `.github/workflows/push-container.yml`. When is the action triggered?]
+
+---
+class: middle, center
+
+.left[Congratulations, you have completed:]
+
+# Open science: longterm perspektive
+
+---
+background-color: #F0F8F8
+
+.center[
+
+&lt;img src="https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg" width="90%" /&gt;
+
+]
+
+---
+class: middle
+
+.center[
+
+.large[**code + data + text + history + software** + workflow]
+
+&lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
+
+]
+
+---
+
+.center[
+
+# Todo list
+
+]
+
+.pull-left[
+
+## Problems
+
+1. ~~copy&amp;paste mistakes~~
+2. ~~inconsistent versions of code or data~~
+3. ~~missing or incompatible software~~
+4. complicated or ambiguous procedure for reproduction
+
+
+]
+
+.pull-right[
+
+## Solutions
+
+1. **RMarkdown**
+2. **Git**
+3. **Docker**
+4. Make
+
+
+]
+
+---
+
+## Software used:
+
+* R, RMarkdown, Git, Docker
+
+## Services used:
+
+* Posit Cloud, GitHub, GitHub Package Registry
+
+## You are here:
+
+Your computer → Posit Cloud → GitHub → Dockerimage
+
+---
+class: center, middle
+
+# Break?
+
+---
+class: inverse, center, middle
+
+.left[Level 5:]
+
+# Reproducibility: ultimate
+
+---
+class: inverse, center, middle
+
+.left[Tool to learn:]
+
+# Make
 
 ---
 class: middle
@@ -685,7 +1317,7 @@ include .repro/Makefile_publish
 
 .todo[Run `repro::use_gha_publish()`]
 
-.todo[Commit and push.]
+.todo[~~Commit and push~~.] ← Has Aaron removed the bug?
 
 ***
 
@@ -695,6 +1327,87 @@ include .repro/Makefile_publish
 class: middle, center
 
 &lt;img src="https://publicdomainvectors.org/download.php?file=johnny_automatic_hourglass.svg" alt="" width="20%" style="filter: invert(1);"&gt;
+
+---
+class: middle, center
+
+.left[Congratulations, you have completed:]
+
+# Reproducibility: ultimate†
+
+--
+
+†To present this accomplishment to the world, one further step is needed: publishing.
+
+---
+background-color: #F0F8F8
+
+.center[
+
+&lt;img src="https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg" width="90%" /&gt;
+
+]
+
+---
+class: middle
+
+.center[
+
+.large[**code + data + text + history + software + workflow**]
+
+&lt;img src="https://publicdomainvectors.org/download.php?file=CARTON01.svg" width="30%" /&gt;
+
+]
+
+---
+
+.center[
+
+# Todo list
+
+]
+
+.pull-left[
+
+## Problems
+
+1. ~~copy&amp;paste mistakes~~
+2. ~~inconsistent versions of code or data~~
+3. ~~missing or incompatible software~~
+4. ~~complicated or ambiguous procedure for reproduction~~
+
+
+]
+
+.pull-right[
+
+## Solutions
+
+1. **RMarkdown**
+2. **Git**
+3. **Docker**
+4. **Make**
+
+
+]
+
+---
+
+## Software used:
+
+* R, RMarkdown, Git, Docker, Make
+
+## Services used:
+
+* Posit Cloud, GitHub, GitHub Package Registry, GitHub Actions
+
+## You are here:
+
+* Posit Cloud → GitHub → GitHub Actions → GitHub Package Registry → Dockerimage → Make → Rscript → R Markdown 
+---
+class: inverse, center, middle
+
+# Last Step: Publish
 
 ---
 
@@ -726,6 +1439,38 @@ class: center, middle
 class: inverse, center, middle
 
 # Questions?
+
+.tiny[I'll tell you how to continue the journey in a minute.]
+
+---
+class: center, middle
+
+# How to procede
+
+---
+
+## Recommended:
+
+1. RMarkdown: Skim [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/), then try to write a manuscript/homework/report
+2. Git/GitHub: Find a friend, visit a workshop, then collaborate on a mini project
+
+---
+
+## Advanced:
+
+3. Read: Peikert, A., van Lissa, C. J., &amp; Brandmaier, A. M. (2021). Reproducible Research in R: A Tutorial on How to Do the Same Thing More Than Once. *Psych*, *3*(4), 836–867. https://doi.org/10.3390/psych3040053
+4. Adept the project we created today, so that it becomes one of your projects (with your data, your analyses).
+
+---
+
+## Digging really deep:
+
+3. Make: Read [Minimal Make](https://kbroman.org/minimal_make/), than simplify a complicated pipeline
+4. Docker: get Docker installed, not fun
+5. Latex: really not fun
+--
+
+6. Enjoy perfect reproducibility!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

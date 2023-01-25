@@ -300,6 +300,9 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 .small {
   font-size: 80%;
 }
+.tiny {
+  font-size: 50%;
+}
 .full {
   padding: 0px;
   margin: 0px;
