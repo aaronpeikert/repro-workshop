@@ -49,7 +49,7 @@ repro::automate_load_packages()
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 primary_color <- "#024959"
-secondary_color <- "#F28705"
+secondary_color <- "#F2D605"
 style_duo(
   primary_color = primary_color,
   secondary_color = secondary_color,
