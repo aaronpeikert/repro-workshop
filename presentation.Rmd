@@ -362,11 +362,11 @@ An incomplete list of computational infrastructures:
 
 ---
 
-# RStudio Cloud
+# Posit / RStudio Cloud
 
 Access the project:
 
-https://rstudio.cloud/content/4467593
+https://posit.cloud/content/5293683
 ---
 
 # Where are you?
@@ -853,7 +853,7 @@ Git pane → Click checkbox of changed files → Commit → Message → Commit
 
 .optional[What can you do when you delete a file by accident?]
 
-.optional[Can Git help when you loose your computer / access to RStudio Cloud?]
+.optional[Can Git help when you loose your computer / access to Posit Cloud?]
 
 ---
 class: center
@@ -956,7 +956,7 @@ We only have authenticated ourselves, nothing has left Posit Cloud.
 
 ## Note
 
-GitHub might find it funky that 20 people push the same code from the same IP range (RStudio Cloud).
+GitHub might find it funky that 20 people push the same code from the same IP range (Posit Cloud).
 
 If pushing code fails or asks for the password, we have triggered spam detection. In this case, we will have to repeat the GitHub handshake.
 
