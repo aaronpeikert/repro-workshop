@@ -15,6 +15,7 @@ link-citations: yes
 github-repo: aaronpeikert/repro-workshop
 ---
 
-# Self Paced
+# Introduction
 
 We (Aaron Peikert and Hannes Diemerling) are currently working on a *self paced* version of this workshop.
+This is a work in progress!
