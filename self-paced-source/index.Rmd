@@ -1,5 +1,6 @@
 --- 
-title: "A Minimal Book Example"
+title: "Reproducible Research"
+subtitle: "How to do the same thing more than once"
 author: "John Doe"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -11,7 +12,7 @@ description: |
   The HTML output format for this example is bookdown::gitbook,
   set in the _output.yml file.
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: aaronpeikert/repro-workshop
 ---
 
 # Self Paced
