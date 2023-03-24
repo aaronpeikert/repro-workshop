@@ -7,4 +7,4 @@ bookdown::gitbook:
         <li><a href="./">Reproducible Research</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/aaronpeikert/repro-workshop/edit/main/%s
+    edit: https://github.com/aaronpeikert/repro-workshop/edit/main/self-paced-source/%s
