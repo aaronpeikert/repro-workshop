@@ -1,0 +1,57 @@
+# Getting Started {-}
+
+## What is reproducibility? {-}
+
+TBD
+
+## What problems must we solve? {-}
+
+1. copy&paste mistakes
+2. inconsistent versions of code or data
+3. missing or incompatible software
+4. complicated or ambiguous procedure for reproduction
+
+## What concepts must we know about? {-}
+
+1. Dynamic documents
+2. Version control
+3. Software management
+4. Workflow orchestration
+
+## What software must we know about? {-}
+
+1. RMarkdown
+2. Git
+3. Docker
+4. Make
+
+To all of these implementations there are alternatives e.g., Quarto, Jupyter, Singluarity, virtualenv, SnakeMake, and many more.
+However, we had to decide on one set of tools.
+More important is that you understand for what we use them, than you may replace them with whatever you favor.
+
+## What services will we use? {-}
+
+Normally you work on your local computer.
+However, in workshops this often leads to the issues of missing/outdated/broken software setups.
+Therefore, we suggest to use the prepared software environment we give you in form of Posit Cloud (= RStudio Cloud).
+
+Additionally, we will make heavy use of GitHub (≠ Git) and
+GitHub Actions (∈ GitHub).
+
+## Setup {-}
+
+If you already have an account, than sign in, otherwise, sign up.
+
+```{r, child="../snippets/signin.Rmd"}
+```
+
+```{r, child="../snippets/signin.Rmd"}
+```
+
+### Final Step {-}
+
+Now, you may open the project:
+
+<https://No-link-to-the-project.yet>
+
+And continue with the next chapter on the left.
