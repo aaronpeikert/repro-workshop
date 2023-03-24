@@ -1,9 +1,6 @@
-sign-in
+signup
 github
-rstudio-cloud
-sign-in-1
-github-1
-rstudio-cloud-1
+rstudio
 dynamic-documents
 version-control
 software-management
