@@ -42,11 +42,19 @@ GitHub Actions (∈ GitHub).
 
 If you already have an account, than sign in, otherwise, sign up.
 
-```{r, child="../snippets/signin.Rmd"}
-```
+### Signup
 
-```{r, child="../snippets/signin.Rmd"}
-```
+#### GitHub
+
+Skip if you already have a GitHub account.
+
+https://github.com/signup
+
+#### RStudio
+
+Use Option: “Sign Up with GitHub”
+
+https://login.posit.cloud/register
 
 ### Final Step {-}
 
@@ -54,4 +62,4 @@ Now, you may open the project:
 
 <https://No-link-to-the-project.yet>
 
-And continue with the next chapter on the left.
+And continue with the [next chapter](./dynamic-documents.html) on the left.
