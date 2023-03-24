@@ -1,0 +1,5 @@
+delete_merged_file: true
+output_dir: "../self-paced"
+language:
+  ui:
+    chapter_name: "Chapter "

@@ -7,10 +7,13 @@ all: presentation.html README.md
 data/raw/inflation.rds: R/download_inflation.R
 	Rscript -e "source('$<')"
 
-publish/: presentation.html index.html xaringan-themer.css presentation_files/ images/
+publish/: presentation.html index.html xaringan-themer.css presentation_files/ images/ self-paced
 
 index.html: presentation.html
 	cp $< $@
+
+self-paced/: self-paced-source/
+	Rscript -e "bookdown::render_book('self-paced-source')"
 
 include .repro/Makefile_publish
 

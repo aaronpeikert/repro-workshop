@@ -5,6 +5,7 @@ ARG BUILD_DATE=2022-09-10
 WORKDIR /home/rstudio
 RUN apt-get update -y && apt-get install -y rsync
 RUN install2.r --error --skipinstalled \ 
+  bookdown \ 
   here \ 
   lubridate \ 
   patchwork \ 

@@ -1,4 +1,5 @@
 RUN install2.r --error --skipinstalled \ 
+  bookdown \ 
   here \ 
   lubridate \ 
   patchwork \ 

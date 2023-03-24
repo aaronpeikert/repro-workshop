@@ -360,6 +360,11 @@ An incomplete list of computational infrastructures:
 
 ]
 
+![Red Circle](data:image/svg+xml;base64,PHN2ZyBpZD0iUmVkJUNpcmNsZSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMzIgMzIiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIHZlcnNpb249IjEuMSIgd2lkdGg9IjMycHgiPjx0aXRsZT5SZWQgQ2lyY2xlPC90aXRsZT48cGF0aCBkPSJNMTkuMTUgMTMuMzVsLS4yNS4yNS0uMjUtLjI1LS4yNSAxLjE1IDEuMTVMMTAuMzQgMTYuNzljLjA1LjA1LjE1LjA1LjI1LjA1bC0uMjUtLjI1LS4yNS0uMjUtMS4xNS0xLjE1QzE2LjUxIDE0Ljg4IDEyLjUyIDEzLjM1IDExLjU0IDEzLjM1eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIxLjAwMDAwMCAtMjAuOTk5OTk5KSI+PC9wYXRoPjwvc3ZnPg==)
+
+
+
+
 ---
 
 # Posit / RStudio Cloud
