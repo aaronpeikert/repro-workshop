@@ -15,8 +15,9 @@ link-citations: yes
 github-repo: aaronpeikert/repro-workshop
 ---
 
-```{r}
+```{r setup, include=FALSE}
 links<-yaml::read_yaml("links.yml")
+source("functions.R")
 ```
 
 # About {-}
