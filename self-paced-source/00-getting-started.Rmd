@@ -49,11 +49,11 @@ There are two types of infoboxes in this course. The first type is the Additiona
 The second type are ReproDude infoboxes. You will find these at least once in each chapter. If you have a question or get stuck, click on the relevant box in the chapter and you will be redirected to ReproDude, already informed about the corresponding topic. Ask what you want to know and have a conversation. To use this, you will need a ChatGPT account, a link to which can be found below.  
 
 ```{r results='asis', echo = FALSE}
-addinfo1 <- generate_additionalinfo("https://en.wikipedia.org/wiki/Information",
+addinfo1 <- generate_additionalinfo(links$addinfos$start,
                                     "Additional info",
                                     "I am an additional infobox that provides you with additional material to educate you more deeply. Click on my sister boxes for more information.")
 
-reprodude1 <- generate_reprodudes("https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff",
+reprodude1 <- generate_reprodudes(links$reprodudes$one,
                                   "ReproDude",
                                   "I am ReproDude, so if you have a question or are stuck on a topic, click on the appropriate ReproDude box and ask there. You will need an account with ChatGPT to use me.")
 cat(addinfo1)
@@ -122,8 +122,12 @@ Use Option: “Log in”
 
 ### Final Step {-}
 
-Now, you may open the project:
+<span style="color:green">Now, please open the project:</span>
 
 [Project](`r links$projekt$start`) 
 
-And continue with the [next chapter](./dynamic-documents.html).
+If you have already logged into Posti/RStudio Cloud during the previous section, you should now see a copy of the project in front of you. 
+<span style="color:green">Click now on "Save a Permanent Copy" in the top right-hand corner of the task bar.</span>
+This ensures that you have access to the project even if you log off.
+
+Congratulations! You are now ready to start the workshop, please go to the next chapter. [next chapter](./dynamic-documents.html).

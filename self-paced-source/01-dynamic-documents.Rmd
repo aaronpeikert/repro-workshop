@@ -1,1 +1,69 @@
 # Dynamic Documents {-}
+
+```{r}
+reprodude2 <- generate_reprodudes(links$reprodudes$two,
+                                  "ReproDude",
+                                  "Hey, I'm your ReproDude for this chapter. If you have any questions click on me and we can talk!")
+
+cat(reprodude2)
+
+```
+<div style="clear: both;"></div>
+
+## What do I see before me? {-}
+First of all:
+
+<span style="color:green"> Look around, become comfortable. Then, locate the files pane.</span>
+
+Do you feel comfortable yet? Yes? Then let's move on. 
+If not, take as much time as you need and move on as soon as you want, I have no more Appointments today.
+
+## Best practices? {-}
+
+To give you a sense of how reproducibility can be increased, i will show you some best practices:
+
+<span style="color:green"> Open the R folder.</span>
+
+You should now see three different R files.
+
+<span style="color:green"> Click on the file </span><span style="color:orange">R/prepare_games.R </span>
+
+Now try to understand the code. 
+Which of these do you already do? 
+What could you improve?
+You want to see more? 
+Because it's you (same thing but more complicated):
+
+<span style="color:green"> Take a look at </span><span style="color:orange">R/prepare_inflation </span>
+
+### A summary? {-}
+
+To summarize this in an incomplete list:
+
+1. List requirements early
+2. Use relative locations
+3. Document relevant information
+
+Let's talk about the last point. 
+Does that mean that every piece of documentation has to be a mile long?
+
+No.... not necessarily.
+
+But how do I decide what should or should not be included in my documentation? 
+Let's make another list:
+
+1. What is *standard* does not have to be documented.
+2. What is *easy* needs only little documentation.
+3. What is *consistent* only has to be documented once.
+
+Great, now you've already finished the necessary! 
+You want to go straight on? 
+Let's take a look at the extended goal first.
+
+![Overview of the extended goal.](Overview.png)
+
+
+
+
+
+
