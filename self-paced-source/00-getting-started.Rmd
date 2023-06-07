@@ -2,7 +2,7 @@
 
 ## What is reproducibility? {-}
 
-TBD
+In the context of research, reproducibility refers to the ability to duplicate results of a study using the same data and methods. It ensures scientific integrity, as it allows others to verify findings and build upon existing work. Reproducibility can be achieved by documenting every step of the research process carefully, using version control systems for tracking changes, and employing tools for managing software environments and Workflow orchestration. Reproducibility is vital in scientific research, promoting transparency, fostering trust, and facilitating continual progress. Moreover, without reproducibility, research may lose its credibility and impact, as we cannot be certain that the results are reliable and accurate. Solving the problems that hinder reproducibility is crucial, which leads us to the problems we will try to understand today.
 
 ## What problems must we solve? {-}
 
@@ -38,7 +38,39 @@ Therefore, we suggest to use the prepared software environment we give you in fo
 Additionally, we will make heavy use of GitHub (≠ Git) and
 GitHub Actions (∈ GitHub).
 
-## Setup {-}
+## What does self-paced mean? {-}
+
+Self-paced learning is an educational approach that allows you to control the speed and the intensity of your learning. This means you can learn at your own rhythm, pausing, reviewing, and progressing when it suits you best. You are encouraged to actively engage with the material, explore the content, and try to solve problems on your own before seeking help. In this course, there's no rigid schedule to follow. You're free to come and go, and move through the content as you please. Remember, while it's self-guided, you're not alone - use the infoboxes, explanation follows in the next paragraph, and course leaders are available to assist if you encounter difficulties you can't resolve on your own. It is a flexible and personal way of learning designed to support you on your learning journey.
+
+## What are infoboxes? {-}
+
+There are two types of infoboxes in this course. The first type is the Additional info box. These provide information to delve deeper into a topic and can be found throughout the course. Clicking on one of these boxes will take you to more in-depth material.
+
+The second type are ReproDude infoboxes. You will find these at least once in each chapter. If you have a question or get stuck, click on the relevant box in the chapter and you will be redirected to ReproDude, already informed about the corresponding topic. Ask what you want to know and have a conversation. To use this, you will need a ChatGPT account, a link to which can be found below.  
+  
+```{=html}
+<div class="infobox" onclick="window.open('https://en.wikipedia.org/wiki/Information', '_blank')">
+  <h2 class="infobox-title">Additional info</h2>
+  <p class="infobox-content">I am an additional infobox that provides you with additional material to educate you more deeply. Click on my sister boxes for more information.</p>
+</div>
+<div class="infoboxgpt" onclick="window.open('https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff', '_blank')">
+  <h2 class="infobox-titlegpt">ReproDude</h2>
+  <p class="infobox-contentgpt">I am ReproDude, so if you have a question or are stuck on a topic, click on the appropriate ReproDude box and ask there. You will need an account with ChatGPT to use me. </p>
+</div>
+<div style="clear: both;"></div>
+```  
+
+## What else should i know before I start? {-}
+
+In this workshop we will go through many things, many of them complicated. The goal today is to understand what is possible and not to achieve a complete deep technical understanding. So be kind to others and yourself and try not to get frustrated, ReproDude and the workshop leaders are there to help you if necessary.  
+
+Just as you set your own pace in this course, you can also decide which tasks you do in this course. There are two types of tasks:
+
+<span style="color:green">1. The tasks marked in green are important and the workshop will not work if you skip any of these points or do them in the wrong order.</span>  
+
+<span style="color:blue">2. The tasks marked in blue are completely optional and are meant for trying out and experimenting. You can skip these tasks as you like.</span>
+
+## Setup! {-}
 
 If you already have an account, than sign in, otherwise, sign up.
 
@@ -64,10 +96,26 @@ If you already have a Posit/RStudio account:
 
 <https://login.posit.cloud/login>
 
+### ChatGPT {-}
+
+If you have not used ChatGPT before:
+
+Use Option: “Sign up”
+
+Be aware, that you will need to enter your Phone number for this step.
+
+<https://chat.openai.com/auth/login>
+
+If you already have a ChatGPT account:
+
+Use Option: “Log in”
+
+<https://chat.openai.com/auth/login>
+
 ### Final Step {-}
 
 Now, you may open the project:
 
-<https://No-link-to-the-project.yet>
+<https://No-link-to-the-project.yet>  
 
-And continue with the [next chapter](./dynamic-documents.html) on the left.
+And continue with the [next chapter](./dynamic-documents.html).
