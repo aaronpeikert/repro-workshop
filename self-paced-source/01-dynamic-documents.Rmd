@@ -215,7 +215,7 @@ We have `r nrow(mtcars)` cars.
 
 <!-- Bad solution, somethin better? -->
 ````markdown
-```{python python.reticulate=FALSE}
+```
 print("Hi! Python here, do you miss R already?")
 ```
 ````
