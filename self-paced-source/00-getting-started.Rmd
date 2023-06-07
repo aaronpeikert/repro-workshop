@@ -78,11 +78,11 @@ If you already have an account, than sign in, otherwise, sign up.
 
 If you have no GitHub account:
 
-<https://github.com/signup>
+<links$logsignins$githubsign>
 
 If you already have a GitHub account:
 
-<https://github.com/login>
+<links$logsignins$githublog>
 
 ### Posti/RStudio Cloud {-}
 
@@ -90,11 +90,11 @@ If you have not used Posit/RStudio Cloud before:
 
 Use Option: “Sign Up with GitHub”
 
-<https://login.posit.cloud/register>
+<links$logsignins$postiin>
 
 If you already have a Posit/RStudio account:
 
-<https://login.posit.cloud/login>
+<links$logsignins$postilog>
 
 ### ChatGPT {-}
 
@@ -104,18 +104,18 @@ Use Option: “Sign up”
 
 Be aware, that you will need to enter your Phone number for this step.
 
-<https://chat.openai.com/auth/login>
+<links$logsignins$chatgptin>
 
 If you already have a ChatGPT account:
 
 Use Option: “Log in”
 
-<https://chat.openai.com/auth/login>
+<links$logsignins$chatgptlog>
 
 ### Final Step {-}
 
 Now, you may open the project:
 
-<https://No-link-to-the-project.yet>  
+<links$projekt$start>  
 
 And continue with the [next chapter](./dynamic-documents.html).
