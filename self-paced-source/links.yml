@@ -1,3 +1,5 @@
+general:
+  feedback: "https://No-feedback-site.yet"
 reprodudes:
   one: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
   two: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
@@ -5,12 +7,12 @@ reprodudes:
   four: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
   five: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
   six: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
-logsignins:
+logsign:
   githubsign: "https://github.com/signup"
   githublog: "https://github.com/login"
-  postiin: "https://login.posit.cloud/register"
+  postisign: "https://login.posit.cloud/register"
   postilog: "https://login.posit.cloud/register"
-  chatgptin: "https://chat.openai.com/auth/login"
+  chatgptsign: "https://chat.openai.com/auth/login"
   chatgptlog: "https://chat.openai.com/auth/login"
 projekt:
   start: "https://No-link-to-the-project.yet"
