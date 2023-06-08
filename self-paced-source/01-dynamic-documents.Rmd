@@ -179,7 +179,7 @@ This is **bold**, while this is *italic*.
 But there is another component in the document. 
 This part are code blocks like:
 
-```{r eval=FALSE}
+```
 inflation %>% 
   group_by(date) %>% 
   summarise(across(c(perception, expectation),

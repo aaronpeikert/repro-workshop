@@ -8,3 +8,104 @@ reprodude2 <- generate_reprodudes(links$reprodudes$three,
 cat(reprodude2)
 
 ```
+
+## What now? {-}
+
+Let's get on with it then! 
+What's next?
+
+let's take another look at our components, which ones are we examining now?
+
+code + data + text + <span style="color:orange">history</span> + software + workflow
+
+History? Maybe a look at our problem and software solution list will help to shed some light on the matter.
+
+Problem list:
+
+1. ~~copy&paste mistakes~~
+2. <span style="color:orange">inconsistent versions of code or data</span>
+3. missing or incompatible software
+4. complicated or ambiguous procedure for reproduction
+
+Software solution list:
+
+1. RMarkdown
+2. <span style="color:orange">Git</span>
+3. Docker
+4. Make
+
+So that means we use the Git (and Github) to avoid the problem of inconsistent versions of code and data?
+
+That sounds good, let's get started right away!
+
+## Git {-}
+
+```{r, echo=FALSE, fig.cap="My SVG Picture"}
+knitr::include_graphics("Git Diagram.svg")
+```
+
+Git is an amazing tool that helps you keep track of changes in your project, just like having a magical time machine for your work. 
+It's like having a superpower for managing files and projects, especially when you're coding, although it can be used for any type of project that involves files.
+
+Imagine you have a project, and it's like a journey represented by a single line called the 'main' branch.
+Each point along this line is a different version of your project, capturing the moments when you've made changes and saved them (committed them). 
+It's like preserving snapshots of your progress, allowing you to travel back in time and see how your project evolved.
+
+### Hands on {-}
+
+Now that we've cleared that up, let's get back to the code.
+
+<span style="color:orange">Modify this code and run it:</span>
+
+```
+# use a function without loading the package
+# package::function
+usethis::use_git_config(
+  user.name = "Jane Doe", # <-- change to your name
+  user.email = "jane@example.org", # <-- and your email
+  init.defaultBranch = "main") # <-- not necessary but kinder than 'master'
+```
+You will need to do this *once for each computing environment*.
+
+Let us now activate Git.
+
+```
+# use a function without loading the package
+# package::function
+usethis::use_git_config(
+  user.name = "Jane Doe",
+  user.email = "jane@example.org",
+  init.defaultBranch = "main") # <-- not necessary but kinder than 'master'
+```
+You will need to do this *once per project*.
+
+You have now built the git, our time machine, for your project. 
+But we can't travel to another time yet, because we are in the first version and there is no history from Git's point of view.
+
+#### Make history {-}
+
+Let's make history then.
+To do that we need to change something in the document. 
+How about the plot in the code? 
+Remember, we are currently in <span style="color:orange">inflation.rmd</span>.
+
+<span style="color:green">The plot is ~~ugly~~ very functional. Beautify it a bit. Some suggestions:</span>
+
+```
+  theme_minimal() +
+  ylab("subjective inflation in %-points") +
+  labs(color = "") +
+  theme(legend.position = c(.1, .9)) +
+```
+
+<span style="color:blue">Plot the the two or five year expectation.</span>
+
+[Hint: Swapping the variable <span style="color:orange">E1y_all</span> in <span style="color:orange">R/prepare_inflation.R</span> should to the trick.]
+
+
+
+
+
+
+
+
