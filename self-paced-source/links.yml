@@ -7,7 +7,6 @@ reprodudes:
   four: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
   five: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
   six: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
-  git: ""
 addinfos:
   start: "https://en.wikipedia.org/wiki/Information"
   rmarkdown: "https://rmarkdown.rstudio.com/"

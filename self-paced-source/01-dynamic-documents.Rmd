@@ -228,7 +228,7 @@ Congratulations, another section done!
 Before we continue, let's take a quick look together at what we have just done.
 We have now one component more in our toolbox.
 
-<span style="color:orange">code + data</span> + text + history + software + workflow
+<span style="color:orange">code + data + text</span> + history + software + workflow
 
 And with that we solved our first Problem on the list:
 

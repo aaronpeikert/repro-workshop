@@ -40,7 +40,7 @@ That sounds good, let's get started right away!
 
 ## Git {-}
 
-```{r, echo=FALSE, fig.cap="My SVG Picture"}
+```{r, echo=FALSE, fig.cap="Git Overview"}
 knitr::include_graphics("Git Diagram.svg")
 ```
 
@@ -58,12 +58,7 @@ addinfogit <- generate_additionalinfo(links$addinfos$git,
                                     "Git",
                                     "I will lead you to a cheat sheet for git, how likes remembering?")
 
-reprodudegit <- generate_reprodudes(links$reprodudes$git,
-                                  "ReproDude",
-                                  "Hey, I'm your ReproDude just for Git, so ask me Git things.")
-
 cat(addinfogit)
-cat(reprodudegit)
 ```
 <!-- so that there is no text between the Boxes-->
 <div style="clear: both;"></div>
@@ -94,11 +89,12 @@ usethis::use_git_config(
 ```
 You will need to do this *once per project*.
 
-```{r, echo=FALSE, fig.cap="My SVG Picture"}
+```{r, echo=FALSE, fig.cap="Your current position"}
 knitr::include_graphics("Git1.svg")
 ```
 
-You have now built the git, our time machine, for your project. 
+You have now initialized Git, our time machine, for your project. 
+As you can see in figure two, you are on the position called Current and Git has saved Version 1, which has no changes to your current point.
 But we can't travel to another time yet, because we are in the first version and there is no history from Git's point of view.
 
 #### Make history {-}
@@ -127,10 +123,6 @@ Can we now just jump back and forth between now and the start, like a time machi
 Almost. We need to tell Git beforehand that the current state should become a new point in time. 
 In Git, we cannot travel freely in time, but only between time points we set. 
 
-```{r, echo=FALSE, fig.cap="My SVG Picture"}
-knitr::include_graphics("Git2.svg")
-```
-
 This is exactly the kind of point in time we are setting now through Git commits.
 
 <span style="color:green">Create a commit:</span>
@@ -141,6 +133,124 @@ Git pane → Click checkbox of changed files → Commit → Message → Commit
 
 <span style="color:blue">Can Git help when you loose your computer / access to Posit Cloud?</span>
 
-```{r, echo=FALSE, fig.cap="My SVG Picture"}
-knitr::include_graphics("Git3.svg")
+Now we have performed our first commit! 
+What does our Git history look like now?
+
+```{r, echo=FALSE, fig.cap="Your current position"}
+knitr::include_graphics("Git2.svg")
 ```
+
+I see. 
+So now we have created a second version that is our modified code and saved it as a point in time. 
+And our Current position is identical to version 2 but different from version 1 (we have changed the plot).
+
+But so far everything is only local, if I try to contribute to your code from the other side of the world it won't work, because I don't have direct access to your local git version.
+
+So to provide remote access for you, me, and anyone else you like or at least collaborate with, we use GitHub.
+
+#### GitHub {-}
+
+GitHub is like a virtual space where you can save and share your code with others. 
+It makes working with Git easy and accessible, allowing you to collaborate with teammates, track changes, and keep your code safe in one place online.
+Let us Introduce our-self to GitHub.
+
+<span style="color:green">To get a GitHub pat/token run:</span>
+
+```
+usethis::create_github_token(description = `r texts$general$token`)
+```
+
+<span style="color:green">Activate scope <span style="color:orange">write:packages.</span></span>
+
+<span style="color:green">Modify expiration. Today is enough.</span>
+
+<span style="color:green">Copy token.</span>
+
+You will need to do this *once for each computing environment*.
+
+
+Now we need to store this Token, it is like our Passport for entering the GitHub Country.
+
+<span style="color:green">Set token:</span>
+
+```
+gitcreds::gitcreds_set() # <-- Token must *not* go into brackets, paste when asked
+```
+
+<span style="color:blue">Verify that everything is in order:</span>
+
+```
+usethis::gh_token_help()
+```
+You will need to do this *once for each computing environment*.
+
+And what have we done now? 
+
+```{r, echo=FALSE, fig.cap="GitHub status"}
+knitr::include_graphics("GitGithub0.svg")
+```
+
+So far we have only authenticated, so we are allowed to enter GitHub land, but we haven't sent anything there yet.
+
+[Hint: If pushing code fails or asks for the password, we have triggered spam detection. In this case, we will have to repeat the GitHub handshake.]
+
+Now let's use GitHub!
+
+<span style="color:green">To activate GitHub and upload your files to the public web:</span>
+
+```
+usethis::use_github()
+```
+
+<span style="color:blue">Private alternative/ upload to non-public web (don't use now):</span>
+
+```
+usethis::use_github(private = TRUE)
+```
+
+<span style="color:blue">Can you simply use code from others that you find on GitHub?</span>
+
+<span style="color:blue">Try <span style="color:orange">usethis::use_mit_license()</span></span>
+
+<span style="color:blue">Up for a challenge? Try <span style="color:orange">usethis::use_readme_rmd()</span></span>
+
+That's it! 
+And what does our stand look like now?
+
+```{r, echo=FALSE, fig.cap="GitHub status"}
+knitr::include_graphics("GitGithub1.svg")
+```
+
+As seen in figure 5, we now have an identical copy of our Git history on GitHub as well!
+
+## And now? {-}
+
+Congratulations, another section done!
+
+Before we continue, let's take a quick look together at what we have just done.
+We have now one component more in our toolbox.
+
+<span style="color:orange">code + data + text + history</span> + software + workflow
+
+And with that we solved our second Problem on the list:
+
+1. ~~copy&paste mistakes~~
+2. ~~inconsistent versions of code or data~~
+3. missing or incompatible software
+4. complicated or ambiguous procedure for reproduction
+
+And which software did we just use for this:
+
+1. RMarkdown
+2. <span style="color:orange">Git</span>
+3. Docker
+4. Make
+
+### Final Step {-}
+
+Now please go through what we have just done and all the software we use. 
+
+You are currently at your computer using Posit Cloud which hosts an R environment where you used Git to create a traceable History with Git and saved it online with GitHub.
+
+But that was it for this section. 
+Shall we both take a short break or do you want to continue straight away?

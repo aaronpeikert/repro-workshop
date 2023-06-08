@@ -17,6 +17,7 @@ github-repo: aaronpeikert/repro-workshop
 
 ```{r setup, include=FALSE}
 links<-yaml::read_yaml("links.yml")
+texts<-yaml::read_yaml("text.yml")
 source("functions.R")
 ```
 
@@ -24,3 +25,4 @@ source("functions.R")
 
 We (Aaron Peikert and Hannes Diemerling) are currently working on a *self paced* version of this workshop.
 This is a work in progress!
+
