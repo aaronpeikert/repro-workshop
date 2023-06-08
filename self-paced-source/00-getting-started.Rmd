@@ -2,7 +2,7 @@
 
 ## What is reproducibility? {-}
 
-In the context of research, reproducibility refers to the ability to duplicate results of a study using the same data and methods. It ensures scientific integrity, as it allows others to verify findings and build upon existing work. Reproducibility can be achieved by documenting every step of the research process carefully, using version control systems for tracking changes, and employing tools for managing software environments and Workflow orchestration. Reproducibility is vital in scientific research, promoting transparency, fostering trust, and facilitating continual progress. Moreover, without reproducibility, research may lose its credibility and impact, as we cannot be certain that the results are reliable and accurate. Solving the problems that hinder reproducibility is crucial, which leads us to the problems we will try to understand today.
+In the context of scientific research, reproducibility refers to the ability of an independent researcher to duplicate the results of a study using the same methods, procedures, and data. It's about ensuring that every step of the research process, from data collection to analysis, is transparent, well-documented, and can be repeated with the same outcome. This is crucial for validating scientific findings and building trust in research outcomes. Tools like the 'repro' package in R, as discussed in the text, help automate this process, making it easier for researchers to create reproducible workflows. In essence, reproducibility is the cornerstone of robust, reliable, and high-quality scientific research.
 
 ## What problems must we solve? {-}
 
@@ -109,8 +109,6 @@ If you already have a Posit/RStudio account:
 If you have not used ChatGPT before:
 
 Use Option: “Sign up”
-
-Be aware, that you will need to enter your Phone number for this step.
 
 [ChatGPT Sign up](`r links$logsign$chatgptsign`)
 

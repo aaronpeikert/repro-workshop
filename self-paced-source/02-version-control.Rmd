@@ -1,1 +1,10 @@
 # Version Control {-}
+
+```{r results='asis', echo = FALSE}
+reprodude2 <- generate_reprodudes(links$reprodudes$three,
+                                  "ReproDude",
+                                  "Hey, I'm your ReproDude for this chapter. If you have any questions click on me and we can talk!")
+
+cat(reprodude2)
+
+```
