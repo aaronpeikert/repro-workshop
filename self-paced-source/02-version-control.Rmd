@@ -14,7 +14,7 @@ cat(reprodude2)
 Let's get on with it then! 
 What's next?
 
-let's take another look at our components, which ones are we examining now?
+Let's take another look at our components, which ones are we examining now?
 
 code + data + text + <span style="color:orange">history</span> + software + workflow
 
@@ -38,7 +38,7 @@ So that means we use the Git (and Github) to avoid the problem of inconsistent v
 
 That sounds good, let's get started right away!
 
-## Git {-}
+## Git? {-}
 
 ```{r, echo=FALSE, fig.cap="Git Overview"}
 knitr::include_graphics("Git Diagram.svg")
@@ -51,7 +51,7 @@ Imagine you have a project, and it's like a journey represented by a single line
 Each point along this line is a different version of your project, capturing the moments when you've made changes and saved them (committed them). 
 It's like preserving snapshots of your progress, allowing you to travel back in time and see how your project evolved.
 
-### Hands on {-}
+### Hands on! {-}
 
 ```{r results='asis', echo = FALSE}
 addinfogit <- generate_additionalinfo(links$addinfos$git,
@@ -246,7 +246,7 @@ And which software did we just use for this:
 3. Docker
 4. Make
 
-### Final Step {-}
+### Final Step! {-}
 
 Now please go through what we have just done and all the software we use. 
 
