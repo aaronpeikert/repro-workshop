@@ -53,6 +53,21 @@ It's like preserving snapshots of your progress, allowing you to travel back in 
 
 ### Hands on {-}
 
+```{r results='asis', echo = FALSE}
+addinfogit <- generate_additionalinfo(links$addinfos$git,
+                                    "Git",
+                                    "I will lead you to a cheat sheet for git, how likes remembering?")
+
+reprodudegit <- generate_reprodudes(links$reprodudes$git,
+                                  "ReproDude",
+                                  "Hey, I'm your ReproDude just for Git, so ask me Git things.")
+
+cat(addinfogit)
+cat(reprodudegit)
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
+
 Now that we've cleared that up, let's get back to the code.
 
 <span style="color:orange">Modify this code and run it:</span>
@@ -79,6 +94,10 @@ usethis::use_git_config(
 ```
 You will need to do this *once per project*.
 
+```{r, echo=FALSE, fig.cap="My SVG Picture"}
+knitr::include_graphics("Git1.svg")
+```
+
 You have now built the git, our time machine, for your project. 
 But we can't travel to another time yet, because we are in the first version and there is no history from Git's point of view.
 
@@ -102,10 +121,26 @@ Remember, we are currently in <span style="color:orange">inflation.rmd</span>.
 
 [Hint: Swapping the variable <span style="color:orange">E1y_all</span> in <span style="color:orange">R/prepare_inflation.R</span> should to the trick.]
 
+Great, now we have changed something!
+Can we now just jump back and forth between now and the start, like a time machine should be?
 
+Almost. We need to tell Git beforehand that the current state should become a new point in time. 
+In Git, we cannot travel freely in time, but only between time points we set. 
 
+```{r, echo=FALSE, fig.cap="My SVG Picture"}
+knitr::include_graphics("Git2.svg")
+```
 
+This is exactly the kind of point in time we are setting now through Git commits.
 
+<span style="color:green">Create a commit:</span>
+Git pane → Click checkbox of changed files → Commit → Message → Commit
+[Note: The Git pane is usually in the same window as the environment variables.]
 
+<span style="color:blue">What can you do when you delete a file by accident?</span>
 
+<span style="color:blue">Can Git help when you loose your computer / access to Posit Cloud?</span>
 
+```{r, echo=FALSE, fig.cap="My SVG Picture"}
+knitr::include_graphics("Git3.svg")
+```

@@ -98,9 +98,10 @@ That is, the component text has the problem of copy&paste mistakes and we use RM
 ## RMarkdown {-}
 
 ```{r results='asis', echo = FALSE}
-addinfo1 <- generate_additionalinfo(links$addinfos$rmarkdown,
+addinfo2 <- generate_additionalinfo(links$addinfos$rmarkdown,
                                     "RMarkdown",
                                     "I will give you more information about RMarkdown by taking you to their documentation.")
+cat(addinfo2)
 ```
 
 Now let's go back to your environment.
