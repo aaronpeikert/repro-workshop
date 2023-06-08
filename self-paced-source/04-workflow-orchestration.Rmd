@@ -1,1 +1,65 @@
 # Workflow Orchestration {-}
+
+```{r results='asis', echo = FALSE}
+reprodude2 <- generate_reprodudes(links$reprodudes$five,
+                                  "ReproDude",
+                                  "Hey, I'm your ReproDude for this chapter. If you have any questions click on me and we can talk!")
+
+cat(reprodude2)
+
+```
+
+
+## What now? {-}
+
+We have already reached the last chapter of content!
+What is it about?
+
+As usual, let's look at our components, which one is missing?
+
+code + data + text + history + software + <span style="color:orange">workflow</span>
+
+Workflow, I heard of that. 
+Let's peek again at our problem and softwaresolution lists to be sure.
+
+Problem list:
+
+1. ~~copy&paste mistakes~~
+2. ~~inconsistent versions of code or data~~
+3. ~~missing or incompatible software~~
+4. <span style="color:orange">complicated or ambiguous procedure for reproduction</span>
+
+Software solution list:
+
+1. RMarkdown
+2. Git
+3. Docker
+4. <span style="color:orange">Make</span>
+
+So that means we use Make to avoid the problem of complicated or unclear procedure for reproduction?
+Let's jump right in!
+
+## Make? {-}
+
+To understand what make is, let's take a step back. 
+To do that, let's move on to a topic that I'm really passionate about. 
+Food. And even one step further back, cooking.
+What is cooking?
+
+Besides the definition of content, cooking is a sequence of dependencies. 
+Let's take a look at my favorite recipe.
+
+>Arrabbiata sauce, or sugo all'arrabbiata in Italian, is a spicy sauce for pasta made from garlic, tomatoes, and dried red chili peppers cooked in olive oil.  
+<small>"Arrabbiata sauce" from Wikipedia under [<span style="color:orange">CC BY-SA 3.0</span>](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)</small>
+
+And what are the steps in this masterpiece of craftsmanship?
+
+>Arrabbiata sauce, or sugo all'arrabbiata in Italian, is a spicy <span style="color:orange">sauce</span> for <span style="color:orange">pasta</span> made from <span style="color:orange">garlic</span>, <span style="color:orange">tomatoes</span>, and dried red <span style="color:orange">chili</span> peppers cooked in olive oil.  
+<small>"Arrabbiata sauce" from Wikipedia under [<span style="color:orange">CC BY-SA 3.0</span>](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License), emphasis added</small>
+
+
+
+
+
+
+
