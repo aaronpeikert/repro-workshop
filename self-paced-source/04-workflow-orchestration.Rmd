@@ -57,6 +57,76 @@ And what are the steps in this masterpiece of craftsmanship?
 >Arrabbiata sauce, or sugo all'arrabbiata in Italian, is a spicy <span style="color:orange">sauce</span> for <span style="color:orange">pasta</span> made from <span style="color:orange">garlic</span>, <span style="color:orange">tomatoes</span>, and dried red <span style="color:orange">chili</span> peppers cooked in olive oil.  
 <small>"Arrabbiata sauce" from Wikipedia under [<span style="color:orange">CC BY-SA 3.0</span>](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License), emphasis added</small>
 
+Despite the beauty inherent in this recipe, we also want to formalize it. 
+Let's see how this recipe looks in a formalized version:
+<!--Python part wieder einfügen?-->
+```
+arrabiata.pdf: arrabiata.Rmd sauce.csv R/pasta.R 
+  Rscript -e "rmarkdown::render('arrabiata.Rmd')"
+sauce.csv: R/cook.R tomatoes.zip aromatics.yaml
+  Rscript -e "source(R/cook.R)"
+aromatics.yaml: R/sizzle.R garlic.txt chili.json
+  Rscript -e "source(R/sizzle.R)"
+```
+Let's break it down for our understanding. <span style="color:orange">arrabiata.pdf</span> is our sauce that we want to have.
+This sauce is created based on the files <span style="color:orange">arrabiata.Rmd</span>, our recipe, using <span style="color:orange">sauce.csv</span> and <span style="color:orange">/pasta.R</span>.
+
+<span style="color:orange">sauce.csv</span> is created with <span style="color:orange">R/cook.R</span> with the raw materials <span style="color:orange">tomatoes.zip</span> and <span style="color:orange">aromatics.yaml</span>.
+
+<span style="color:orange">aromatics.yaml</span> in turn is created by <span style="color:orange">R/sizzle.R</span> with the raw materials <span style="color:orange">garlic.txt</span> and <span style="color:orange">chili.json</span>.
+
+If you have trouble understanding the recipe, don't worry, we're all just virtual people. 
+Maybe a conversation with ReproDude will help you?
+
+After looking at the arrabiata sauce now another example of culinary masterpiece.
+
+<span style="color:brown">Brownies.</span>
+
+Just kidding, let's get out of here or I'll need a lunch break.
+
+Instead, let's point out the key features of this kind of recipes by Make:
+
+- Missing ingredients will be generated,  
+  <small>*e.g., if the cleaned data is missing, the raw data is first cleaned.*</small>
+
+- Newer ingredients trigger updates,  
+  <small>*e.g., new data leads to recreation of the whole manuscript.*</small>
+
+- Always the same "button" that triggers reproduction,  
+  <small>*e.g., regardless of programming language, file format, and intermediate steps.*</small>
+
+And the great thing is that repro::automate() automatically generates recipes for Rmds, only deeper nested dependencies must be added manually.
+
+### Hands on! {-}
+
+But now we have had enough thinking, let's go back to the code!
+
+<span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make inflation.pdf</span></span>
+
+<span style="color:green">Delete <span style="color:orange">inflation.pdf.</span></span>
+
+<span style="color:green">Add <span style="color:orange">inflation.pdf</span> to the target <span style="color:orange">all (all: inflation.pdf).</span></span>
+
+<span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make</span></span>
+
+<span style="color:blue">Run: <span style="color:orange">make -B --dry-run</span></span>
+
+[Hint: <span style="color:orange">-B</span> means rebuild everything. <span style="color:orange">--dry-run</span> means do not actually run the commands.</span>]
+
+And now that we've created the recipe, let's take it one step further and Make it in the cloud.
+
+<span style="color:green">Run <span style="color:orange">repro::use_make_publish()</span></span>
+
+<span style="color:green">Paste the following into the <span style="color:orange">Makefile:</span></span>
+
+publish/: inflation.pdf
+include .repro/Makefile_publish
+
+<span style="color:green">Run <span style="color:orange">repro::use_gha_publish()</span></span>
+
+<span style="color:green">Commit and push.</span>
+
+<span style="color:blue">Inspect <span style="color:orange">.repro/Makefile_publish.</span></span>
 
 
 
