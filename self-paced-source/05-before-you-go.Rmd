@@ -1,3 +1,120 @@
 # Before you go {-}
-here all together
+
+Welcome to the end of our journey!
+Now that we have everything behind us, let's take another look at how the individual components work together.
+
+Let's look at everything together again.
+
 ![Overview of the extended goal.](Overview.png)
+
+And does it make more sense to you now?
+If not, don't worry, practice makes perfect.
+Now that we have gathered a lot of knowledge, the journey together is over, but hopefully your journey has just begun.
+To help get you started, here are a few resources.
+
+## Ressources {-}
+
+### Starter {-}
+
+First, we started with RMarkdown.
+This was the part where we familiarized ourselves with the files
+
+
+```{r results='asis', echo = FALSE}
+suggestionsrmarkdown <- generate_additionalinfo(links$suggestions$rmarkdown,
+                                    "RMarkdown",
+                                    "Click on me and I will lead you to R Markdown: The Definitive Guide.")
+
+cat(suggestionsrmarkdown)
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
+
+
+Secondly, we have Git, with which we have recorded our versions and can travel in time.
+
+
+```{r results='asis', echo = FALSE}
+suggestionsgit <- generate_additionalinfo(links$suggestions$git,
+                                    "Git",
+                                    "Click on me and I will lead you to a specific Git tutorial.")
+
+cat(suggestionsgit)
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
+
+
+Third, we have GitHub, which allows us to store our Git versions online and do a variety of additional things, such as GitHub Actions.
+But a even better idea than to use the resources here is to start a small project on GitHub together with a friend.
+
+
+```{r results='asis', echo = FALSE}
+suggestionsgithub <- generate_additionalinfo(links$suggestions$github,
+                                    "GitHub",
+                                    "Click on me and I will lead you to a Deep Dive tutorial for GitHub.")
+
+cat(suggestionsgithub)
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
+
+
+That's it for the starter tutorials. 
+
+### Advanced {-}
+
+To go deeper, I would recommend you to read the following:
+
+<span style="color:blue">Read: Peikert, A., van Lissa, C. J., & Brandmaier, A. M. (2021). Reproducible Research in R: A Tutorial on How to Do the Same Thing More Than Once. Psych, 3(4), 836–867. https://doi.org/10.3390/psych3040053</span>
+
+And to give you a direct starting point from here, how about this:
+
+<span style="color:blue">Adept the project we created today, so that it becomes one of your projects (with your data, your analyses).</span>
+
+### Digging really Deep {-}
+
+As you have probably noticed, we are still missing a deep dive into some of the software we have directly or indirectly used. 
+These are a bit more complicated than what we have described so far, so let's just bundle them into this section.
+First, Make, which we used to build our recipes.
+
+
+```{r results='asis', echo = FALSE}
+suggestionsmake <- generate_additionalinfo(links$suggestions$make,
+                                    "Make",
+                                    "Click on me and I will lead you to minimal make: A minimal tutorial on make.")
+
+cat(suggestionsgithub)
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
+
+
+And after you've looked at that:
+
+<span style="color:blue">Simplify a complicated pipeline</span>
+
+Next up is Docker.
+Docker is a great program once you get it running.
+If you enjoy a bit of a headache:
+
+<span style="color:blue">Docker: get [<span style="color:orange">Docker</span>](`r links$suggestions$docker`) installed.</span>
+
+And if you enjoy severe headaches, welcome to LaTeX.
+
+<span style="color:blue">Try to learn [<span style="color:orange">LaTeX</span>](`r links$suggestions$latex`)</span>
+
+## Hard to say Goodbye {-}
+
+If you're reading this, you're all done with the workshop!
+Unless you're just passing through, in which case I hope to see you again later.
+
+Thank you for taking the time to explore the big world of reproducibility with me.
+
+Also many thanks from my developers Aaron Peikert and Hannes Diemerling.
+
+If you have any questions and/or comments, here is the link to the corresponding document:
+
+[<span style="color:orange">Feedback</span>](`r links$general$feedback`)
+
+And then it only remains for me to say goodbye to you, it was nice to have you here!

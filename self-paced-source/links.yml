@@ -11,6 +11,7 @@ addinfos:
   start: "https://en.wikipedia.org/wiki/Information"
   rmarkdown: "https://rmarkdown.rstudio.com/"
   git: "https://education.github.com/git-cheat-sheet-education.pdf"
+  repro: "https://github.com/aaronpeikert/repro"
   docker: "https://docs.docker.com/"
   make: "https://www.gnu.org/software/make/manual/make.html"
 logsign:
@@ -22,4 +23,10 @@ logsign:
   chatgptlog: "https://chat.openai.com/auth/login"
 projekt:
   start: "https://No-link-to-the-project.yet"
-  
+suggestions:
+  rmarkdown: "https://bookdown.org/yihui/rmarkdown/"
+  git: "https://git-scm.com/docs/gittutorial"
+  github: "https://docs.github.com/en/get-started/quickstart/hello-world"
+  make: "https://kbroman.org/minimal_make/"
+  docker: "https://docs.docker.com/get-docker/"
+  latex: "https://de.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes"

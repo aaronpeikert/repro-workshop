@@ -1,14 +1,15 @@
 # Software Management {-}
 
 ```{r results='asis', echo = FALSE}
-reprodude2 <- generate_reprodudes(links$reprodudes$four,
+reprodude4 <- generate_reprodudes(links$reprodudes$four,
                                   "ReproDude",
                                   "Hey, I'm your ReproDude for this chapter. If you have any questions click on me and we can talk!")
 
-cat(reprodude2)
+cat(reprodude4)
 
 ```
-
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
 
 ## What now? {-}
 
@@ -65,6 +66,16 @@ Nevertheless, the use of repro prevents headaches by taking over many steps.
 [Besides, it would go beyond the scope of the workshop if we were to do every step ourselves.]
 
 ### repro! {-}
+
+```{r results='asis', echo = FALSE}
+addinforepro <- generate_additionalinfo(links$addinfos$repro,
+                                    "repro",
+                                    "I will lead you to a deep dive of the repro package.")
+
+cat(addinforepro)
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
 
 <span style="color:orange">repro</span> uses metadata in Rmds to infer (among other things) the software environment required.
 

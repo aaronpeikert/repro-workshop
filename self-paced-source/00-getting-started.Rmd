@@ -49,14 +49,14 @@ There are two types of infoboxes in this course. The first type is the Additiona
 The second type are ReproDude infoboxes. You will find these at least once in each chapter. If you have a question or get stuck, click on the relevant box in the chapter and you will be redirected to ReproDude, already informed about the corresponding topic. Ask what you want to know and have a conversation. To use this, you will need a ChatGPT account, a link to which can be found below.  
 
 ```{r results='asis', echo = FALSE}
-addinfo1 <- generate_additionalinfo(links$addinfos$start,
+addinfostart <- generate_additionalinfo(links$addinfos$start,
                                     "Additional info",
                                     "I am an additional infobox that provides you with additional material to educate you more deeply. Click on my sister boxes for more information.")
 
 reprodude1 <- generate_reprodudes(links$reprodudes$one,
                                   "ReproDude",
                                   "I am ReproDude, so if you have a question or are stuck on a topic, click on the appropriate ReproDude box and ask there. You will need an account with ChatGPT to use me.")
-cat(addinfo1)
+cat(addinfostart)
 cat(reprodude1)
 ```
 <!-- so that there is no text between the Boxes-->

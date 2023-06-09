@@ -8,6 +8,7 @@ reprodude2 <- generate_reprodudes(links$reprodudes$two,
 cat(reprodude2)
 
 ```
+<!-- so that there is no text between the Boxes-->
 <div style="clear: both;"></div>
 
 ## What do I see before me? {-}

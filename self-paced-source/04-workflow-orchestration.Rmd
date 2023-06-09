@@ -1,14 +1,15 @@
 # Workflow Orchestration {-}
 
 ```{r results='asis', echo = FALSE}
-reprodude2 <- generate_reprodudes(links$reprodudes$five,
+reprodude5 <- generate_reprodudes(links$reprodudes$five,
                                   "ReproDude",
                                   "Hey, I'm your ReproDude for this chapter. If you have any questions click on me and we can talk!")
 
-cat(reprodude2)
+cat(reprodude5)
 
 ```
-
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
 
 ## What now? {-}
 
@@ -40,6 +41,16 @@ So that means we use Make to avoid the problem of complicated or unclear procedu
 Let's jump right in!
 
 ## Make? {-}
+
+```{r results='asis', echo = FALSE}
+addinfomake <- generate_additionalinfo(links$addinfos$make,
+                                    "Make",
+                                    "Click on me for the documentation of Make!")
+
+cat(addinfomake)
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
 
 To understand what make is, let's take a step back. 
 To do that, let's move on to a topic that I'm really passionate about. 
