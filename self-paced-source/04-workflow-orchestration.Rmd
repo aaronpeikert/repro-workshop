@@ -128,8 +128,62 @@ include .repro/Makefile_publish
 
 <span style="color:blue">Inspect <span style="color:orange">.repro/Makefile_publish.</span></span>
 
+Ready yet?  
+All right, what did we just do?
 
+We created and send a Makefile to the cloud using Make and the repro package.
+This makefile will ensure that we can track how our sauce is created!
 
+## And now? {-}
 
+Congratulations, we are more or less at the finish line!
 
+Before we stop, let's take one more quick look together at what we just did.
+We now have all the components from our toolbox together.
 
+<span style="color:orange">code + data + text + history + software + workflow</span>
+
+And with that we solved our last Problem on the list:
+
+1. ~~copy&paste mistakes~~
+2. ~~inconsistent versions of code or data~~
+3. ~~missing or incompatible software~~
+4. ~~complicated or ambiguous procedure for reproduction~~
+
+And which software did we used?:
+
+1. RMarkdown
+2. Git
+3. Docker
+4. <span style="color:orange">Make</span>
+
+### Almost the Final Final Step! {-}
+
+Now please go through all the things we just did and all the software we used.
+
+You are currently at your computer using Posit Cloud which hosts an R environment where you used Make and the repro package to generate a Makefile which automates the reproducibility of build processes.
+
+You have now reached the advanced status of reproducibility, there is only one last step to show the world what we have learned here.
+
+<span style="color:orange">Publish</span>
+
+With this step we will now publish the document automatically, for this we will use GitHub again.
+
+<span style="color:green">Go back to GitHub.</span>
+
+<span style="color:green">Go to Settings → Pages and change <span style="color:orange">none</span> to <span style="color:orange">gh-pages.</span></span>
+
+<span style="color:green">Go to actions and wait for the new action to finish.</span>
+
+<span style="color:green">Inspect the published PDF online (<span style="color:orange">change username</span>):</span>
+
+<span style="color:orange">yourusername.github.io/project/inflation.pdf</span>
+
+<span style="color:blue">Change something, e.g., make the plot ugly again, then commit and push. Takes ~5min or so.</span>
+
+The great thing about this automation is that it now automatically builds and publishes your document every time you push a new version to GitHub.
+
+And with that, we have concluded the workshop in terms of content!
+In the following chapter, we'll just go through some suggestions on how you can continue your Reproductions journey.
+
+You are now ready for the last chapter. [next chapter](./before-you-go.html).
