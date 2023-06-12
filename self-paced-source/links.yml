@@ -2,11 +2,10 @@ general:
   feedback: "https://No-feedback-site.yet"
 reprodudes:
   one: "https://chat.openai.com/share/f188d04a-e569-4e53-8226-2532f0801812"
-  two: "https://chat.openai.com/share/a0720ed3-0fcf-43a6-bfea-d7d9deb2d067"
-  three: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
-  four: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
-  five: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
-  six: "https://chat.openai.com/share/e4dfb501-b17b-40ee-a35c-20cda449fbff"
+  two: "https://chat.openai.com/share/dfe3ad22-f9ac-4e3c-ae94-11646b46fb24"
+  three: "https://chat.openai.com/share/029cb41c-36cb-4bbb-9ddc-bf1510faedfd"
+  four: "https://chat.openai.com/share/d7cc9c85-c57a-4222-aafe-9d84a93b8d7b"
+  five: "https://chat.openai.com/share/f2c7a3d9-4d5e-4a75-90d3-d4a5bb1cc47b"
 addinfos:
   start: "https://en.wikipedia.org/wiki/Information"
   rmarkdown: "https://rmarkdown.rstudio.com/"
