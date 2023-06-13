@@ -20,8 +20,8 @@ As usual, let's look at our components, which one is missing?
 
 code + data + text + history + software + <span style="color:orange">workflow</span>
 
-Workflow, I heard of that. 
-Let's peek again at our problem and softwaresolution lists to be sure.
+Workflow, I think I heard of that. 
+Let's peek again at our problem and software solution lists to be sure.
 
 Problem list:
 
@@ -52,9 +52,10 @@ cat(addinfomake)
 <!-- so that there is no text between the Boxes-->
 <div style="clear: both;"></div>
 
-To understand what make is, let's take a step back. 
+To understand what Make is, let's take a step back. 
 To do that, let's move on to a topic that I'm really passionate about. 
-Food. And even one step further back, cooking.
+Food.
+And even one step further back, cooking.
 What is cooking?
 
 Besides the definition of content, cooking is a sequence of dependencies. 
@@ -70,7 +71,7 @@ And what are the steps in this masterpiece of craftsmanship?
 
 Despite the beauty inherent in this recipe, we also want to formalize it. 
 Let's see how this recipe looks in a formalized version:
-<!--Python part wieder einfügen?-->
+<!--Python part wieder einfügen? Hat beim rendern zu problemen geführt.-->
 ```
 arrabiata.pdf: arrabiata.Rmd sauce.csv R/pasta.R 
   Rscript -e "rmarkdown::render('arrabiata.Rmd')"
@@ -106,7 +107,7 @@ Instead, let's point out the key features of this kind of recipes by Make:
 - Always the same "button" that triggers reproduction,  
   <small>*e.g., regardless of programming language, file format, and intermediate steps.*</small>
 
-And the great thing is that repro::automate() automatically generates recipes for Rmds, only deeper nested dependencies must be added manually.
+And the great thing is that <span style="color:orange">repro::automate()</span> automatically generates recipes for Rmds, only deeper nested dependencies must be added manually.
 
 ### Hands on! {-}
 
@@ -124,14 +125,16 @@ But now we have had enough thinking, let's go back to the code!
 
 [Hint: <span style="color:orange">-B</span> means rebuild everything. <span style="color:orange">--dry-run</span> means do not actually run the commands.</span>]
 
-And now that we've created the recipe, let's take it one step further and Make it in the cloud.
+And now that we've created the recipe, let's take it one step further and *Make* it in the cloud.
 
 <span style="color:green">Run <span style="color:orange">repro::use_make_publish()</span></span>
 
 <span style="color:green">Paste the following into the <span style="color:orange">Makefile:</span></span>
 
+```
 publish/: inflation.pdf
 include .repro/Makefile_publish
+```
 
 <span style="color:green">Run <span style="color:orange">repro::use_gha_publish()</span></span>
 
@@ -147,9 +150,9 @@ This makefile will ensure that we can track how our sauce is created!
 
 ## And now? {-}
 
-Congratulations, we are more or less at the finish line!
+Congratulations, we are more or less near the finish line!
 
-Before we stop, let's take one more quick look together at what we just did.
+Before we will finish, let's take one more quick look together at what we just did.
 We now have all the components from our toolbox together.
 
 <span style="color:orange">code + data + text + history + software + workflow</span>

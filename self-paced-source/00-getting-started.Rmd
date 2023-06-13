@@ -33,20 +33,20 @@ More important is that you understand for what we use them, than you may replace
 
 Normally you work on your local computer.
 However, in workshops this often leads to the issues of missing/outdated/broken software setups.
-Therefore, we suggest to use the prepared software environment we give you in form of Posit Cloud (= RStudio Cloud).
+Therefore, we will use the prepared software environment we give you in form of Posit Cloud (= RStudio Cloud).
 
 Additionally, we will make heavy use of GitHub (≠ Git) and
 GitHub Actions (∈ GitHub).
 
 ## What does self-paced mean? {-}
 
-Self-paced learning is an educational approach that allows you to control the speed and the intensity of your learning. This means you can learn at your own rhythm, pausing, reviewing, and progressing when it suits you best. You are encouraged to actively engage with the material, explore the content, and try to solve problems on your own before seeking help. In this course, there's no rigid schedule to follow. You're free to come and go, and move through the content as you please. Remember, while it's self-guided, you're not alone - use the infoboxes, explanation follows in the next paragraph, and course leaders are available to assist if you encounter difficulties you can't resolve on your own. It is a flexible and personal way of learning designed to support you on your learning journey.
+Self-paced learning is an educational approach that allows you to control the speed and the intensity of your learning. This means you can learn at your own rhythm, pausing, reviewing, and progressing when it suits you best. You are encouraged to actively engage with the material, explore the content, and try to solve problems on your own before seeking help. In this course, there's no rigid schedule to follow. You're free to come and go, and move through the content as you please. Remember, while it's self-guided, you're not alone - use the Infoboxes, explanation follows in the next paragraph, and course leaders are available to assist if you encounter difficulties you can't resolve on your own. It is a flexible and personal way of learning, designed to support you on your learning journey.
 
 ## What are infoboxes? {-}
 
-There are two types of infoboxes in this course. The first type is the Additional info box. These provide information to delve deeper into a topic and can be found throughout the course. Clicking on one of these boxes will take you to more in-depth material.
+There are two types of Infoboxes in this course. The first type is the Additional Infobox. These provide information to delve deeper into a topic and can be found throughout the course. Clicking on one of these boxes will take you to more in-depth material.
 
-The second type are ReproDude infoboxes. You will find these at least once in each chapter. If you have a question or get stuck, click on the relevant box in the chapter and you will be redirected to ReproDude, already informed about the corresponding topic. Ask what you want to know and have a conversation. To use this, you will need a ChatGPT account, a link to which can be found below.  
+The second type are ReproDudes. You will find these at least once in each main chapter. If you have a question or get stuck, click on the relevant box in the chapter and you will be redirected to ReproDude, already informed about the corresponding topic. Ask what you want to know and have a conversation. To use this, you will need a ChatGPT account, a link to which can be found below.  
 
 ```{r results='asis', echo = FALSE}
 addinfostart <- generate_additionalinfo(links$addinfos$start,
@@ -65,7 +65,7 @@ cat(reprodude1)
 
 ## What else should i know before I start? {-}
 
-In this workshop we will go through many things, many of them complicated. The goal today is to understand what is possible and not to achieve a complete deep technical understanding. So be kind to others and yourself and try not to get frustrated, ReproDude and the workshop leaders are there to help you if necessary.  
+In this workshop we will go through many things, many of them are complicated. The goal today is to understand what is possible and not to achieve a complete deep technical understanding. So be kind to others and yourself and try not to get frustrated, ReproDude and the workshop leaders are there to help you if necessary!  
 
 Just as you set your own pace in this course, you can also decide which tasks you do in this course. There are two types of tasks:
 

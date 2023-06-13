@@ -1,6 +1,9 @@
 # Dynamic Documents {-}
 
 ```{r results='asis', echo = FALSE}
+links<-yaml::read_yaml("links.yml")
+texts<-yaml::read_yaml("text.yml")
+source("functions.R")
 reprodude2 <- generate_reprodudes(links$reprodudes$two,
                                   "ReproDude",
                                   "Hey, I'm your ReproDude for this chapter. If you have any questions click on me and we can talk!")
@@ -23,7 +26,7 @@ If not, take as much time as you need and move on as soon as you want, I have no
 
 ## Best practices? {-}
 
-To give you a sense of how reproducibility can be increased, i will show you some best practices:
+To give you a sense of how reproducibility can be increased, let us look at some best practices:
 
 <span style="color:green"> Open the R folder.</span>
 
@@ -32,22 +35,26 @@ You should now see three different R files.
 <span style="color:green"> Click on the file </span><span style="color:orange">R/prepare_games.R </span>
 
 Now try to understand the code.
+
 Which of these do you already do? 
 What could you improve?
-You want to see more? 
-Because it's you (same thing but more complicated):
 
-<span style="color:green"> Take a look at </span><span style="color:orange">R/prepare_inflation </span>
+You want to see more? 
+Just for you (same thing but more complicated):
+
+<span style="color:blue"> Take a look at </span><span style="color:orange">R/prepare_inflation </span>
 
 ### A summary? {-}
 
-To summarize this in an incomplete list:
+Let us summarize this in an incomplete list:
 
 1. List requirements early
 2. Use relative locations
 3. Document relevant information
 
-Let's talk about the last point. 
+The first two points are more or less clear, if you would like to talk about that, maybe you want to give ReproDude a try?
+
+But let's talk about the last point. 
 Does that mean that every piece of documentation has to be a mile long?
 
 No.... not necessarily.
@@ -59,7 +66,7 @@ Let's make another list:
 2. What is *easy* needs only little documentation.
 3. What is *consistent* only has to be documented once.
 
-Great, now you've already finished the necessary! 
+Great, now you've already finished the <span style="color:orange">necessary</span>! 
 You want to go straight on? 
 Let's take a look at the extended Goals first.
 
@@ -69,17 +76,21 @@ Let's take a look at the extended Goals first.
 
 So, did I confuse you with that?
 Don't worry, we're in this together.
+Let us break it down.
 What components do we need to get closer to reproducibility?
 
 code + data + text + history + software + workflow
 
-But we have already looked at something. 
-Was that already part of the overall picture? 
-Yes! 
+But haven't we already looked at parts of it?
+Was that already part of the overall picture?
+Yes!
 
 <span style="color:orange">code + data</span> + text + history + software + workflow
 
-We have already dealt with code and data, so next is text. 
+We have already dealt with code and data.
+If you want to read up on it again, go back to the beginning of this chapter.
+
+Next is text. 
 Let's look again at the problems we need to solve:
 
 1. copy&paste mistakes
@@ -104,16 +115,16 @@ addinfo2 <- generate_additionalinfo(links$addinfos$rmarkdown,
                                     "I will give you more information about RMarkdown by taking you to their documentation.")
 cat(addinfo2)
 ```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
 
-Now let's go back to your environment.
+Now let's go back to your R environment.
 
 <span style="color:green">Open the file</span><span style="color:orange">inflation.Rmd.</span>
 
 If you are still in the R folder, you have to go up one level again.
 
-<span style="color:green">Take a minute to skim the document.</span>
-
-Or even two.
+<span style="color:green">Take a minute to skim the document (Or even two).</span>
 
 <span style="color:green">Click on </span><span style="color:orange">knit.</span>
 
@@ -121,7 +132,7 @@ Or even two.
 
 ### Metadata (YAML) {-}
 
-Now that you have looked at at least one RMarkdown example, did you notice the following part:
+Now that you have looked at at least one RMarkdown example, did you notice the following part?:
 
 ```
 ---
@@ -148,7 +159,8 @@ This is the metadata, in YAML format, for the RMarkdown document.
 
 <span style="color:green">Knit again.</span>
 
-What happened? 
+What happened?
+
 You want to experiment more?
 
 <span style="color:blue">Change the author or date field.</span>
@@ -166,7 +178,7 @@ I quote:
 > This dataset contains the individual responses to our Inflation Attitudes Survey, a quarterly survey of people’s feelings about inflation and other economic variables like the interest rate. 
 ```
 
-This is markdown and we use it to write and format the actual text.
+This is markdown and we will use it to write and format the actual text.
 
 <span style="color:green">Make something **bold** and something else *italic*:</span>
 
@@ -178,8 +190,8 @@ This is **bold**, while this is *italic*.
 
 ### Code (R) {-}
 
-But there is another component in the document. 
-This part are code blocks like:
+But there is yet another component in the document. 
+This part contain code blocks like:
 
 ```
 inflation %>% 
@@ -196,7 +208,7 @@ inflation %>%
 
 These code blocks can be not only R code but also Julia, Python, Octave and other programming languages.
 
-<span style="color:green">Add a code chunk (Ctrl + Alt + I) and inline code:</span>
+<span style="color:green">Add a R code chunk (Ctrl + Alt + I) and inline code:</span>
 
 <!-- Bad solution, somethin better? -->
 ````markdown
@@ -218,7 +230,7 @@ We have `r nrow(mtcars)` cars.
 <!-- Bad solution, somethin better? -->
 ````markdown
 ```
-print("Hi! Python here, do you miss R already?")
+print("Hello World! Python here, do you miss R already?")
 ```
 ````
 
@@ -238,7 +250,7 @@ And with that we solved our first Problem on the list:
 3. missing or incompatible software
 4. complicated or ambiguous procedure for reproduction
 
-And which software did we just use for this:
+And which software did we just used for this?:
 
 1. <span style="color:orange">RMarkdown</span>
 2. Git
@@ -251,7 +263,7 @@ Now please go through what we have just done and all the software we use.
 
 You are currently at your computer using Posit Cloud which hosts an R environment where you used RMarkdown to write some examples.
 
-But that was it for this section. 
+But that was it for this section.
 Shall we both take a short break or do you want to continue straight away?
 
 You are for the next chapter. [next chapter](./version-control.html).

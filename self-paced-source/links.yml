@@ -20,8 +20,6 @@ logsign:
   postilog: "https://login.posit.cloud/register"
   chatgptsign: "https://chat.openai.com/auth/login"
   chatgptlog: "https://chat.openai.com/auth/login"
-projekt:
-  start: "https://No-link-to-the-project.yet"
 suggestions:
   rmarkdown: "https://bookdown.org/yihui/rmarkdown/"
   git: "https://git-scm.com/docs/gittutorial"
@@ -29,3 +27,5 @@ suggestions:
   make: "https://kbroman.org/minimal_make/"
   docker: "https://docs.docker.com/get-docker/"
   latex: "https://de.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes"
+projekt:
+  start: "https://No-link-to-the-project.yet"

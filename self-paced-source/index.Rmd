@@ -26,3 +26,8 @@ source("functions.R")
 We (Aaron Peikert and Hannes Diemerling) are currently working on a *self paced* version of this workshop.
 This is a work in progress!
 
+wer wir sind, wo wir herkommen und email
+
+leute die im workshop sind sollen hier begrüßt werden und leute im internet sollen sich damit auch selbst zurechtfinden im notfall.
+
+
