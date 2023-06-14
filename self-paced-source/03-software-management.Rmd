@@ -104,10 +104,10 @@ GitHub action is a cloud service that runs software when certain events trigger 
 
 <span style="color:blue">Take a look at <span style="color:orange">.github/workflows/push-container.yml.</span> When is the action triggered?</span>
 
-That's it. 
+That's it.
 But what have we actually just done?
 
-We created Dockerfiles using the repro package and then automated the building of Docker images by setting up GitHub Action. 
+We created Dockerfiles using the repro package and then automated the building of Docker images by setting up GitHub Action.
 These Docker images now ensure a reproducible software environment!
 
 ## And now? {-}

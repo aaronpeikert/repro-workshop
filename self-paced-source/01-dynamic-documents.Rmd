@@ -17,7 +17,8 @@ cat(reprodude2)
 ## What do I see before me? {-}
 First of all:
 
-<span style="color:green"> Look around, become comfortable. Then, locate the files pane.</span>
+<span style="color:green"> Look around, become comfortable.
+Then, locate the files pane.</span>
 
 You are currently at your computer using Posit Cloud which hosts an R environment that you are looking at.
 
@@ -36,10 +37,10 @@ You should now see three different R files.
 
 Now try to understand the code.
 
-Which of these do you already do? 
+Which of these do you already do?
 What could you improve?
 
-You want to see more? 
+You want to see more?
 Just for you (same thing but more complicated):
 
 <span style="color:blue"> Take a look at </span><span style="color:orange">R/prepare_inflation </span>
@@ -57,9 +58,9 @@ The first two points are more or less clear, if you would like to talk about tha
 But let's talk about the last point. 
 Does that mean that every piece of documentation has to be a mile long?
 
-No.... not necessarily.
+No... not necessarily.
 
-But how do I decide what should or should not be included in my documentation? 
+But how do I decide what should or should not be included in my documentation?
 Let's make another list:
 
 1. What is *standard* does not have to be documented.
@@ -67,7 +68,7 @@ Let's make another list:
 3. What is *consistent* only has to be documented once.
 
 Great, now you've already finished the <span style="color:orange">necessary</span>! 
-You want to go straight on? 
+You want to go straight on?
 Let's take a look at the extended Goals first.
 
 ## Extended Goals? {-}
@@ -90,7 +91,7 @@ Yes!
 We have already dealt with code and data.
 If you want to read up on it again, go back to the beginning of this chapter.
 
-Next is text. 
+Next is text.
 Let's look again at the problems we need to solve:
 
 1. copy&paste mistakes
@@ -175,7 +176,7 @@ The dataset we use stems from the [Bank of England Research datasets](https://ww
 
 I quote:
 
-> This dataset contains the individual responses to our Inflation Attitudes Survey, a quarterly survey of people’s feelings about inflation and other economic variables like the interest rate. 
+> This dataset contains the individual responses to our Inflation Attitudes Survey, a quarterly survey of people’s feelings about inflation and other economic variables like the interest rate.
 ```
 
 This is markdown and we will use it to write and format the actual text.
@@ -259,7 +260,7 @@ And which software did we just used for this?:
 
 ### Final Step {-}
 
-Now please go through what we have just done and all the software we use. 
+Now please go through what we have just done and all the software we use.
 
 You are currently at your computer using Posit Cloud which hosts an R environment where you used RMarkdown to write some examples.
 

@@ -186,7 +186,7 @@ usethis::gh_token_help()
 ```
 You will need to do this *once for each computing environment*.
 
-And what have we done now? 
+And what have we done now?
 
 ```{r, echo=FALSE, fig.cap="GitHub status"}
 knitr::include_graphics("GitGithub0.svg")
@@ -250,11 +250,11 @@ And which software did we just used for this?:
 
 ### Final Step! {-}
 
-Now please go through what we have just done and all the software we used. 
+Now please go through what we have just done and all the software we used.
 
 You are currently at your computer using Posit Cloud which hosts an R environment where you used Git to create a traceable History and saved it online with GitHub.
 
-But that was all for this section. 
+But that was all for this section.
 Shall we both take a short break or do you want to continue straight away?
 
 You are now ready for the next chapter. [next chapter](./software-managment.html).
