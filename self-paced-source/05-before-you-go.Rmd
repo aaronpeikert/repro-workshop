@@ -5,7 +5,9 @@ Now that we have everything behind us, let's take another look at how the indivi
 
 Let's look at everything together again.
 
-![Overview of the extended goal.](Overview.png)
+```{r, echo=FALSE, out.width='100%'}
+knitr::include_graphics("https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg")
+```
 
 And does it make more sense to you now?
 If not, don't worry; practice makes perfect.
