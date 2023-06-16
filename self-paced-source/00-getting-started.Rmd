@@ -2,9 +2,8 @@
 
 ## What is reproducibility? {-}
 
-In the context of scientific research, reproducibility refers to the ability of an independent researcher to duplicate the results of a study using the same methods, procedures, and data.
-It's about ensuring that every step of the research process, from data collection to analysis, is transparent, well-documented, and can be repeated with the same outcome.
-This is crucial for validating scientific findings and building trust in research outcomes.
+Computational reproducibility is the ability to obtain identical results from the same data with the same computer code.
+It is a building block for transparent and cumulative science because it enables the originator and other researchers, on other computers and later in time, to reproduce and thus understand how results came about while avoiding a variety of errors that may lead to erroneous reporting of statistical and computational results.
 Tools like the 'repro' package in R, as discussed in the text, help automate this process, making it easier for researchers to create reproducible workflows.
 In essence, reproducibility is the cornerstone of robust, reliable, and high-quality scientific research.
 
