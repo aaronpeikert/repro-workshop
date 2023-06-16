@@ -8,9 +8,7 @@ documentclass: book
 url: https://aaronpeikert.github.io/repro-workshop/self-paced
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
+  This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions).
 link-citations: yes
 github-repo: aaronpeikert/repro-workshop
 ---
@@ -24,7 +22,9 @@ source("functions.R")
 # About {-}
 
 We ([Aaron Peikert](mailto:peikert@mpib-berlin.mpg.de) and [Hannes Diemerling](mailto:diemerling@mpib-berlin.mpg.de)) work at the Formal Methods project at the Max Planck Institute for Human Development.
-Do no hesitate to contact us if you have any questions!
+Do no hesitate to contact us via email if you have any questions!
+If you found typos, have problems, or have suggestions for improvement [please open an issue](https://github.com/aaronpeikert/repro-workshop/issues/new).
+
 
 If you found your way to this page because you are currently participating in a workshop, thank you for attending!
 You can head to the [next chapter "Getting Started"](./getting-started.html)
@@ -32,4 +32,4 @@ You can head to the [next chapter "Getting Started"](./getting-started.html)
 If you are here on your own, you are welcome to try the workshop; however, we can not gaurantee that the instructions on this website will work at random time points between workshops.
 In case you like what you see and you want to offer this workshop at your institution, [get in touch with us]((mailto:peikert@mpib-berlin.mpg.de)).
 
-You may use all materials from www.github.com/aaronpeikert/repro-workshop under the CC0 1.0 Universal licence unless noted otherwise; still, we expect that you credit us where appropriate (e.g., with citing this as the source).
+You may use all materials from www.github.com/aaronpeikert/repro-workshop under the [CC0 1.0 Universal licence](https://creativecommons.org/publicdomain/zero/1.0/) unless noted otherwise; still, we expect that you credit us where appropriate (e.g., with citing this as the source).
