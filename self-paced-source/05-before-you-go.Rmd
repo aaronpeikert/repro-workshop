@@ -8,8 +8,8 @@ Let's look at everything together again.
 ![Overview of the extended goal.](Overview.png)
 
 And does it make more sense to you now?
-If not, don't worry, practice makes perfect.
-Now that we have gathered a lot of knowledge, the journey together is over, but hopefully your journey has just begun.
+If not, don't worry; practice makes perfect.
+Now that we have gathered a lot of knowledge, the journey together is over, but hopefully, your journey has just begun.
 To help get you started, here are a few resources.
 
 ## Ressources {-}
@@ -46,7 +46,7 @@ cat(suggestionsgit)
 
 
 Third, we have GitHub, which allows us to store our Git versions online and do a variety of additional things, such as GitHub Actions.
-But a even better idea than to use the resources here is to start a small project on GitHub together with a friend.
+But an even better idea than to use the resources here is to start a small project on GitHub together with a friend.
 
 
 ```{r results='asis', echo = FALSE}
@@ -70,7 +70,7 @@ To go deeper, I would recommend you to read the following:
 
 And to give you a direct starting point from here, how about this:
 
-<span style="color:blue">Adept the project we created today, so that it becomes one of your projects (with your data, your analyses).</span>
+<span style="color:blue">Adept the project we created today so that it becomes one of your projects (with your data, your analyses).</span>
 
 ### Digging really Deep {-}
 
@@ -111,10 +111,6 @@ Unless you're just passing through, in which case I hope to see you again later.
 
 Thank you for taking the time to explore the big world of reproducibility with me.
 
-Also many thanks from my developers Aaron Peikert and Hannes Diemerling.
+Also, I want to thank my developers, Aaron Peikert and Hannes Diemerling.
 
-If you have any questions and/or comments, here is the link to the corresponding document:
-
-[<span style="color:orange">Feedback</span>](`r links$general$feedback`)
-
-And then it only remains for me to say goodbye to you, it was nice to have you here!
+And then it only remains for me to say goodbye to you; it was nice to have you here!
