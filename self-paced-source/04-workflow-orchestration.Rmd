@@ -16,7 +16,8 @@ cat(reprodude5)
 We have already reached the last chapter of content!
 What is it about?
 
-As usual, let's look at our components, which one is missing?
+As usual, let's look at our components.
+Which is the last missing piece for fully automating reproducibility?
 
 code + data + text + history + software + <span style="color:orange">workflow</span>
 
@@ -90,19 +91,19 @@ This sauce is created based on the files <span style="color:orange">arrabiata.Rm
 If you have trouble understanding the recipe, don't worry, we're all just virtual people. 
 Maybe a conversation with ReproDude will help you?
 
-After looking at the arrabiata sauce now another example of culinary masterpiece.
+After looking at the arrabbiata sauce, here is another example of a culinary masterpiece.
 
 <span style="color:brown">Brownies.</span>
 
 Just kidding, let's get out of here or I'll need a lunch break.
 
-Instead, let's point out the key features of this kind of recipes by Make:
+Instead, let's point out the key features of this kind of recipe by Make:
 
 - Missing ingredients will be generated,  
   <small>*e.g., if the cleaned data is missing, the raw data is first cleaned.*</small>
 
 - Newer ingredients trigger updates,  
-  <small>*e.g., new data leads to recreation of the whole manuscript.*</small>
+  <small>*e.g., new data leads to the recreation of the whole manuscript.*</small>
 
 - Always the same "button" that triggers reproduction,  
   <small>*e.g., regardless of programming language, file format, and intermediate steps.*</small>
@@ -152,19 +153,19 @@ This makefile will ensure that we can track how our sauce is created!
 
 Congratulations, we are more or less near the finish line!
 
-Before we will finish, let's take one more quick look together at what we just did.
+Before we finish, let's take one more quick look together at what we just did.
 We now have all the components from our toolbox together.
 
 <span style="color:orange">code + data + text + history + software + workflow</span>
 
-And with that we solved our last Problem on the list:
+And with that, we solved our last problem on the list:
 
 1. ~~copy&paste mistakes~~
 2. ~~inconsistent versions of code or data~~
 3. ~~missing or incompatible software~~
 4. ~~complicated or ambiguous procedure for reproduction~~
 
-And which software did we used?:
+And which software did we use?:
 
 1. RMarkdown
 2. Git
@@ -175,9 +176,9 @@ And which software did we used?:
 
 Now please go through all the things we just did and all the software we used.
 
-You are currently at your computer using Posit Cloud which hosts an R environment where you used Make and the repro package to generate a Makefile which automates the reproducibility of build processes.
+You are currently at your computer using Posit Cloud, which hosts an R environment where you used Make and the repro package to generate a Makefile which automates the reproducibility of build processes.
 
-You have now reached the advanced status of reproducibility, there is only one last step to show the world what we have learned here.
+You have now reached the advanced status of reproducibility; there is only one last step to show the world what we have learned here.
 
 <span style="color:orange">Publish</span>
 
