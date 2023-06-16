@@ -17,7 +17,7 @@ cat(reprodude2)
 ## What do I see before me? {-}
 First of all:
 
-<span style="color:green"> Look around, become comfortable.
+<span style="color:green"> Look around, become comfortable with Posit/RStudio Cloud.
 Then, locate the files pane.</span>
 
 You are currently at your computer using Posit Cloud which hosts an R environment that you are looking at.
@@ -43,7 +43,7 @@ What could you improve?
 You want to see more?
 Just for you (same thing but more complicated):
 
-<span style="color:blue"> Take a look at </span><span style="color:orange">R/prepare_inflation </span>
+<span style="color:blue"> Take a look at </span><span style="color:orange">R/prepare_inflation</span><span style="color:blue">. Remember this blue means a task is optional.</span>
 
 ### A summary? {-}
 
@@ -67,23 +67,36 @@ Let's make another list:
 2. What is *easy* needs only little documentation.
 3. What is *consistent* only has to be documented once.
 
-Great, now you've already finished the <span style="color:orange">necessary</span>! 
-You want to go straight on?
-Let's take a look at the extended Goals first.
+If you follow the best practice of:
+
+1. List requirements early
+2. Use relative locations
+3. Document relevant information
+  1. What is *standard* does not have to be documented.
+  2. What is *easy* needs only little documentation.
+  3. What is *consistent* only has to be documented once.
+
+you already are in a pretty good position.
+However, we could spend a whole day on how to code in way that is easy to follow and all the best practices there.
+Instead, we want to focus today on how to automate reproducibility *assuming* you allready have an R script that is easy to understand.
+For everything else we are missing the time and there are simply to many different skill levels for R programming.
 
 ## Extended Goals? {-}
 
-![Overview of the extended goal.](Overview.png)
+This is a schematic overview of the system we want to build today:
 
-So, did I confuse you with that?
+```{r, echo=FALSE, out.width='100%'}
+knitr::include_graphics("https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg")
+```
+
+Sorry, did I confuse you with that?
 Don't worry, we're in this together.
 Let us break it down.
-What components do we need to get closer to reproducibility?
+What components do we need to bundle neatly together to archive automated reproduibility?
 
 code + data + text + history + software + workflow
 
 But haven't we already looked at parts of it?
-Was that already part of the overall picture?
 Yes!
 
 <span style="color:orange">code + data</span> + text + history + software + workflow
@@ -119,7 +132,7 @@ cat(addinfo2)
 <!-- so that there is no text between the Boxes-->
 <div style="clear: both;"></div>
 
-Now let's go back to your R environment.
+Now let's go back to your R cloud environment.
 
 <span style="color:green">Open the file</span><span style="color:orange">inflation.Rmd.</span>
 
@@ -167,7 +180,7 @@ You want to experiment more?
 <span style="color:blue">Change the author or date field.</span>
 <span style="color:blue">Try the <span style="color:orange">[tufte-format (click me)](https://rstudio.github.io/tufte/).</span></span>
 
-### Text (markdown) {-}
+### Text (Markdown) {-}
 
 In the document, you probably also noticed this part:
 
@@ -179,7 +192,7 @@ I quote:
 > This dataset contains the individual responses to our Inflation Attitudes Survey, a quarterly survey of people’s feelings about inflation and other economic variables like the interest rate.
 ```
 
-This is markdown and we will use it to write and format the actual text.
+This is Markdown and we will use it to write and format the actual text.
 
 <span style="color:green">Make something **bold** and something else *italic*:</span>
 
@@ -194,7 +207,8 @@ This is **bold**, while this is *italic*.
 But there is yet another component in the document. 
 This part contain code blocks like:
 
-```
+````markdown
+`r ''````{r}
 inflation %>% 
   group_by(date) %>% 
   summarise(across(c(perception, expectation),
@@ -206,6 +220,7 @@ inflation %>%
   geom_line(aes(date, value, color = name)) +
   NULL
 ```
+````
 
 These code blocks can be not only R code but also Julia, Python, Octave and other programming languages.
 
@@ -215,7 +230,7 @@ These code blocks can be not only R code but also Julia, Python, Octave and othe
 ````markdown
 A code chunk is for longer code/output:
 
-```{r}
+`r ''````{r}
 with(mtcars, plot(hp, mpg))
 ```
 
@@ -228,9 +243,8 @@ We have `r nrow(mtcars)` cars.
 
 <span style="color:blue">Try using python:</span>
 
-<!-- Bad solution, somethin better? -->
 ````markdown
-```
+`r ''````{python}
 print("Hello World! Python here, do you miss R already?")
 ```
 ````
@@ -264,7 +278,6 @@ Now please go through what we have just done and all the software we use.
 
 You are currently at your computer using Posit Cloud which hosts an R environment where you used RMarkdown to write some examples.
 
-But that was it for this section.
 Shall we both take a short break or do you want to continue straight away?
 
-You are for the next chapter. [next chapter](./version-control.html).
+You are ready for the next chapter. [next chapter](./version-control.html).
