@@ -42,7 +42,7 @@ That sounds good, let's get started right away!
 ## Git? {-}
 
 ```{r, echo=FALSE, fig.cap="Git Overview"}
-knitr::include_graphics("Git Diagram.svg")
+knitr::include_graphics("images/GitDiagram.svg")
 ```
 
 Git is an amazing tool that helps you keep track of changes in your project, just like having a magical time machine for your work.
@@ -93,7 +93,7 @@ usethis::use_git_config(
 You will need to do this *once per project*.
 
 ```{r, echo=FALSE, fig.cap="Your current position"}
-knitr::include_graphics("Git1.svg")
+knitr::include_graphics("images/Git1.svg")
 ```
 
 You have now initialized Git, our time machine, for your project. 
@@ -141,7 +141,7 @@ Now we have performed our first commit!
 What does our Git history look like now?
 
 ```{r, echo=FALSE, fig.cap="Your current position"}
-knitr::include_graphics("Git2.svg")
+knitr::include_graphics("images/Git2.svg")
 ```
 
 So now we have created a second version that is our modified code and saved it as a point in time. 
@@ -189,7 +189,7 @@ You will need to do this *once for each computing environment*.
 And what have we done now?
 
 ```{r, echo=FALSE, fig.cap="GitHub status"}
-knitr::include_graphics("GitGithub0.svg")
+knitr::include_graphics("images/GitGithub0.svg")
 ```
 
 So far we have only authenticated, so we are allowed to enter the GitHub Country, but we haven't sent anything there yet.
@@ -220,7 +220,7 @@ That's it!
 And what does our history look like now?
 
 ```{r, echo=FALSE, fig.cap="GitHub status"}
-knitr::include_graphics("GitGithub1.svg")
+knitr::include_graphics("images/GitGithub1.svg")
 ```
 
 As seen in figure 5, we now have an identical copy of our Git history on GitHub as well!
