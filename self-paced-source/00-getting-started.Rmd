@@ -110,17 +110,17 @@ If you already have a GitHub account:
 
 [GitHub Log in](`r links$logsign$githublog`)
 
-### Posti/RStudio Cloud {-}
+### Posit/RStudio Cloud {-}
 
 If you have not used Posit/RStudio Cloud before:
 
 Use Option: "Sign Up with GitHub"
 
-[Posti/RStudio Cloud Sign up](`r links$logsign$postisign`)
+[Posit/RStudio Cloud Sign up](`r links$logsign$positsign`)
 
 If you already have a Posit/RStudio account:
 
-[Posti/RStudio Cloud Log in](`r links$logsign$postilog`)
+[Posit/RStudio Cloud Log in](`r links$logsign$positlog`)
 
 ### ChatGPT {-}
 
@@ -142,7 +142,7 @@ Use Option: "Log in"
 
 [Project](`r links$projekt$start`) 
 
-If you have already logged into Posti/RStudio Cloud during the previous section, you should now see a copy of the project in front of you. 
+If you have already logged into Posit/RStudio Cloud during the previous section, you should now see a copy of the project in front of you. 
 <span style= "color:green">Click now on "Save a Permanent Copy" in the top right-hand corner of the task bar.</span>
 This ensures you have access to the project even after logging off.
 

@@ -16,8 +16,8 @@ addinfos:
 logsign:
   githubsign: "https://github.com/signup"
   githublog: "https://github.com/login"
-  postisign: "https://login.posit.cloud/register"
-  postilog: "https://login.posit.cloud/register"
+  positsign: "https://login.posit.cloud/register"
+  positlog: "https://login.posit.cloud/register"
   chatgptsign: "https://chat.openai.com/auth/login"
   chatgptlog: "https://chat.openai.com/auth/login"
 suggestions:
