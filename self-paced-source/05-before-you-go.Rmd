@@ -61,7 +61,6 @@ cat(suggestionsgithub)
 <!-- so that there is no text between the Boxes-->
 <div style="clear: both;"></div>
 
-
 That's it for the starter tutorials. 
 
 ### Advanced {-}
@@ -86,7 +85,7 @@ suggestionsmake <- generate_additionalinfo(links$suggestions$make,
                                     "Make",
                                     "Click on me and I will lead you to minimal make: A minimal tutorial on make.")
 
-cat(suggestionsgithub)
+cat(suggestionsmake)
 ```
 <!-- so that there is no text between the Boxes-->
 <div style="clear: both;"></div>
