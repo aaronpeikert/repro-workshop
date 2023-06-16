@@ -1,0 +1,31 @@
+general:
+  feedback: "https://No-feedback-site.yet"
+reprodudes:
+  one: "https://chat.openai.com/share/f188d04a-e569-4e53-8226-2532f0801812"
+  two: "https://chat.openai.com/share/dfe3ad22-f9ac-4e3c-ae94-11646b46fb24"
+  three: "https://chat.openai.com/share/029cb41c-36cb-4bbb-9ddc-bf1510faedfd"
+  four: "https://chat.openai.com/share/d7cc9c85-c57a-4222-aafe-9d84a93b8d7b"
+  five: "https://chat.openai.com/share/f2c7a3d9-4d5e-4a75-90d3-d4a5bb1cc47b"
+addinfos:
+  start: "https://en.wikipedia.org/wiki/Information"
+  rmarkdown: "https://rmarkdown.rstudio.com/"
+  git: "https://education.github.com/git-cheat-sheet-education.pdf"
+  repro: "https://github.com/aaronpeikert/repro"
+  docker: "https://docs.docker.com/"
+  make: "https://www.gnu.org/software/make/manual/make.html"
+logsign:
+  githubsign: "https://github.com/signup"
+  githublog: "https://github.com/login"
+  positsign: "https://login.posit.cloud/register"
+  positlog: "https://login.posit.cloud/register"
+  chatgptsign: "https://chat.openai.com/auth/login"
+  chatgptlog: "https://chat.openai.com/auth/login"
+suggestions:
+  rmarkdown: "https://bookdown.org/yihui/rmarkdown/"
+  git: "https://git-scm.com/docs/gittutorial"
+  github: "https://docs.github.com/en/get-started/quickstart/hello-world"
+  make: "https://kbroman.org/minimal_make/"
+  docker: "https://docs.docker.com/get-docker/"
+  latex: "https://de.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes"
+projekt:
+  start: "https://No-link-to-the-project.yet"

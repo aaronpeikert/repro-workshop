@@ -1,1 +1,147 @@
-# Software Management
+# Software Management {-}
+
+```{r results='asis', echo = FALSE}
+reprodude4 <- generate_reprodudes(links$reprodudes$four,
+                                  "ReproDude",
+                                  "Hey, I'm your ReproDude for this chapter. If you have any questions click on me and we can talk!")
+
+cat(reprodude4)
+
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
+
+## What now? {-}
+
+And on to another chapter!
+What's next?
+
+Like last time, let's look at our components.
+Which ones are we examining now?
+
+code + data + text + history + <span style="color:orange">software</span> + workflow
+
+Software? Maybe a look at our problem and software solution list will help us again.
+
+Problem list:
+
+1. ~~copy&paste mistakes~~
+2. ~~inconsistent versions of code or data~~
+3. <span style="color:orange">missing or incompatible software</span>
+4. complicated or ambiguous procedure for reproduction
+
+Software solution list:
+
+1. RMarkdown
+2. Git
+3. <span style="color:orange">Docker</span>
+4. Make
+
+So does that mean we use Docker to avoid the problem of missing or incompatible software?
+This sounds like a program I would have needed a while ago. 
+Then let's jump right in!
+
+## Docker? {-}
+
+Let me introduce Docker: your software superhero! 
+It saves you from compatibility chaos and missing dependencies. 
+With Docker, create portable packages called Docker images that effortlessly work on any computer. 
+Docker operates on the principle of containerization, which essentially means encapsulating your software application in a bundle with its own operating system, also known as a container. 
+This approach provides a unified and consistent environment that is isolated from the rest of your system, ensuring that your software runs the same way, no matter where it is deployed.
+
+Short note from the management, this workshop uses a lot of automation to automate reproducibility, e.g., to configure software, fill templates, interact with Git/GitHub etc.
+
+Among them:
+
+- usethis
+- gitcreds
+- gh
+
+and a package from Aaron:
+
+- <span style="color:orange">repro</span>
+
+These packages are "training wheels" and are not strictly required.
+
+Nevertheless, the use of repro prevents headaches by automating many steps.
+[Besides, it would go way beyond the scope of the workshop if we were to do every step ourselves.]
+
+### repro! {-}
+
+```{r results='asis', echo = FALSE}
+addinforepro <- generate_additionalinfo(links$addinfos$repro,
+                                    "repro",
+                                    "I will lead you to a deep dive of the repro package.")
+
+cat(addinforepro)
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
+
+Then let's dive into the repro package together.
+
+<span style="color:orange">repro</span> uses metadata in Rmds to infer (among other things) the software environment required.
+
+<span style="color:green">Trigger this mechanism using: <span style="color:orange">repro::automate()</span></span>
+
+<span style="color:green">Take a look at the newly generated file <span style="color:orange">Dockerfile.</span></span>
+
+<span style="color:green">Remove all, if any, python chunks.</span>
+
+<span style="color:green">Commit changes. (Do not push.)</span>
+
+<span style="color:blue">Add any package of your liking to any Rmd and run <span style="color:orange">repro::automate()</span></span>
+
+<span style="color:blue">Take a look at the file <span style="color:orange">.repro/Dockerfile_base</span> and friends. How would you change the R version used?</span>
+
+Now we will use GitHub action (GHA).
+GitHub action is a cloud service that runs software when certain events trigger it (like Pushing something up to GitHub).
+
+<span style="color:green">Add a GitHub Action to build the required Docker image with <span style="color:orange">repro::use_gha_docker()</span></span>
+
+<span style="color:green">To trigger the action, commit and push your changes.</span>
+
+<span style="color:green">Browse through the actions: <span style="color:orange">usethis::browse_github_actions()</span></span>
+
+<span style="color:blue">Take a look at <span style="color:orange">.github/workflows/push-container.yml.</span> When is the action triggered?</span>
+
+That's it.
+But what have we actually just done?
+
+We created Dockerfiles using the repro package and then automated the building of Docker images by setting up GitHub Action.
+These Docker images now ensure a reproducible software environment!
+
+## And now? {-}
+
+Congratulations, we are approaching the finish line!
+
+Before we continue, let's take another quick look together at what we have just done.
+We now have one more component in our toolbox:
+
+<span style="color:orange">code + data + text + history + software</span> + workflow
+
+And with that, we solved our third problem on the list:
+
+1. ~~copy&paste mistakes~~
+2. ~~inconsistent versions of code or data~~
+3. ~~missing or incompatible software~~
+4. complicated or ambiguous procedure for reproduction
+
+And which software did we just use for this?:
+
+1. RMarkdown
+2. Git
+3. <span style="color:orange">Docker</span>
+4. Make
+
+
+### Final Step! {-}
+
+Now please go through what we have just done and all the software we used. 
+
+You are currently at your computer using Posit Cloud, which hosts an R environment where you used the repro package and GitHub to generate a Docker image to ensure a reproducible software environment.
+
+That ends this section.
+Should we pause for a short break or proceed without interruption?
+
+You are now ready for the next chapter. [next chapter](./workflow-orchestration.html).

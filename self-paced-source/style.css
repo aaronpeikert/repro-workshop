@@ -12,3 +12,75 @@ pre {
 pre code {
   white-space: inherit;
 }
+/* Infobox-Styling */
+.infobox {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  width: calc(40%); /* 1/3 der Breite abzüglich des horizontalen Paddings */
+  float: left; /* Links orientieren */
+  clear: left; /* Elemente darunter richtig positionieren */
+  box-sizing: border-box; /* Breite inklusive Border und Padding berechnen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Infobox-Stylinggpt */
+.infoboxgpt {
+  background-color: #000; /* Dunklerer Farbton */
+  border: 1px solid #222; /* Dunklerer Rahmen */
+  border-radius: 10px; /* Abgerundete Ecken */
+  padding: 10px;
+  width: calc(40%);
+  float: right;
+  clear: right;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Titel-Styling */
+.infobox-title {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 1px;
+}
+
+/* Titel-Stylinggpt */
+.infobox-titlegpt {
+  color: #fff; /* Weiße Schriftfarbe für bessere Lesbarkeit auf dunklem Hintergrund */
+  font-size: 24px;
+  font-weight: bold;
+  margin: 1px;
+}
+
+/* Inhalt-Styling */
+.infobox-content {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 1px; /* Fügt Abstand oben und unten hinzu */
+}
+
+/* Inhalt-Stylinggpt */
+.infobox-contentgpt {
+  color: #ddd; /* Helle Schriftfarbe für bessere Lesbarkeit auf dunklem Hintergrund */
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 1px; /* Fügt Abstand oben und unten hinzu */
+}
+
+/* Hover-Effekt */
+.infobox:hover, .infoboxgpt:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.infoboxgpt:hover {
+  box-shadow: 0 0 20px 5px rgba(33, 150, 243, 0.5);
+}

@@ -1,1 +1,204 @@
-# Workflow Orchestration
+# Workflow Orchestration {-}
+
+```{r results='asis', echo = FALSE}
+reprodude5 <- generate_reprodudes(links$reprodudes$five,
+                                  "ReproDude",
+                                  "Hey, I'm your ReproDude for this chapter. If you have any questions click on me and we can talk!")
+
+cat(reprodude5)
+
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
+
+## What now? {-}
+
+We have already reached the last chapter of content!
+What is it about?
+
+As usual, let's look at our components.
+Which is the last missing piece for fully automating reproducibility?
+
+code + data + text + history + software + <span style="color:orange">workflow</span>
+
+Workflow, I think I heard of that. 
+Let's peek again at our problem and software solution lists to be sure.
+
+Problem list:
+
+1. ~~copy&paste mistakes~~
+2. ~~inconsistent versions of code or data~~
+3. ~~missing or incompatible software~~
+4. <span style="color:orange">complicated or ambiguous procedure for reproduction</span>
+
+Software solution list:
+
+1. RMarkdown
+2. Git
+3. Docker
+4. <span style="color:orange">Make</span>
+
+So that means we use Make to avoid the problem of complicated or unclear procedure for reproduction?
+Let's jump right in!
+
+## Make? {-}
+
+```{r results='asis', echo = FALSE}
+addinfomake <- generate_additionalinfo(links$addinfos$make,
+                                    "Make",
+                                    "Click on me for the documentation of Make!")
+
+cat(addinfomake)
+```
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;"></div>
+
+To understand what Make is, let's take a step back. 
+To do that, let's move on to a topic that I'm really passionate about. 
+Food.
+And even one step further back, cooking.
+What is cooking?
+
+Besides the definition of content, cooking is a sequence of dependencies. 
+Let's take a look at my favorite recipe.
+
+>Arrabbiata sauce, or sugo all'arrabbiata in Italian, is a spicy sauce for pasta made from garlic, tomatoes, and dried red chili peppers cooked in olive oil.  
+<small>"Arrabbiata sauce" from Wikipedia under [<span style="color:orange">CC BY-SA 3.0</span>](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)</small>
+
+And what are the steps in this masterpiece of craftsmanship?
+
+>Arrabbiata sauce, or sugo all'arrabbiata in Italian, is a spicy <span style="color:orange">sauce</span> for <span style="color:orange">pasta</span> made from <span style="color:orange">garlic</span>, <span style="color:orange">tomatoes</span>, and dried red <span style="color:orange">chili</span> peppers cooked in olive oil.  
+<small>"Arrabbiata sauce" from Wikipedia under [<span style="color:orange">CC BY-SA 3.0</span>](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License), emphasis added</small>
+
+Despite the beauty inherent in this recipe, we also want to formalize it. 
+Let's see how this recipe looks in a formalized version:
+<!--Python part wieder einfügen? Hat beim rendern zu problemen geführt.-->
+```
+arrabiata.pdf: arrabiata.Rmd sauce.csv R/pasta.R 
+  Rscript -e "rmarkdown::render('arrabiata.Rmd')"
+sauce.csv: R/cook.R tomatoes.zip aromatics.yaml
+  Rscript -e "source(R/cook.R)"
+aromatics.yaml: R/sizzle.R garlic.txt chili.json
+  Rscript -e "source(R/sizzle.R)"
+```
+Let's break it down for our understanding. <span style="color:orange">arrabiata.pdf</span> is our sauce that we want to have.
+This sauce is created based on the files <span style="color:orange">arrabiata.Rmd</span>, our recipe, using <span style="color:orange">sauce.csv</span> and <span style="color:orange">/pasta.R</span>.
+
+<span style="color:orange">sauce.csv</span> is created with <span style="color:orange">R/cook.R</span> with the raw materials <span style="color:orange">tomatoes.zip</span> and <span style="color:orange">aromatics.yaml</span>.
+
+<span style="color:orange">aromatics.yaml</span> in turn is created by <span style="color:orange">R/sizzle.R</span> with the raw materials <span style="color:orange">garlic.txt</span> and <span style="color:orange">chili.json</span>.
+
+If you have trouble understanding the recipe, don't worry, we're all just virtual people. 
+Maybe a conversation with ReproDude will help you?
+
+After looking at the arrabbiata sauce, here is another example of a culinary masterpiece.
+
+<span style="color:brown">Brownies.</span>
+
+Just kidding, let's get out of here or I'll need a lunch break.
+
+Instead, let's point out the key features of this kind of recipe by Make:
+
+- Missing ingredients will be generated,  
+  <small>*e.g., if the cleaned data is missing, the raw data is first cleaned.*</small>
+
+- Newer ingredients trigger updates,  
+  <small>*e.g., new data leads to the recreation of the whole manuscript.*</small>
+
+- Always the same "button" that triggers reproduction,  
+  <small>*e.g., regardless of programming language, file format, and intermediate steps.*</small>
+
+And the great thing is that <span style="color:orange">repro::automate()</span> automatically generates recipes for Rmds, only deeper nested dependencies must be added manually.
+
+### Hands on! {-}
+
+But now we have had enough thinking, let's go back to the code!
+
+<span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make inflation.pdf</span></span>
+
+<span style="color:green">Delete <span style="color:orange">inflation.pdf.</span></span>
+
+<span style="color:green">Add <span style="color:orange">inflation.pdf</span> to the target <span style="color:orange">all (all: inflation.pdf).</span></span>
+
+<span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make</span></span>
+
+<span style="color:blue">Run: <span style="color:orange">make -B --dry-run</span></span>
+
+[Hint: <span style="color:orange">-B</span> means rebuild everything. <span style="color:orange">--dry-run</span> means do not actually run the commands.</span>]
+
+And now that we've created the recipe, let's take it one step further and *Make* it in the cloud.
+
+<span style="color:green">Run <span style="color:orange">repro::use_make_publish()</span></span>
+
+<span style="color:green">Paste the following into the <span style="color:orange">Makefile:</span></span>
+
+```
+publish/: inflation.pdf
+include .repro/Makefile_publish
+```
+
+<span style="color:green">Run <span style="color:orange">repro::use_gha_publish()</span></span>
+
+<span style="color:green">Commit and push.</span>
+
+<span style="color:blue">Inspect <span style="color:orange">.repro/Makefile_publish.</span></span>
+
+Ready yet?  
+All right, what did we just do?
+
+We created and send a Makefile to the cloud using Make and the repro package.
+This makefile will ensure that we can track how our sauce is created!
+
+## And now? {-}
+
+Congratulations, we are more or less near the finish line!
+
+Before we finish, let's take one more quick look together at what we just did.
+We now have all the components from our toolbox together.
+
+<span style="color:orange">code + data + text + history + software + workflow</span>
+
+And with that, we solved our last problem on the list:
+
+1. ~~copy&paste mistakes~~
+2. ~~inconsistent versions of code or data~~
+3. ~~missing or incompatible software~~
+4. ~~complicated or ambiguous procedure for reproduction~~
+
+And which software did we use?:
+
+1. RMarkdown
+2. Git
+3. Docker
+4. <span style="color:orange">Make</span>
+
+### Almost the Final Final Step! {-}
+
+Now please go through all the things we just did and all the software we used.
+
+You are currently at your computer using Posit Cloud, which hosts an R environment where you used Make and the repro package to generate a Makefile which automates the reproducibility of build processes.
+
+You have now reached the advanced status of reproducibility; there is only one last step to show the world what we have learned here.
+
+<span style="color:orange">Publish</span>
+
+With this step we will now publish the document automatically, for this we will use GitHub again.
+
+<span style="color:green">Go back to GitHub.</span>
+
+<span style="color:green">Go to Settings → Pages and change <span style="color:orange">none</span> to <span style="color:orange">gh-pages.</span></span>
+
+<span style="color:green">Go to actions and wait for the new action to finish.</span>
+
+<span style="color:green">Inspect the published PDF online (<span style="color:orange">change username</span>):</span>
+
+<span style="color:orange">yourusername.github.io/project/inflation.pdf</span>
+
+<span style="color:blue">Change something, e.g., make the plot ugly again, then commit and push. Takes ~5min or so.</span>
+
+The great thing about this automation is that it now automatically builds and publishes your document every time you push a new version to GitHub.
+
+And with that, we have concluded the workshop in terms of content!
+In the following chapter, we'll just go through some suggestions on how you can continue your Reproductions journey.
+
+You are now ready for the last chapter. [next chapter](./before-you-go.html).

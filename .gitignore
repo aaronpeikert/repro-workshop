@@ -10,6 +10,7 @@ presentation_files/
 data/
 publish/
 self-paced/
+self-paced-source/*_files/
 
 # Created by https://www.toptal.com/developers/gitignore/api/latex
 # Edit at https://www.toptal.com/developers/gitignore?templates=latex
