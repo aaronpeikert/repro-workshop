@@ -30,6 +30,6 @@ If you found your way to this page because you are currently participating in a 
 You can head to the [next chapter "Getting Started"](./getting-started.html)
 
 If you are here on your own, you are welcome to try the workshop; however, we can not gaurantee that the instructions on this website will work at random time points between workshops.
-In case you like what you see and you want to offer this workshop at your institution, [get in touch with us]((mailto:peikert@mpib-berlin.mpg.de)).
+In case you like what you see and you want to offer this workshop at your institution, [get in touch with us](mailto:peikert@mpib-berlin.mpg.de).
 
 You may use all materials from www.github.com/aaronpeikert/repro-workshop under the [CC0 1.0 Universal licence](https://creativecommons.org/publicdomain/zero/1.0/) unless noted otherwise; still, we expect that you credit us where appropriate (e.g., with citing this as the source).
