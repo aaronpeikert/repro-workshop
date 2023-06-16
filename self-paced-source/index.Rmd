@@ -5,7 +5,7 @@ author: "Aaron Peikert & Hannes Diemerling"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-# url: your book url like https://bookdown.org/yihui/bookdown
+url: https://aaronpeikert.github.io/repro-workshop/self-paced
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
   This is a minimal example of using the bookdown package to write a book.
@@ -23,11 +23,13 @@ source("functions.R")
 
 # About {-}
 
-We (Aaron Peikert and Hannes Diemerling) are currently working on a *self paced* version of this workshop.
-This is a work in progress!
+We ([Aaron Peikert](mailto:peikert@mpib-berlin.mpg.de) and [Hannes Diemerling](mailto:diemerling@mpib-berlin.mpg.de)) work at the Formal Methods project at the Max Planck Institute for Human Development.
+Do no hesitate to contact us if you have any questions!
 
-wer wir sind, wo wir herkommen und email
+If you found your way to this page because you are currently participating in a workshop, thank you for attending!
+You can head to the [next chapter "Getting Started"](./getting-started.html)
 
-leute die im workshop sind sollen hier begrüßt werden und leute im internet sollen sich damit auch selbst zurechtfinden im notfall.
+If you are here on your own, you are welcome to try the workshop; however, we can not gaurantee that the instructions on this website will work at random time points between workshops.
+In case you like what you see and you want to offer this workshop at your institution, [get in touch with us]((mailto:peikert@mpib-berlin.mpg.de)).
 
-
+You may use all materials from www.github.com/aaronpeikert/repro-workshop under the CC0 1.0 Universal licence unless noted otherwise; still, we expect that you credit us where appropriate (e.g., with citing this as the source).
