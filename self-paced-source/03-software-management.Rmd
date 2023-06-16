@@ -16,7 +16,8 @@ cat(reprodude4)
 And on to another chapter!
 What's next?
 
-Like last time, let's look at our components, which ones are we examining now?
+Like last time, let's look at our components.
+Which ones are we examining now?
 
 code + data + text + history + <span style="color:orange">software</span> + workflow
 
@@ -36,8 +37,8 @@ Software solution list:
 3. <span style="color:orange">Docker</span>
 4. Make
 
-So that means we use Docker to avoid the problem of missing or incompatible software?
-This sounds like a program I would have needed a while ago... 
+So does that mean we use Docker to avoid the problem of missing or incompatible software?
+This sounds like a program I would have needed a while ago. 
 Then let's jump right in!
 
 ## Docker? {-}
@@ -45,7 +46,7 @@ Then let's jump right in!
 Let me introduce Docker: your software superhero! 
 It saves you from compatibility chaos and missing dependencies. 
 With Docker, create portable packages called Docker images that effortlessly work on any computer. 
-Docker operates on a principle of containerization, which essentially means encapsulating your software application in a bundle with its own operating system, also known as a container. 
+Docker operates on the principle of containerization, which essentially means encapsulating your software application in a bundle with its own operating system, also known as a container. 
 This approach provides a unified and consistent environment that is isolated from the rest of your system, ensuring that your software runs the same way, no matter where it is deployed.
 
 Short note from the management, this workshop uses a lot of automation to automate reproducibility, e.g., to configure software, fill templates, interact with Git/GitHub etc.
@@ -60,9 +61,9 @@ and a package from Aaron:
 
 - <span style="color:orange">repro</span>
 
-These packages are "training wheels" and not required.
+These packages are "training wheels" and are not strictly required.
 
-Nevertheless, the use of repro prevents headaches by taking over many steps.
+Nevertheless, the use of repro prevents headaches by automating many steps.
 [Besides, it would go way beyond the scope of the workshop if we were to do every step ourselves.]
 
 ### repro! {-}
@@ -119,14 +120,14 @@ We now have one more component in our toolbox:
 
 <span style="color:orange">code + data + text + history + software</span> + workflow
 
-And with that we solved our third Problem on the list:
+And with that, we solved our third problem on the list:
 
 1. ~~copy&paste mistakes~~
 2. ~~inconsistent versions of code or data~~
 3. ~~missing or incompatible software~~
 4. complicated or ambiguous procedure for reproduction
 
-And which software did we just used for this?:
+And which software did we just use for this?:
 
 1. RMarkdown
 2. Git
@@ -138,7 +139,7 @@ And which software did we just used for this?:
 
 Now please go through what we have just done and all the software we used. 
 
-You are currently at your computer using Posit Cloud which hosts an R environment where you used the repro package and GitHub to generate a Dockerimage to ensure a reproducible software environment.
+You are currently at your computer using Posit Cloud, which hosts an R environment where you used the repro package and GitHub to generate a Docker image to ensure a reproducible software environment.
 
 That ends this section.
 Should we pause for a short break or proceed without interruption?
