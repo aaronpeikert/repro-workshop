@@ -79,7 +79,7 @@ cat(reprodude1)
 <div style="clear: both;"></div>
 
 
-## What else should i know before I start? {-}
+## What else should I know before I start? {-}
 
 In this workshop, we will go through many things, many of which are complicated.
 The goal today is to understand what is possible and not to achieve a complete deep technical understanding.
