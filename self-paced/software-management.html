@@ -4,32 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Software Management | Reproducible Research</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <title>Software Management | Reproducible Research</title>
+  <meta name="description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Software Management | Reproducible Research" />
+  <meta property="og:title" content="Software Management | Reproducible Research" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta property="og:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="github-repo" content="aaronpeikert/repro-workshop" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Software Management | Reproducible Research" />
+  <meta name="twitter:title" content="Software Management | Reproducible Research" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   
 
 <meta name="author" content="Aaron Peikert &amp; Hannes Diemerling" />
 
 
-<meta name="date" content="2023-03-24" />
+<meta name="date" content="2023-06-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -60,6 +54,70 @@ set in the _output.yml file.</p>" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -86,20 +144,86 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-concepts-must-we-know-about"><i class="fa fa-check"></i>What concepts must we know about?</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-software-must-we-know-about"><i class="fa fa-check"></i>What software must we know about?</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-services-will-we-use"><i class="fa fa-check"></i>What services will we use?</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#setup"><i class="fa fa-check"></i>Setup</a>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-does-self-paced-mean"><i class="fa fa-check"></i>What does self-paced mean?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-are-infoboxes"><i class="fa fa-check"></i>What are infoboxes?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-else-should-i-know-before-i-start"><i class="fa fa-check"></i>What else should I know before I start?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#questions-comments-notes"><i class="fa fa-check"></i>Questions? Comments? Notes?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#setup"><i class="fa fa-check"></i>Setup!</a>
 <ul>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#github"><i class="fa fa-check"></i>GitHub</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#postirstudio-cloud"><i class="fa fa-check"></i>Posti/RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#positrstudio-cloud"><i class="fa fa-check"></i>Posit/RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#chatgpt"><i class="fa fa-check"></i>ChatGPT</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#final-step"><i class="fa fa-check"></i>Final Step</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i><b>1</b> Dynamic Documents</a></li>
-<li class="chapter" data-level="2" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i><b>2</b> Version Control</a></li>
-<li class="chapter" data-level="3" data-path="software-management.html"><a href="software-management.html"><i class="fa fa-check"></i><b>3</b> Software Management</a></li>
-<li class="chapter" data-level="4" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html"><i class="fa fa-check"></i><b>4</b> Workflow Orchestration</a></li>
-<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html"><i class="fa fa-check"></i>Before you go</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i>Dynamic Documents</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-i-see-before-me"><i class="fa fa-check"></i>What do I see before me?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#best-practices"><i class="fa fa-check"></i>Best practices?</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#a-summary"><i class="fa fa-check"></i>A summary?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#extended-goals"><i class="fa fa-check"></i>Extended Goals?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#metadata-yaml"><i class="fa fa-check"></i>Metadata (YAML)</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#text-markdown"><i class="fa fa-check"></i>Text (Markdown)</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#code-r"><i class="fa fa-check"></i>Code (R)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#and-now"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#final-step-1"><i class="fa fa-check"></i>Final Step</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i>Version Control</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#what-now"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#git"><i class="fa fa-check"></i>Git?</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#hands-on"><i class="fa fa-check"></i>Hands on!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#and-now-1"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#final-step-2"><i class="fa fa-check"></i>Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html"><i class="fa fa-check"></i>Software Management</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#what-now-1"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#docker"><i class="fa fa-check"></i>Docker?</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#repro"><i class="fa fa-check"></i>repro!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#and-now-2"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#final-step-3"><i class="fa fa-check"></i>Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html"><i class="fa fa-check"></i>Workflow Orchestration</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#what-now-2"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#make"><i class="fa fa-check"></i>Make?</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#hands-on-1"><i class="fa fa-check"></i>Hands on!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#and-now-3"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#almost-the-final-final-step"><i class="fa fa-check"></i>Almost the Final Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html"><i class="fa fa-check"></i>Before you go</a>
+<ul>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#ressources"><i class="fa fa-check"></i>Ressources</a>
+<ul>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#starter"><i class="fa fa-check"></i>Starter</a></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#advanced"><i class="fa fa-check"></i>Advanced</a></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#digging-really-deep"><i class="fa fa-check"></i>Digging really Deep</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#hard-to-say-goodbye"><i class="fa fa-check"></i>Hard to say Goodbye</a></li>
+</ul></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/aaronpeikert/repro-workshop/issues/new" target="blank">Questions? Problems? Suggestions?</a></li>
+<li><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="blank">Licensed under CC0, but please cite us.</a></li>
 
 </ul>
 
@@ -118,9 +242,131 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="software-management" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Software Management<a href="software-management.html#software-management" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="software-management" class="section level1 unnumbered hasAnchor">
+<h1>Software Management<a href="software-management.html#software-management" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="infoboxgpt" onclick="window.open(&#39;https://chat.openai.com/share/d7cc9c85-c57a-4222-aafe-9d84a93b8d7b&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-titlegpt">
+ReproDude
+</h2>
+<p class="infobox-contentgpt">
+Hey, I’m your ReproDude for this chapter. If you have any questions click on me and we can talk!
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
 
+</div>
+<div id="what-now-1" class="section level2 unnumbered hasAnchor">
+<h2>What now?<a href="software-management.html#what-now-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>And on to another chapter!
+What’s next?</p>
+<p>Like last time, let’s look at our components.
+Which ones are we examining now?</p>
+<p>code + data + text + history + <span style="color:orange">software</span> + workflow</p>
+<p>Software? Maybe a look at our problem and software solution list will help us again.</p>
+<p>Problem list:</p>
+<ol style="list-style-type: decimal">
+<li><del>copy&amp;paste mistakes</del></li>
+<li><del>inconsistent versions of code or data</del></li>
+<li><span style="color:orange">missing or incompatible software</span></li>
+<li>complicated or ambiguous procedure for reproduction</li>
+</ol>
+<p>Software solution list:</p>
+<ol style="list-style-type: decimal">
+<li>RMarkdown</li>
+<li>Git</li>
+<li><span style="color:orange">Docker</span></li>
+<li>Make</li>
+</ol>
+<p>So does that mean we use Docker to avoid the problem of missing or incompatible software?
+This sounds like a program I would have needed a while ago.
+Then let’s jump right in!</p>
+</div>
+<div id="docker" class="section level2 unnumbered hasAnchor">
+<h2>Docker?<a href="software-management.html#docker" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let me introduce Docker: your software superhero!
+It saves you from compatibility chaos and missing dependencies.
+With Docker, create portable packages called Docker images that effortlessly work on any computer.
+Docker operates on the principle of containerization, which essentially means encapsulating your software application in a bundle with its own operating system, also known as a container.
+This approach provides a unified and consistent environment that is isolated from the rest of your system, ensuring that your software runs the same way, no matter where it is deployed.</p>
+<p>Short note from the management, this workshop uses a lot of automation to automate reproducibility, e.g., to configure software, fill templates, interact with Git/GitHub etc.</p>
+<p>Among them:</p>
+<ul>
+<li>usethis</li>
+<li>gitcreds</li>
+<li>gh</li>
+</ul>
+<p>and a package from Aaron:</p>
+<ul>
+<li><span style="color:orange">repro</span></li>
+</ul>
+<p>These packages are “training wheels” and are not strictly required.</p>
+<p>Nevertheless, the use of repro prevents headaches by automating many steps.
+[Besides, it would go way beyond the scope of the workshop if we were to do every step ourselves.]</p>
+<div id="repro" class="section level3 unnumbered hasAnchor">
+<h3>repro!<a href="software-management.html#repro" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="infobox" onclick="window.open(&#39;https://github.com/aaronpeikert/repro&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-title">
+repro
+</h2>
+<p class="infobox-content">
+I will lead you to a deep dive of the repro package.
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
+
+</div>
+<p>Then let’s dive into the repro package together.</p>
+<p><span style="color:orange">repro</span> uses metadata in Rmds to infer (among other things) the software environment required.</p>
+<p><span style="color:green">Trigger this mechanism using: <span style="color:orange">repro::automate()</span></span></p>
+<p><span style="color:green">Take a look at the newly generated file <span style="color:orange">Dockerfile.</span></span></p>
+<p><span style="color:green">Remove all, if any, python chunks.</span></p>
+<p><span style="color:green">Commit changes. (Do not push.)</span></p>
+<p><span style="color:blue">Add any package of your liking to any Rmd and run <span style="color:orange">repro::automate()</span></span></p>
+<p><span style="color:blue">Take a look at the file <span style="color:orange">.repro/Dockerfile_base</span> and friends. How would you change the R version used?</span></p>
+<p>Now we will use GitHub action (GHA).
+GitHub action is a cloud service that runs software when certain events trigger it (like Pushing something up to GitHub).</p>
+<p><span style="color:green">Add a GitHub Action to build the required Docker image with <span style="color:orange">repro::use_gha_docker()</span></span></p>
+<p><span style="color:green">To trigger the action, commit and push your changes.</span></p>
+<p><span style="color:green">Browse through the actions: <span style="color:orange">usethis::browse_github_actions()</span></span></p>
+<p><span style="color:blue">Take a look at <span style="color:orange">.github/workflows/push-container.yml.</span> When is the action triggered?</span></p>
+<p>That’s it.
+But what have we actually just done?</p>
+<p>We created Dockerfiles using the repro package and then automated the building of Docker images by setting up GitHub Action.
+These Docker images now ensure a reproducible software environment!</p>
+</div>
+</div>
+<div id="and-now-2" class="section level2 unnumbered hasAnchor">
+<h2>And now?<a href="software-management.html#and-now-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Congratulations, we are approaching the finish line!</p>
+<p>Before we continue, let’s take another quick look together at what we have just done.
+We now have one more component in our toolbox:</p>
+<p><span style="color:orange">code + data + text + history + software</span> + workflow</p>
+<p>And with that, we solved our third problem on the list:</p>
+<ol style="list-style-type: decimal">
+<li><del>copy&amp;paste mistakes</del></li>
+<li><del>inconsistent versions of code or data</del></li>
+<li><del>missing or incompatible software</del></li>
+<li>complicated or ambiguous procedure for reproduction</li>
+</ol>
+<p>And which software did we just use for this?:</p>
+<ol style="list-style-type: decimal">
+<li>RMarkdown</li>
+<li>Git</li>
+<li><span style="color:orange">Docker</span></li>
+<li>Make</li>
+</ol>
+<div id="final-step-3" class="section level3 unnumbered hasAnchor">
+<h3>Final Step!<a href="software-management.html#final-step-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now please go through what we have just done and all the software we used.</p>
+<p>You are currently at your computer using Posit Cloud, which hosts an R environment where you used the repro package and GitHub to generate a Docker image to ensure a reproducible software environment.</p>
+<p>That ends this section.
+Should we pause for a short break or proceed without interruption?</p>
+<p>You are now ready for the next chapter. <a href="./workflow-orchestration.html">next chapter</a>.</p>
+
+</div>
+</div>
 </div>
             </section>
 

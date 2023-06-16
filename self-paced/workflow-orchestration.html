@@ -4,32 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Workflow Orchestration | Reproducible Research</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <title>Workflow Orchestration | Reproducible Research</title>
+  <meta name="description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Workflow Orchestration | Reproducible Research" />
+  <meta property="og:title" content="Workflow Orchestration | Reproducible Research" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta property="og:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="github-repo" content="aaronpeikert/repro-workshop" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Workflow Orchestration | Reproducible Research" />
+  <meta name="twitter:title" content="Workflow Orchestration | Reproducible Research" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   
 
 <meta name="author" content="Aaron Peikert &amp; Hannes Diemerling" />
 
 
-<meta name="date" content="2023-03-24" />
+<meta name="date" content="2023-06-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -60,6 +54,70 @@ set in the _output.yml file.</p>" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -86,20 +144,86 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-concepts-must-we-know-about"><i class="fa fa-check"></i>What concepts must we know about?</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-software-must-we-know-about"><i class="fa fa-check"></i>What software must we know about?</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-services-will-we-use"><i class="fa fa-check"></i>What services will we use?</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#setup"><i class="fa fa-check"></i>Setup</a>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-does-self-paced-mean"><i class="fa fa-check"></i>What does self-paced mean?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-are-infoboxes"><i class="fa fa-check"></i>What are infoboxes?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-else-should-i-know-before-i-start"><i class="fa fa-check"></i>What else should I know before I start?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#questions-comments-notes"><i class="fa fa-check"></i>Questions? Comments? Notes?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#setup"><i class="fa fa-check"></i>Setup!</a>
 <ul>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#github"><i class="fa fa-check"></i>GitHub</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#postirstudio-cloud"><i class="fa fa-check"></i>Posti/RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#positrstudio-cloud"><i class="fa fa-check"></i>Posit/RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#chatgpt"><i class="fa fa-check"></i>ChatGPT</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#final-step"><i class="fa fa-check"></i>Final Step</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i><b>1</b> Dynamic Documents</a></li>
-<li class="chapter" data-level="2" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i><b>2</b> Version Control</a></li>
-<li class="chapter" data-level="3" data-path="software-management.html"><a href="software-management.html"><i class="fa fa-check"></i><b>3</b> Software Management</a></li>
-<li class="chapter" data-level="4" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html"><i class="fa fa-check"></i><b>4</b> Workflow Orchestration</a></li>
-<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html"><i class="fa fa-check"></i>Before you go</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i>Dynamic Documents</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-i-see-before-me"><i class="fa fa-check"></i>What do I see before me?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#best-practices"><i class="fa fa-check"></i>Best practices?</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#a-summary"><i class="fa fa-check"></i>A summary?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#extended-goals"><i class="fa fa-check"></i>Extended Goals?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#metadata-yaml"><i class="fa fa-check"></i>Metadata (YAML)</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#text-markdown"><i class="fa fa-check"></i>Text (Markdown)</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#code-r"><i class="fa fa-check"></i>Code (R)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#and-now"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#final-step-1"><i class="fa fa-check"></i>Final Step</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i>Version Control</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#what-now"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#git"><i class="fa fa-check"></i>Git?</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#hands-on"><i class="fa fa-check"></i>Hands on!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#and-now-1"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#final-step-2"><i class="fa fa-check"></i>Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html"><i class="fa fa-check"></i>Software Management</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#what-now-1"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#docker"><i class="fa fa-check"></i>Docker?</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#repro"><i class="fa fa-check"></i>repro!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#and-now-2"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#final-step-3"><i class="fa fa-check"></i>Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html"><i class="fa fa-check"></i>Workflow Orchestration</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#what-now-2"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#make"><i class="fa fa-check"></i>Make?</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#hands-on-1"><i class="fa fa-check"></i>Hands on!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#and-now-3"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#almost-the-final-final-step"><i class="fa fa-check"></i>Almost the Final Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html"><i class="fa fa-check"></i>Before you go</a>
+<ul>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#ressources"><i class="fa fa-check"></i>Ressources</a>
+<ul>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#starter"><i class="fa fa-check"></i>Starter</a></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#advanced"><i class="fa fa-check"></i>Advanced</a></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#digging-really-deep"><i class="fa fa-check"></i>Digging really Deep</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#hard-to-say-goodbye"><i class="fa fa-check"></i>Hard to say Goodbye</a></li>
+</ul></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/aaronpeikert/repro-workshop/issues/new" target="blank">Questions? Problems? Suggestions?</a></li>
+<li><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="blank">Licensed under CC0, but please cite us.</a></li>
 
 </ul>
 
@@ -118,9 +242,167 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="workflow-orchestration" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Workflow Orchestration<a href="workflow-orchestration.html#workflow-orchestration" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="workflow-orchestration" class="section level1 unnumbered hasAnchor">
+<h1>Workflow Orchestration<a href="workflow-orchestration.html#workflow-orchestration" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="infoboxgpt" onclick="window.open(&#39;https://chat.openai.com/share/f2c7a3d9-4d5e-4a75-90d3-d4a5bb1cc47b&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-titlegpt">
+ReproDude
+</h2>
+<p class="infobox-contentgpt">
+Hey, I’m your ReproDude for this chapter. If you have any questions click on me and we can talk!
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
 
+</div>
+<div id="what-now-2" class="section level2 unnumbered hasAnchor">
+<h2>What now?<a href="workflow-orchestration.html#what-now-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have already reached the last chapter of content!
+What is it about?</p>
+<p>As usual, let’s look at our components.
+Which is the last missing piece for fully automating reproducibility?</p>
+<p>code + data + text + history + software + <span style="color:orange">workflow</span></p>
+<p>Workflow, I think I heard of that.
+Let’s peek again at our problem and software solution lists to be sure.</p>
+<p>Problem list:</p>
+<ol style="list-style-type: decimal">
+<li><del>copy&amp;paste mistakes</del></li>
+<li><del>inconsistent versions of code or data</del></li>
+<li><del>missing or incompatible software</del></li>
+<li><span style="color:orange">complicated or ambiguous procedure for reproduction</span></li>
+</ol>
+<p>Software solution list:</p>
+<ol style="list-style-type: decimal">
+<li>RMarkdown</li>
+<li>Git</li>
+<li>Docker</li>
+<li><span style="color:orange">Make</span></li>
+</ol>
+<p>So that means we use Make to avoid the problem of complicated or unclear procedure for reproduction?
+Let’s jump right in!</p>
+</div>
+<div id="make" class="section level2 unnumbered hasAnchor">
+<h2>Make?<a href="workflow-orchestration.html#make" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="infobox" onclick="window.open(&#39;https://www.gnu.org/software/make/manual/make.html&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-title">
+Make
+</h2>
+<p class="infobox-content">
+Click on me for the documentation of Make!
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
+
+</div>
+<p>To understand what Make is, let’s take a step back.
+To do that, let’s move on to a topic that I’m really passionate about.
+Food.
+And even one step further back, cooking.
+What is cooking?</p>
+<p>Besides the definition of content, cooking is a sequence of dependencies.
+Let’s take a look at my favorite recipe.</p>
+<blockquote>
+<p>Arrabbiata sauce, or sugo all’arrabbiata in Italian, is a spicy sauce for pasta made from garlic, tomatoes, and dried red chili peppers cooked in olive oil.<br />
+<small>“Arrabbiata sauce” from Wikipedia under <a href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"><span style="color:orange">CC BY-SA 3.0</span></a></small></p>
+</blockquote>
+<p>And what are the steps in this masterpiece of craftsmanship?</p>
+<blockquote>
+<p>Arrabbiata sauce, or sugo all’arrabbiata in Italian, is a spicy <span style="color:orange">sauce</span> for <span style="color:orange">pasta</span> made from <span style="color:orange">garlic</span>, <span style="color:orange">tomatoes</span>, and dried red <span style="color:orange">chili</span> peppers cooked in olive oil.<br />
+<small>“Arrabbiata sauce” from Wikipedia under <a href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"><span style="color:orange">CC BY-SA 3.0</span></a>, emphasis added</small></p>
+</blockquote>
+<p>Despite the beauty inherent in this recipe, we also want to formalize it.
+Let’s see how this recipe looks in a formalized version:
+<!--Python part wieder einfügen? Hat beim rendern zu problemen geführt.--></p>
+<pre><code>arrabiata.pdf: arrabiata.Rmd sauce.csv R/pasta.R 
+  Rscript -e &quot;rmarkdown::render(&#39;arrabiata.Rmd&#39;)&quot;
+sauce.csv: R/cook.R tomatoes.zip aromatics.yaml
+  Rscript -e &quot;source(R/cook.R)&quot;
+aromatics.yaml: R/sizzle.R garlic.txt chili.json
+  Rscript -e &quot;source(R/sizzle.R)&quot;</code></pre>
+<p>Let’s break it down for our understanding. <span style="color:orange">arrabiata.pdf</span> is our sauce that we want to have.
+This sauce is created based on the files <span style="color:orange">arrabiata.Rmd</span>, our recipe, using <span style="color:orange">sauce.csv</span> and <span style="color:orange">/pasta.R</span>.</p>
+<p><span style="color:orange">sauce.csv</span> is created with <span style="color:orange">R/cook.R</span> with the raw materials <span style="color:orange">tomatoes.zip</span> and <span style="color:orange">aromatics.yaml</span>.</p>
+<p><span style="color:orange">aromatics.yaml</span> in turn is created by <span style="color:orange">R/sizzle.R</span> with the raw materials <span style="color:orange">garlic.txt</span> and <span style="color:orange">chili.json</span>.</p>
+<p>If you have trouble understanding the recipe, don’t worry, we’re all just virtual people.
+Maybe a conversation with ReproDude will help you?</p>
+<p>After looking at the arrabbiata sauce, here is another example of a culinary masterpiece.</p>
+<p><span style="color:brown">Brownies.</span></p>
+<p>Just kidding, let’s get out of here or I’ll need a lunch break.</p>
+<p>Instead, let’s point out the key features of this kind of recipe by Make:</p>
+<ul>
+<li><p>Missing ingredients will be generated,<br />
+<small><em>e.g., if the cleaned data is missing, the raw data is first cleaned.</em></small></p></li>
+<li><p>Newer ingredients trigger updates,<br />
+<small><em>e.g., new data leads to the recreation of the whole manuscript.</em></small></p></li>
+<li><p>Always the same “button” that triggers reproduction,<br />
+<small><em>e.g., regardless of programming language, file format, and intermediate steps.</em></small></p></li>
+</ul>
+<p>And the great thing is that <span style="color:orange">repro::automate()</span> automatically generates recipes for Rmds, only deeper nested dependencies must be added manually.</p>
+<div id="hands-on-1" class="section level3 unnumbered hasAnchor">
+<h3>Hands on!<a href="workflow-orchestration.html#hands-on-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>But now we have had enough thinking, let’s go back to the code!</p>
+<p><span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make inflation.pdf</span></span></p>
+<p><span style="color:green">Delete <span style="color:orange">inflation.pdf.</span></span></p>
+<p><span style="color:green">Add <span style="color:orange">inflation.pdf</span> to the target <span style="color:orange">all (all: inflation.pdf).</span></span></p>
+<p><span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make</span></span></p>
+<p><span style="color:blue">Run: <span style="color:orange">make -B –dry-run</span></span></p>
+<p>[Hint: <span style="color:orange">-B</span> means rebuild everything. <span style="color:orange">–dry-run</span> means do not actually run the commands.</span>]</p>
+<p>And now that we’ve created the recipe, let’s take it one step further and <em>Make</em> it in the cloud.</p>
+<p><span style="color:green">Run <span style="color:orange">repro::use_make_publish()</span></span></p>
+<p><span style="color:green">Paste the following into the <span style="color:orange">Makefile:</span></span></p>
+<pre><code>publish/: inflation.pdf
+include .repro/Makefile_publish</code></pre>
+<p><span style="color:green">Run <span style="color:orange">repro::use_gha_publish()</span></span></p>
+<p><span style="color:green">Commit and push.</span></p>
+<p><span style="color:blue">Inspect <span style="color:orange">.repro/Makefile_publish.</span></span></p>
+<p>Ready yet?<br />
+All right, what did we just do?</p>
+<p>We created and send a Makefile to the cloud using Make and the repro package.
+This makefile will ensure that we can track how our sauce is created!</p>
+</div>
+</div>
+<div id="and-now-3" class="section level2 unnumbered hasAnchor">
+<h2>And now?<a href="workflow-orchestration.html#and-now-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Congratulations, we are more or less near the finish line!</p>
+<p>Before we finish, let’s take one more quick look together at what we just did.
+We now have all the components from our toolbox together.</p>
+<p><span style="color:orange">code + data + text + history + software + workflow</span></p>
+<p>And with that, we solved our last problem on the list:</p>
+<ol style="list-style-type: decimal">
+<li><del>copy&amp;paste mistakes</del></li>
+<li><del>inconsistent versions of code or data</del></li>
+<li><del>missing or incompatible software</del></li>
+<li><del>complicated or ambiguous procedure for reproduction</del></li>
+</ol>
+<p>And which software did we use?:</p>
+<ol style="list-style-type: decimal">
+<li>RMarkdown</li>
+<li>Git</li>
+<li>Docker</li>
+<li><span style="color:orange">Make</span></li>
+</ol>
+<div id="almost-the-final-final-step" class="section level3 unnumbered hasAnchor">
+<h3>Almost the Final Final Step!<a href="workflow-orchestration.html#almost-the-final-final-step" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now please go through all the things we just did and all the software we used.</p>
+<p>You are currently at your computer using Posit Cloud, which hosts an R environment where you used Make and the repro package to generate a Makefile which automates the reproducibility of build processes.</p>
+<p>You have now reached the advanced status of reproducibility; there is only one last step to show the world what we have learned here.</p>
+<p><span style="color:orange">Publish</span></p>
+<p>With this step we will now publish the document automatically, for this we will use GitHub again.</p>
+<p><span style="color:green">Go back to GitHub.</span></p>
+<p><span style="color:green">Go to Settings → Pages and change <span style="color:orange">none</span> to <span style="color:orange">gh-pages.</span></span></p>
+<p><span style="color:green">Go to actions and wait for the new action to finish.</span></p>
+<p><span style="color:green">Inspect the published PDF online (<span style="color:orange">change username</span>):</span></p>
+<p><span style="color:orange">yourusername.github.io/project/inflation.pdf</span></p>
+<p><span style="color:blue">Change something, e.g., make the plot ugly again, then commit and push. Takes ~5min or so.</span></p>
+<p>The great thing about this automation is that it now automatically builds and publishes your document every time you push a new version to GitHub.</p>
+<p>And with that, we have concluded the workshop in terms of content!
+In the following chapter, we’ll just go through some suggestions on how you can continue your Reproductions journey.</p>
+<p>You are now ready for the last chapter. <a href="./before-you-go.html">next chapter</a>.</p>
+
+</div>
+</div>
 </div>
             </section>
 

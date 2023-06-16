@@ -4,32 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Version Control | Reproducible Research</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <title>Version Control | Reproducible Research</title>
+  <meta name="description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Version Control | Reproducible Research" />
+  <meta property="og:title" content="Version Control | Reproducible Research" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta property="og:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="github-repo" content="aaronpeikert/repro-workshop" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Version Control | Reproducible Research" />
+  <meta name="twitter:title" content="Version Control | Reproducible Research" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   
 
 <meta name="author" content="Aaron Peikert &amp; Hannes Diemerling" />
 
 
-<meta name="date" content="2023-03-24" />
+<meta name="date" content="2023-06-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -60,6 +54,70 @@ set in the _output.yml file.</p>" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -86,20 +144,86 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-concepts-must-we-know-about"><i class="fa fa-check"></i>What concepts must we know about?</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-software-must-we-know-about"><i class="fa fa-check"></i>What software must we know about?</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-services-will-we-use"><i class="fa fa-check"></i>What services will we use?</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#setup"><i class="fa fa-check"></i>Setup</a>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-does-self-paced-mean"><i class="fa fa-check"></i>What does self-paced mean?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-are-infoboxes"><i class="fa fa-check"></i>What are infoboxes?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-else-should-i-know-before-i-start"><i class="fa fa-check"></i>What else should I know before I start?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#questions-comments-notes"><i class="fa fa-check"></i>Questions? Comments? Notes?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#setup"><i class="fa fa-check"></i>Setup!</a>
 <ul>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#github"><i class="fa fa-check"></i>GitHub</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#postirstudio-cloud"><i class="fa fa-check"></i>Posti/RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#positrstudio-cloud"><i class="fa fa-check"></i>Posit/RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#chatgpt"><i class="fa fa-check"></i>ChatGPT</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#final-step"><i class="fa fa-check"></i>Final Step</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i><b>1</b> Dynamic Documents</a></li>
-<li class="chapter" data-level="2" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i><b>2</b> Version Control</a></li>
-<li class="chapter" data-level="3" data-path="software-management.html"><a href="software-management.html"><i class="fa fa-check"></i><b>3</b> Software Management</a></li>
-<li class="chapter" data-level="4" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html"><i class="fa fa-check"></i><b>4</b> Workflow Orchestration</a></li>
-<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html"><i class="fa fa-check"></i>Before you go</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i>Dynamic Documents</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-i-see-before-me"><i class="fa fa-check"></i>What do I see before me?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#best-practices"><i class="fa fa-check"></i>Best practices?</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#a-summary"><i class="fa fa-check"></i>A summary?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#extended-goals"><i class="fa fa-check"></i>Extended Goals?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#metadata-yaml"><i class="fa fa-check"></i>Metadata (YAML)</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#text-markdown"><i class="fa fa-check"></i>Text (Markdown)</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#code-r"><i class="fa fa-check"></i>Code (R)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#and-now"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#final-step-1"><i class="fa fa-check"></i>Final Step</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i>Version Control</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#what-now"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#git"><i class="fa fa-check"></i>Git?</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#hands-on"><i class="fa fa-check"></i>Hands on!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#and-now-1"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#final-step-2"><i class="fa fa-check"></i>Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html"><i class="fa fa-check"></i>Software Management</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#what-now-1"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#docker"><i class="fa fa-check"></i>Docker?</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#repro"><i class="fa fa-check"></i>repro!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#and-now-2"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#final-step-3"><i class="fa fa-check"></i>Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html"><i class="fa fa-check"></i>Workflow Orchestration</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#what-now-2"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#make"><i class="fa fa-check"></i>Make?</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#hands-on-1"><i class="fa fa-check"></i>Hands on!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#and-now-3"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#almost-the-final-final-step"><i class="fa fa-check"></i>Almost the Final Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html"><i class="fa fa-check"></i>Before you go</a>
+<ul>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#ressources"><i class="fa fa-check"></i>Ressources</a>
+<ul>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#starter"><i class="fa fa-check"></i>Starter</a></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#advanced"><i class="fa fa-check"></i>Advanced</a></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#digging-really-deep"><i class="fa fa-check"></i>Digging really Deep</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#hard-to-say-goodbye"><i class="fa fa-check"></i>Hard to say Goodbye</a></li>
+</ul></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/aaronpeikert/repro-workshop/issues/new" target="blank">Questions? Problems? Suggestions?</a></li>
+<li><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="blank">Licensed under CC0, but please cite us.</a></li>
 
 </ul>
 
@@ -118,9 +242,203 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="version-control" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Version Control<a href="version-control.html#version-control" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="version-control" class="section level1 unnumbered hasAnchor">
+<h1>Version Control<a href="version-control.html#version-control" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="infoboxgpt" onclick="window.open(&#39;https://chat.openai.com/share/029cb41c-36cb-4bbb-9ddc-bf1510faedfd&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-titlegpt">
+ReproDude
+</h2>
+<p class="infobox-contentgpt">
+Hey, I’m your ReproDude for this chapter. If you have any questions click on me and we can talk!
+</p>
+</div>
+<div id="what-now" class="section level2 unnumbered hasAnchor">
+<h2>What now?<a href="version-control.html#what-now" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s get on with it then!
+What’s next?</p>
+<p>Let’s take another look at our components, which ones are we examining now?</p>
+<p>code + data + text + <span style="color:orange">history</span> + software + workflow</p>
+<p>History?
+Maybe a look at our problem and software solution list will help to shed some light on the matter.</p>
+<p>Problem list:</p>
+<ol style="list-style-type: decimal">
+<li><del>copy&amp;paste mistakes</del></li>
+<li><span style="color:orange">inconsistent versions of code or data</span></li>
+<li>missing or incompatible software</li>
+<li>complicated or ambiguous procedure for reproduction</li>
+</ol>
+<p>Software solution list:</p>
+<ol style="list-style-type: decimal">
+<li>RMarkdown</li>
+<li><span style="color:orange">Git</span></li>
+<li>Docker</li>
+<li>Make</li>
+</ol>
+<p>So does that mean we use Git (and Github) to avoid the problem of inconsistent versions of code and data?</p>
+<p>That sounds good; let’s get started right away!</p>
+</div>
+<div id="git" class="section level2 unnumbered hasAnchor">
+<h2>Git?<a href="version-control.html#git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="images/GitDiagram.svg" alt="Git Overview"  />
+<p class="caption">
+Figure 1: Git Overview
+</p>
+</div>
+<p>Git is an amazing tool that helps you keep track of changes in your project, just like having a magical time machine for your work.
+It’s like having a superpower for managing files and projects, especially when you’re coding, although it can be used for any type of project that involves files.</p>
+<p>Imagine you have a project, and it’s like a journey represented by a single line called the ‘main’ branch.
+Each point along this line is a different version of your project, capturing the moments when you’ve made changes and saved them (committed them).
+It’s like preserving snapshots of your progress, allowing you to travel back in time and see how your project evolved.</p>
+<div id="hands-on" class="section level3 unnumbered hasAnchor">
+<h3>Hands on!<a href="version-control.html#hands-on" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="infobox" onclick="window.open(&#39;https://education.github.com/git-cheat-sheet-education.pdf&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-title">
+Git
+</h2>
+<p class="infobox-content">
+I will lead you to a cheat sheet for git, who likes remembering?
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
 
+</div>
+<p>Now that we’ve cleared that up, let’s get back to the code.</p>
+<p><span style="color:green">Modify this code and run it:</span></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="version-control.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use a function without loading the package</span></span>
+<span id="cb7-2"><a href="version-control.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># package::function</span></span>
+<span id="cb7-3"><a href="version-control.html#cb7-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb7-4"><a href="version-control.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">&quot;Jane Doe&quot;</span>, <span class="co"># &lt;-- change to your name</span></span>
+<span id="cb7-5"><a href="version-control.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">&quot;jane@example.org&quot;</span>, <span class="co"># &lt;-- and your email</span></span>
+<span id="cb7-6"><a href="version-control.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">init.defaultBranch =</span> <span class="st">&quot;main&quot;</span>) <span class="co"># &lt;-- not necessary but kinder than &#39;master&#39;</span></span></code></pre></div>
+<p>You will need to do this <em>once for each computing environment</em>.</p>
+<p>Let us now activate Git.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="version-control.html#cb8-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div>
+<p>You will need to do this <em>once per project</em>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="images/Git1.svg" alt="Your current position"  />
+<p class="caption">
+Figure 2: Your current position
+</p>
+</div>
+<p>You have now initialized Git, our time machine, for your project.
+As you can see in figure two, you are on the position called Current and Git has saved Version 1, which has no changes to your current point.
+But we can’t travel to another time yet, because we are in the first version and there is no history from Git’s point of view.</p>
+<div id="make-history" class="section level4 unnumbered hasAnchor">
+<h4>Make history<a href="version-control.html#make-history" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Let’s make history then.
+To do that we need to change something in the document.
+How about the plot in the code?
+Remember, we are currently in <span style="color:orange">inflation.rmd</span>.</p>
+<p><span style="color:green">The plot is <del>ugly</del> very functional. Beautify it a bit. Some suggestions:</span></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="version-control.html#cb9-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-2"><a href="version-control.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;subjective inflation in %-points&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="version-control.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="version-control.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">9</span>)) <span class="sc">+</span></span></code></pre></div>
+<p><span style="color:blue">Plot the two or five year expectation.</span></p>
+<p>[Hint: Swapping the variable <span style="color:orange">E1y_all</span> in <span style="color:orange">R/prepare_inflation.R</span> should to the trick.]</p>
+<p>Great, now we have changed something!
+Can we now just jump back and forth between now and the start, like a time machine should be?</p>
+<p>Almost.
+We need to tell Git beforehand, that the current state should become a new point in time.
+In Git, we cannot travel completely free in time, but only between time points we set.</p>
+<p>This is exactly the kind of point in time we are setting now through Git commits.</p>
+<p><span style="color:green">Create a commit:</span>
+Git pane → Click checkbox of changed files → Commit → Message → Commit
+[Note: The Git pane is usually in the same window as the environment variables.]</p>
+<p><span style="color:blue">What can you do when you delete a file by accident?</span></p>
+<p><span style="color:blue">Can Git help when you loose your computer / access to Posit Cloud?</span></p>
+<p>Now we have performed our first commit!
+What does our Git history look like now?</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="images/Git2.svg" alt="Your current position"  />
+<p class="caption">
+Figure 3: Your current position
+</p>
+</div>
+<p>So now we have created a second version that is our modified code and saved it as a point in time.
+And our Current position is identical to version 2 but different from version 1 (we have changed the plot).</p>
+<p>But so far, everything is only local.
+If I try to contribute to your code from the other side of the world, it won’t work because I don’t have direct access to your local Git repository.</p>
+<p>To provide remote access for you, me, and anyone else you like or at least collaborate with, we will use GitHub.</p>
+</div>
+<div id="github-1" class="section level4 unnumbered hasAnchor">
+<h4>GitHub<a href="version-control.html#github-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>GitHub is like a virtual space where you can save and share your code with others.
+It makes working with Git easy and accessible, allowing you to collaborate with teammates, track changes, and keep your code safe in one place online.
+Let us Introduce our-self to GitHub.</p>
+<p><span style="color:green">To get a GitHub pat/token run:</span></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="version-control.html#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>(<span class="at">description =</span> Token <span class="cf">for</span> Repro Workshop <span class="dv">2023</span> Test)</span></code></pre></div>
+<p><span style="color:green">Activate scope <span style="color:orange">write:packages.</span></span></p>
+<p><span style="color:green">Modify expiration. Today is enough.</span></p>
+<p><span style="color:green">Copy token.</span></p>
+<p>You will need to do this <em>once for each computing environment</em>.</p>
+<p>Now we need to store this Token, it is like our Passport for entering the GitHub Country.</p>
+<p><span style="color:green">Set token:</span></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="version-control.html#cb11-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>() <span class="co"># &lt;-- Token must *not* go into brackets, paste when asked</span></span></code></pre></div>
+<p><span style="color:blue">Verify that everything is in order:</span></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="version-control.html#cb12-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">gh_token_help</span>()</span></code></pre></div>
+<p>You will need to do this <em>once for each computing environment</em>.</p>
+<p>And what have we done now?</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="images/GitGithub0.svg" alt="GitHub status"  />
+<p class="caption">
+Figure 4: GitHub status
+</p>
+</div>
+<p>So far, we have only authenticated, so we have permission to enter the realm of GitHub, but we haven’t sent anything there yet.</p>
+<p>[Hint: If pushing code fails or asks for the password, we have triggered spam detection. In this case, we will have to repeat the GitHub handshake.]</p>
+<p>Now let’s use GitHub!</p>
+<p><span style="color:green">To activate GitHub and upload your files to the public web:</span></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="version-control.html#cb13-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div>
+<p><span style="color:blue">Private alternative/ upload to the non-public web (don’t use now):</span></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="version-control.html#cb14-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>(<span class="at">private =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><span style="color:blue">Can you simply use code from others that you find on GitHub?</span></p>
+<p><span style="color:blue">Try <span style="color:orange">usethis::use_mit_license()</span></span></p>
+<p><span style="color:blue">Up for a challenge? Try <span style="color:orange">usethis::use_readme_rmd()</span></span></p>
+<p>That’s it!
+And what does our history look like now?</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<img src="images/GitGithub1.svg" alt="GitHub status"  />
+<p class="caption">
+Figure 5: GitHub status
+</p>
+</div>
+<p>As seen in figure 5, we now have an identical copy of our Git history on GitHub as well!</p>
+</div>
+</div>
+</div>
+<div id="and-now-1" class="section level2 unnumbered hasAnchor">
+<h2>And now?<a href="version-control.html#and-now-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Congratulations, another section done!</p>
+<p>Before we continue, let’s take a quick look together at what we have just done.
+We now have one more component in our toolbox.</p>
+<p><span style="color:orange">code + data + text + history</span> + software + workflow</p>
+<p>And with that, we solved our second problem on the list:</p>
+<ol style="list-style-type: decimal">
+<li><del>copy&amp;paste mistakes</del></li>
+<li><del>inconsistent versions of code or data</del></li>
+<li>missing or incompatible software</li>
+<li>complicated or ambiguous procedure for reproduction</li>
+</ol>
+<p>And which software did we use for this?:</p>
+<ol style="list-style-type: decimal">
+<li>RMarkdown</li>
+<li><span style="color:orange">Git</span></li>
+<li>Docker</li>
+<li>Make</li>
+</ol>
+<div id="final-step-2" class="section level3 unnumbered hasAnchor">
+<h3>Final Step!<a href="version-control.html#final-step-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now please go through what we have just done and all the software we used.</p>
+<p>You are currently at your computer using Posit Cloud, which hosts an R environment where you used Git to create a traceable History and saved it online with GitHub.</p>
+<p>But that was all for this section.
+Shall we both take a short break or do you want to continue straight away?</p>
+<p>You are now ready for the next chapter. <a href="./software-management.html">next chapter</a>.</p>
+
+</div>
+</div>
 </div>
             </section>
 

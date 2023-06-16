@@ -5,31 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Before you go | Reproducible Research</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Before you go | Reproducible Research" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta property="og:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="github-repo" content="aaronpeikert/repro-workshop" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Before you go | Reproducible Research" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   
 
 <meta name="author" content="Aaron Peikert &amp; Hannes Diemerling" />
 
 
-<meta name="date" content="2023-03-24" />
+<meta name="date" content="2023-06-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -60,6 +54,70 @@ set in the _output.yml file.</p>" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -86,20 +144,86 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-concepts-must-we-know-about"><i class="fa fa-check"></i>What concepts must we know about?</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-software-must-we-know-about"><i class="fa fa-check"></i>What software must we know about?</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-services-will-we-use"><i class="fa fa-check"></i>What services will we use?</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#setup"><i class="fa fa-check"></i>Setup</a>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-does-self-paced-mean"><i class="fa fa-check"></i>What does self-paced mean?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-are-infoboxes"><i class="fa fa-check"></i>What are infoboxes?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-else-should-i-know-before-i-start"><i class="fa fa-check"></i>What else should I know before I start?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#questions-comments-notes"><i class="fa fa-check"></i>Questions? Comments? Notes?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#setup"><i class="fa fa-check"></i>Setup!</a>
 <ul>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#github"><i class="fa fa-check"></i>GitHub</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#postirstudio-cloud"><i class="fa fa-check"></i>Posti/RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#positrstudio-cloud"><i class="fa fa-check"></i>Posit/RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#chatgpt"><i class="fa fa-check"></i>ChatGPT</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#final-step"><i class="fa fa-check"></i>Final Step</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i><b>1</b> Dynamic Documents</a></li>
-<li class="chapter" data-level="2" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i><b>2</b> Version Control</a></li>
-<li class="chapter" data-level="3" data-path="software-management.html"><a href="software-management.html"><i class="fa fa-check"></i><b>3</b> Software Management</a></li>
-<li class="chapter" data-level="4" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html"><i class="fa fa-check"></i><b>4</b> Workflow Orchestration</a></li>
-<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html"><i class="fa fa-check"></i>Before you go</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i>Dynamic Documents</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-i-see-before-me"><i class="fa fa-check"></i>What do I see before me?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#best-practices"><i class="fa fa-check"></i>Best practices?</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#a-summary"><i class="fa fa-check"></i>A summary?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#extended-goals"><i class="fa fa-check"></i>Extended Goals?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#metadata-yaml"><i class="fa fa-check"></i>Metadata (YAML)</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#text-markdown"><i class="fa fa-check"></i>Text (Markdown)</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#code-r"><i class="fa fa-check"></i>Code (R)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#and-now"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#final-step-1"><i class="fa fa-check"></i>Final Step</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i>Version Control</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#what-now"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#git"><i class="fa fa-check"></i>Git?</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#hands-on"><i class="fa fa-check"></i>Hands on!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#and-now-1"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#final-step-2"><i class="fa fa-check"></i>Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html"><i class="fa fa-check"></i>Software Management</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#what-now-1"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#docker"><i class="fa fa-check"></i>Docker?</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#repro"><i class="fa fa-check"></i>repro!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#and-now-2"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#final-step-3"><i class="fa fa-check"></i>Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html"><i class="fa fa-check"></i>Workflow Orchestration</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#what-now-2"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#make"><i class="fa fa-check"></i>Make?</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#hands-on-1"><i class="fa fa-check"></i>Hands on!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#and-now-3"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#almost-the-final-final-step"><i class="fa fa-check"></i>Almost the Final Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html"><i class="fa fa-check"></i>Before you go</a>
+<ul>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#ressources"><i class="fa fa-check"></i>Ressources</a>
+<ul>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#starter"><i class="fa fa-check"></i>Starter</a></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#advanced"><i class="fa fa-check"></i>Advanced</a></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#digging-really-deep"><i class="fa fa-check"></i>Digging really Deep</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#hard-to-say-goodbye"><i class="fa fa-check"></i>Hard to say Goodbye</a></li>
+</ul></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/aaronpeikert/repro-workshop/issues/new" target="blank">Questions? Problems? Suggestions?</a></li>
+<li><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="blank">Licensed under CC0, but please cite us.</a></li>
 
 </ul>
 
@@ -120,7 +244,104 @@ set in the _output.yml file.</p>" />
             <section class="normal" id="section-">
 <div id="before-you-go" class="section level1 unnumbered hasAnchor">
 <h1>Before you go<a href="before-you-go.html#before-you-go" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Welcome to the end of our journey!
+Now that we have everything behind us, let’s take another look at how the individual components work together.</p>
+<p>Let’s look at everything together again.</p>
+<p><img src="https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg" width="100%" /></p>
+<p>And does it make more sense to you now?
+If not, don’t worry; practice makes perfect.
+Now that we have gathered a lot of knowledge, the journey together is over, but hopefully, your journey has just begun.
+To help get you started, here are a few resources.</p>
+<div id="ressources" class="section level2 unnumbered hasAnchor">
+<h2>Ressources<a href="before-you-go.html#ressources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="starter" class="section level3 unnumbered hasAnchor">
+<h3>Starter<a href="before-you-go.html#starter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First, we started with RMarkdown.
+This was the part where we familiarized ourselves with the files</p>
+<div class="infobox" onclick="window.open(&#39;https://bookdown.org/yihui/rmarkdown/&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-title">
+RMarkdown
+</h2>
+<p class="infobox-content">
+Click on me and I will lead you to R Markdown: The Definitive Guide.
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
 
+</div>
+<p>Secondly, we have Git, with which we have recorded our versions and can travel in time.</p>
+<div class="infobox" onclick="window.open(&#39;https://git-scm.com/docs/gittutorial&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-title">
+Git
+</h2>
+<p class="infobox-content">
+Click on me and I will lead you to a specific Git tutorial.
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
+
+</div>
+<p>Third, we have GitHub, which allows us to store our Git versions online and do a variety of additional things, such as GitHub Actions.
+But an even better idea than to use the resources here is to start a small project on GitHub together with a friend.</p>
+<div class="infobox" onclick="window.open(&#39;https://docs.github.com/en/get-started/quickstart/hello-world&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-title">
+GitHub
+</h2>
+<p class="infobox-content">
+Click on me and I will lead you to a Deep Dive tutorial for GitHub.
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
+
+</div>
+<p>That’s it for the starter tutorials.</p>
+</div>
+<div id="advanced" class="section level3 unnumbered hasAnchor">
+<h3>Advanced<a href="before-you-go.html#advanced" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To go deeper, I would recommend you to read the following:</p>
+<p><span style="color:blue">Read: Peikert, A., van Lissa, C. J., &amp; Brandmaier, A. M. (2021). Reproducible Research in R: A Tutorial on How to Do the Same Thing More Than Once. Psych, 3(4), 836–867. <a href="https://doi.org/10.3390/psych3040053" class="uri">https://doi.org/10.3390/psych3040053</a></span></p>
+<p>And to give you a direct starting point from here, how about this:</p>
+<p><span style="color:blue">Adept the project we created today so that it becomes one of your projects (with your data, your analyses).</span></p>
+</div>
+<div id="digging-really-deep" class="section level3 unnumbered hasAnchor">
+<h3>Digging really Deep<a href="before-you-go.html#digging-really-deep" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As you have probably noticed, we are still missing a deep dive into some of the software we have directly or indirectly used.
+These are a bit more complicated than what we have described so far, so let’s just bundle them into this section.
+First, Make, which we used to build our recipes.</p>
+<div class="infobox" onclick="window.open(&#39;https://kbroman.org/minimal_make/&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-title">
+Make
+</h2>
+<p class="infobox-content">
+Click on me and I will lead you to minimal make: A minimal tutorial on make.
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
+
+</div>
+<p>And after you’ve looked at that:</p>
+<p><span style="color:blue">Simplify a complicated pipeline</span></p>
+<p>Next up is Docker.
+Docker is a great program once you get it running.
+If you enjoy a bit of a headache:</p>
+<p><span style="color:blue">Docker: get <a href="https://docs.docker.com/get-docker/"><span style="color:orange">Docker</span></a> installed.</span></p>
+<p>And if you enjoy severe headaches, welcome to LaTeX.</p>
+<p><span style="color:blue">Try to learn <a href="https://de.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes"><span style="color:orange">LaTeX</span></a></span></p>
+</div>
+</div>
+<div id="hard-to-say-goodbye" class="section level2 unnumbered hasAnchor">
+<h2>Hard to say Goodbye<a href="before-you-go.html#hard-to-say-goodbye" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you’re reading this, you’re all done with the workshop!
+Unless you’re just passing through, in which case I hope to see you again later.</p>
+<p>Thank you for taking the time to explore the big world of reproducibility with me.</p>
+<p>Also, I want to thank my developers, Aaron Peikert and Hannes Diemerling.</p>
+<p>And then it only remains for me to say goodbye to you; it was nice to have you here!</p>
+
+</div>
 </div>
             </section>
 

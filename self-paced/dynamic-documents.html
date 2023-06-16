@@ -4,32 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Dynamic Documents | Reproducible Research</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <title>Dynamic Documents | Reproducible Research</title>
+  <meta name="description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Dynamic Documents | Reproducible Research" />
+  <meta property="og:title" content="Dynamic Documents | Reproducible Research" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta property="og:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="github-repo" content="aaronpeikert/repro-workshop" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Dynamic Documents | Reproducible Research" />
+  <meta name="twitter:title" content="Dynamic Documents | Reproducible Research" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   
 
 <meta name="author" content="Aaron Peikert &amp; Hannes Diemerling" />
 
 
-<meta name="date" content="2023-03-24" />
+<meta name="date" content="2023-06-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -60,6 +54,70 @@ set in the _output.yml file.</p>" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -86,20 +144,86 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-concepts-must-we-know-about"><i class="fa fa-check"></i>What concepts must we know about?</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-software-must-we-know-about"><i class="fa fa-check"></i>What software must we know about?</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-services-will-we-use"><i class="fa fa-check"></i>What services will we use?</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#setup"><i class="fa fa-check"></i>Setup</a>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-does-self-paced-mean"><i class="fa fa-check"></i>What does self-paced mean?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-are-infoboxes"><i class="fa fa-check"></i>What are infoboxes?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#what-else-should-i-know-before-i-start"><i class="fa fa-check"></i>What else should I know before I start?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#questions-comments-notes"><i class="fa fa-check"></i>Questions? Comments? Notes?</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#setup"><i class="fa fa-check"></i>Setup!</a>
 <ul>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#github"><i class="fa fa-check"></i>GitHub</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#postirstudio-cloud"><i class="fa fa-check"></i>Posti/RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#positrstudio-cloud"><i class="fa fa-check"></i>Posit/RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#chatgpt"><i class="fa fa-check"></i>ChatGPT</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#final-step"><i class="fa fa-check"></i>Final Step</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i><b>1</b> Dynamic Documents</a></li>
-<li class="chapter" data-level="2" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i><b>2</b> Version Control</a></li>
-<li class="chapter" data-level="3" data-path="software-management.html"><a href="software-management.html"><i class="fa fa-check"></i><b>3</b> Software Management</a></li>
-<li class="chapter" data-level="4" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html"><i class="fa fa-check"></i><b>4</b> Workflow Orchestration</a></li>
-<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html"><i class="fa fa-check"></i>Before you go</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i>Dynamic Documents</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-i-see-before-me"><i class="fa fa-check"></i>What do I see before me?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#best-practices"><i class="fa fa-check"></i>Best practices?</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#a-summary"><i class="fa fa-check"></i>A summary?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#extended-goals"><i class="fa fa-check"></i>Extended Goals?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#rmarkdown"><i class="fa fa-check"></i>RMarkdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#metadata-yaml"><i class="fa fa-check"></i>Metadata (YAML)</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#text-markdown"><i class="fa fa-check"></i>Text (Markdown)</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#code-r"><i class="fa fa-check"></i>Code (R)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#and-now"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#final-step-1"><i class="fa fa-check"></i>Final Step</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i>Version Control</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#what-now"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#git"><i class="fa fa-check"></i>Git?</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#hands-on"><i class="fa fa-check"></i>Hands on!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#and-now-1"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="version-control.html"><a href="version-control.html#final-step-2"><i class="fa fa-check"></i>Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html"><i class="fa fa-check"></i>Software Management</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#what-now-1"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#docker"><i class="fa fa-check"></i>Docker?</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#repro"><i class="fa fa-check"></i>repro!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#and-now-2"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="software-management.html"><a href="software-management.html#final-step-3"><i class="fa fa-check"></i>Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html"><i class="fa fa-check"></i>Workflow Orchestration</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#what-now-2"><i class="fa fa-check"></i>What now?</a></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#make"><i class="fa fa-check"></i>Make?</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#hands-on-1"><i class="fa fa-check"></i>Hands on!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#and-now-3"><i class="fa fa-check"></i>And now?</a>
+<ul>
+<li class="chapter" data-level="" data-path="workflow-orchestration.html"><a href="workflow-orchestration.html#almost-the-final-final-step"><i class="fa fa-check"></i>Almost the Final Final Step!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html"><i class="fa fa-check"></i>Before you go</a>
+<ul>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#ressources"><i class="fa fa-check"></i>Ressources</a>
+<ul>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#starter"><i class="fa fa-check"></i>Starter</a></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#advanced"><i class="fa fa-check"></i>Advanced</a></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#digging-really-deep"><i class="fa fa-check"></i>Digging really Deep</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="before-you-go.html"><a href="before-you-go.html#hard-to-say-goodbye"><i class="fa fa-check"></i>Hard to say Goodbye</a></li>
+</ul></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/aaronpeikert/repro-workshop/issues/new" target="blank">Questions? Problems? Suggestions?</a></li>
+<li><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="blank">Licensed under CC0, but please cite us.</a></li>
 
 </ul>
 
@@ -118,9 +242,230 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="dynamic-documents" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Dynamic Documents<a href="dynamic-documents.html#dynamic-documents" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="dynamic-documents" class="section level1 unnumbered hasAnchor">
+<h1>Dynamic Documents<a href="dynamic-documents.html#dynamic-documents" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="infoboxgpt" onclick="window.open(&#39;https://chat.openai.com/share/dfe3ad22-f9ac-4e3c-ae94-11646b46fb24&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-titlegpt">
+ReproDude
+</h2>
+<p class="infobox-contentgpt">
+Hey, I’m your ReproDude for this chapter. If you have any questions click on me and we can talk!
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
 
+</div>
+<div id="what-do-i-see-before-me" class="section level2 unnumbered hasAnchor">
+<h2>What do I see before me?<a href="dynamic-documents.html#what-do-i-see-before-me" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First of all:</p>
+<p><span style="color:green"> Look around, become comfortable with Posit/RStudio Cloud.
+Then, locate the files pane.</span></p>
+<p>You are currently at your computer using Posit Cloud which hosts an R environment that you are looking at.</p>
+<p>Do you feel comfortable yet? Yes? Then let’s move on.
+If not, take as much time as you need and move on as soon as you want, I have no more Appointments today.</p>
+</div>
+<div id="best-practices" class="section level2 unnumbered hasAnchor">
+<h2>Best practices?<a href="dynamic-documents.html#best-practices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To give you a sense of how reproducibility can be increased, let us look at some best practices:</p>
+<p><span style="color:green"> Open the R folder.</span></p>
+<p>You should now see three different R files.</p>
+<p><span style="color:green"> Click on the file </span><span style="color:orange">R/prepare_games.R </span></p>
+<p>Now try to understand the code.</p>
+<p>Which of these do you already do?
+What could you improve?</p>
+<p>You want to see more?
+Just for you (same thing but more complicated):</p>
+<p><span style="color:blue"> Take a look at </span><span style="color:orange">R/prepare_inflation</span><span style="color:blue">. Remember this blue means a task is optional.</span></p>
+<div id="a-summary" class="section level3 unnumbered hasAnchor">
+<h3>A summary?<a href="dynamic-documents.html#a-summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let us summarize this in an incomplete list:</p>
+<ol style="list-style-type: decimal">
+<li>List requirements early</li>
+<li>Use relative locations</li>
+<li>Document relevant information</li>
+</ol>
+<p>The first two points are more or less clear, if you would like to talk about that, maybe you want to give ReproDude a try?</p>
+<p>But let’s talk about the last point.
+Does that mean that every piece of documentation has to be a mile long?</p>
+<p>No… not necessarily.</p>
+<p>But how do I decide what should or should not be included in my documentation?
+Let’s make another list:</p>
+<ol style="list-style-type: decimal">
+<li>What is <em>standard</em> does not have to be documented.</li>
+<li>What is <em>easy</em> needs only little documentation.</li>
+<li>What is <em>consistent</em> only has to be documented once.</li>
+</ol>
+<p>If you follow the best practice of:</p>
+<ol style="list-style-type: decimal">
+<li>List requirements early</li>
+<li>Use relative locations</li>
+<li>Document relevant information</li>
+<li>What is <em>standard</em> does not have to be documented.</li>
+<li>What is <em>easy</em> needs only little documentation.</li>
+<li>What is <em>consistent</em> only has to be documented once.</li>
+</ol>
+<p>you already are in a pretty good position.
+However, we could spend a whole day on how to code in way that is easy to follow and all the best practices there.
+Instead, we want to focus today on how to automate reproducibility <em>assuming</em> you allready have an R script that is easy to understand.
+For everything else we are missing the time and there are simply to many different skill levels for R programming.</p>
+</div>
+</div>
+<div id="extended-goals" class="section level2 unnumbered hasAnchor">
+<h2>Extended Goals?<a href="dynamic-documents.html#extended-goals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This is a schematic overview of the system we want to build today:</p>
+<p><img src="https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg" width="100%" /></p>
+<p>Sorry, did I confuse you with that?
+Don’t worry, we’re in this together.
+Let us break it down.
+What components do we need to bundle neatly together to archive automated reproduibility?</p>
+<p>code + data + text + history + software + workflow</p>
+<p>But haven’t we already looked at parts of it?
+Yes!</p>
+<p><span style="color:orange">code + data</span> + text + history + software + workflow</p>
+<p>We have already dealt with code and data.
+If you want to read up on it again, go back to the beginning of this chapter.</p>
+<p>Next is text.
+Let’s look again at the problems we need to solve:</p>
+<ol style="list-style-type: decimal">
+<li>copy&amp;paste mistakes</li>
+<li>inconsistent versions of code or data</li>
+<li>missing or incompatible software</li>
+<li>complicated or ambiguous procedure for reproduction</li>
+</ol>
+<p>And the solution software:</p>
+<ol style="list-style-type: decimal">
+<li>RMarkdown</li>
+<li>Git</li>
+<li>Docker</li>
+<li>Make</li>
+</ol>
+<p>That is, the component text has the problem of copy&amp;paste mistakes and we use RMarkdown to solve the problem.</p>
+</div>
+<div id="rmarkdown" class="section level2 unnumbered hasAnchor">
+<h2>RMarkdown<a href="dynamic-documents.html#rmarkdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="infobox" onclick="window.open(&#39;https://rmarkdown.rstudio.com/&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-title">
+RMarkdown
+</h2>
+<p class="infobox-content">
+I will give you more information about RMarkdown by taking you to their documentation.
+</p>
+</div>
+<!-- so that there is no text between the Boxes-->
+<div style="clear: both;">
+
+</div>
+<p>Now let’s go back to your R cloud environment.</p>
+<p><span style="color:green">Open the file</span><span style="color:orange">inflation.Rmd.</span></p>
+<p>If you are still in the R folder, you have to go up one level again.</p>
+<p><span style="color:green">Take a minute to skim the document (Or even two).</span></p>
+<p><span style="color:green">Click on </span><span style="color:orange">knit.</span></p>
+<p><span style="color:blue">And if you want to admire more examples, click on </span><span style="color:orange"><a href="https://rmarkdown.rstudio.com/gallery.html">RMarkdown Gallery</a>.</span></p>
+<div id="metadata-yaml" class="section level3 unnumbered hasAnchor">
+<h3>Metadata (YAML)<a href="dynamic-documents.html#metadata-yaml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now that you have looked at at least one RMarkdown example, did you notice the following part?:</p>
+<pre><code>---
+title: &quot;Inflation Data&quot;
+author: &quot;Aaron Peikert&quot;
+date: &quot;2023-06-16&quot;
+output: html_document
+repro:
+  packages:
+    - here
+    - tidyverse
+    - lubridate
+    - aaronpeikert/repro@fc7e884
+  scripts:
+    - R/prepare_inflation.R
+  data:
+    - data/raw/inflation.rds
+---</code></pre>
+<p>This is the metadata, in YAML format, for the RMarkdown document.</p>
+<p><span style="color:green">Change <span style="color:orange">html_document </span> to <span style="color:orange">pdf_document </span></span></p>
+<p><span style="color:green">Knit again.</span></p>
+<p>What happened?</p>
+<p>You want to experiment more?</p>
+<p><span style="color:blue">Change the author or date field.</span>
+<span style="color:blue">Try the <span style="color:orange"><a href="https://rstudio.github.io/tufte/">tufte-format (click me)</a>.</span></span></p>
+</div>
+<div id="text-markdown" class="section level3 unnumbered hasAnchor">
+<h3>Text (Markdown)<a href="dynamic-documents.html#text-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the document, you probably also noticed this part:</p>
+<pre><code>The dataset we use stems from the [Bank of England Research datasets](https://www.bankofengland.co.uk/statistics/research-datasets).
+
+I quote:
+
+&gt; This dataset contains the individual responses to our Inflation Attitudes Survey, a quarterly survey of people’s feelings about inflation and other economic variables like the interest rate.</code></pre>
+<p>This is Markdown and we will use it to write and format the actual text.</p>
+<p><span style="color:green">Make something <strong>bold</strong> and something else <em>italic</em>:</span></p>
+<pre><code>This is **bold**, while this is *italic*.</code></pre>
+<p><span style="color:blue">Go to <span style="color:orange">Help → Markdown Quick Reference</span> and try something out.</span></p>
+</div>
+<div id="code-r" class="section level3 unnumbered hasAnchor">
+<h3>Code (R)<a href="dynamic-documents.html#code-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>But there is yet another component in the document.
+This part contain code blocks like:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="dynamic-documents.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="dynamic-documents.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">inflation %&gt;% </span></span>
+<span id="cb4-3"><a href="dynamic-documents.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(date) %&gt;% </span></span>
+<span id="cb4-4"><a href="dynamic-documents.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(across(c(perception, expectation),</span></span>
+<span id="cb4-5"><a href="dynamic-documents.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">                   ~ mean(., na.rm = TRUE)),</span></span>
+<span id="cb4-6"><a href="dynamic-documents.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="in">            .groups = &quot;drop&quot;) %&gt;% </span></span>
+<span id="cb4-7"><a href="dynamic-documents.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="in">  pivot_longer(c(expectation, perception)) %&gt;% </span></span>
+<span id="cb4-8"><a href="dynamic-documents.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() %&gt;% </span></span>
+<span id="cb4-9"><a href="dynamic-documents.html#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot() +</span></span>
+<span id="cb4-10"><a href="dynamic-documents.html#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(date, value, color = name)) +</span></span>
+<span id="cb4-11"><a href="dynamic-documents.html#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="in">  NULL</span></span>
+<span id="cb4-12"><a href="dynamic-documents.html#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>These code blocks can be not only R code but also Julia, Python, Octave and other programming languages.</p>
+<p><span style="color:green">Add a R code chunk (Ctrl + Alt + I) and inline code:</span></p>
+<!-- Bad solution, somethin better? -->
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="dynamic-documents.html#cb5-1" aria-hidden="true" tabindex="-1"></a>A code chunk is for longer code/output:</span>
+<span id="cb5-2"><a href="dynamic-documents.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="dynamic-documents.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-4"><a href="dynamic-documents.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">with(mtcars, plot(hp, mpg))</span></span>
+<span id="cb5-5"><a href="dynamic-documents.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-6"><a href="dynamic-documents.html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="dynamic-documents.html#cb5-7" aria-hidden="true" tabindex="-1"></a>Inline code is for single numbers/short text:</span>
+<span id="cb5-8"><a href="dynamic-documents.html#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="dynamic-documents.html#cb5-9" aria-hidden="true" tabindex="-1"></a>We have 32 cars.</span></code></pre></div>
+<p><span style="color:blue">Include all the code in output with: <span style="color:orange">knitr::opts_chunk$set(echo = TRUE)</span></span></p>
+<p><span style="color:blue">Try using python:</span></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="dynamic-documents.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb6-2"><a href="dynamic-documents.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">print(&quot;Hello World! Python here, do you miss R already?&quot;)</span></span>
+<span id="cb6-3"><a href="dynamic-documents.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+</div>
+</div>
+<div id="and-now" class="section level2 unnumbered hasAnchor">
+<h2>And now?<a href="dynamic-documents.html#and-now" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Congratulations, another section done!</p>
+<p>Before we continue, let’s take a quick look together at what we have just done.
+We have now one component more in our toolbox.</p>
+<p><span style="color:orange">code + data + text</span> + history + software + workflow</p>
+<p>And with that we solved our first Problem on the list:</p>
+<ol style="list-style-type: decimal">
+<li><del>copy&amp;paste mistakes</del></li>
+<li>inconsistent versions of code or data</li>
+<li>missing or incompatible software</li>
+<li>complicated or ambiguous procedure for reproduction</li>
+</ol>
+<p>And which software did we just used for this?:</p>
+<ol style="list-style-type: decimal">
+<li><span style="color:orange">RMarkdown</span></li>
+<li>Git</li>
+<li>Docker</li>
+<li>Make</li>
+</ol>
+<div id="final-step-1" class="section level3 unnumbered hasAnchor">
+<h3>Final Step<a href="dynamic-documents.html#final-step-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now please go through what we have just done and all the software we use.</p>
+<p>You are currently at your computer using Posit Cloud which hosts an R environment where you used RMarkdown to write some examples.</p>
+<p>Shall we both take a short break or do you want to continue straight away?</p>
+<p>You are ready for the next chapter. <a href="./version-control.html">next chapter</a>.</p>
+
+</div>
+</div>
 </div>
             </section>
 
