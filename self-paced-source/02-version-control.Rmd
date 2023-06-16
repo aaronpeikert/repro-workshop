@@ -68,7 +68,7 @@ Now that we've cleared that up, let's get back to the code.
 
 <span style="color:green">Modify this code and run it:</span>
 
-```
+```r
 # use a function without loading the package
 # package::function
 usethis::use_git_config(
@@ -81,13 +81,8 @@ You will need to do this *once for each computing environment*.
 
 Let us now activate Git.
 
-```
-# use a function without loading the package
-# package::function
-usethis::use_git_config(
-  user.name = "Jane Doe",
-  user.email = "jane@example.org",
-  init.defaultBranch = "main") # <-- not necessary but kinder than 'master'
+```r
+usethis::use_git()
 ```
 
 You will need to do this *once per project*.
@@ -109,7 +104,7 @@ Remember, we are currently in <span style="color:orange">inflation.rmd</span>.
 
 <span style="color:green">The plot is ~~ugly~~ very functional. Beautify it a bit. Some suggestions:</span>
 
-```
+```r
   theme_minimal() +
   ylab("subjective inflation in %-points") +
   labs(color = "") +
@@ -160,7 +155,7 @@ Let us Introduce our-self to GitHub.
 
 <span style="color:green">To get a GitHub pat/token run:</span>
 
-```
+```r
 usethis::create_github_token(description = `r texts$general$token`)
 ```
 
@@ -176,15 +171,16 @@ Now we need to store this Token, it is like our Passport for entering the GitHub
 
 <span style="color:green">Set token:</span>
 
-```
+```r
 gitcreds::gitcreds_set() # <-- Token must *not* go into brackets, paste when asked
 ```
 
 <span style="color:blue">Verify that everything is in order:</span>
 
-```
+```r
 usethis::gh_token_help()
 ```
+
 You will need to do this *once for each computing environment*.
 
 And what have we done now?
@@ -201,13 +197,13 @@ Now let's use GitHub!
 
 <span style="color:green">To activate GitHub and upload your files to the public web:</span>
 
-```
+```r
 usethis::use_github()
 ```
 
 <span style="color:blue">Private alternative/ upload to the non-public web (don't use now):</span>
 
-```
+```r
 usethis::use_github(private = TRUE)
 ```
 
@@ -258,4 +254,4 @@ You are currently at your computer using Posit Cloud, which hosts an R environme
 But that was all for this section.
 Shall we both take a short break or do you want to continue straight away?
 
-You are now ready for the next chapter. [next chapter](./software-managment.html).
+You are now ready for the next chapter. [next chapter](./software-management.html).
