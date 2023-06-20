@@ -23,7 +23,7 @@
 <meta name="author" content="Aaron Peikert &amp; Hannes Diemerling" />
 
 
-<meta name="date" content="2023-06-16" />
+<meta name="date" content="2023-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i>Dynamic Documents</a>
 <ul>
-<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-i-see-before-me"><i class="fa fa-check"></i>What do I see before me?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-you-see-before-you"><i class="fa fa-check"></i>What do you see before you?</a></li>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#best-practices"><i class="fa fa-check"></i>Best practices?</a>
 <ul>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#a-summary"><i class="fa fa-check"></i>A summary?</a></li>
@@ -256,12 +256,13 @@ Hey, I’m your ReproDude for this chapter. If you have any questions click on m
 <div style="clear: both;">
 
 </div>
-<div id="what-do-i-see-before-me" class="section level2 unnumbered hasAnchor">
-<h2>What do I see before me?<a href="dynamic-documents.html#what-do-i-see-before-me" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="what-do-you-see-before-you" class="section level2 unnumbered hasAnchor">
+<h2>What do you see before you?<a href="dynamic-documents.html#what-do-you-see-before-you" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First of all:</p>
 <p><span style="color:green"> Look around, become comfortable with Posit/RStudio Cloud.
 Then, locate the files pane.</span></p>
-<p>You are currently at your computer using Posit Cloud which hosts an R environment that you are looking at.</p>
+<p>You are currently at your computer using Posit Cloud which hosts an R environment that you are looking at.
+Importantly, any actions that you do locally on your computer (e.g., with your locally installed, R, Git, terminal, etc.) will have no effect on the cloud environment.</p>
 <p>Do you feel comfortable yet? Yes? Then let’s move on.
 If not, take as much time as you need and move on as soon as you want, I have no more Appointments today.</p>
 </div>
@@ -281,9 +282,21 @@ Just for you (same thing but more complicated):</p>
 <h3>A summary?<a href="dynamic-documents.html#a-summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let us summarize this in an incomplete list:</p>
 <ol style="list-style-type: decimal">
-<li>List requirements early</li>
-<li>Use relative locations</li>
-<li>Document relevant information</li>
+<li>List requirements early
+<ul>
+<li>What does have to be installed?</li>
+<li>What datasets have to be aquired from where?</li>
+<li>What computational resources must be present?</li>
+</ul></li>
+<li>Use relative locations
+<ul>
+<li>relative paths, <code>./data/</code> instead of <code>/documents/aaron/data/</code></li>
+<li>names, instead of indices, <code>data[["id"]]</code> instead of <code>data[[1]]</code></li>
+</ul></li>
+<li>Document relevant information
+<ul>
+<li>more on this below</li>
+</ul></li>
 </ol>
 <p>The first two points are more or less clear, if you would like to talk about that, maybe you want to give ReproDude a try?</p>
 <p>But let’s talk about the last point.
@@ -292,50 +305,63 @@ Does that mean that every piece of documentation has to be a mile long?</p>
 <p>But how do I decide what should or should not be included in my documentation?
 Let’s make another list:</p>
 <ol style="list-style-type: decimal">
-<li>What is <em>standard</em> does not have to be documented.</li>
-<li>What is <em>easy</em> needs only little documentation.</li>
-<li>What is <em>consistent</em> only has to be documented once.</li>
+<li>What is <em>standard</em> does not have to be documented.
+<ul>
+<li>if you use, e.g., a CSV file, you do not need to explain that values a seperated by comma</li>
+</ul></li>
+<li>What is <em>easy</em> needs only little documentation.
+<ul>
+<li>if your code is easy to understand, you don’t have to write a comment explaining it</li>
+</ul></li>
+<li>What is <em>consistent</em> only has to be documented once.
+<ul>
+<li>sometimes things are complex and there is no way around it, e.g., you have a messy JSON dataset that must be cleaned, however, if you write a function for cleaning and reuse it, there is no need to repeat yourself in explaining how this works.</li>
+</ul></li>
 </ol>
 <p>If you follow the best practice of:</p>
 <ol style="list-style-type: decimal">
 <li>List requirements early</li>
 <li>Use relative locations</li>
-<li>Document relevant information</li>
+<li>Document relevant information
+<ol style="list-style-type: decimal">
 <li>What is <em>standard</em> does not have to be documented.</li>
 <li>What is <em>easy</em> needs only little documentation.</li>
 <li>What is <em>consistent</em> only has to be documented once.</li>
+</ol></li>
 </ol>
 <p>you already are in a pretty good position.
 However, we could spend a whole day on how to code in way that is easy to follow and all the best practices there.
 Instead, we want to focus today on how to automate reproducibility <em>assuming</em> you allready have an R script that is easy to understand.
-For everything else we are missing the time and there are simply to many different skill levels for R programming.</p>
+For everything else we are missing the time today and there are simply to many different skill levels present in such a workshop.</p>
 </div>
 </div>
 <div id="extended-goals" class="section level2 unnumbered hasAnchor">
 <h2>Extended Goals?<a href="dynamic-documents.html#extended-goals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This is a schematic overview of the system we want to build today:</p>
-<p><img src="https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg" width="100%" /></p>
-<p>Sorry, did I confuse you with that?
-Don’t worry, we’re in this together.
-Let us break it down.
-What components do we need to bundle neatly together to archive automated reproduibility?</p>
+<p>The goal today is conceptually simple:</p>
+<p><strong><code>raw data</code> → automatically → <code>final paper</code></strong></p>
+<p>We want to create a system that takes your analysis and reproduces it automagically.
+Therefore, whenever you make a change to your analysis you get the results without lifting a finger.
+Crucially, since it is reproduced by an external system this proofs to you that your results are reproducible by any external person.
+In fact, when I say results, what I really mean is the whole article including text, tables, and figures.
+An added benefit is that collaborators, readers, and the future you, can simply change things online withou installing anything and can expect to get the full paper reproduced with these changes.</p>
+<p>The goal, therefore is create a neat bundle of the following components that we can send to others so they have everything they need for reproduction:</p>
 <p>code + data + text + history + software + workflow</p>
 <p>But haven’t we already looked at parts of it?
 Yes!</p>
 <p><span style="color:orange">code + data</span> + text + history + software + workflow</p>
-<p>We have already dealt with code and data.
-If you want to read up on it again, go back to the beginning of this chapter.</p>
-<p>Next is text.
-Let’s look again at the problems we need to solve:</p>
+<p>We have already dealt with code and data (or rather I assume that is solved).</p>
+<p>This is a schematic overview of the system we want to build today:</p>
+<p><img src="https://raw.githubusercontent.com/aaronpeikert/repro-tutorial/main/images/nutshell.svg" width="100%" /></p>
+<p>We build this system to solve the following problems:</p>
 <ol style="list-style-type: decimal">
-<li>copy&amp;paste mistakes</li>
+<li><span style="color:orange">copy&amp;paste mistakes</span></li>
 <li>inconsistent versions of code or data</li>
 <li>missing or incompatible software</li>
 <li>complicated or ambiguous procedure for reproduction</li>
 </ol>
-<p>And the solution software:</p>
+<p>Using:</p>
 <ol style="list-style-type: decimal">
-<li>RMarkdown</li>
+<li><span style="color:orange">RMarkdown</span></li>
 <li>Git</li>
 <li>Docker</li>
 <li>Make</li>
@@ -357,7 +383,7 @@ I will give you more information about RMarkdown by taking you to their document
 
 </div>
 <p>Now let’s go back to your R cloud environment.</p>
-<p><span style="color:green">Open the file</span><span style="color:orange">inflation.Rmd.</span></p>
+<p><span style="color:green">Open the file </span><span style="color:orange">inflation.Rmd.</span></p>
 <p>If you are still in the R folder, you have to go up one level again.</p>
 <p><span style="color:green">Take a minute to skim the document (Or even two).</span></p>
 <p><span style="color:green">Click on </span><span style="color:orange">knit.</span></p>
@@ -368,7 +394,7 @@ I will give you more information about RMarkdown by taking you to their document
 <pre><code>---
 title: &quot;Inflation Data&quot;
 author: &quot;Aaron Peikert&quot;
-date: &quot;2023-06-16&quot;
+date: &quot;2023-06-20&quot;
 output: html_document
 repro:
   packages:
@@ -420,7 +446,6 @@ This part contain code blocks like:</p>
 <span id="cb4-12"><a href="dynamic-documents.html#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>These code blocks can be not only R code but also Julia, Python, Octave and other programming languages.</p>
 <p><span style="color:green">Add a R code chunk (Ctrl + Alt + I) and inline code:</span></p>
-<!-- Bad solution, somethin better? -->
 <div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="dynamic-documents.html#cb5-1" aria-hidden="true" tabindex="-1"></a>A code chunk is for longer code/output:</span>
 <span id="cb5-2"><a href="dynamic-documents.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="dynamic-documents.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>

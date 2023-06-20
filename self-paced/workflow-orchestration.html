@@ -23,7 +23,7 @@
 <meta name="author" content="Aaron Peikert &amp; Hannes Diemerling" />
 
 
-<meta name="date" content="2023-06-16" />
+<meta name="date" content="2023-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i>Dynamic Documents</a>
 <ul>
-<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-i-see-before-me"><i class="fa fa-check"></i>What do I see before me?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-you-see-before-you"><i class="fa fa-check"></i>What do you see before you?</a></li>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#best-practices"><i class="fa fa-check"></i>Best practices?</a>
 <ul>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#a-summary"><i class="fa fa-check"></i>A summary?</a></li>
@@ -344,8 +344,9 @@ Maybe a conversation with ReproDude will help you?</p>
 <h3>Hands on!<a href="workflow-orchestration.html#hands-on-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>But now we have had enough thinking, let’s go back to the code!</p>
 <p><span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make inflation.pdf</span></span></p>
+<p>[Hint: If you did not change <code>output: html_document</code> to <code>output: pdf_document</code> in <code>inflation.Rmd</code> you need to use <code>.html</code> instead of <code>.pdf</code>.]</p>
 <p><span style="color:green">Delete <span style="color:orange">inflation.pdf.</span></span></p>
-<p><span style="color:green">Add <span style="color:orange">inflation.pdf</span> to the target <span style="color:orange">all (all: inflation.pdf).</span></span></p>
+<p><span style="color:green">Add <span style="color:orange">inflation.pdf</span> to the target <span style="color:orange">all </span> (e.g.,: <code>all: inflation.pdf</code>) in the <span style="color:orange">Makefile</span>.</span></p>
 <p><span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make</span></span></p>
 <p><span style="color:blue">Run: <span style="color:orange">make -B –dry-run</span></span></p>
 <p>[Hint: <span style="color:orange">-B</span> means rebuild everything. <span style="color:orange">–dry-run</span> means do not actually run the commands.</span>]</p>

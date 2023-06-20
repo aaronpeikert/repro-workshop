@@ -23,7 +23,7 @@
 <meta name="author" content="Aaron Peikert &amp; Hannes Diemerling" />
 
 
-<meta name="date" content="2023-06-16" />
+<meta name="date" content="2023-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i>Dynamic Documents</a>
 <ul>
-<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-i-see-before-me"><i class="fa fa-check"></i>What do I see before me?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-you-see-before-you"><i class="fa fa-check"></i>What do you see before you?</a></li>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#best-practices"><i class="fa fa-check"></i>Best practices?</a>
 <ul>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#a-summary"><i class="fa fa-check"></i>A summary?</a></li>
@@ -286,7 +286,7 @@ Then let’s jump right in!</p>
 <h2>Docker?<a href="software-management.html#docker" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let me introduce Docker: your software superhero!
 It saves you from compatibility chaos and missing dependencies.
-With Docker, create portable packages called Docker images that effortlessly work on any computer.
+Docker images effortlessly make all required software availible on any computer (with Docker installed).
 Docker operates on the principle of containerization, which essentially means encapsulating your software application in a bundle with its own operating system, also known as a container.
 This approach provides a unified and consistent environment that is isolated from the rest of your system, ensuring that your software runs the same way, no matter where it is deployed.</p>
 <p>Short note from the management, this workshop uses a lot of automation to automate reproducibility, e.g., to configure software, fill templates, interact with Git/GitHub etc.</p>
@@ -300,7 +300,7 @@ This approach provides a unified and consistent environment that is isolated fro
 <ul>
 <li><span style="color:orange">repro</span></li>
 </ul>
-<p>These packages are “training wheels” and are not strictly required.</p>
+<p>These packages are “training wheels” and are not strictly required; you could configure everything manually.</p>
 <p>Nevertheless, the use of repro prevents headaches by automating many steps.
 [Besides, it would go way beyond the scope of the workshop if we were to do every step ourselves.]</p>
 <div id="repro" class="section level3 unnumbered hasAnchor">
@@ -334,7 +334,8 @@ GitHub action is a cloud service that runs software when certain events trigger 
 <p>That’s it.
 But what have we actually just done?</p>
 <p>We created Dockerfiles using the repro package and then automated the building of Docker images by setting up GitHub Action.
-These Docker images now ensure a reproducible software environment!</p>
+These Docker images now ensure a reproducible software environment!
+At the momemt, we have not used the newly build image, that follows in the next step.</p>
 </div>
 </div>
 <div id="and-now-2" class="section level2 unnumbered hasAnchor">

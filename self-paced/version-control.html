@@ -23,7 +23,7 @@
 <meta name="author" content="Aaron Peikert &amp; Hannes Diemerling" />
 
 
-<meta name="date" content="2023-06-16" />
+<meta name="date" content="2023-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html"><i class="fa fa-check"></i>Dynamic Documents</a>
 <ul>
-<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-i-see-before-me"><i class="fa fa-check"></i>What do I see before me?</a></li>
+<li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#what-do-you-see-before-you"><i class="fa fa-check"></i>What do you see before you?</a></li>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#best-practices"><i class="fa fa-check"></i>Best practices?</a>
 <ul>
 <li class="chapter" data-level="" data-path="dynamic-documents.html"><a href="dynamic-documents.html#a-summary"><i class="fa fa-check"></i>A summary?</a></li>
@@ -286,7 +286,7 @@ Figure 1: Git Overview
 </p>
 </div>
 <p>Git is an amazing tool that helps you keep track of changes in your project, just like having a magical time machine for your work.
-It’s like having a superpower for managing files and projects, especially when you’re coding, although it can be used for any type of project that involves files.</p>
+It’s like having a superpower for managing files and projects, especially when you’re coding, although it can be used for any type of project that involves files (think RMardown!).</p>
 <p>Imagine you have a project, and it’s like a journey represented by a single line called the ‘main’ branch.
 Each point along this line is a different version of your project, capturing the moments when you’ve made changes and saved them (committed them).
 It’s like preserving snapshots of your progress, allowing you to travel back in time and see how your project evolved.</p>
@@ -306,16 +306,17 @@ I will lead you to a cheat sheet for git, who likes remembering?
 </div>
 <p>Now that we’ve cleared that up, let’s get back to the code.</p>
 <p><span style="color:green">Modify this code and run it:</span></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="version-control.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use a function without loading the package</span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="version-control.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use a function without loading the package:</span></span>
 <span id="cb7-2"><a href="version-control.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># package::function</span></span>
 <span id="cb7-3"><a href="version-control.html#cb7-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
 <span id="cb7-4"><a href="version-control.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">&quot;Jane Doe&quot;</span>, <span class="co"># &lt;-- change to your name</span></span>
 <span id="cb7-5"><a href="version-control.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">&quot;jane@example.org&quot;</span>, <span class="co"># &lt;-- and your email</span></span>
 <span id="cb7-6"><a href="version-control.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">init.defaultBranch =</span> <span class="st">&quot;main&quot;</span>) <span class="co"># &lt;-- not necessary but kinder than &#39;master&#39;</span></span></code></pre></div>
 <p>You will need to do this <em>once for each computing environment</em>.</p>
-<p>Let us now activate Git.</p>
+<p><span style="color:green">Run this code to activate git:</span></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="version-control.html#cb8-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div>
-<p>You will need to do this <em>once per project</em>.</p>
+<p>You are then asked to confirm some actions, simply choose the option that means approval in these situations (also if you see this kind of dialog in the future).
+You will need to do this <em>once per project</em>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
 <img src="images/Git1.svg" alt="Your current position"  />
 <p class="caption">
@@ -369,7 +370,7 @@ If I try to contribute to your code from the other side of the world, it won’t
 It makes working with Git easy and accessible, allowing you to collaborate with teammates, track changes, and keep your code safe in one place online.
 Let us Introduce our-self to GitHub.</p>
 <p><span style="color:green">To get a GitHub pat/token run:</span></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="version-control.html#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>(<span class="at">description =</span> Token <span class="cf">for</span> Repro Workshop <span class="dv">2023</span> Test)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="version-control.html#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>(<span class="at">description =</span> <span class="st">&quot;Token for Repro Workshop 2023 Test&quot;</span>)</span></code></pre></div>
 <p><span style="color:green">Activate scope <span style="color:orange">write:packages.</span></span></p>
 <p><span style="color:green">Modify expiration. Today is enough.</span></p>
 <p><span style="color:green">Copy token.</span></p>
