@@ -46,7 +46,7 @@ knitr::include_graphics("images/GitDiagram.svg")
 ```
 
 Git is an amazing tool that helps you keep track of changes in your project, just like having a magical time machine for your work.
-It's like having a superpower for managing files and projects, especially when you're coding, although it can be used for any type of project that involves files.
+It's like having a superpower for managing files and projects, especially when you're coding, although it can be used for any type of project that involves files (think RMardown!).
   
 Imagine you have a project, and it's like a journey represented by a single line called the 'main' branch.
 Each point along this line is a different version of your project, capturing the moments when you've made changes and saved them (committed them). 
@@ -69,7 +69,7 @@ Now that we've cleared that up, let's get back to the code.
 <span style="color:green">Modify this code and run it:</span>
 
 ```r
-# use a function without loading the package
+# use a function without loading the package:
 # package::function
 usethis::use_git_config(
   user.name = "Jane Doe", # <-- change to your name
@@ -79,12 +79,13 @@ usethis::use_git_config(
 
 You will need to do this *once for each computing environment*.
 
-Let us now activate Git.
+<span style="color:green">Run this code to activate git:</span>
 
 ```r
 usethis::use_git()
 ```
 
+You are then asked to confirm some actions, simply choose the option that means approval in these situations (also if you see this kind of dialog in the future).
 You will need to do this *once per project*.
 
 ```{r, echo=FALSE, fig.cap="Your current position"}
@@ -156,7 +157,7 @@ Let us Introduce our-self to GitHub.
 <span style="color:green">To get a GitHub pat/token run:</span>
 
 ```r
-usethis::create_github_token(description = `r texts$general$token`)
+usethis::create_github_token(description = "`r texts$general$token`")
 ```
 
 <span style="color:green">Activate scope <span style="color:orange">write:packages.</span></span>

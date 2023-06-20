@@ -116,9 +116,11 @@ But now we have had enough thinking, let's go back to the code!
 
 <span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make inflation.pdf</span></span>
 
+[Hint: If you did not change `output: html_document` to `output: pdf_document` in `inflation.Rmd` you need to use `.html` instead of `.pdf`.]
+
 <span style="color:green">Delete <span style="color:orange">inflation.pdf.</span></span>
 
-<span style="color:green">Add <span style="color:orange">inflation.pdf</span> to the target <span style="color:orange">all (all: inflation.pdf).</span></span>
+<span style="color:green">Add <span style="color:orange">inflation.pdf</span> to the target <span style="color:orange">all </span> (e.g.,: `all: inflation.pdf`) in the <span style="color:orange">Makefile</span>.</span>
 
 <span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make</span></span>
 
