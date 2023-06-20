@@ -11,6 +11,7 @@ fs::dir_create("data/raw/")
 ```
 
  - Upload the rds.
+ - Maybe upload the `inflation.rds` as a new github release as well.
  - Scrub the Makefile.
  
 ```
