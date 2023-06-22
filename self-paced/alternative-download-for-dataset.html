@@ -267,16 +267,10 @@ if(FALSE){
                    fs::path_ext_set(inflation_raw_path, &quot;rds&quot;),
                    compress = &quot;gz&quot;)
 } else {
-  download.file(
-    &quot;https://github.com/aaronpeikert/repro-workshop/releases/latest/download/inflation.rds&quot;,
-    fs::path_ext_set(inflation_raw_path, &quot;rds&quot;)
-  )
-  if(!file.exists(fs::path_ext_set(inflation_raw_path, &quot;rds&quot;))){
     download.file(
       &quot;https://drive.google.com/uc?export=download&amp;id=1czE3r1UEF21XvRGkXna0SE7yVvvrSiG3&quot;,
       fs::path_ext_set(inflation_raw_path, &quot;rds&quot;)
     )
-  }
 }</code></pre>
 
 </div>
