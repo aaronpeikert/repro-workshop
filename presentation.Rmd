@@ -2,8 +2,8 @@
 title: "Reproducible Research in R"
 subtitle: "How to do the same thing more than once"
 author: 
-  - "Aaron Peikert"
-date: 'LMU Open Science Center | `r Sys.Date()`'
+  - "Aaron Peikert & Elisa Buchberger"
+date: 'SIPS | `r Sys.Date()`'
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -29,9 +29,7 @@ repro:
   apt:
     - rsync
 ---
-class: inverse, center, middle
-
-# Why should we work reproducibly?
+class: middle, center
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -71,6 +69,31 @@ style_extra_css(css = list(".todo" = list(color = "#17C25B"),
                 )
 ```
 
+## In a Nutshell
+
+.left[
+
+1. aaronpeikert.github.io/repro-workshop/self-paced
+2. Do the .todo[green stuff].
+3. Drink enough water.
+
+]
+
+
+
+```{r, echo=FALSE}
+link <- "aaronpeikert.github.io/repro-workshop/self-paced/"
+```
+
+```{r, echo=FALSE, out.width = "30%", out.extra='style="float:center"'}
+generate_svg(qr_code(link), here::here("images/", "qr_slides.svg"), foreground = secondary_color, background = primary_color, show = FALSE)
+knitr::include_graphics("images/qr_slides.svg")
+```
+
+---
+class: inverse, center, middle
+
+# Why should we work reproducibly?
 ---
 class: inverse, center, middle
 
@@ -257,14 +280,9 @@ class: middle
 
 ---
 
-## Slides
-
-```{r, echo=FALSE}
-link <- "aaronpeikert.github.io/repro-workshop"
-```
+## Materials
 
 ```{r, echo=FALSE, out.width = "30%", out.extra='style="float:right; padding:10px"'}
-generate_svg(qr_code(link), here::here("images/", "qr_slides.svg"), foreground = secondary_color, background = primary_color, show = FALSE)
 knitr::include_graphics("images/qr_slides.svg")
 ```
 
