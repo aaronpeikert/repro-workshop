@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Getting Started | Reproducible Research</title>
+  <title>Alternative Download for Dataset | Reproducible Research</title>
   <meta name="description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Getting Started | Reproducible Research" />
+  <meta property="og:title" content="Alternative Download for Dataset | Reproducible Research" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="github-repo" content="aaronpeikert/repro-workshop" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Getting Started | Reproducible Research" />
+  <meta name="twitter:title" content="Alternative Download for Dataset | Reproducible Research" />
   
   <meta name="twitter:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="alternative-download-for-dataset.html"/>
+<link rel="prev" href="getting-started.html"/>
+<link rel="next" href="dynamic-documents.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -248,162 +248,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="getting-started" class="section level1 unnumbered hasAnchor">
-<h1>Getting Started<a href="getting-started.html#getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="what-is-reproducibility" class="section level2 unnumbered hasAnchor">
-<h2>What is reproducibility?<a href="getting-started.html#what-is-reproducibility" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Computational reproducibility is the ability to obtain identical results from the same data with the same computer code.
-It is a building block for transparent and cumulative science because it enables the originator and other researchers, on other computers and later in time, to reproduce and thus understand how results came about while avoiding a variety of errors that may lead to erroneous reporting of statistical and computational results.
-Tools like the ‘repro’ package in R, as discussed in the text, help automate this process, making it easier for researchers to create reproducible workflows.
-In essence, reproducibility is the cornerstone of robust, reliable, and high-quality scientific research.</p>
-</div>
-<div id="what-problems-must-we-solve" class="section level2 unnumbered hasAnchor">
-<h2>What problems must we solve?<a href="getting-started.html#what-problems-must-we-solve" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>copy&amp;paste mistakes</li>
-<li>inconsistent versions of code or data</li>
-<li>missing or incompatible software</li>
-<li>complicated or ambiguous procedure for reproduction</li>
-</ol>
-</div>
-<div id="what-concepts-must-we-know-about" class="section level2 unnumbered hasAnchor">
-<h2>What concepts must we know about?<a href="getting-started.html#what-concepts-must-we-know-about" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>Dynamic documents</li>
-<li>Version control</li>
-<li>Software management</li>
-<li>Workflow orchestration</li>
-</ol>
-</div>
-<div id="what-software-must-we-know-about" class="section level2 unnumbered hasAnchor">
-<h2>What software must we know about?<a href="getting-started.html#what-software-must-we-know-about" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>RMarkdown</li>
-<li>Git</li>
-<li>Docker</li>
-<li>Make</li>
-</ol>
-<p>There are alternatives to these implementations, e.g., Quarto, Jupyter, Singularity, virtualenv, SnakeMake, and many more.
-However, we had to decide on one set of tools.
-More important is that you understand for which purpose we use them then you may replace them with whatever you favor.</p>
-</div>
-<div id="what-services-will-we-use" class="section level2 unnumbered hasAnchor">
-<h2>What services will we use?<a href="getting-started.html#what-services-will-we-use" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You usually work on your local computer.
-However, in workshops, this often leads to the issues of missing/outdated/broken software setups.
-Therefore, we will use the prepared software environment we give you in the form of Posit Cloud (= RStudio Cloud).</p>
-<p>Additionally, we will make heavy use of GitHub (≠ Git) and
-GitHub Actions (∈ GitHub).</p>
-</div>
-<div id="what-does-self-paced-mean" class="section level2 unnumbered hasAnchor">
-<h2>What does self-paced mean?<a href="getting-started.html#what-does-self-paced-mean" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Self-paced learning is an educational approach that allows you to control the speed and intensity of your learning.
-This means you can learn at your own rhythm, pausing, reviewing, and progressing when it suits you best.
-You are encouraged to actively engage with the material, explore the content, and try to solve problems on your own before seeking help.
-In this course, there’s no rigid schedule to follow.
-You’re free to come-and-go and move through the content as you please.
-Remember, while it’s self-guided, you’re not alone - use the Infoboxes, explanation follows in the next paragraph, and course leaders are available to assist if you encounter difficulties you can’t resolve on your own.
-It is a flexible and personal way of learning designed to support you on your learning journey.</p>
-</div>
-<div id="what-are-infoboxes" class="section level2 unnumbered hasAnchor">
-<h2>What are infoboxes?<a href="getting-started.html#what-are-infoboxes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are two types of Infoboxes in this course.
-The first type is the Additional Infobox.
-These provide information to delve deeper into a topic and can be found throughout the course.
-Clicking on one of these boxes will take you to more in-depth material.</p>
-<p>The second type is the ReproDudes.
-You will find these at least once in each main chapter.
-If you have a question or get stuck, click on the relevant box in the chapter, and you will be redirected to ReproDude, already informed about the corresponding topic.
-Ask what you want to know and have a conversation.
-To use this, you will need a ChatGPT account, a link to which can be found below.</p>
-<div class="infobox" onclick="window.open(&#39;https://en.wikipedia.org/wiki/Information&#39;, &#39;_blank&#39;)">
-<h2 class="infobox-title">
-Additional info
-</h2>
-<p class="infobox-content">
-I am an additional infobox that provides you with additional material to educate you more deeply. Click on my sister boxes for more information.
-</p>
-</div>
-<div class="infoboxgpt" onclick="window.open(&#39;https://chat.openai.com/share/f188d04a-e569-4e53-8226-2532f0801812&#39;, &#39;_blank&#39;)">
-<h2 class="infobox-titlegpt">
-ReproDude
-</h2>
-<p class="infobox-contentgpt">
-I am ReproDude, so if you have a question or are stuck on a topic, click on the appropriate ReproDude box and ask there. You will need an account with ChatGPT to use me.
-</p>
-</div>
-<!-- so that there is no text between the Boxes-->
-<div style="clear: both;">
+<div id="alternative-download-for-dataset" class="section level1 unnumbered hasAnchor">
+<h1>Alternative Download for Dataset<a href="alternative-download-for-dataset.html#alternative-download-for-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Replace the contents of the file <code>R/download_inflation.R</code>:</p>
+<pre><code>library(here)
 
-</div>
-</div>
-<div id="what-else-should-i-know-before-i-start" class="section level2 unnumbered hasAnchor">
-<h2>What else should I know before I start?<a href="getting-started.html#what-else-should-i-know-before-i-start" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this workshop, we will go through many things, many of which are complicated.
-The goal today is to understand what is possible and not to achieve a complete deep technical understanding.
-So be kind to others and yourself and try not to get frustrated, ReproDude and the workshop leaders are there to help you if necessary!</p>
-<p>Just as you set your own pace in this course, you can also decide which tasks you do in this course.
-There are two types of tasks:</p>
-<p><span style="color:green">1. The tasks marked in green are important, and the workshop will not work if you skip any of these points or do them in the wrong order.</span></p>
-<p><span style="color:blue">2. The tasks marked in blue are completely optional and are meant for trying out and experimenting. You can skip these tasks as you like.</span></p>
-</div>
-<div id="questions-comments-notes" class="section level2 unnumbered hasAnchor">
-<h2>Questions? Comments? Notes?<a href="getting-started.html#questions-comments-notes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If you have any questions, comments, or notes regarding the workshop in general, you can <a href="https://github.com/aaronpeikert/repro-workshop/issues/new">open an issue on GitHub</a>.</p>
-</div>
-<div id="setup" class="section level2 unnumbered hasAnchor">
-<h2>Setup!<a href="getting-started.html#setup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If you already have an account, sign in; otherwise, sign up.</p>
-<div id="github" class="section level3 unnumbered hasAnchor">
-<h3>GitHub<a href="getting-started.html#github" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you have no GitHub account:</p>
-<p><a href="https://github.com/signup">GitHub Sign in</a></p>
-<p>If you already have a GitHub account:</p>
-<p><a href="https://github.com/login">GitHub Log in</a></p>
-</div>
-<div id="positrstudio-cloud" class="section level3 unnumbered hasAnchor">
-<h3>Posit/RStudio Cloud<a href="getting-started.html#positrstudio-cloud" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you have not used Posit/RStudio Cloud before:</p>
-<p>Use Option: “Sign Up with GitHub”</p>
-<p><a href="https://login.posit.cloud/register">Posit/RStudio Cloud Sign up</a></p>
-<p>If you already have a Posit/RStudio account:</p>
-<p><a href="https://login.posit.cloud/register">Posit/RStudio Cloud Log in</a></p>
-</div>
-<div id="chatgpt" class="section level3 unnumbered hasAnchor">
-<h3>ChatGPT<a href="getting-started.html#chatgpt" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you have not used ChatGPT before:</p>
-<p>Use Option: “Sign up”</p>
-<p><a href="https://chat.openai.com/auth/login">ChatGPT Sign up</a></p>
-<p>If you already have a ChatGPT account:</p>
-<p>Use Option: “Log in”</p>
-<p><a href="https://chat.openai.com/auth/login">ChatGPT Log in</a></p>
-</div>
-<div id="final-step" class="section level3 unnumbered hasAnchor">
-<h3>Final Step<a href="getting-started.html#final-step" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><span style="color:green">Now, please open the project:</span></p>
-<p><a href="https://posit.cloud/content/6127689">Project</a></p>
-<p>If you have already logged into Posit/RStudio Cloud during the previous section, you should now see a copy of the project in front of you.
-<span style="color:green">Click now on “Save a Permanent Copy” in the top right-hand corner of the task bar.</span>
-This ensures you have access to the project even after logging off.</p>
-<p>Congratulations!
-You are now ready to start the workshop; please go to the next chapter. <a href="./dynamic-documents.html">next chapter</a>.</p>
-</div>
-<div id="video" class="section level3 unnumbered hasAnchor">
-<h3>Video<a href="getting-started.html#video" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<video class="welcome_vid" controls muted>
-  <source src="https://github.com/aaronpeikert/repro-workshop/releases/latest/download/1Getting.Started.mp4" type="video/mp4">
-  This browser does not display the video tag.
-</video>
-</div>
-</div>
+#----download----
+inflation_raw_path &lt;- here(&quot;data&quot;, &quot;raw&quot;, &quot;inflation.xlsx&quot;)
+fs::dir_create(fs::path_dir(inflation_raw_path))
+if(FALSE){
+  download.file(
+    &quot;https://www.bankofengland.co.uk/-/media/boe/files/inflation-attitudes-survey/individual-responses-xlsx.xlsx&quot;,
+    inflation_raw_path
+  )
+  inflation_raw &lt;-
+    readxl::read_xlsx(here(&quot;data&quot;, &quot;raw&quot;, &quot;inflation.xlsx&quot;), sheet = 1)
+  readr::write_rds(inflation_raw,
+                   fs::path_ext_set(inflation_raw_path, &quot;rds&quot;),
+                   compress = &quot;gz&quot;)
+} else {
+  download.file(
+    &quot;https://github.com/aaronpeikert/repro-workshop/releases/latest/download/inflation.rds&quot;,
+    fs::path_ext_set(inflation_raw_path, &quot;rds&quot;)
+  )
+  if(!file.exists(fs::path_ext_set(inflation_raw_path, &quot;rds&quot;))){
+    download.file(
+      &quot;https://drive.google.com/uc?export=download&amp;id=1czE3r1UEF21XvRGkXna0SE7yVvvrSiG3&quot;,
+      fs::path_ext_set(inflation_raw_path, &quot;rds&quot;)
+    )
+  }
+}</code></pre>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="alternative-download-for-dataset.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dynamic-documents.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
