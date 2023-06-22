@@ -10,7 +10,7 @@ addinfos:
   start: "https://en.wikipedia.org/wiki/Information"
   rmarkdown: "https://rmarkdown.rstudio.com/"
   git: "https://education.github.com/git-cheat-sheet-education.pdf"
-  repro: "https://github.com/aaronpeikert/repro"
+  repro: "https://github.com/aaronpeikert/repro-tutorial"
   docker: "https://docs.docker.com/"
   make: "https://www.gnu.org/software/make/manual/make.html"
 logsign:
@@ -28,4 +28,4 @@ suggestions:
   docker: "https://docs.docker.com/get-docker/"
   latex: "https://de.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes"
 projekt:
-  start: "https://No-link-to-the-project.yet"
+  start: "https://posit.cloud/content/6127346"
