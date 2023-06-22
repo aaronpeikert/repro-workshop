@@ -204,3 +204,12 @@ And with that, we have concluded the workshop in terms of content!
 In the following chapter, we'll just go through some suggestions on how you can continue your Reproductions journey.
 
 You are now ready for the last chapter. [next chapter](./before-you-go.html).
+
+### Video {-}
+
+```{=html}
+<video class="welcome_vid" controls muted>
+  <source src="https://github.com/aaronpeikert/repro-workshop/releases/latest/download/5Workflow.Orchestration.mp4" type="video/mp4">
+  This browser does not display the video tag.
+</video>
+```

@@ -148,3 +148,13 @@ This ensures you have access to the project even after logging off.
 
 Congratulations!
 You are now ready to start the workshop; please go to the next chapter. [next chapter](./dynamic-documents.html).
+
+### Video {-}
+
+```{=html}
+<video class="welcome_vid" controls muted>
+  <source src="https://github.com/aaronpeikert/repro-workshop/releases/latest/download/1Getting.Started.mp4" type="video/mp4">
+  This browser does not display the video tag.
+</video>
+```
+

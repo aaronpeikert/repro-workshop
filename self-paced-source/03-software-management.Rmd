@@ -146,3 +146,12 @@ That ends this section.
 Should we pause for a short break or proceed without interruption?
 
 You are now ready for the next chapter. [next chapter](./workflow-orchestration.html).
+
+### Video {-}
+
+```{=html}
+<video class="welcome_vid" controls muted>
+  <source src="https://github.com/aaronpeikert/repro-workshop/releases/latest/download/4Software.Management.mp4" type="video/mp4">
+  This browser does not display the video tag.
+</video>
+```

@@ -256,3 +256,12 @@ But that was all for this section.
 Shall we both take a short break or do you want to continue straight away?
 
 You are now ready for the next chapter. [next chapter](./software-management.html).
+
+### Video {-}
+
+```{=html}
+<video class="welcome_vid" controls muted>
+  <source src="https://github.com/aaronpeikert/repro-workshop/releases/latest/download/3Version.Control.mp4" type="video/mp4">
+  This browser does not display the video tag.
+</video>
+```
