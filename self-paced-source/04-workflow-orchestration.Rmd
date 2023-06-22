@@ -124,7 +124,7 @@ But now we have had enough thinking, let's go back to the code!
 
 <span style="color:green">Go to the terminal (<span style="color:orange">Alt + Shift + M</span>) and type <span style="color:orange">make</span></span>
 
-<span style="color:blue">Run: <span style="color:orange">make -B --dry-run</span></span>
+<span style="color:blue">Run: <span style="color:orange">make -B \-\-dry-run</span></span>
 
 [Hint: <span style="color:orange">-B</span> means rebuild everything. <span style="color:orange">--dry-run</span> means do not actually run the commands.</span>]
 
