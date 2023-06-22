@@ -16,7 +16,7 @@ authors:
     name-particle: Aaron
     affiliation: Max Planck Institute for Human Development
     orcid: 'https://orcid.org/0000-0001-7813-818X'
-   - given-names: Hannes
+  - given-names: Hannes
     family-names: Diemerling
 repository-code: 'https://github.com/aaronpeikert/repro-workshop'
 url: 'https://aaronpeikert.github.io/repro-workshop/self-paced/'
