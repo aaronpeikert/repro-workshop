@@ -1,0 +1,55 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Reproducible Research in R: A Workshop on How to Do the
+  Same Thing More Than Once
+message: >-
+  If you find the workshop materials useful you may use them
+  under CC0 license, but please cite us.
+type: software
+authors:
+  - given-names: Aaron
+    family-names: Peikert
+    email: peikert@mpib-berlin.mpg.de
+    name-particle: Aaron
+    affiliation: Max Planck Institute for Human Development
+    orcid: 'https://orcid.org/0000-0001-7813-818X'
+   - given-names: Hannes
+    family-names: Diemerling
+repository-code: 'https://github.com/aaronpeikert/repro-workshop'
+url: 'https://aaronpeikert.github.io/repro-workshop/self-paced/'
+abstract: >
+  Computational reproducibility represents a key challenge
+  for making one's own work accessible and easily
+  understandable for others—but achieving this goal is not
+  easy.
+
+  Often, researchers must invest considerable efforts to
+  find out what the end goal of such a reproducible workflow
+  can look like and how they can acquire the skills to get
+  there.
+
+  This workshop gives an overview of how to create
+  reproducible data analyses in R (and beyond).
+
+  Specifically, this workshop will showcase one way to
+  automate the entire process from raw data to publishable
+  manuscripts in a pre-set online environment.
+
+  This automation combines dynamic document generation (via
+  R Markdown), version control (via Git), workflow
+  orchestration (via Make) and software management (via
+  Docker).
+
+  All these tools and, therefore, the entire automatic
+  reproduction of results are available on any machine with
+  Docker installed.
+
+  The resulting workflow is hence ensured to reproduce over
+  time, locally and in the cloud.
+keywords:
+  - r
+  - reproducible research
+license: CC0-1.0
