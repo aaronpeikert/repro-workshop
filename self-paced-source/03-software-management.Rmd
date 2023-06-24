@@ -110,7 +110,7 @@ But what have we actually just done?
 
 We created Dockerfiles using the repro package and then automated the building of Docker images by setting up GitHub Action.
 These Docker images now ensure a reproducible software environment!
-At the momemt, we have not used the newly build image, that follows in the next step.
+At the moment, we have not used the newly build image, that follows in the next step.
 
 ## And now? {-}
 
