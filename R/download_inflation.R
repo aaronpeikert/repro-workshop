@@ -5,10 +5,11 @@ library(tidyverse)
 inflation_raw_path <- here("data", "raw", "inflation.xlsx")
 fs::dir_create(fs::path_dir(inflation_raw_path))
 
+# Using Google Drive or the source because it requires to much RAM for posit cloud or GitHub
 # Function to attempt Google Drive download
 download_from_google <- function() {
   download.file(
-    "https://drive.google.com/uc?export=download&id=1czE3r1UEF21XvRGkXna0SE7yVvvrSiG3",
+    "https://docs.google.com/uc?id=18oftsa7DT53jDWc3XHr_uT6iITt2rQ0J&export=download",
     fs::path_ext_set(inflation_raw_path, "rds")
   )
 }
@@ -20,7 +21,7 @@ download_from_bank_of_england <- function() {
   readr::write_rds(inflation_raw, fs::path_ext_set(inflation_raw_path, "rds"), compress = "gz")
 }
 
-# Use tryCatch to first attempt Google Drive download and if that fails, attempt Bank of England download
+# Use tryCatch to first attempt Google Drive download and if that fails, attempt Bank of England download (The source)
 tryCatch({
   download_from_google()
 }, error = function(e) {
