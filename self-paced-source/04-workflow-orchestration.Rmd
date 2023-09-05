@@ -139,7 +139,7 @@ publish/: inflation.pdf
 include .repro/Makefile_publish
 ```
 
-<span style="color:green">Run <span style="color:orange">repro::use_gha_publish()</span></span>
+<span style="color:green">Back to the Console, run <span style="color:orange">repro::use_gha_publish()</span></span>
 
 <span style="color:green">Commit and push.</span>
 
