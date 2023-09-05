@@ -311,15 +311,15 @@ I will lead you to a cheat sheet for git, who likes remembering?
 </div>
 <p>Now that we’ve cleared that up, let’s get back to the code.</p>
 <p><span style="color:green">Modify this code and run it:</span></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="version-control.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use a function without loading the package:</span></span>
-<span id="cb7-2"><a href="version-control.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># package::function</span></span>
-<span id="cb7-3"><a href="version-control.html#cb7-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb7-4"><a href="version-control.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">&quot;Jane Doe&quot;</span>, <span class="co"># &lt;-- change to your name</span></span>
-<span id="cb7-5"><a href="version-control.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">&quot;jane@example.org&quot;</span>, <span class="co"># &lt;-- and your email</span></span>
-<span id="cb7-6"><a href="version-control.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">init.defaultBranch =</span> <span class="st">&quot;main&quot;</span>) <span class="co"># &lt;-- not necessary but kinder than &#39;master&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="version-control.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use a function without loading the package:</span></span>
+<span id="cb8-2"><a href="version-control.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># package::function</span></span>
+<span id="cb8-3"><a href="version-control.html#cb8-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb8-4"><a href="version-control.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">&quot;Jane Doe&quot;</span>, <span class="co"># &lt;-- change to your name</span></span>
+<span id="cb8-5"><a href="version-control.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">&quot;jane@example.org&quot;</span>, <span class="co"># &lt;-- and your email</span></span>
+<span id="cb8-6"><a href="version-control.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">init.defaultBranch =</span> <span class="st">&quot;main&quot;</span>) <span class="co"># &lt;-- not necessary but kinder than &#39;master&#39;</span></span></code></pre></div>
 <p>You will need to do this <em>once for each computing environment</em>.</p>
 <p><span style="color:green">Run this code to activate git:</span></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="version-control.html#cb8-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="version-control.html#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div>
 <p>You are then asked to confirm some actions, simply choose the option that means approval in these situations (also if you see this kind of dialog in the future).
 You will need to do this <em>once per project</em>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
@@ -338,10 +338,10 @@ To do that we need to change something in the document.
 How about the plot in the code?
 Remember, we are currently in <span style="color:orange">inflation.rmd</span>.</p>
 <p><span style="color:green">The plot is <del>ugly</del> very functional. Beautify it a bit. Some suggestions:</span></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="version-control.html#cb9-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb9-2"><a href="version-control.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;subjective inflation in %-points&quot;</span>) <span class="sc">+</span></span>
-<span id="cb9-3"><a href="version-control.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
-<span id="cb9-4"><a href="version-control.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">9</span>)) <span class="sc">+</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="version-control.html#cb10-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-2"><a href="version-control.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;subjective inflation in %-points&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="version-control.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="version-control.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">9</span>)) <span class="sc">+</span></span></code></pre></div>
 <p><span style="color:blue">Plot the two or five year expectation.</span></p>
 <p>[Hint: Swapping the variable <span style="color:orange">E1y_all</span> in <span style="color:orange">R/prepare_inflation.R</span> should to the trick.]</p>
 <p>Great, now we have changed something!
@@ -375,16 +375,16 @@ If I try to contribute to your code from the other side of the world, it won’t
 It makes working with Git easy and accessible, allowing you to collaborate with teammates, track changes, and keep your code safe in one place online.
 Let us Introduce our-self to GitHub.</p>
 <p><span style="color:green">To get a GitHub pat/token run:</span></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="version-control.html#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>(<span class="at">description =</span> <span class="st">&quot;Token for Repro Workshop 2023 Test&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="version-control.html#cb11-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>(<span class="at">description =</span> <span class="st">&quot;Token for Repro Workshop 2023 Test&quot;</span>)</span></code></pre></div>
 <p><span style="color:green">Activate scope <span style="color:orange">write:packages.</span></span></p>
 <p><span style="color:green">Modify expiration. Today is enough.</span></p>
 <p><span style="color:green">Copy token.</span></p>
 <p>You will need to do this <em>once for each computing environment</em>.</p>
 <p>Now we need to store this Token, it is like our Passport for entering the GitHub Country.</p>
 <p><span style="color:green">Set token:</span></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="version-control.html#cb11-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>() <span class="co"># &lt;-- Token must *not* go into brackets, paste when asked</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="version-control.html#cb12-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>() <span class="co"># &lt;-- Token must *not* go into brackets, paste when asked</span></span></code></pre></div>
 <p><span style="color:blue">Verify that everything is in order:</span></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="version-control.html#cb12-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">gh_token_help</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="version-control.html#cb13-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">gh_token_help</span>()</span></code></pre></div>
 <p>You will need to do this <em>once for each computing environment</em>.</p>
 <p>And what have we done now?</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
@@ -397,9 +397,9 @@ Figure 4: GitHub status
 <p>[Hint: If pushing code fails or asks for the password, we have triggered spam detection. In this case, we will have to repeat the GitHub handshake.]</p>
 <p>Now let’s use GitHub!</p>
 <p><span style="color:green">To activate GitHub and upload your files to the public web:</span></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="version-control.html#cb13-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="version-control.html#cb14-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div>
 <p><span style="color:blue">Private alternative/ upload to the non-public web (don’t use now):</span></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="version-control.html#cb14-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>(<span class="at">private =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="version-control.html#cb15-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>(<span class="at">private =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p><span style="color:blue">Can you simply use code from others that you find on GitHub?</span></p>
 <p><span style="color:blue">Try <span style="color:orange">usethis::use_mit_license()</span></span></p>
 <p><span style="color:blue">Up for a challenge? Try <span style="color:orange">usethis::use_readme_rmd()</span></span></p>

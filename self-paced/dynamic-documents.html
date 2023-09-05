@@ -437,34 +437,34 @@ I quote:
 <h3>Code (R)<a href="dynamic-documents.html#code-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>But there is yet another component in the document.
 This part contain code blocks like:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="dynamic-documents.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="dynamic-documents.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">inflation %&gt;% </span></span>
-<span id="cb4-3"><a href="dynamic-documents.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(date) %&gt;% </span></span>
-<span id="cb4-4"><a href="dynamic-documents.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(across(c(perception, expectation),</span></span>
-<span id="cb4-5"><a href="dynamic-documents.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">                   ~ mean(., na.rm = TRUE)),</span></span>
-<span id="cb4-6"><a href="dynamic-documents.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="in">            .groups = &quot;drop&quot;) %&gt;% </span></span>
-<span id="cb4-7"><a href="dynamic-documents.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="in">  pivot_longer(c(expectation, perception)) %&gt;% </span></span>
-<span id="cb4-8"><a href="dynamic-documents.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() %&gt;% </span></span>
-<span id="cb4-9"><a href="dynamic-documents.html#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot() +</span></span>
-<span id="cb4-10"><a href="dynamic-documents.html#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(date, value, color = name)) +</span></span>
-<span id="cb4-11"><a href="dynamic-documents.html#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="in">  NULL</span></span>
-<span id="cb4-12"><a href="dynamic-documents.html#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="dynamic-documents.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="dynamic-documents.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">inflation %&gt;% </span></span>
+<span id="cb5-3"><a href="dynamic-documents.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(date) %&gt;% </span></span>
+<span id="cb5-4"><a href="dynamic-documents.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(across(c(perception, expectation),</span></span>
+<span id="cb5-5"><a href="dynamic-documents.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">                   ~ mean(., na.rm = TRUE)),</span></span>
+<span id="cb5-6"><a href="dynamic-documents.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="in">            .groups = &quot;drop&quot;) %&gt;% </span></span>
+<span id="cb5-7"><a href="dynamic-documents.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">  pivot_longer(c(expectation, perception)) %&gt;% </span></span>
+<span id="cb5-8"><a href="dynamic-documents.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() %&gt;% </span></span>
+<span id="cb5-9"><a href="dynamic-documents.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot() +</span></span>
+<span id="cb5-10"><a href="dynamic-documents.html#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(date, value, color = name)) +</span></span>
+<span id="cb5-11"><a href="dynamic-documents.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="in">  NULL</span></span>
+<span id="cb5-12"><a href="dynamic-documents.html#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>These code blocks can be not only R code but also Julia, Python, Octave and other programming languages.</p>
 <p><span style="color:green">Add a R code chunk (Ctrl + Alt + I) and inline code:</span></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="dynamic-documents.html#cb5-1" aria-hidden="true" tabindex="-1"></a>A code chunk is for longer code/output:</span>
-<span id="cb5-2"><a href="dynamic-documents.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="dynamic-documents.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-4"><a href="dynamic-documents.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">with(mtcars, plot(hp, mpg))</span></span>
-<span id="cb5-5"><a href="dynamic-documents.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-6"><a href="dynamic-documents.html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="dynamic-documents.html#cb5-7" aria-hidden="true" tabindex="-1"></a>Inline code is for single numbers/short text:</span>
-<span id="cb5-8"><a href="dynamic-documents.html#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="dynamic-documents.html#cb5-9" aria-hidden="true" tabindex="-1"></a>We have 32 cars.</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="dynamic-documents.html#cb6-1" aria-hidden="true" tabindex="-1"></a>A code chunk is for longer code/output:</span>
+<span id="cb6-2"><a href="dynamic-documents.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="dynamic-documents.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-4"><a href="dynamic-documents.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">with(mtcars, plot(hp, mpg))</span></span>
+<span id="cb6-5"><a href="dynamic-documents.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-6"><a href="dynamic-documents.html#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="dynamic-documents.html#cb6-7" aria-hidden="true" tabindex="-1"></a>Inline code is for single numbers/short text:</span>
+<span id="cb6-8"><a href="dynamic-documents.html#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="dynamic-documents.html#cb6-9" aria-hidden="true" tabindex="-1"></a>We have 32 cars.</span></code></pre></div>
 <p><span style="color:blue">Include all the code in output with: <span style="color:orange">knitr::opts_chunk$set(echo = TRUE)</span></span></p>
 <p><span style="color:blue">Try using python:</span></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="dynamic-documents.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb6-2"><a href="dynamic-documents.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">print(&quot;Hello World! Python here, do you miss R already?&quot;)</span></span>
-<span id="cb6-3"><a href="dynamic-documents.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="dynamic-documents.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb7-2"><a href="dynamic-documents.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">print(&quot;Hello World! Python here, do you miss R already?&quot;)</span></span>
+<span id="cb7-3"><a href="dynamic-documents.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
 </div>
 <div id="and-now" class="section level2 unnumbered hasAnchor">
