@@ -280,6 +280,12 @@ class: middle
 
 ---
 
+class: middle, center
+
+<img src="https://publicdomainvectors.org/download.php?file=johnny_automatic_hourglass.svg" alt="" width="20%" style="filter: invert(1);">
+
+---
+
 ## Materials
 
 ```{r, echo=FALSE, out.width = "30%", out.extra='style="float:right; padding:10px"'}
