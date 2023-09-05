@@ -270,19 +270,14 @@ class: middle
 ## How to behave in this workshop?
 
 1. Be nice and help each other.
-2. Don't be shy: Answer and ask questions, even stupid ones.
-3. .todo[Do things in this color (green).]
-4. .optional[Try things in this color (blue). They are completely optional.]
+2. Take your time, there is no schedule.
+3. Don't be shy: Answer and ask questions, even stupid ones.
+4. .todo[Do things in this color (green).]
+5. .optional[Try things in this color (blue). They are completely optional.]
 
 --
 
 ## Let's try it.
-
----
-
-class: middle, center
-
-<img src="https://publicdomainvectors.org/download.php?file=johnny_automatic_hourglass.svg" alt="" width="20%" style="filter: invert(1);">
 
 ---
 
