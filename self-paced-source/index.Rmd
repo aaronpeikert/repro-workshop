@@ -33,3 +33,22 @@ If you are here on your own, you are welcome to try the workshop; however, we ca
 In case you like what you see and you want to offer this workshop at your institution, [get in touch with us](mailto:peikert@mpib-berlin.mpg.de).
 
 You may use all materials from the [GitHub repo](https://www.github.com/aaronpeikert/repro-workshop) under the [CC0 1.0 Universal licence](https://creativecommons.org/publicdomain/zero/1.0/) unless noted otherwise; still, we expect that you credit us where appropriate (e.g., with citing this as the source).
+
+> Peikert, Aaron, & Diemerling, Hannes. (2023). Reproducible Research in R: A Workshop on How to Do the Same Thing More Than Once. Zenodo. https://doi.org/10.5281/zenodo.8069391
+
+```
+@software{peikertRepro2023,
+  author       = {Peikert, Aaron and
+                  Diemerling, Hannes},
+  title        = {{Reproducible Research in R: A Workshop on How to 
+                   Do the Same Thing More Than Once}},
+  month        = jun,
+  year         = 2023,
+  note         = {{If you find the workshop materials useful you may 
+                   use them under CC0 license, but please cite us.}},
+  publisher    = {Zenodo},
+  version      = {v1.0.0},
+  doi          = {10.5281/zenodo.8069391},
+  url          = {https://doi.org/10.5281/zenodo.8069391}
+}
+```
