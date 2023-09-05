@@ -2,8 +2,8 @@
 title: "Reproducible Research in R"
 subtitle: "How to do the same thing more than once"
 author: 
-  - "Aaron Peikert & Elisa Buchberger"
-date: 'SIPS | `r Sys.Date()`'
+  - "Aaron Peikert & Hannes Diemerling"
+date: 'EPSY | `r Sys.Date()`'
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -60,7 +60,7 @@ style_extra_css(css = list(".todo" = list(color = "#17C25B"),
                            ".optional" = list(color = "#05BCE6"),
                            ".large" = list(`font-size` = "130%"),
                            ".small" = list(`font-size` = "80%"),
-                                                      ".tiny" = list(`font-size` = "50%"),
+                           ".tiny" = list(`font-size` = "50%"),
                            ".full" = list(padding = "0px",
                                           margin = "0px",
                                           border = "0px"),
@@ -75,7 +75,7 @@ style_extra_css(css = list(".todo" = list(color = "#17C25B"),
 
 1. aaronpeikert.github.io/repro-workshop/self-paced
 2. Do the .todo[green stuff].
-3. Drink enough water.
+3. Take your time.
 
 ]
 
@@ -314,6 +314,13 @@ Do you have a question?
 4. .optional[Try things in this color (they are completely optional).]
 
 Workshop within the workshop.
+
+---
+## Takeaways
+
+1. What are the most important aspects learned?
+2. How will you try to ensure reproducibility in the future?
+3. What was your biggest challenge about reproducibility that was addressed?
 
 ---
 ## Questions?! Comments? Notes?
