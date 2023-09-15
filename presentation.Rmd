@@ -3,7 +3,7 @@ title: "Reproducible Research in R"
 subtitle: "How to do the same thing more than once"
 author: 
   - "Aaron Peikert & Hannes Diemerling"
-date: 'EPSY | `r Sys.Date()`'
+date: 'BEACON | `r Sys.Date()`'
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
