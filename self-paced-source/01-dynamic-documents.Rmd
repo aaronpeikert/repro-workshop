@@ -251,7 +251,7 @@ with(mtcars, plot(hp, mpg))
 
 Inline code is for single numbers/short text:
 
-We have `r nrow(mtcars)` cars.
+We have ``r nrow(mtcars)`` cars.
 ````
 
 <span style="color:blue">Include all the code in output with: <span style="color:orange">knitr::opts_chunk$set(echo = TRUE)</span></span>
