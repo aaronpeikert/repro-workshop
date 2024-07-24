@@ -23,7 +23,7 @@ workshop gets researchers up to speed on how to create reproducible data
 analyses in R (and beyond). Specifically, researchers learn to automate
 the whole process from raw data to publishable manuscripts. This
 automation is possible by combining dynamic document generation (via R
-Markdown), version control (via Git), workflow orchestration (via Make)
+Markdown/Quarto), version control (via Git), workflow orchestration (via Make)
 and software management (via Docker). These tools and, therefore,
 automatic reproduction of results are available on any machine with
 Docker installed. The resulting workflow is, hence, highly transferable
