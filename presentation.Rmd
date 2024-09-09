@@ -329,7 +329,7 @@ Workshop within the workshop.
 
 Write them down:
 
-`r links$shared-doc`
+`r links$shareddoc`
 
 ---
 class: inverse, center, middle
