@@ -10,7 +10,8 @@ remotes::install_github("aaronpeikert/repro")
 fs::dir_create("data/raw/")
 ```
 
-```
+```r
+# execute this locally, not enough RAM on cloud
 install.packages("readxl")
 library(readxl)
 
@@ -18,7 +19,7 @@ download.file("https://www.bankofengland.co.uk/-/media/boe/files/inflation-attit
 saveRDS(read_excel(destfile, sheet = "Dataset"), "inflation.rds")
 ```
 
- - Upload the rds.
+ - Upload the rds (created in step bevor).
  - Maybe upload the `inflation.rds` as a new github release as well.
  - Scrub the Makefile.
  
