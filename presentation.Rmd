@@ -43,6 +43,7 @@ knitr::opts_chunk$set(
   dev = "svglite"
 )
 repro::automate_load_packages()
+links<-yaml::read_yaml("links.yml")
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -397,7 +398,8 @@ An incomplete list of computational infrastructures:
 
 Access the project:
 
-https://posit.cloud/content/6446915
+`r links$projekt$start`
+
 ---
 
 # Where are you?
