@@ -70,7 +70,7 @@ style_extra_css(css = list(".todo" = list(color = "#17C25B"),
                 )
 ```
 
-## In a Nutshell
+## In a nutshell
 
 .left[
 
@@ -235,7 +235,7 @@ class: center, middle
 
 --
 
-## 1. do the nessesary,
+## 1. do the necessary,
 
 --
 
@@ -336,7 +336,7 @@ class: inverse, center, middle
 
 .left[Level 1:]
 
-# The nessesary
+# The necessary
 
 ---
 class: middle
@@ -456,7 +456,7 @@ class: middle, center
 
 .left[Congratulations, you have completed:]
 
-# Nessesary
+# Necessary
 
 ---
 class: inverse, center, middle
@@ -513,10 +513,10 @@ knitr::include_graphics("https://publicdomainvectors.org/download.php?file=CARTO
 
 ## Problems
 
-1. copy&paste mistakes
-2. inconsistent versions of code or data
-3. missing or incompatible software
-4. complicated or ambiguous procedure for reproduction
+1. Copy&paste mistakes
+2. Inconsistent versions of code or data
+3. Missing or incompatible software
+4. Complicated or ambiguous procedure for reproduction
 
 ]
 
