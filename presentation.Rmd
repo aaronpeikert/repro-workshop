@@ -3,8 +3,7 @@ title: "Reproducible Research in R"
 subtitle: "How to do the same thing more than once"
 author: 
   - "Aaron Peikert, Maximilian Ernst, & Hannes Diemerling"
-date: 'AI IN COGNITIVE
-NEUROSCIENCES | `r Sys.Date()`'
+date: 'AI in cognitive neuroscience | `r Sys.Date()`'
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
