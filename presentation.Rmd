@@ -329,7 +329,7 @@ Workshop within the workshop.
 
 Write them down:
 
-<https://tinyurl.com/20230126-RRR>
+<https://pad.gwdg.de/s/g7FuZNcw1>
 
 ---
 class: inverse, center, middle
