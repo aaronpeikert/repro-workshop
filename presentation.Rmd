@@ -931,7 +931,7 @@ class: center
 .todo[To get a GitHub pat/token run:]
 
 ```{r, eval=FALSE}
-usethis::create_github_token(description = "Token for Repro Workshop 2023 LMU Open Science Center")
+usethis::create_github_token(description = "Token for Repro Workshop")
 ```
 
 .todo[Activate scope `write:packages`.]
