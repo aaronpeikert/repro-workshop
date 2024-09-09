@@ -1,4 +1,4 @@
-- Log into RStudio Cloud
+- Log into [Posit Cloud](https://posit.cloud/)
 - New Project → From Git → <https://github.com/aaronpeikert/repro-workshop>
 
 ```r
