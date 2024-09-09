@@ -46,4 +46,5 @@ file_delete(to_delete)
 ```
  - set link to public
  - paste link into slides
+ - maybe update the pad link
  - maybe tickle CI to update date on slides
