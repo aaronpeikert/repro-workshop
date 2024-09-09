@@ -45,6 +45,6 @@ to_delete <- all_files[!(all_files %in% c("inflation.Rmd", "R", "data", "Makefil
 file_delete(to_delete)
 ```
  - set link to public
- - paste link into slides
+ - update link to project in [links.yml](https://github.com/aaronpeikert/repro-workshop/blob/main/self-paced-source/links.yml)
  - maybe update the pad link
  - maybe tickle CI to update date on slides
