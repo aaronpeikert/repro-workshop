@@ -43,7 +43,7 @@ knitr::opts_chunk$set(
   dev = "svglite"
 )
 repro::automate_load_packages()
-links<-yaml::read_yaml("links.yml")
+links<-yaml::read_yaml(here::here("self-paced-source", "links.yml"))
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -329,7 +329,7 @@ Workshop within the workshop.
 
 Write them down:
 
-<https://pad.gwdg.de/s/g7FuZNcw1>
+`r links$shared-doc`
 
 ---
 class: inverse, center, middle
