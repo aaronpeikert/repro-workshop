@@ -4,7 +4,7 @@ Many researchers want to work reproducibly, but it is not easy.
 Considerable time is required to acquire the skills required for reproducible research, and the path is lined with pitfalls.
 This workshop gets researchers up to speed on how to create reproducible data analyses in R (and beyond).
 Specifically, researchers learn to automate the whole process from raw data to publishable manuscripts.
-This automation is possible by combining dynamic document generation (via R Markdown), version control (via Git), workflow orchestration (via Make) and software management (via Docker).
+This automation is possible by combining dynamic document generation (via R Markdown), version control (via Git/GitHub), workflow orchestration (via Make/GitHub Actions) and software management (via Docker).
 These tools and, therefore, automatic reproduction of results are available on any machine with Docker installed.
 The resulting workflow is, hence, highly transferable across machines and time.
 These core properties of reproducibility are demonstrated for any reader by automatically reproducing the manuscript online.
