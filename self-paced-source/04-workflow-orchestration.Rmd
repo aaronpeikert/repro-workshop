@@ -203,7 +203,7 @@ The great thing about this automation is that it now automatically builds and pu
 And with that, we have concluded the workshop in terms of content!
 In the following chapter, we'll just go through some suggestions on how you can continue your Reproductions journey.
 
-You are now ready for the last chapter. [next chapter](./before-you-go.html).
+You are now ready for the [last chapter](./before-you-go.html).
 
 ### Video {-}
 
