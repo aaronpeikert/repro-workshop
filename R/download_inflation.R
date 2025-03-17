@@ -1,29 +1,37 @@
 library(here)
 library(tidyverse)
+library(fs)
+library(readxl)
 
 #----download----
 inflation_raw_path <- here("data", "raw", "inflation.xlsx")
+inflation_rds_path <- fs::path_ext_set(inflation_raw_path, "rds")
 fs::dir_create(fs::path_dir(inflation_raw_path))
-
-# Using Google Drive or the source because it requires to much RAM for posit cloud or GitHub
-# Function to attempt Google Drive download
-download_from_google <- function() {
-  download.file(
-    "https://drive.google.com/uc?id=1irXtt_1vgDuIBmj4t5LpReEutpIDv4z4&export=download",
-    fs::path_ext_set(inflation_raw_path, "rds")
-  )
-}
 
 # Function to attempt Bank of England download and then process it
 download_from_bank_of_england <- function() {
-  system(paste("curl -o", inflation_raw_path, "https://www.bankofengland.co.uk/-/media/boe/files/inflation-attitudes-survey/individual-responses-xlsx.xlsx"))
-  inflation_raw <- readxl::read_excel(here("data", "raw", "inflation.xlsx"), sheet = 4)
-  readr::write_rds(inflation_raw, fs::path_ext_set(inflation_raw_path, "rds"), compress = "gz")
+  temp_file <- tempfile(fileext = ".xlsx")
+  download.file(
+    "https://www.bankofengland.co.uk/-/media/boe/files/inflation-attitudes-survey/individual-responses-xlsx.xlsx",
+    destfile = temp_file,
+    mode = "wb"
+  )
+  inflation_raw <- read_excel(temp_file, sheet = "Dataset")
+  saveRDS(inflation_raw, inflation_rds_path)
 }
 
-# Use tryCatch to first attempt Google Drive download and if that fails, attempt Bank of England download (The source)
+# Function to attempt GitHub download as failsafe
+download_from_github <- function() {
+  download.file(
+    "https://github.com/aaronpeikert/repro-workshop/releases/download/v1.1.0/inflation.rds",
+    destfile = inflation_rds_path,
+    mode = "wb"
+  )
+}
+
+# Use tryCatch to first attempt Bank of England download and if that fails, attempt GitHub download (the failsafe)
 tryCatch({
-  download_from_google()
-}, error = function(e) {
   download_from_bank_of_england()
+}, error = function(e) {
+  download_from_github()
 })
