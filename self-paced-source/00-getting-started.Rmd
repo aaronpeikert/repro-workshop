@@ -98,13 +98,13 @@ If you have any questions, comments, or notes regarding the workshop in general,
 
 ## Setup! {-}
 
-If you already have an account, sign in; otherwise, sign up.
+If you already have an account, log in; otherwise, sign up.
 
 ### GitHub {-}
 
 If you have no GitHub account:
 
-[GitHub Sign in](`r links$logsign$githubsign`)
+[GitHub Sign up](`r links$logsign$githubsign`)
 
 If you already have a GitHub account:
 
