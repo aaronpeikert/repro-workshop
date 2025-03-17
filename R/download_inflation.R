@@ -23,7 +23,7 @@ download_from_bank_of_england <- function() {
 # Function to attempt GitHub download as failsafe
 download_from_github <- function() {
   download.file(
-    "https://github.com/aaronpeikert/repro-workshop/releases/download/v1.1.0/inflation.rds",
+    "https://github.com/aaronpeikert/repro-workshop/releases/latest/download/inflation.rds",
     destfile = inflation_rds_path,
     mode = "wb"
   )
