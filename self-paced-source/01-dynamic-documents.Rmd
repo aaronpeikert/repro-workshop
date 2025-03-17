@@ -280,7 +280,7 @@ And with that we solved our first Problem on the list:
 3. missing or incompatible software
 4. complicated or ambiguous procedure for reproduction
 
-And which software did we just used for this?:
+And which software did we just use for this?:
 
 1. <span style="color:orange">RMarkdown</span>
 2. Git
@@ -295,7 +295,7 @@ You are currently at your computer using Posit Cloud which hosts an R environmen
 
 Shall we both take a short break or do you want to continue straight away?
 
-You are ready for the next chapter. [next chapter](./version-control.html).
+You are ready for the [next chapter](./version-control.html).
 
 ### Video {-}
 
