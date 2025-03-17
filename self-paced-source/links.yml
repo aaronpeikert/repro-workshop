@@ -13,6 +13,7 @@ addinfos:
   repro: "https://github.com/aaronpeikert/repro-tutorial"
   docker: "https://docs.docker.com/"
   make: "https://www.gnu.org/software/make/manual/make.html"
+  PAT: "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"
 logsign:
   githubsign: "https://github.com/signup"
   githublog: "https://github.com/login"
