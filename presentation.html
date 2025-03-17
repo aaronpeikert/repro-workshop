@@ -753,7 +753,7 @@ class: center
 .todo[Modify, then run:]
 
 
-```r
+``` r
 # use a function without loading the package
 # package::function
 usethis::use_git_config(
@@ -771,7 +771,7 @@ usethis::use_git_config(
 .todo[Run:]
 
 
-```r
+``` r
 usethis::use_git()
 ```
 
@@ -888,7 +888,7 @@ class: center
 .todo[To get a GitHub pat/token run:]
 
 
-```r
+``` r
 usethis::create_github_token(description = "Token for Repro Workshop")
 ```
 
@@ -907,7 +907,7 @@ usethis::create_github_token(description = "Token for Repro Workshop")
 .todo[Set token:]
 
 
-```r
+``` r
 gitcreds::gitcreds_set() # &lt;-- Token must *not* go into brackets, paste when asked
 ```
 
@@ -916,7 +916,7 @@ gitcreds::gitcreds_set() # &lt;-- Token must *not* go into brackets, paste when 
 .optional[Verify that everything is in order:]
 
 
-```r
+``` r
 usethis::gh_token_help()
 ```
 
@@ -962,7 +962,7 @@ Generally the "handshake" only needs to be done once per machine (per token vali
 .todo[To activate GitHub and upload your files to the public web:]
 
 
-```r
+``` r
 usethis::use_github()
 ```
 
@@ -971,7 +971,7 @@ usethis::use_github()
 .optional[Private alternative/ upload to non-public web (don't use now):]
 
 
-```r
+``` r
 usethis::use_github(private = TRUE)
 ```
 
@@ -1512,11 +1512,11 @@ class: center, middle
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"slideNumberFormat": "%current%",
-"highlightStyle": "github",
-"highlightLines": true,
-"ratio": "16:9",
-"countIncrementalSlides": true
+  "slideNumberFormat": "%current%",
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "ratio": "16:9",
+  "countIncrementalSlides": true
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

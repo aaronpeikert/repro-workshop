@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Dynamic Documents | Reproducible Research</title>
   <meta name="description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Dynamic Documents | Reproducible Research" />
   <meta property="og:type" content="book" />
@@ -55,6 +55,7 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -119,6 +120,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -437,34 +442,34 @@ I quote:
 <h3>Code (R)<a href="dynamic-documents.html#code-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>But there is yet another component in the document.
 This part contain code blocks like:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="dynamic-documents.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-2"><a href="dynamic-documents.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">inflation %&gt;% </span></span>
-<span id="cb5-3"><a href="dynamic-documents.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(date) %&gt;% </span></span>
-<span id="cb5-4"><a href="dynamic-documents.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(across(c(perception, expectation),</span></span>
-<span id="cb5-5"><a href="dynamic-documents.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">                   ~ mean(., na.rm = TRUE)),</span></span>
-<span id="cb5-6"><a href="dynamic-documents.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="in">            .groups = &quot;drop&quot;) %&gt;% </span></span>
-<span id="cb5-7"><a href="dynamic-documents.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">  pivot_longer(c(expectation, perception)) %&gt;% </span></span>
-<span id="cb5-8"><a href="dynamic-documents.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() %&gt;% </span></span>
-<span id="cb5-9"><a href="dynamic-documents.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot() +</span></span>
-<span id="cb5-10"><a href="dynamic-documents.html#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line(aes(date, value, color = name)) +</span></span>
-<span id="cb5-11"><a href="dynamic-documents.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="in">  NULL</span></span>
-<span id="cb5-12"><a href="dynamic-documents.html#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="dynamic-documents.html#cb5-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="dynamic-documents.html#cb5-2" tabindex="-1"></a><span class="in">inflation %&gt;% </span></span>
+<span id="cb5-3"><a href="dynamic-documents.html#cb5-3" tabindex="-1"></a><span class="in">  group_by(date) %&gt;% </span></span>
+<span id="cb5-4"><a href="dynamic-documents.html#cb5-4" tabindex="-1"></a><span class="in">  summarise(across(c(perception, expectation),</span></span>
+<span id="cb5-5"><a href="dynamic-documents.html#cb5-5" tabindex="-1"></a><span class="in">                   ~ mean(., na.rm = TRUE)),</span></span>
+<span id="cb5-6"><a href="dynamic-documents.html#cb5-6" tabindex="-1"></a><span class="in">            .groups = &quot;drop&quot;) %&gt;% </span></span>
+<span id="cb5-7"><a href="dynamic-documents.html#cb5-7" tabindex="-1"></a><span class="in">  pivot_longer(c(expectation, perception)) %&gt;% </span></span>
+<span id="cb5-8"><a href="dynamic-documents.html#cb5-8" tabindex="-1"></a><span class="in">  ungroup() %&gt;% </span></span>
+<span id="cb5-9"><a href="dynamic-documents.html#cb5-9" tabindex="-1"></a><span class="in">  ggplot() +</span></span>
+<span id="cb5-10"><a href="dynamic-documents.html#cb5-10" tabindex="-1"></a><span class="in">  geom_line(aes(date, value, color = name)) +</span></span>
+<span id="cb5-11"><a href="dynamic-documents.html#cb5-11" tabindex="-1"></a><span class="in">  NULL</span></span>
+<span id="cb5-12"><a href="dynamic-documents.html#cb5-12" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>These code blocks can be not only R code but also Julia, Python, Octave and other programming languages.</p>
 <p><span style="color:green">Add a R code chunk (Ctrl + Alt + I) and inline code:</span></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="dynamic-documents.html#cb6-1" aria-hidden="true" tabindex="-1"></a>A code chunk is for longer code/output:</span>
-<span id="cb6-2"><a href="dynamic-documents.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="dynamic-documents.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-4"><a href="dynamic-documents.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">with(mtcars, plot(hp, mpg))</span></span>
-<span id="cb6-5"><a href="dynamic-documents.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-6"><a href="dynamic-documents.html#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="dynamic-documents.html#cb6-7" aria-hidden="true" tabindex="-1"></a>Inline code is for single numbers/short text:</span>
-<span id="cb6-8"><a href="dynamic-documents.html#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="dynamic-documents.html#cb6-9" aria-hidden="true" tabindex="-1"></a>We have <span class="in">`32`</span> cars.</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="dynamic-documents.html#cb6-1" tabindex="-1"></a>A code chunk is for longer code/output:</span>
+<span id="cb6-2"><a href="dynamic-documents.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="dynamic-documents.html#cb6-3" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-4"><a href="dynamic-documents.html#cb6-4" tabindex="-1"></a><span class="in">with(mtcars, plot(hp, mpg))</span></span>
+<span id="cb6-5"><a href="dynamic-documents.html#cb6-5" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-6"><a href="dynamic-documents.html#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="dynamic-documents.html#cb6-7" tabindex="-1"></a>Inline code is for single numbers/short text:</span>
+<span id="cb6-8"><a href="dynamic-documents.html#cb6-8" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="dynamic-documents.html#cb6-9" tabindex="-1"></a>We have <span class="in">`32`</span> cars.</span></code></pre></div>
 <p><span style="color:blue">Include all the code in output with: <span style="color:orange">knitr::opts_chunk$set(echo = TRUE)</span></span></p>
 <p><span style="color:blue">Try using python:</span></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="dynamic-documents.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb7-2"><a href="dynamic-documents.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">print(&quot;Hello World! Python here, do you miss R already?&quot;)</span></span>
-<span id="cb7-3"><a href="dynamic-documents.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="dynamic-documents.html#cb7-1" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb7-2"><a href="dynamic-documents.html#cb7-2" tabindex="-1"></a><span class="in">print(&quot;Hello World! Python here, do you miss R already?&quot;)</span></span>
+<span id="cb7-3"><a href="dynamic-documents.html#cb7-3" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
 </div>
 <div id="and-now" class="section level2 unnumbered hasAnchor">
@@ -524,42 +529,42 @@ We have now one component more in our toolbox.</p>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/aaronpeikert/repro-workshop/edit/main/self-paced-source/01-dynamic-documents.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/aaronpeikert/repro-workshop/edit/main/self-paced-source/01-dynamic-documents.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
 });
 });
 </script>
