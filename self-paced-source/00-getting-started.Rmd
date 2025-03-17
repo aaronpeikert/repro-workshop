@@ -122,20 +122,6 @@ If you already have a Posit/RStudio account:
 
 [Posit/RStudio Cloud Log in](`r links$logsign$positlog`)
 
-### ChatGPT {-}
-
-If you have not used ChatGPT before:
-
-Use Option: "Sign up"
-
-[ChatGPT Sign up](`r links$logsign$chatgptsign`)
-
-If you already have a ChatGPT account:
-
-Use Option: "Log in"
-
-[ChatGPT Log in](`r links$logsign$chatgptlog`)
-
 ### Error Handling {-}
 
 In this workshop, hiccups may pop up that aren't exactly your fault. When faced with such situations, here's a cheat sheet to get you back on track:
