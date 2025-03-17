@@ -30,7 +30,7 @@ jobs:
     steps:
       -
         name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.2.2
       -
         name: Make things to be published.
         run: |
@@ -39,7 +39,7 @@ jobs:
         name: Publish 🚀
         # only publish when push to main
         if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           # The branch the action should deploy to.
           branch: gh-pages
