@@ -36,7 +36,7 @@ inflation <- inflation_raw %>%
     ),
     education = fct_recode(as.ordered(educ), low = "1", medium = "2", high = "3"),
     perception = ifelse(P_all == 99.0, NA, P_all),
-    expectation = ifelse(E1y_all == 99.0, NA, P_all),
+    expectation = ifelse(E1y_all == 99.0, NA, E1y_all),
     # first four characters are year, convert to date
     year = ymd(str_c(str_sub(yyyyqq, 1, 4), "-01-01")),
     # last two characters are quarters, convert to number
