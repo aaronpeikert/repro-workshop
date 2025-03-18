@@ -156,7 +156,7 @@ It makes working with Git easy and accessible, allowing you to collaborate with 
 ```{r results='asis', echo = FALSE}
 addinfoPAT <- generate_additionalinfo(links$addinfos$PAT,
                                       "Personal Access Tokens (PAT)",
-                                      "Personal Access Tokens (PATs) work just like passwords—they’re digital keys that let you log in securely. Instead of using your full password, you use a PAT, which only grants the specific access you need, so if it’s ever compromised, the potential damage is limited. Click on this box for additional details and to visit the official documentation.")
+                                      "Personal Access Tokens (PATs) work just like passwords—they’re digital keys that let you log in securely. However, instead of one password you can have as many PAT's as you need, which only grants specific access, so if it’s ever compromised, the potential damage is limited. You can imagine them similar to a transponder like they are used in big office buildings or a hotel card: An administrator (in this case you) decides what a specific PAT/card/transponder which repository/room can open for how long, and you give them to programs/people that you trust. Click on this box for additional details and to visit the official documentation.")
 cat(addinfoPAT)
 ```
 
