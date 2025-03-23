@@ -2,8 +2,8 @@
 title: "Reproducible Research in R"
 subtitle: "How to do the same thing more than once"
 author: 
-  - "Hannes Diemerling, Aaron Peikert, & Maximilian Ernst "
-date: 'Oxford Summer School | `r Sys.Date()`'
+  - "Aaron Peikert, Hannes Diemerling & Maximilian Ernst "
+date: 'DAGStat 2025 | `r Sys.Date()`'
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
