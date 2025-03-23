@@ -269,7 +269,7 @@ You are now ready for the [next chapter](./software-management.html).
 
 ```{=html}
 <video class="welcome_vid" controls muted>
-  <source src="https://github.com/aaronpeikert/repro-workshop/releases/latest/download/3Version.Control.mp4" type="video/mp4">
+  <source src="https://github.com/aaronpeikert/repro-workshop/releases/download/v1.0.0/3Version.Control.mp4" type="video/mp4">
   This browser does not display the video tag.
 </video>
 ```
