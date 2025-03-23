@@ -23,7 +23,7 @@
 <meta name="author" content="Aaron Peikert &amp; Hannes Diemerling" />
 
 
-<meta name="date" content="2025-03-17" />
+<meta name="date" content="2025-03-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -377,8 +377,16 @@ If I try to contribute to your code from the other side of the world, it won’t
 <div id="github-1" class="section level4 unnumbered hasAnchor">
 <h4>GitHub<a href="version-control.html#github-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>GitHub is like a virtual space where you can save and share your code with others.
-It makes working with Git easy and accessible, allowing you to collaborate with teammates, track changes, and keep your code safe in one place online.
-Let us Introduce ourself to GitHub.</p>
+It makes working with Git easy and accessible, allowing you to collaborate with teammates, track changes, and keep your code safe in one place online.</p>
+<div class="infobox" onclick="window.open(&#39;https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens&#39;, &#39;_blank&#39;)">
+<h2 class="infobox-title">
+Personal Access Tokens (PAT)
+</h2>
+<p class="infobox-content">
+Personal Access Tokens (PATs) work just like passwords—they’re digital keys that let you log in securely. However, instead of one password you can have as many PAT’s as you need, which only grants specific access, so if it’s ever compromised, the potential damage is limited. You can imagine them similar to a transponder like they are used in big office buildings or a hotel card: An administrator (in this case you) decides what a specific PAT/card/transponder which repository/room can open for how long, and you give them to programs/people that you trust. Click on this box for additional details and to visit the official documentation.
+</p>
+</div>
+<p>Let us Introduce ourself to GitHub.</p>
 <p><span style="color:green">To get a GitHub pat/token run:</span></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="version-control.html#cb11-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>(<span class="at">description =</span> <span class="st">&quot;Token for Repro Workshop 2024&quot;</span>)</span></code></pre></div>
 <p><span style="color:green">Activate scope <span style="color:orange">write:packages.</span></span></p>
@@ -392,7 +400,7 @@ Let us Introduce ourself to GitHub.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="version-control.html#cb13-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">gh_token_help</span>()</span></code></pre></div>
 <p>You will need to do this <em>once for each computing environment</em>.</p>
 <p>And what have we done now?</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="images/GitGithub0.svg" alt="GitHub status"  />
 <p class="caption">
 Figure 4: GitHub status
@@ -410,7 +418,7 @@ Figure 4: GitHub status
 <p><span style="color:blue">Up for a challenge? Try <span style="color:orange">usethis::use_readme_rmd()</span></span></p>
 <p>That’s it!
 And what does our history look like now?</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
 <img src="images/GitGithub1.svg" alt="GitHub status"  />
 <p class="caption">
 Figure 5: GitHub status
