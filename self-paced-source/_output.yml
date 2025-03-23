@@ -7,6 +7,6 @@ bookdown::gitbook:
         <li><a href="./">Reproducible Research</a></li>
       after: |
         <li><a href="https://github.com/aaronpeikert/repro-workshop/issues/new" target="blank">Questions? Problems? Suggestions?</a></li>
-        <li><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="blank">Licensed under CC0, but please cite us.</a></li>
+        <li><a href="https://doi.org/10.5281/zenodo.8069391" target="blank">Licensed under CC0, but please cite us.</a></li>
 
     edit: https://github.com/aaronpeikert/repro-workshop/edit/main/self-paced-source/%s
