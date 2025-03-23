@@ -154,7 +154,7 @@ You are now ready to start the workshop; please go to the [next chapter](./dynam
 
 ```{=html}
 <video class="welcome_vid" controls muted>
-  <source src="https://github.com/aaronpeikert/repro-workshop/releases/latest/download/1Getting.Started.mp4" type="video/mp4">
+  <source src="https://github.com/aaronpeikert/repro-workshop/releases/download/v1.0.0/1Getting.Started.mp4" type="video/mp4">
   This browser does not display the video tag.
 </video>
 ```
