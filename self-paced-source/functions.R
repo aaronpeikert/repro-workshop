@@ -32,7 +32,10 @@ generate_reprodudes <- function(links, title, text) {
 }
 
 
-generate_additionalinfo_full <- function(links, title, text) {
+library(whisker)
+
+# Generate a full width additional info box
+generate_fullwidthinfo <- function(links, title, text) {
   template <- '
 <div class="infobox-full" onclick="window.open(\'{{links}}\', \'_blank\')">
   <h2 class="infobox-title">{{title}}</h2>
@@ -46,4 +49,5 @@ generate_additionalinfo_full <- function(links, title, text) {
   
   return(html)
 }
+
 
