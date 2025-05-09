@@ -1,3 +1,7 @@
+# Setup
+
+This is the required setup.
+
 - Log into [Posit Cloud](https://posit.cloud/)
 - New Project → From Git → <https://github.com/aaronpeikert/repro-workshop>
 
@@ -48,3 +52,43 @@ file_delete(to_delete)
  - update link to project in [links.yml](https://github.com/aaronpeikert/repro-workshop/blob/main/self-paced-source/links.yml)
  - maybe update the pad link
  - maybe tickle CI to update date on slides
+
+# Minimal Test
+
+This is the minimal amount of commands to test the workshop.
+Setup has to be repeated.
+
+- Change to `pdf_document` in `inflation.Rmd`.
+
+```
+usethis::use_git_config(
+  user.name = "Aaron Peikert", # <-- change to your name
+  user.email = "peikert@mpib-berlin.mpg.de", # <-- and your email
+  init.defaultBranch = "main") # <-- not necessary but kinder than 'master'
+usethis::use_git()
+usethis::create_github_token(description = "Token for Repro Workshop 2024")
+gitcreds::gitcreds_set()
+usethis::use_github() # !!!this does not work!!! if you ever did the workshop from your account. The repo name must be unique (even for repos you deleted)
+repro::automate()
+repro::use_gha_docker()
+repro::use_make_publish()
+repro::use_gha_publish()
+```
+
+Paste the following into the Makefile:
+
+```
+publish/: inflation.pdf
+include .repro/Makefile_publish
+```
+
+```
+git add .
+git commit -m "full workshop"
+git push
+```
+
+Second action will fail, it reuquires the first.
+Simply wait for the first to finish and restart the second.
+
+
