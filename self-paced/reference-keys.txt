@@ -3,4 +3,3 @@ fig:unnamed-chunk-8
 fig:unnamed-chunk-9
 fig:unnamed-chunk-11
 fig:unnamed-chunk-12
-fig:unnamed-chunk-22
