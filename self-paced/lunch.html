@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Software Management | Reproducible Research</title>
+  <title>Lunch | Reproducible Research</title>
   <meta name="description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Software Management | Reproducible Research" />
+  <meta property="og:title" content="Lunch | Reproducible Research" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   <meta name="github-repo" content="aaronpeikert/repro-workshop" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Software Management | Reproducible Research" />
+  <meta name="twitter:title" content="Lunch | Reproducible Research" />
   
   <meta name="twitter:description" content="This is a self-paced workshop on how to implement reproducible research with RMarkdown, Docker, Make, Git, GitHub (Actions)." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="version-control.html"/>
-<link rel="next" href="workflow-orchestration.html"/>
+<link rel="prev" href="before-you-go.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -253,147 +253,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="software-management" class="section level1 unnumbered hasAnchor">
-<h1>Software Management<a href="software-management.html#software-management" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="infoboxgpt" onclick="window.open(&#39;https://chatgpt.com/share/67d7f11c-4cb0-800e-9464-4eb708851473&#39;, &#39;_blank&#39;)">
-<h2 class="infobox-titlegpt">
-ReproDude
-</h2>
-<p class="infobox-contentgpt">
-Hey, I’m your ReproDude for this chapter. If you have any questions click on me and we can talk!
+<div id="lunch" class="section level1 unnumbered hasAnchor">
+<h1>Lunch<a href="lunch.html#lunch" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
+<img src="images/lunch.jpg" alt="Lunch Places"  />
+<p class="caption">
+Figure 6: Lunch Places
 </p>
 </div>
-<!-- so that there is no text between the Boxes-->
-<div style="clear: both;">
 
-</div>
-<div id="what-now-1" class="section level2 unnumbered hasAnchor">
-<h2>What now?<a href="software-management.html#what-now-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>And on to another chapter!
-What’s next?</p>
-<p>Like last time, let’s look at our components.
-Which ones are we examining now?</p>
-<p>code + data + text + history + <span style="color:orange">software</span> + workflow</p>
-<p>Software? Maybe a look at our problem and software solution list will help us again.</p>
-<p>Problem list:</p>
-<ol style="list-style-type: decimal">
-<li><del>copy&amp;paste mistakes</del></li>
-<li><del>inconsistent versions of code or data</del></li>
-<li><span style="color:orange">missing or incompatible software</span></li>
-<li>complicated or ambiguous procedure for reproduction</li>
-</ol>
-<p>Software solution list:</p>
-<ol style="list-style-type: decimal">
-<li>RMarkdown</li>
-<li>Git</li>
-<li><span style="color:orange">Docker</span></li>
-<li>Make</li>
-</ol>
-<p>So does that mean we use Docker to avoid the problem of missing or incompatible software?
-This sounds like a program I would have needed a while ago.
-Then let’s jump right in!</p>
-</div>
-<div id="docker" class="section level2 unnumbered hasAnchor">
-<h2>Docker?<a href="software-management.html#docker" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Let me introduce Docker: your software superhero!
-It saves you from compatibility chaos and missing dependencies.
-Docker images effortlessly make all required software availible on any computer (with Docker installed).
-Docker operates on the principle of containerization, which essentially means encapsulating your software application in a bundle with its own operating system, also known as a container.
-This approach provides a unified and consistent environment that is isolated from the rest of your system, ensuring that your software runs the same way, no matter where it is deployed.</p>
-<p>Short note from the management, this workshop uses a lot of automation to automate reproducibility, e.g., to configure software, fill templates, interact with Git/GitHub etc.</p>
-<p>Among them:</p>
-<ul>
-<li>usethis</li>
-<li>gitcreds</li>
-<li>gh</li>
-</ul>
-<p>and a package from Aaron:</p>
-<ul>
-<li><span style="color:orange">repro</span></li>
-</ul>
-<p>These packages are “training wheels” and are not strictly required; you could configure everything manually.</p>
-<p>Nevertheless, the use of repro prevents headaches by automating many steps.
-[Besides, it would go way beyond the scope of the workshop if we were to do every step ourselves.]</p>
-<div id="repro" class="section level3 unnumbered hasAnchor">
-<h3>repro!<a href="software-management.html#repro" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="infobox" onclick="window.open(&#39;https://github.com/aaronpeikert/repro-tutorial&#39;, &#39;_blank&#39;)">
-<h2 class="infobox-title">
-repro
-</h2>
-<p class="infobox-content">
-I will lead you to a deep dive of the repro package.
-</p>
-</div>
-<!-- so that there is no text between the Boxes-->
-<div style="clear: both;">
-
-</div>
-<p>Then let’s dive into the repro package together.</p>
-<p><span style="color:orange">repro</span> uses metadata in Rmds to infer (among other things) the software environment required.</p>
-<p><span style="color:green">Trigger this mechanism using: <span style="color:orange">repro::automate()</span></span></p>
-<p><span style="color:green">Take a look at the newly generated file <span style="color:orange">Dockerfile.</span></span></p>
-<p><span style="color:green">Remove all, if any, python chunks.</span></p>
-<p><span style="color:green">Commit changes. (Do not push.)</span></p>
-<p><span style="color:blue">Add any package of your liking to any Rmd and run <span style="color:orange">repro::automate()</span></span></p>
-<p><span style="color:blue">Take a look at the file <span style="color:orange">.repro/Dockerfile_base</span> and friends. How would you change the R version used?</span></p>
-<p>Now we will use GitHub action (GHA).
-GitHub action is a cloud service that runs software when certain events trigger it (like Pushing something up to GitHub).</p>
-<p><span style="color:green">Add a GitHub Action to build the required Docker image with <span style="color:orange">repro::use_gha_docker()</span></span></p>
-<p><span style="color:green">To trigger the action, commit and push your changes.</span></p>
-<p><span style="color:green">Browse through the actions: <span style="color:orange">usethis::browse_github_actions()</span></span></p>
-<p><span style="color:blue">Take a look at <span style="color:orange">.github/workflows/push-container.yml.</span> When is the action triggered?</span></p>
-<p>That’s it.
-But what have we actually just done?</p>
-<p>We created Dockerfiles using the repro package and then automated the building of Docker images by setting up GitHub Action.
-These Docker images now ensure a reproducible software environment!
-At the moment, we have not used the newly build image, that follows in the next step.</p>
-</div>
-</div>
-<div id="and-now-2" class="section level2 unnumbered hasAnchor">
-<h2>And now?<a href="software-management.html#and-now-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Congratulations, we are approaching the finish line!</p>
-<p>Before we continue, let’s take another quick look together at what we have just done.
-We now have one more component in our toolbox:</p>
-<p><span style="color:orange">code + data + text + history + software</span> + workflow</p>
-<p>And with that, we solved our third problem on the list:</p>
-<ol style="list-style-type: decimal">
-<li><del>copy&amp;paste mistakes</del></li>
-<li><del>inconsistent versions of code or data</del></li>
-<li><del>missing or incompatible software</del></li>
-<li>complicated or ambiguous procedure for reproduction</li>
-</ol>
-<p>And which software did we just use for this?:</p>
-<ol style="list-style-type: decimal">
-<li>RMarkdown</li>
-<li>Git</li>
-<li><span style="color:orange">Docker</span></li>
-<li>Make</li>
-</ol>
-<div id="final-step-3" class="section level3 unnumbered hasAnchor">
-<h3>Final Step!<a href="software-management.html#final-step-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Now please go through what we have just done and all the software we used.</p>
-<p>You are currently at your computer using Posit Cloud, which hosts an R environment where you used the repro package and GitHub to generate a Docker image to ensure a reproducible software environment.</p>
-<p>That ends this section.
-Should we pause for a short break or proceed without interruption?</p>
-<p>You are now ready for the <a href="./workflow-orchestration.html">next chapter</a>.</p>
-</div>
-<div id="video-3" class="section level3 unnumbered hasAnchor">
-<h3>Video<a href="software-management.html#video-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<video class="welcome_vid" controls muted>
-  <source src="https://github.com/aaronpeikert/repro-workshop/releases/download/v1.0.0/4Software.Management.mp4" type="video/mp4">
-  This browser does not display the video tag.
-</video>
-
-</div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="version-control.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="workflow-orchestration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="before-you-go.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -424,7 +300,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/aaronpeikert/repro-workshop/edit/main/self-paced-source/03-software-management.Rmd",
+    "link": "https://github.com/aaronpeikert/repro-workshop/edit/main/self-paced-source/06-lunch.Rmd",
     "text": "Edit"
   },
   "history": {
