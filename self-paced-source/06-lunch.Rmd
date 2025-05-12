@@ -1,0 +1,5 @@
+# Lunch {-}
+
+```{r, echo=FALSE, fig.cap="Lunch Places"}
+knitr::include_graphics("images/lunch.jpg")
+```
