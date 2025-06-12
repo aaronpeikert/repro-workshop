@@ -481,3 +481,12 @@ knitr::include_graphics("https://publicdomainvectors.org/download.php?file=CARTO
 class: middle, center
 
 <https://github.com/aaronpeikert/repro-workshop/actions>
+
+---
+class: middle, center
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/qr_slides.svg")
+```
+
+[`r link`](https://`r link`)
