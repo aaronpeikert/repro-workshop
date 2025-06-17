@@ -17,12 +17,12 @@ jobs:
   imagename:
     runs-on: ubuntu-latest
     outputs:
-      lowercase: ${{ steps.lowercase.outputs.test }}
+      lowercase: ${{ steps.lowercase.outputs.lowercase }}
     steps:
       -
         name: Convert the repo name to lowercase.
         id: lowercase
-        run: echo "::set-output name=test::$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')"
+        run: echo "lowercase=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"  publish:
   publish:
     runs-on: ubuntu-latest
     needs: imagename
