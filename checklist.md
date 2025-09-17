@@ -69,6 +69,7 @@ usethis::use_git()
 usethis::create_github_token(description = "Token for Repro Workshop 2024")
 gitcreds::gitcreds_set()
 usethis::use_github() # !!!this does not work!!! if you ever did the workshop from your account. The repo name must be unique (even for repos you deleted)
+# head to https://github.com/new and follow commands for "push an existing repository from the command line"
 repro::automate()
 repro::use_gha_docker()
 repro::use_make_publish()
