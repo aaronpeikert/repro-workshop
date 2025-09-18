@@ -16,7 +16,7 @@ download_from_bank_of_england <- function() {
     destfile = temp_file,
     mode = "wb"
   )
-  inflation_raw <- read_excel(temp_file, sheet = "Dataset")
+  inflation_raw <- read_excel(temp_file, guess_max = 1e6, sheet = "Dataset")
   saveRDS(inflation_raw, inflation_rds_path)
 }
 
