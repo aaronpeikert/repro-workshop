@@ -1,6 +1,6 @@
 ---
-title: "Reproducible Research in R"
-subtitle: "How to do the same thing more than once"
+title: "Reproducible Research in Collaboration"
+subtitle: "Writing Academic Texts on GitHub Together"
 author: 
   - "Aaron Peikert, Hannes Diemerling, Maximilian S. Ernst, Andreas M. Brandmaier"
 date: '`r Sys.Date()`'
