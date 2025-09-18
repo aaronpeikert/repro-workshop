@@ -20,7 +20,7 @@ install.packages("readxl")
 library(readxl)
 
 download.file("https://www.bankofengland.co.uk/-/media/boe/files/inflation-attitudes-survey/individual-responses-xlsx.xlsx", destfile <- tempfile(fileext = ".xlsx"), mode = "wb")
-saveRDS(read_excel(destfile, sheet = "Dataset"), "inflation.rds")
+saveRDS(read_excel(destfile, sheet = "Dataset", guess_max = 1e6), "inflation.rds")
 ```
 
  - Upload the rds (created in step bevor).
